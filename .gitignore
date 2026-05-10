@@ -28,7 +28,7 @@ Log/
 *.log
 # Temp files
 *.tmp
-*.bak
+*.bak*
 *.cryasset.tmp
 *.~*
 
