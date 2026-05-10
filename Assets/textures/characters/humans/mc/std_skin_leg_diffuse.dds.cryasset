@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="5da8452f-4c18-5615-e22f-02bd1fe2ccbe" source="std_skin_leg_diffuse.tif">
+ <Files>
+  <File path="std_skin_leg_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

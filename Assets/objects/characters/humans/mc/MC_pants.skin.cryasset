@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="23f92345-1d5d-843b-f5c1-063279971650" source="MC.fbx">
+ <Files>
+  <File path="MC_pants.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">28</Detail>
+  <Detail name="triangleCount">4760</Detail>
+  <Detail name="vertexCount">3141</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">895</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./MC.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

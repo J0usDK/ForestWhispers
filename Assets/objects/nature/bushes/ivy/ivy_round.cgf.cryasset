@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="7a7762d9-8fcc-cc4f-56f7-f8836f5facc0" source="ivy_round.fbx">
+ <Files>
+  <File path="ivy_round.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">542</Detail>
+  <Detail name="vertexCount">471</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/bushes/ivy/vegetation_ivy_m.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

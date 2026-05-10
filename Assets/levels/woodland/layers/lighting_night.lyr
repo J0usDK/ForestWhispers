@@ -1,0 +1,15 @@
+<ObjectLayer>
+ <Layer Name="Lighting_Night" FullName="Lighting_Night" GUID="85f1b94b-8a0d-4dd1-9656-c8ca89412961" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="0" Color="8141841" Timestamp="1777068680">
+  <LayerObjects>
+   <Object Type="EnvironmentProbe" Layer="Lighting_Night" LayerGUID="85f1b94b-8a0d-4dd1-9656-c8ca89412961" Id="2f71a7ae-e085-41d3-850f-1e335f667fac" Name="l_probe_global_night" Pos="1433.1525,912.8783,40.236031" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="c2678a77-3037-2bea-8129-7b2e3b420a93" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_global_night_cm.dds">
+      <BoxSize x="10" y="10" z="10"/>
+      <Color r="1" g="1" b="1" a="1"/>
+     </Component>
+    </Components>
+   </Object>
+  </LayerObjects>
+ </Layer>
+</ObjectLayer>

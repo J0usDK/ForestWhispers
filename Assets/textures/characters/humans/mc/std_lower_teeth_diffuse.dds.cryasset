@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="f9294b5c-651d-b354-bd3a-f36dda67c825" source="std_lower_teeth_diffuse.tif">
+ <Files>
+  <File path="std_lower_teeth_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

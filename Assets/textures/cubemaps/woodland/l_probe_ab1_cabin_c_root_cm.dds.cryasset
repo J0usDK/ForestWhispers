@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="6bcfc4f8-ea5f-c200-e243-1f591802affc" source="l_probe_ab1_cabin_c_root_cm.tif">
+ <Files>
+  <File path="l_probe_ab1_cabin_c_root_cm.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1536</Detail>
+  <Detail name="height">256</Detail>
+  <Detail name="mipCount">7</Detail>
+ </Details>
+</AssetMetadata>

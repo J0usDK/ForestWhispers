@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="c17a42eb-f2dd-f5be-2c0b-c888dae61fae" source="std_eyelash_ddn.tif">
+ <Files>
+  <File path="std_eyelash_ddn.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

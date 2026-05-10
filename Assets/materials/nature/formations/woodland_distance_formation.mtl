@@ -1,0 +1,68 @@
+<Material MtlFlags="524544" vertModifType="0">
+ <SubMaterials>
+  <Material Name="rock_a" MtlFlags="524416" Shader="Illum" GenMask="40020000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_diff.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="2" TileV="2"/>
+    </Texture>
+    <Texture Map="Bumpmap" File="textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_ddna.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Detail" File="textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_detail.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="0.5" TileV="0.5"/>
+    </Texture>
+    <Texture Map="Custom" File="textures/nature/trees/pine/pine_distance_diff.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="[1] Custom" File="textures/nature/decals/moss/moss_ddna.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Opacity" File="textures/generic/masks/brick_blend/brick_blend.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+   </Textures>
+   <PublicParams BlendFactor="16" BlendFalloff="1" BlendLayer2Specular="0.02" BlendLayer2Tiling="1" BlendMaskTiling="1" DetailBumpScale="1.5" DetailDiffuseScale="0.40000001" DetailGlossScale="0" EmittanceMapGamma="1" SSSIndex="0"/>
+  </Material>
+  <Material Name="rock_b" MtlFlags="524416" Shader="Illum" GenMask="40020000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="0.42326775,0.42326775,0.42326775" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_diff.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="2" TileV="2"/>
+    </Texture>
+    <Texture Map="Bumpmap" File="textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_ddna.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Detail" File="textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_detail.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="0.5" TileV="0.5"/>
+    </Texture>
+    <Texture Map="Custom" File="textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_river_wet_diff.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="[1] Custom" File="textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_ddna.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Opacity" File="textures/generic/masks/brick_blend/brick_blend.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+   </Textures>
+   <PublicParams BlendFactor="16" BlendFalloff="1" BlendLayer2Specular="0.02" BlendLayer2Tiling="1" BlendMaskTiling="3" DetailBumpScale="1.5" DetailDiffuseScale="1" DetailGlossScale="0" EmittanceMapGamma="1" SSSIndex="0"/>
+  </Material>
+  <Material Name="tree_a" MtlFlags="524418" Shader="Vegetation" GenMask="2400800020" StringGenMask="%LEAVES%NORMAL_MAP%TEMP_VEGETATION%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="255" AlphaTest="0.47" vertModifType="0" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="textures/nature/trees/pine/pine_distance_diff.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Bumpmap" File="textures/nature/trees/pine/pine_distance_ddna.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Opacity" File="textures/nature/trees/pine/pine_distance_sss.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+   </Textures>
+   <PublicParams bendDetailLeafAmplitude="0.2" bendDetailFrequency="1" bendDetailBranchAmplitude="-0.5" VertexAlphaBlendFactor="1" NormalViewDependency="0.5" TransmittanceColor="1,1,1" CapOpacityFalloff="0" BackDiffuseMultiplier="0.5"/>
+  </Material>
+  <Material Name="tree_b" MtlFlags="525442" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="" MatTemplate="" Diffuse="0,0,0" Specular="0,0,0" Opacity="1" Shininess="9.9450016" vertModifType="0" LayerAct="1">
+   <Textures />
+  </Material>
+ </SubMaterials>
+ <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
+</Material>

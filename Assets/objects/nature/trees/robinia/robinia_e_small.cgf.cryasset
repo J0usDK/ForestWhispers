@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="32955005-2528-555e-d941-90a43c273e39" source="robinia_e_small.fbx">
+ <Files>
+  <File path="robinia_e_small.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">2079</Detail>
+  <Detail name="vertexCount">3185</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/trees/robinia/robinia.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

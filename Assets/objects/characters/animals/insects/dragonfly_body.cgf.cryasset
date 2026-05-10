@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="2e50dc6b-b5d8-e73e-905b-8e5e71a3cb6e" source="dragonfly_body.fbx">
+ <Files>
+  <File path="dragonfly_body.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">2</Detail>
+  <Detail name="triangleCount">180</Detail>
+  <Detail name="vertexCount">514</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/characters/animals/insects/dragonfly_body.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="194db6fb-cac4-ad25-86c8-544b5787779e" source="cc_base_tear_ducts_diffuse.tif">
+ <Files>
+  <File path="cc_base_tear_ducts_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

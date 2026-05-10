@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="d1213142-6836-a3b1-c80f-9a957c5f75a6" source="MC.fbx">
+ <Files>
+  <File path="MC.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">28</Detail>
+  <Detail name="triangleCount">287726</Detail>
+  <Detail name="vertexCount">188925</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./MC.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

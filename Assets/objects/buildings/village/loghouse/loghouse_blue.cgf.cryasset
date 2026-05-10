@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="0fbb8662-57d7-27ed-2a6c-d9a2a36ab581" source="loghouse_blue.fbx">
+ <Files>
+  <File path="loghouse_blue.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">14</Detail>
+  <Detail name="triangleCount">49447</Detail>
+  <Detail name="vertexCount">91229</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/buildings/village/loghouse/loghouse.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

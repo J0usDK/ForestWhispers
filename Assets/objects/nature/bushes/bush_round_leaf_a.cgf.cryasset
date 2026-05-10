@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="48bada80-69e9-eaa9-e714-63773844dca2" source="bush_round_leaf_a.fbx">
+ <Files>
+  <File path="bush_round_leaf_a.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">2</Detail>
+  <Detail name="triangleCount">324</Detail>
+  <Detail name="vertexCount">972</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/bushes/bush_round_leaf.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

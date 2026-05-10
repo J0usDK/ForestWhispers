@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="cdbe01c8-ac52-f3e0-5135-2060b9b811a6" source="canyon_waterfall.fbx">
+ <Files>
+  <File path="canyon_waterfall.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">12</Detail>
+  <Detail name="triangleCount">7500</Detail>
+  <Detail name="vertexCount">4466</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/rocks/canyon.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

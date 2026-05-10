@@ -1,0 +1,15 @@
+<Material MtlFlags="524296" Shader="Illum" GenMask="400000A000820" StringGenMask="%DECAL%NORMAL_MAP%OFFSET_BUMP_MAPPING%PARALLAX_OCCLUSION_MAPPING%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.034339812,0.034339812,0.034339812" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
+ <Textures>
+  <Texture Map="Diffuse" File="textures/decals/mud/river_ground/river_ground_diff.dds" Filter="5">
+   <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+  </Texture>
+  <Texture Map="Bumpmap" File="textures/decals/mud/river_ground/river_ground_ddna.dds" Filter="4">
+   <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+  </Texture>
+  <Texture Map="Heightmap" File="textures/decals/mud/river_ground/river_ground_displ.dds">
+   <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+  </Texture>
+ </Textures>
+ <DetailDecal Opacity="128" SSAOAmount="0" topTileU="1" topTileV="1" topOffsV="0" topOffsU="0" topRotation="0" topDeformation="0" topSortOffset="0" bottomTileU="0.5" bottomTileV="0.5" bottomOffsV="0.5" bottomOffsU="0.5" bottomRotation="0" bottomDeformation="0" bottomSortOffset="0"/>
+ <PublicParams DecalAlphaMult="1" DecalAngleBasedFading="1" DecalDiffuseOpacity="1" DecalFalloff="1" DecalNormalOpacity="1" DecalSpecularOpacity="1" EmittanceMapGamma="1" HeightBias="0.5" ObmDisplacement="0.025" PomDisplacement="0.029999999" SelfShadowStrength="5"/>
+</Material>

@@ -1,0 +1,49 @@
+<AssetMetadata version="0" type="Material" guid="9a31aa37-cb90-6d52-d9c3-dd00fae4403c" source="" timestamp="1777828554">
+ <Files>
+  <File path="mc.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">25</Detail>
+  <Detail name="textureCount">38</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/characters/humans/mc/std_skin_head_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_skin_head_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_skin_body_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_skin_body_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_skin_arm_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_skin_arm_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_skin_leg_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_skin_leg_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_nails_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_nails_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eyelash_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eyelash_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eye_r_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eye_r_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_cornea_r_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eye_l_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eye_l_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_cornea_l_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eye_occlusion_r_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eye_occlusion_l_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/cc_base_tear_ducts_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_tearline_r_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_tearline_l_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_upper_teeth_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_upper_teeth_ddna.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_lower_teeth_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_lower_teeth_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_tongue_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_tongue_ddna.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/hair_transparency_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/hair_clap_transparency_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/male_brow_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/male_brow_base_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/beard_transparency_diffuse.dds</Path>
+  <Path usageCount="1">%ENGINE%/EngineAssets/Textures/white.dds</Path>
+  <Path usageCount="1">%ENGINE%/EngineAssets/Textures/white_ddn.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/boxers_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/boxers_ddn.dds</Path>
+ </Dependencies>
+</AssetMetadata>

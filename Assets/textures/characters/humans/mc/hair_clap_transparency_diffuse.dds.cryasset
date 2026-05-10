@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="b9f40d42-ad69-1d06-8cd3-54b9daa9ac9d" source="hair_clap_transparency_diffuse.tif">
+ <Files>
+  <File path="hair_clap_transparency_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

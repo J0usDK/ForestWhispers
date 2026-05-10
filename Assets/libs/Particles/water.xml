@@ -1,0 +1,13 @@
+<ParticleLibrary Name="water" SandboxVersion="3.7.0.208" ParticleVersion="26">
+ <Particles Name="CXP_waterfall.surface_spray">
+  <Params Count="10" Continuous="true" ParticleLifeTime="1.5,Random=0.13" PositionOffset="z=-1" RandomOffset="x=1,y=1,z=1" EmitAngle="90,Random=1" Texture="textures/sprites/water/waterdust1.dds" SoftParticle="true" Alpha="0.2,ParticleAge=(t=0.5,v=1;t=1)" Color="(x=0.74540436,y=0.7912981,z=0.7835379)" DiffuseLighting="0.5" DiffuseBacklighting="1" Size="5,Random=0.188,ParticleAge=(v=0.43;t=0.29,v=1)" Speed="5" GravityScale="0.15" RandomAngles="y=60" CameraMaxDistance="50"/>
+ </Particles>
+ <Particles Name="waterfall_tiny.waterfall_tiny">
+  <Params Count="20" Continuous="true" ParticleLifeTime="1" RandomOffset="x=2" BlendType="Additive" TextureTiling="TilesX=6,TilesY=6,AnimFramesCount=36" Material="materials/particle/water_splash_rapids.mtl" Tessellation="true" SoftParticle="true" Alpha="ParticleAge=(flags=32;t=0.086,v=1;t=0.73,v=1;t=1)" DiffuseBacklighting="1" ReceiveShadows="true" Size="2.1,Random=0.198" Stretch="0.249,ParticleAge=(;t=1,v=1)" Speed="7,Random=0.314" AirResistance="RotationalDragScale=0" GravityScale="1,ParticleAge=(v=0.953;t=1,v=1)" RandomAngles="y=360" SortOffset="-1.27"/>
+ </Particles>
+ <Particles Name="waterfall_tiny.waterfall_refract">
+  <Params Continuous="true" ParticleLifeTime="2.5" RandomOffset="x=1" SoftParticle="true" Alpha="2,ParticleAge=(;t=0.325,v=1;t=0.643,v=1;t=1)" Color="(x=0.63,y=0.68,z=0.737)" DiffuseBacklighting="1" ReceiveShadows="true" Size="2,Random=0.396,ParticleAge=(v=0.047,flags=32;t=1,v=1)" Stretch="0.703" Speed="2,Random=0.165" GravityScale="1,Random=0.226" RandomAngles="y=360" RotationRate="y=20" RandomRotationRate="y=20" CameraMaxDistance="100"/>
+  <Childs>
+  </Childs>
+ </Particles>
+</ParticleLibrary>

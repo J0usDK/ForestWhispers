@@ -1,0 +1,38 @@
+<ParticleLibrary Name="environment_fx" SandboxVersion="3.7.0.208" ParticleVersion="26">
+ <Particles Name="smoke.ground_smoke">
+  <Params Count="20" Continuous="true" ParticleLifeTime="10" RandomOffset="x=30,z=30" OffsetRoundness="1" EmitAngle="180,Random=1" Curvature="0" Texture="textures/sprites/smoke/smoke_white_tiled2.dds" TextureTiling="TilesX=2,TilesY=2,VariantCount=4" SoftParticle="true" Alpha="0.5,Random=0.3,ParticleAge=(;t=0.51,v=1;t=1)" AlphaClip="SourceMin=(Min=0.001,Max=0.001)" Color="(x=0.41,y=0.41,z=0.41),Random=0.46" DiffuseLighting="0.5" DiffuseBacklighting="0.5" EmissiveLighting="0.5" Size="10,Random=0.405" Speed="Random=0.847" AirResistance="1,Random=0.73,RotationalDragScale=0.211" RandomAngles="y=180" RandomRotationRate="y=5" CameraMaxDistance="50" CameraMinDistance="20" FillRateCost="0"/>
+ </Particles>
+ <Particles Name="environment.gnat">
+  <Params Count="1" Continuous="true" ParticleLifeTime="10" Texture="textures/default/grey.dds" Alpha="2" SoundFXParam="0.3" Size="0" Speed="1" AirResistance="WindScale=0.15"/>
+  <Childs>
+   <Particles Name="flies1">
+    <Params Count="65,Random=0.737" Continuous="true" ParticleLifeTime="15,Random=0.355" RandomOffset="x=0.5,y=0.5,z=0.5" FocusGravityDir="true" EmitAngle="180,Random=1" OrientToVelocity="true" Curvature="0.5" Texture="textures/sprites/insects/fly_a/fly_a.dds" Alpha="ParticleAge=(;t=0.255,v=1;t=0.745,v=1;t=1)" EmissiveLighting="0.01" ReceiveShadows="true" Size="0.01,Random=0.364" MinPixels="1.5" AirResistance="5,WindScale=0.35" Turbulence3DSpeed="5,Random=0.5" MoveRelEmitter="Yes" TargetAttraction="Target=OwnEmitter,Orbit=true,Radius=(2,Random=0.711,ParticleAge=(v=1;t=0.5,v=0.455;t=1,v=1))" ViewDistanceAdjust="5" CameraMaxDistance="45"/>
+   </Particles>
+   <Particles Name="sound">
+    <Params Enabled="false" Count="1" Continuous="true" ParticleLifeTime="1" Speed="1"/>
+   </Particles>
+  </Childs>
+ </Particles>
+ <Particles Name="leaves.falling_leaves_b">
+  <Params Count="30,Random=0.813" Continuous="true" ParticleLifeTime="8" RandomOffset="y=5" FocusAngle="90" Facing="Free" Texture="textures/sprites/leaves/leaves_green.dds" TextureTiling="TilesX=2,TilesY=2,VariantCount=4" Alpha="ParticleAge=(;t=0.06,v=1;t=0.918,v=1;t=1)" Color="Random=0.514" DiffuseLighting="0.25" DiffuseBacklighting="0.2" ReceiveShadows="true" Size="0.2,Random=0.733" Speed="2,Random=0.433" AirResistance="RotationalDragScale=0.42" GravityScale="0.075,Random=0.336" Turbulence3DSpeed="0.6,Random=0.424" RandomAngles="x=360,y=360,z=360" RotationRate="x=154.46,y=113.13,z=90.78" ViewDistanceAdjust="2" CameraMaxDistance="70"/>
+ </Particles>
+ <Particles Name="environment.dandelion">
+  <Params Count="180" Continuous="true" ParticleLifeTime="5" RandomOffset="x=15,y=3,z=15" FocusAngle="90" Curvature="0" Texture="textures/sprites/leaves/dandelion_petal.dds" Alpha="ParticleAge=(;t=0.06,v=1;t=0.93,v=1;t=1)" DiffuseLighting="2" DiffuseBacklighting="1" EmissiveLighting="1" ReceiveShadows="true" Size="0.07,Random=0.69,ParticleAge=(;t=0.098,v=1;t=0.906,v=0.84;t=1)" Speed="Random=0.72" AirResistance="0.04,RotationalDragScale=0,WindScale=8" GravityScale="-0.01,Random=0.614" Turbulence3DSpeed="0.8,Random=0.492" RandomAngles="y=30" RotationRate="y=4.2" CameraMaxDistance="70" CameraMinDistance="0.8"/>
+ </Particles>
+ <Particles Name="environment.dragonfly_attract">
+  <Params Continuous="true" ParticleLifeTime="1" OrientToVelocity="true" Texture="textures/default/grey.dds" Alpha="2" SoundFXParam="0.3" Size="0.01" Speed="1" AirResistance="WindScale=0.15"/>
+  <Childs>
+   <Particles Name="flies1">
+    <Params Count="4" Continuous="true" ParticleLifeTime="30" PositionOffset="z=2" FocusAngle="90,Random=0.478" FocusAzimuth="90,Random=0.389" Facing="Free" OrientToVelocity="true" Geometry="objects/characters/animals/insects/dragonfly_body.cgf" Material="materials/characters/animals/insects/dragonfly_body.mtl" Size="0.08" Speed="1.1,Random=0.309" AirResistance="0.2,Random=0.8,WindScale=0" Turbulence3DSpeed="Random=0.153" TurbulenceSize="1.22,Random=1" TurbulenceSpeed="97.1,Random=1" MoveRelEmitter="Yes" TargetAttraction="Target=OwnEmitter,Orbit=true,Radius=(6.6,Random=1,ParticleAge=(v=1;t=0.15,v=0.25;t=0.26,v=0.863;t=0.38,v=0.16;t=0.525,v=0.863;t=0.77,v=0.25;t=1,v=1))" InitAngles="x=-90,y=90" Elasticity="1"/>
+    <Childs>
+     <Particles Name="Dragonfly1">
+      <Params SpawnIndirection="ParentStart" Count="1" Continuous="true" ParticleLifeTime="0.2" PositionOffset="z=0.02" Texture="textures/sprites/insects/dragonfly/dragonfly_flapping.dds" TextureTiling="TilesX=8,TilesY=4,AnimFramesCount=30" Alpha="0.2" Color="(x=0.76,y=0.77,z=0.965)" DiffuseLighting="0.025" DiffuseBacklighting="1" EmissiveLighting="0.05" ReceiveShadows="true" Size="0.35" MoveRelEmitter="Yes"/>
+     </Particles>
+     <Particles Name="audio">
+      <Params StartTrigger="Play_p_pfx_env_insect_dragonfly_swarm"/>
+     </Particles>
+    </Childs>
+   </Particles>
+  </Childs>
+ </Particles>
+</ParticleLibrary>

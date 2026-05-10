@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="3c4369c7-0de4-76eb-1978-0e06575cdaa5" source="tunic_ddna.tif">
+ <Files>
+  <File path="tunic_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>

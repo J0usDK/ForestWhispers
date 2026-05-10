@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="d94bdfe8-b9e7-9805-d709-14fe7f2477f9" source="MC.fbx">
+ <Files>
+  <File path="MC_CC_Base_EyeOcclusion.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">28</Detail>
+  <Detail name="triangleCount">288</Detail>
+  <Detail name="vertexCount">182</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">883</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./MC.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="b77e1723-0623-3901-f6fb-a415e5a8840c" source="std_nails_diffuse.tif">
+ <Files>
+  <File path="std_nails_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

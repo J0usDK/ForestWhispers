@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="32500a31-3622-bda9-69c6-40526e6b2399" source="wood_pile_b.fbx">
+ <Files>
+  <File path="wood_pile_b.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">7</Detail>
+  <Detail name="triangleCount">6644</Detail>
+  <Detail name="vertexCount">5333</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/biome/forest/forest.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

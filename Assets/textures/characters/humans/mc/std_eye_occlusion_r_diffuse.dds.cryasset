@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="44319c51-8c9b-8011-88d5-e228260bf70b" source="std_eye_occlusion_r_diffuse.tif">
+ <Files>
+  <File path="std_eye_occlusion_r_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">64</Detail>
+  <Detail name="height">64</Detail>
+  <Detail name="mipCount">5</Detail>
+ </Details>
+</AssetMetadata>

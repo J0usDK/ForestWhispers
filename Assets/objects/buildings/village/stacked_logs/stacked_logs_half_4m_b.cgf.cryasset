@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="c0868e20-8b7b-c42d-f218-000fc56588cb" source="stacked_logs_half_4m_b.fbx">
+ <Files>
+  <File path="stacked_logs_half_4m_b.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">4</Detail>
+  <Detail name="triangleCount">1454</Detail>
+  <Detail name="vertexCount">2414</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/buildings/village/stacked_logs/stacked_logs.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

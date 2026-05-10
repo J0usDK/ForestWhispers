@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="4a8226c2-2ee4-d1b2-6e2a-9fc063df1391" source="MC.fbx">
+ <Files>
+  <File path="MC_Short_blowback.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">28</Detail>
+  <Detail name="triangleCount">23506</Detail>
+  <Detail name="vertexCount">26533</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">883</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./MC.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

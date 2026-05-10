@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="3fb25de4-9ebb-6e7b-7b14-c97dd4231436" source="MC.fbx">
+ <Files>
+  <File path="MC_tunic.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">28</Detail>
+  <Detail name="triangleCount">63070</Detail>
+  <Detail name="vertexCount">34460</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">912</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./MC.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

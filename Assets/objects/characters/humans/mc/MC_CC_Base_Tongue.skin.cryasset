@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="51dce2b7-f361-0300-c7f3-045aa8622ea8" source="MC.fbx">
+ <Files>
+  <File path="MC_CC_Base_Tongue.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">28</Detail>
+  <Detail name="triangleCount">592</Detail>
+  <Detail name="vertexCount">331</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">888</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./MC.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="8c5cb271-a1d5-0a88-0897-a1da9b815303" source="pine_forest_distance_a.fbx">
+ <Files>
+  <File path="pine_forest_distance_a.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">4</Detail>
+  <Detail name="triangleCount">202</Detail>
+  <Detail name="vertexCount">350</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/biome/forest/forest.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

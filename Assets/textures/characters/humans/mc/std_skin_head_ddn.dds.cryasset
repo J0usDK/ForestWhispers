@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="9d27e1f6-f30f-d00b-abf2-bed744a85ddf" source="std_skin_head_ddn.tif">
+ <Files>
+  <File path="std_skin_head_ddn.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

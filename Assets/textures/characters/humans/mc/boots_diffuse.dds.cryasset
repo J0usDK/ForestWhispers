@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="69d62161-dbdb-3a0b-699c-62e71e835119" source="boots_diffuse.tif">
+ <Files>
+  <File path="boots_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>

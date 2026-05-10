@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="681de848-ab69-963e-e94c-0240155e5392" source="boots_ddna.tif">
+ <Files>
+  <File path="boots_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>

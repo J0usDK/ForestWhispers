@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="7d6bc0c0-e6f5-e197-c57a-583ad6f0d5ba" source="tunic_diffuse.tif">
+ <Files>
+  <File path="tunic_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="006c74df-fb97-8242-b843-46cd6daaf214" source="bench_a.fbx">
+ <Files>
+  <File path="bench_a.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">6</Detail>
+  <Detail name="triangleCount">423</Detail>
+  <Detail name="vertexCount">348</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/buildings/village/misc/benches.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

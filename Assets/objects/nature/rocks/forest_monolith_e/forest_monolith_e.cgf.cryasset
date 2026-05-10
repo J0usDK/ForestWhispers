@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="41d10db7-c9e3-cf52-d7cd-6d914b097ee8" source="forest_monolith_e.fbx">
+ <Files>
+  <File path="forest_monolith_e.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">10</Detail>
+  <Detail name="triangleCount">3478</Detail>
+  <Detail name="vertexCount">2055</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/rocks/forest_monoliths.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

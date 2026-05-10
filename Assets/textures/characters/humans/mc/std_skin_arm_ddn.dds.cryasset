@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="8cdc006a-79b0-0002-748f-3b4244b3a585" source="std_skin_arm_ddn.tif">
+ <Files>
+  <File path="std_skin_arm_ddn.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

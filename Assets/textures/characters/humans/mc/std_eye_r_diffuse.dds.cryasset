@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="516b06f6-f148-1706-1a94-89e0a87da5fc" source="std_eye_r_diffuse.tif">
+ <Files>
+  <File path="std_eye_r_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

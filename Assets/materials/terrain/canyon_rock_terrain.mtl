@@ -1,0 +1,11 @@
+<Material MtlFlags="526336" Shader="Terrain.Layer" GenMask="200000020" StringGenMask="%NORMAL_MAP%TEMP_TERRAIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.016807375,0.016807375,0.016807375" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
+ <Textures>
+  <Texture Map="Diffuse" File="textures/terrain/canyon_rock_terrain/canyon_rock_terrain_diff.dds">
+   <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="0.2" TileV="0.2"/>
+  </Texture>
+  <Texture Map="Bumpmap" File="textures/terrain/canyon_rock_terrain/canyon_rock_terrain_ddna.dds">
+   <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+  </Texture>
+ </Textures>
+ <PublicParams BlendFactor="0.88999999" BlendFalloff="1" DetailTextureHighPassRange="15" DetailTextureStrength="0.84299999" DetailTextureStrengthFade="1" NormalMapBumpiness="1"/>
+</Material>

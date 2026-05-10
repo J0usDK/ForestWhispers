@@ -1,0 +1,13 @@
+<AssetMetadata version="0" type="Material" guid="165d481d-f524-0bc3-28c8-17edcd200d5a" source="" timestamp="1776901000">
+ <Files>
+  <File path="canyon_river_v1.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="textureCount">2</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/cubemaps/l_probe_ab1_river_a_root_cm.dds</Path>
+  <Path usageCount="1">textures/nature/water/canyon_river/water_glossmap.dds</Path>
+ </Dependencies>
+</AssetMetadata>

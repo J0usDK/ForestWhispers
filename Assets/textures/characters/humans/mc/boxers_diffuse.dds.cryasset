@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="4fd0fbcf-28f0-d587-8b25-3bbee53057f2" source="boxers_diffuse.tif">
+ <Files>
+  <File path="boxers_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

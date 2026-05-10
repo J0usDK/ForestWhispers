@@ -1,0 +1,24 @@
+<ObjectLayer>
+ <Layer Name="AB02_Lighting" FullName="lighting/AB02_Lighting" GUID="05ade498-2a17-46ee-b182-5ccbddedbc91" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1777068680">
+  <LayerObjects>
+   <Object Type="EnvironmentProbe" Layer="AB02_Lighting" LayerGUID="05ade498-2a17-46ee-b182-5ccbddedbc91" Id="81e5192c-ad44-421b-b1a9-61e7126fd640" Name="l_probe_AB2_forest_a_child" Pos="1495.7791,852.11292,42.14291" Rotate="0.97437006,0,0,0.22495122" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="42f0451a-a30b-b2fe-abce-b4047acf856c" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab2_forest_a_child_cm.dds">
+      <BoxSize x="10" y="10" z="10"/>
+      <Color r="1" g="1" b="1" a="1"/>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="EnvironmentProbe" Layer="AB02_Lighting" LayerGUID="05ade498-2a17-46ee-b182-5ccbddedbc91" Id="b6f85d1f-ec35-4dbf-8ef7-929501e9ab7e" Name="l_probe_AB2_forest_a_root" Pos="1493.4259,877.9483,42.14291" Rotate="0.97437006,0,0,0.22495122" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="d0cc4485-dfcf-5288-2343-85435500508f" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab2_forest_a_root_cm.dds">
+      <BoxSize x="10" y="10" z="10"/>
+      <Color r="1" g="1" b="1" a="1"/>
+     </Component>
+    </Components>
+   </Object>
+  </LayerObjects>
+ </Layer>
+</ObjectLayer>

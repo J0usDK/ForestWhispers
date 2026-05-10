@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="70604167-4073-418e-6c82-bcf82f173dbd" source="MCB.fbx">
+ <Files>
+  <File path="MCB_boxers.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">2</Detail>
+  <Detail name="triangleCount">1212</Detail>
+  <Detail name="vertexCount">792</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">1329</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./MCB.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

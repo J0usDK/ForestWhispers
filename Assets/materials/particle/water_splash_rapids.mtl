@@ -1,0 +1,11 @@
+<Material MtlFlags="2623492" Shader="Particles" GenMask="500" StringGenMask="" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.40197781,0.40197781,0.40197781" Opacity="0.1" Shininess="255" vertModifType="0" LayerAct="0">
+ <Textures>
+  <Texture Map="Diffuse" File="textures/sprites/water/water_splash.dds">
+   <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+  </Texture>
+  <Texture Map="Bumpmap" File="textures/sprites/water/water_splash_ddn.dds">
+   <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+  </Texture>
+ </Textures>
+ <PublicParams GlobalIlluminationAmount="0.0099999998"/>
+</Material>

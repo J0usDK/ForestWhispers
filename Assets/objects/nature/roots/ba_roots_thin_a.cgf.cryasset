@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="1abe8b2d-7c43-125b-fa45-afdbf703def0" source="ba_roots_thin_a.fbx">
+ <Files>
+  <File path="ba_roots_thin_a.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">207</Detail>
+  <Detail name="vertexCount">222</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/roots/ba_roots_tree_a.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

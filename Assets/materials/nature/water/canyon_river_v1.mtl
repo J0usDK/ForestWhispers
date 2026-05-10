@@ -1,0 +1,7 @@
+<Material MtlFlags="526336" Shader="Watervolume" GenMask="13" StringGenMask="" SurfaceType="mat_water" MatTemplate="" Diffuse="1,1,1" Specular="0.019382358,0.020288559,0.020288559" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
+ <Textures>
+  <Texture Map="Specular" File="textures/cubemaps/l_probe_ab1_river_a_root_cm.dds"/>
+  <Texture Map="Environment" File="textures/nature/water/canyon_river/water_glossmap.dds"/>
+ </Textures>
+ <PublicParams DetailNormalsScale="0.5" DetailTilling="2.5" EnvCubeScale="16" GlossMapBias="0" GlossMapExponent="6" GlossMapScale="1.5" GlossMapTilling="1" NormalsFlatten="0.333" NormalsScale="0.17" RainTilling="1" SoftIntersectionFactor="1" Tilling="0.1" VertexWaveScale="0.125" WaterFlowSpeed="0.5" ssrBGMultiplier="1" ssrBorderFadeExponent="1" ssrBorderSizeY="0.5" ssrBorderSizeZ="1" ssrDistanceAtt="1" ssrSamplingAtt="1"/>
+</Material>

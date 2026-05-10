@@ -1,0 +1,56 @@
+{
+	"version": 1,
+	"source_filename": "MCB.fbx",
+	"output_ext": "skin",
+	"material_filename": "MCB",
+	"unit_size": "file",
+	"scale": 1.0,
+	"forward_up_axes": "",
+	"merge_all_nodes": false,
+	"scene_origin": false,
+	"ignore_custom_normals": false,
+	"ignore_uv": false,
+	"materials": [
+		{
+			"name": "9_meshes_Merge",
+			"file": "",
+			"physicalize": "no",
+			"sub_index": 0,
+			"ui_autoflag": true
+		},
+		{
+			"name": "<unassigned>",
+			"file": "",
+			"physicalize": "no",
+			"sub_index": 1,
+			"ui_autoflag": true
+		}
+	],
+	"nodes": [
+		{
+			"name": "cc_base_tear_ducts",
+			"path": [ "cc_base_tear_ducts" ],
+			"mass": -1.0,
+			"density": -1.0
+		}
+	],
+	"animation": {
+		"name": "",
+		"motionNodePath": [ ],
+		"startFrame": -1,
+		"endFrame": -1
+	},
+	"use_32_bit_positions": false,
+	"autolodsettings": {
+		"globalparams": {
+			"viewresolution": 26.69321,
+			"viewsaround": 12,
+			"viewelevations": 3,
+			"silhouetteweight": 5.0,
+			"vertexwelding": 0.001,
+			"checktopology": true,
+			"objecthasbase": false
+		},
+		"nodeparams": [ ]
+	}
+}

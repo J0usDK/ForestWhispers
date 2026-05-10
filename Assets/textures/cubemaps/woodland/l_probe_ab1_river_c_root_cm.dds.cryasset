@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="da065a99-1812-47b5-7955-2321039be884" source="l_probe_ab1_river_c_root_cm.tif">
+ <Files>
+  <File path="l_probe_ab1_river_c_root_cm.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1536</Detail>
+  <Detail name="height">256</Detail>
+  <Detail name="mipCount">7</Detail>
+ </Details>
+</AssetMetadata>

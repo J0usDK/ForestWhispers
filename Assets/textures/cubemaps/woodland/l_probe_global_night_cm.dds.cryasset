@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="2e50ff9e-85d5-ee15-1448-7a63efd119e6" source="l_probe_global_night_cm.tif">
+ <Files>
+  <File path="l_probe_global_night_cm.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1536</Detail>
+  <Detail name="height">256</Detail>
+  <Detail name="mipCount">7</Detail>
+ </Details>
+</AssetMetadata>

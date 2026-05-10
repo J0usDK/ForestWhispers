@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Material" guid="3eff75ff-79d3-3d32-7069-c75d5b7d0695" source="" timestamp="1777155953">
+ <Files>
+  <File path="fern_bush_2.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">2</Detail>
+  <Detail name="textureCount">3</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/nature/bushes/ferns/ground_cover_fernbush_diff.dds</Path>
+  <Path usageCount="1">textures/nature/bushes/ferns/ground_cover_fernbush_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/bushes/ferns/ground_cover_fernbush_sss.dds</Path>
+ </Dependencies>
+</AssetMetadata>

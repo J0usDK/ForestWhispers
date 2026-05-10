@@ -1,0 +1,36 @@
+<AssetMetadata version="0" type="Material" guid="b5757866-30bc-1867-53b4-6df7523021fc" source="" timestamp="1776890885">
+ <Files>
+  <File path="canyon_weathered.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">13</Detail>
+  <Detail name="textureCount">25</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="5">textures/nature/rocks/canyon_rocks/canyon_rock/canyon_rock_diff.dds</Path>
+  <Path usageCount="5">textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock/canyon_rock_spec.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_detail.dds</Path>
+  <Path usageCount="6">textures/nature/decals/moss/moss_diff.dds</Path>
+  <Path usageCount="6">textures/nature/decals/moss/moss_ddna.dds</Path>
+  <Path usageCount="7">textures/generic/masks/river_rock_blend/river_rock_blend.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_wall_low/canyon_wall_low_ddna.dds</Path>
+  <Path usageCount="2">textures/nature/rocks/canyon_rocks/canyon_path_a_detail/canyon_path_a_detail.dds</Path>
+  <Path usageCount="5">textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_diff.dds</Path>
+  <Path usageCount="2">textures/generic/masks/moss_blend/moss_blend.dds</Path>
+  <Path usageCount="2">textures/nature/rocks/canyon_rocks/canyon_path/canyon_path_diff.dds</Path>
+  <Path usageCount="2">textures/nature/rocks/canyon_rocks/canyon_path/canyon_path_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/rock_clean/rock_clean_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_path/canyon_path_displ.dds</Path>
+  <Path usageCount="2">textures/nature/rocks/canyon_rocks/canyon_rock/canyon_rock_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_a_detail/canyon_rock_a_detail.dds</Path>
+  <Path usageCount="2">textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_river_wet_diff.dds</Path>
+  <Path usageCount="2">textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_river_wet_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_d_detail/canyon_rock_d_detail.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_e_wall_detail/canyon_rock_e_wall_detail.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_wall_low/canyon_wall_low_diff.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_wall_river_a_detail/canyon_wall_river_a_detail.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_b_detail/canyon_rock_b_detail.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_c_detail/canyon_rock_c_detail.dds</Path>
+ </Dependencies>
+</AssetMetadata>

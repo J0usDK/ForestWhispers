@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="fd612c14-ec3a-8094-07b1-27d91429f406" source="rock_forest_group_d.fbx">
+ <Files>
+  <File path="rock_forest_group_d.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">12</Detail>
+  <Detail name="triangleCount">55938</Detail>
+  <Detail name="vertexCount">36343</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/biome/forest/forest.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

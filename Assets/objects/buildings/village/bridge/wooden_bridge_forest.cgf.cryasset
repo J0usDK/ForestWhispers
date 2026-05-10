@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="ca4ca6bc-33ee-a591-8a41-2fcfa9ab9dd6" source="wooden_bridge_forest.fbx">
+ <Files>
+  <File path="wooden_bridge_forest.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">4</Detail>
+  <Detail name="triangleCount">21235</Detail>
+  <Detail name="vertexCount">18220</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/buildings/village/bridge/br_bridge_wood.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

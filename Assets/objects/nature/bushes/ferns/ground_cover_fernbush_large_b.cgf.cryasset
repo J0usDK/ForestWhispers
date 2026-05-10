@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="b285ba95-fec3-46e5-d173-0be1d3da5134" source="ground_cover_fernbush_large_b.fbx">
+ <Files>
+  <File path="ground_cover_fernbush_large_b.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">2</Detail>
+  <Detail name="triangleCount">1915</Detail>
+  <Detail name="vertexCount">2270</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/bushes/ferns/fern_bush_2.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

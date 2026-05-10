@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="90248859-1b7b-c626-a03b-67c6fed7373e" source="woodland_distance_formation_c.fbx">
+ <Files>
+  <File path="woodland_distance_formation_c.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">4</Detail>
+  <Detail name="triangleCount">1962</Detail>
+  <Detail name="vertexCount">1935</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/formations/woodland_distance_formation.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

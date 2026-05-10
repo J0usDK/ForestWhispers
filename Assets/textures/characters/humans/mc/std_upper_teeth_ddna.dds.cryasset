@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="58dc5a03-3600-41ba-9589-3f967944b264" source="std_upper_teeth_ddna.tif">
+ <Files>
+  <File path="std_upper_teeth_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

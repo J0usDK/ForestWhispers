@@ -1,0 +1,892 @@
+<ObjectLayer>
+ <Layer Name="Main" FullName="Main" GUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="1" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1777156779">
+  <LayerObjects>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="162dfba3-7bfc-406b-a7fa-f11a513dba48" Name="NavigationArea41" Pos="1422.4781,874.19867,35" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="7" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-1.4587402,2.9732056,0"/>
+     <Point Pos="-4.3950195,0.97808838,0"/>
+     <Point Pos="-5.4869385,-2.3181763,0"/>
+     <Point Pos="-2.8389893,-4.0258789,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Shape" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="1dd8e5a2-9b7e-4ab4-b449-26da0c898f0b" Name="AB05_LS_Shape" Pos="1569.6008,809.74634,0" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="255" UseCustomLevelLayerColor="0" MinSpec="0" Width="0" Height="100" InnerFadeDistance="0" AreaId="0" GroupId="0" Priority="0" Closed="1" DisplayFilled="0" DisplaySoundInfo="0" Agent_height="0" Agent_width="0" Render_voxel_grid="0" voxel_offset_x="0" voxel_offset_y="0" EntityClass="AreaShape" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="feb82854-291c-4aba-9652-ddd7f403f24a" guid="0bdb87df-8bb1-06ef-cc07-a5eaf90ccb36">
+      <Area Id="0" Group="0" Proximity="0" Priority="0" InnerFadeDistance="0" Height="100">
+       <Points>
+        <Point Pos="0,0,0" ObstructSound="0"/>
+        <Point Pos="16.891113,39.202576,0" ObstructSound="0"/>
+        <Point Pos="44.156494,57.823792,0" ObstructSound="0"/>
+        <Point Pos="100.1106,44.746094,0" ObstructSound="0"/>
+        <Point Pos="122.20996,48.202881,0" ObstructSound="0"/>
+        <Point Pos="114.82385,-41.143066,0" ObstructSound="0"/>
+        <Point Pos="35.59082,-60.863892,0" ObstructSound="0"/>
+       </Points>
+       <Roof ObstructSound="0"/>
+       <Floor ObstructSound="0"/>
+       <Entities>
+        <Entity GUID="c08426fd-7242-4e4c-b186-230c39c5dd02"/>
+       </Entities>
+      </Area>
+     </Component>
+    </Components>
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="16.891113,39.202576,0"/>
+     <Point Pos="44.156494,57.823792,0"/>
+     <Point Pos="100.1106,44.746094,0"/>
+     <Point Pos="122.20996,48.202881,0"/>
+     <Point Pos="114.82385,-41.143066,0"/>
+     <Point Pos="35.59082,-60.863892,0"/>
+    </Points>
+    <Entities>
+     <Entity Id="c08426fd-7242-4e4c-b186-230c39c5dd02"/>
+    </Entities>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationSeedPoint" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="cbd67f38-8c3e-4100-b9ea-cc336466f3df" Name="NavigationSeedPoint2" Pos="1538.5334,844.74805,42.614857" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="16711680" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="NavigationSeedPoint" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="4d56ce5a-8efe-4bd0-8593-bb69915feabe" Name="NavigationArea15" Pos="1682.0027,643.02789,40.405926" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="20" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-11.68396,5.7589111,0"/>
+     <Point Pos="-2.607666,27.160522,0"/>
+     <Point Pos="12.598145,13.412781,0"/>
+     <Point Pos="22.809204,11.448486,0"/>
+     <Point Pos="22.909668,2.8911743,0"/>
+     <Point Pos="31.923706,7.4300537,0"/>
+     <Point Pos="29.940674,12.958313,0"/>
+     <Point Pos="36.305542,15.971802,0"/>
+     <Point Pos="41.507446,13.326843,0"/>
+     <Point Pos="40.249878,7.7176514,0"/>
+     <Point Pos="27.858643,-4.3540039,0"/>
+     <Point Pos="20.911743,-4.4969482,0"/>
+     <Point Pos="12.640625,0.11846924,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="ebc14e5f-c7d0-43f0-997c-60f2c416f3cf" Name="AB03_LS_trig" Pos="1570.4387,890.16077,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="b22b03d1-4d4c-e8ac-6c04-e0d6216172df" CryXmlVersion="2" Active="true"/>
+    </Components>
+   </Object>
+   <Object Type="Shape" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="418faab5-6be5-4f94-ad23-4fc8d167e9f3" Name="AB01_LS_Shape" Pos="1493.674,923.07391,0" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="255" UseCustomLevelLayerColor="0" MinSpec="0" Width="0" Height="100" InnerFadeDistance="0" AreaId="0" GroupId="0" Priority="0" Closed="1" DisplayFilled="0" DisplaySoundInfo="0" Agent_height="0" Agent_width="0" Render_voxel_grid="0" voxel_offset_x="0" voxel_offset_y="0" EntityClass="AreaShape" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="feb82854-291c-4aba-9652-ddd7f403f24a" guid="eb05f7c5-d9e1-32f8-0985-dea5b0d86e04">
+      <Area Id="0" Group="0" Proximity="0" Priority="0" InnerFadeDistance="0" Height="100">
+       <Points>
+        <Point Pos="0,0,0" ObstructSound="0"/>
+        <Point Pos="-35.717163,-70.863708,0" ObstructSound="0"/>
+        <Point Pos="-80.945679,-127.50031,0" ObstructSound="0"/>
+        <Point Pos="-155.01733,-111.57703,0" ObstructSound="0"/>
+        <Point Pos="-197.61121,-22.886414,0" ObstructSound="0"/>
+        <Point Pos="-205.39917,34.643921,0" ObstructSound="0"/>
+        <Point Pos="-174.9082,68.354492,0" ObstructSound="0"/>
+        <Point Pos="-132.87695,37.408081,0" ObstructSound="0"/>
+        <Point Pos="-76.202026,42.072632,0" ObstructSound="0"/>
+        <Point Pos="-41.172974,20.368408,0" ObstructSound="0"/>
+       </Points>
+       <Roof ObstructSound="0"/>
+       <Floor ObstructSound="0"/>
+       <Entities>
+        <Entity GUID="d39a66cc-4a92-4a83-a66b-e6198d4ec093"/>
+       </Entities>
+      </Area>
+     </Component>
+    </Components>
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-35.717163,-70.863708,0"/>
+     <Point Pos="-80.945679,-127.50031,0"/>
+     <Point Pos="-155.01733,-111.57703,0"/>
+     <Point Pos="-197.61121,-22.886414,0"/>
+     <Point Pos="-205.39917,34.643921,0"/>
+     <Point Pos="-174.9082,68.354492,0"/>
+     <Point Pos="-132.87695,37.408081,0"/>
+     <Point Pos="-76.202026,42.072632,0"/>
+     <Point Pos="-41.172974,20.368408,0"/>
+    </Points>
+    <Entities>
+     <Entity Id="d39a66cc-4a92-4a83-a66b-e6198d4ec093"/>
+    </Entities>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Shape" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="872bd310-5b94-44f0-81cf-9dcd5b47c621" Name="Cutscene_Menu_Shape" Pos="1317.2057,928.75513,39.999996" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="16763904" UseCustomLevelLayerColor="0" MinSpec="0" Width="0" Height="30" InnerFadeDistance="0" AreaId="0" GroupId="0" Priority="0" Closed="1" DisplayFilled="0" DisplaySoundInfo="0" Agent_height="0" Agent_width="0" Render_voxel_grid="0" voxel_offset_x="0" voxel_offset_y="0" EntityClass="AreaShape" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="feb82854-291c-4aba-9652-ddd7f403f24a" guid="c708d4b0-9e2f-bec2-fec3-27c465474055">
+      <Area Id="0" Group="0" Proximity="0" Priority="0" InnerFadeDistance="0" Height="30">
+       <Points>
+        <Point Pos="0,0,0" ObstructSound="0"/>
+        <Point Pos="-4.2058105,12.244873,0" ObstructSound="0"/>
+        <Point Pos="14.794189,19.244873,0" ObstructSound="0"/>
+        <Point Pos="24.794189,10.244873,0" ObstructSound="0"/>
+       </Points>
+       <Roof ObstructSound="0"/>
+       <Floor ObstructSound="0"/>
+       <Entities>
+        <Entity GUID="afd080ae-1eb7-4db6-963f-8a7c9ee92bfc"/>
+       </Entities>
+      </Area>
+     </Component>
+    </Components>
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-4.2058105,12.244873,0"/>
+     <Point Pos="14.794189,19.244873,0"/>
+     <Point Pos="24.794189,10.244873,0"/>
+    </Points>
+    <Entities>
+     <Entity Id="afd080ae-1eb7-4db6-963f-8a7c9ee92bfc"/>
+    </Entities>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="SmartObject" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="b61af80a-9603-43ae-87f6-b2a0b4a012fe" Name="SmartObject13" Pos="1423.5969,844.08649,37.341454" Rotate="0.19936791,0,0,0.97992474" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="SmartObject" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="Shape" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="404f3e85-28d3-4519-9254-b0f403d4ea2a" Name="AB02_LS_Shape" Pos="1524,820,0" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="255" UseCustomLevelLayerColor="0" MinSpec="0" Width="0" Height="100" InnerFadeDistance="0" AreaId="0" GroupId="0" Priority="0" Closed="1" DisplayFilled="0" DisplaySoundInfo="0" Agent_height="0" Agent_width="0" Render_voxel_grid="0" voxel_offset_x="0" voxel_offset_y="0" EntityClass="AreaShape" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="feb82854-291c-4aba-9652-ddd7f403f24a" guid="72017fa9-2483-6acc-93c2-fce3040c15ee">
+      <Area Id="0" Group="0" Proximity="0" Priority="0" InnerFadeDistance="0" Height="100">
+       <Points>
+        <Point Pos="0,0,0" ObstructSound="0"/>
+        <Point Pos="-65,28,0" ObstructSound="0"/>
+        <Point Pos="-28,102,0" ObstructSound="0"/>
+        <Point Pos="17,65,0" ObstructSound="0"/>
+       </Points>
+       <Roof ObstructSound="0"/>
+       <Floor ObstructSound="0"/>
+       <Entities>
+        <Entity GUID="037eb6ac-7f97-4fd9-abaf-5be38bc310c8"/>
+       </Entities>
+      </Area>
+     </Component>
+    </Components>
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-65,28,0"/>
+     <Point Pos="-28,102,0"/>
+     <Point Pos="17,65,0"/>
+    </Points>
+    <Entities>
+     <Entity Id="037eb6ac-7f97-4fd9-abaf-5be38bc310c8"/>
+    </Entities>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="2f540778-3e7a-4037-a18d-0ada30f3dd06" Name="NavigationArea28" Pos="1579.959,916.93048,35.494041" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="20" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-18.415649,-5.2045898,0"/>
+     <Point Pos="-36.725464,-21.548706,0"/>
+     <Point Pos="-43.520996,-47.994202,0"/>
+     <Point Pos="-41.563477,-49.693237,0"/>
+     <Point Pos="-46.729126,-65.629761,0"/>
+     <Point Pos="-39.791748,-70.426086,0"/>
+     <Point Pos="-36.766235,-60.677612,0"/>
+     <Point Pos="-29.642822,-64.26239,0"/>
+     <Point Pos="-26.848999,-60.265869,0"/>
+     <Point Pos="-33.602051,-52.57428,0"/>
+     <Point Pos="-25.737915,-18.496704,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="0969d53b-d499-4b3a-8218-55fe5e46fe49" Name="NavigationArea22" Pos="1467.436,922.49268,36" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="4" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-4.5344238,-1.0258179,0"/>
+     <Point Pos="-6.7302246,-3.4279785,0"/>
+     <Point Pos="-2.3343506,-4.6737671,0"/>
+     <Point Pos="0.2845459,-2.7417603,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Brush" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="6c07126f-9db1-4196-bf5f-1db884236408" Name="ivy_round4" Pos="1575.1952,904.87042,46.379204" Rotate="-0.19936782,0,0,0.97992474" Scale="1,1,1" ColorRGB="16777215" UseCustomLevelLayerColor="0" Material="materials/nature/bushes/ivy/vegetation_ivy_m" MinSpec="0" MatLayersMask="0" Prefab="objects/nature/bushes/ivy/ivy_round.cgf" IgnoreVisareas="0" CastShadowMaps="0" GIMode="1" RainOccluder="0" SupportSecondVisarea="0" DynamicDistanceShadows="0" Hideable="0" LodRatio="100" ViewDistRatio="25" ExcludeFromNavigation="0" NoDynamicWater="0" AIRadius="-1" NoStaticDecals="0" RecvWind="0" Occluder="0" DrawLast="0" ShadowLodBias="0" IgnoreTerrainLayerBlend="0" IgnoreDecalBlend="0" RndFlags="180000000400">
+    <CollisionFiltering />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="74f96036-53ac-48e6-9258-30cbae1013a8" Name="NavigationArea38" Pos="1430.015,889.9007,35" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="7" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-0.98278809,2.0559082,0"/>
+     <Point Pos="-4.2479248,3.0492554,0"/>
+     <Point Pos="-5.7711182,-0.68902588,0"/>
+     <Point Pos="-2.3554688,-3.3598022,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="58321981-2204-47fe-a856-f6955c964d64" Name="NavigationArea4" Pos="1429.583,901.74341,35" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="7" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-1.6568604,2.7407227,0"/>
+     <Point Pos="-3.8740234,3.2109985,0"/>
+     <Point Pos="-4.6209717,1.3857422,0"/>
+     <Point Pos="-7.0159912,0.4352417,0"/>
+     <Point Pos="-4.578125,-3.0366211,0"/>
+     <Point Pos="-1.838623,-3.3019409,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Brush" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="c2e7376e-2b5c-4f1b-b7a7-71058c5ed6f8" Name="ivy_round5" Pos="1576.1401,905.27148,46.070374" Rotate="-0.19936782,0,0,0.97992474" Scale="1,1,1" ColorRGB="16777215" UseCustomLevelLayerColor="0" Material="materials/nature/bushes/ivy/vegetation_ivy_m" MinSpec="0" MatLayersMask="0" Prefab="objects/nature/bushes/ivy/ivy_round.cgf" IgnoreVisareas="0" CastShadowMaps="0" GIMode="1" RainOccluder="0" SupportSecondVisarea="0" DynamicDistanceShadows="0" Hideable="0" LodRatio="100" ViewDistRatio="25" ExcludeFromNavigation="0" NoDynamicWater="0" AIRadius="-1" NoStaticDecals="0" RecvWind="0" Occluder="0" DrawLast="0" ShadowLodBias="0" IgnoreTerrainLayerBlend="0" IgnoreDecalBlend="0" RndFlags="180000000400">
+    <CollisionFiltering />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="8bc39016-d4e6-461e-aea1-b1c3631dd016" Name="NavigationArea18" Pos="1624.4441,899.26807,45" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="10" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="3.9307861,7.4343262,0"/>
+     <Point Pos="6.0965576,7.1005859,0"/>
+     <Point Pos="11.234253,3.3787231,0"/>
+     <Point Pos="11.50354,-0.95343018,0"/>
+     <Point Pos="7.875,-3.0823364,0"/>
+     <Point Pos="7.0627441,-1.6009521,0"/>
+     <Point Pos="3.7907715,-1.8516846,0"/>
+     <Point Pos="2.1174316,-2.7981567,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="12ddae73-b1db-46cf-9dcc-ae5eedc0ee2f" Name="NavigationArea33" Pos="1501.9043,615.17401,41" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="14" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="1.3001709,6.404541,0"/>
+     <Point Pos="8.8526611,9.8046875,0"/>
+     <Point Pos="9.4853516,21.977264,0"/>
+     <Point Pos="19.771973,22.196045,0"/>
+     <Point Pos="51.300415,57.009827,0"/>
+     <Point Pos="59.925049,46.691223,0"/>
+     <Point Pos="61.987061,23.186523,0"/>
+     <Point Pos="55.833618,19.11792,0"/>
+     <Point Pos="47.920044,29.949829,0"/>
+     <Point Pos="37.029419,24.19519,0"/>
+     <Point Pos="44.401001,10.030762,0"/>
+     <Point Pos="37.223022,6.4133301,0"/>
+     <Point Pos="28.844238,16.284973,0"/>
+     <Point Pos="24.538818,4.5283203,0"/>
+     <Point Pos="27.433472,1.8567505,0"/>
+     <Point Pos="32.793335,-7.8743286,0"/>
+     <Point Pos="25.796265,-10.681335,0"/>
+     <Point Pos="13.526611,-2.8776245,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Side15="0" Side16="0" Side17="0" Side18="0" Side19="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="b9b88c52-67a4-461c-b1c7-a174f735ed7d" Name="AB5_NavigationArea2" Pos="1688.5,693.25,45" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="9846784" UseCustomLevelLayerColor="0" MinSpec="0" Height="15" Exclusion="0" RemoveInaccessibleTriangles="1" DisplayFilled="1" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="26.625,-18.5,0"/>
+     <Point Pos="48.25,-16.625,0"/>
+     <Point Pos="64.75,-82.625,0"/>
+     <Point Pos="49.125,-103.875,0"/>
+     <Point Pos="55.375,-149.625,0"/>
+     <Point Pos="13,-163.625,0"/>
+     <Point Pos="-2,-193.875,0"/>
+     <Point Pos="-61.875,-215.625,0"/>
+     <Point Pos="-109.25,-194.75,0"/>
+     <Point Pos="-118.65845,-165.90381,0"/>
+     <Point Pos="-163.3855,-171.95618,0"/>
+     <Point Pos="-169.17859,-160.03064,0"/>
+     <Point Pos="-129.90479,-142.58466,0"/>
+     <Point Pos="-97.773804,-117.22504,0"/>
+     <Point Pos="-85.870972,-60.665771,0"/>
+     <Point Pos="-73.307373,-54.789063,0"/>
+     <Point Pos="-26.138916,-60.789124,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Side15="0" Side16="0" Side17="0" Side18="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="6e6aef02-46af-4b26-8383-b8058cd4a6d5" Name="NavigationArea30" Pos="1617.8441,879.67462,38.523918" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="18" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="2.6601563,13.709229,0"/>
+     <Point Pos="-0.46411133,18.638245,0"/>
+     <Point Pos="-10.063354,11.424622,0"/>
+     <Point Pos="-17.497803,8.3704224,0"/>
+     <Point Pos="-25.443481,-2.1424561,0"/>
+     <Point Pos="-34.324829,-11.432068,0"/>
+     <Point Pos="-41.991821,-9.9199829,0"/>
+     <Point Pos="-44.725098,-13.403137,0"/>
+     <Point Pos="-47.097168,-22.782532,0"/>
+     <Point Pos="-46.596558,-28.31665,0"/>
+     <Point Pos="-57.296143,-39.186829,0"/>
+     <Point Pos="-64.3573,-32.144531,0"/>
+     <Point Pos="-68.165649,-35.854675,0"/>
+     <Point Pos="-58.019531,-46.313904,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Side15="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="250c3f4a-b8de-46df-89da-32c5e1a2620e" Name="NavigationArea20" Pos="1406.5217,901.89105,35" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="8" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-6.1617432,-3.6609497,0"/>
+     <Point Pos="-10.873169,-10.437073,0"/>
+     <Point Pos="-10.429077,-15.419739,0"/>
+     <Point Pos="-14.597412,-19.49176,0"/>
+     <Point Pos="-6.9440918,-23.472412,0"/>
+     <Point Pos="-7.0324707,-29.746521,0"/>
+     <Point Pos="-0.88928223,-33.543274,0"/>
+     <Point Pos="2.1463623,-28.393677,0"/>
+     <Point Pos="0.69836426,-21.671753,0"/>
+     <Point Pos="7.2307129,-19.690613,0"/>
+     <Point Pos="8.9146729,-12.77948,0"/>
+     <Point Pos="6.3638916,-8.8997803,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="9db256e5-c5b7-4960-b630-6577f56871ca" Name="AB6_NavigationArea1" Pos="1496.1874,571.59351,45" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="9846784" UseCustomLevelLayerColor="0" MinSpec="0" Height="10" Exclusion="0" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="3.3330078,21.214233,0"/>
+     <Point Pos="-10.466797,24.714539,0"/>
+     <Point Pos="-9.8730469,76.31604,0"/>
+     <Point Pos="7.197998,83.330505,0"/>
+     <Point Pos="10.37915,109.61334,0"/>
+     <Point Pos="62.887329,160.30994,0"/>
+     <Point Pos="103.35718,151.30084,0"/>
+     <Point Pos="116.88879,126.18103,0"/>
+     <Point Pos="141.89258,109.48029,0"/>
+     <Point Pos="114.5437,102.20227,0"/>
+     <Point Pos="96.659668,120.64703,0"/>
+     <Point Pos="89.15625,112.82819,0"/>
+     <Point Pos="70.330933,105.29071,0"/>
+     <Point Pos="53.965332,88.150146,0"/>
+     <Point Pos="65.48291,70.410706,0"/>
+     <Point Pos="59.887573,24.275085,0"/>
+     <Point Pos="22.084961,-0.65447998,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Side15="0" Side16="0" Side17="0" Side18="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="6e7e2db8-c79d-45a3-88f8-414a4baa0c52" Name="NavigationArea26" Pos="1504.4248,874.01276,35.494041" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="8" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-3.5474854,2.9210815,0"/>
+     <Point Pos="-12.838257,-4.0443726,0"/>
+     <Point Pos="-16.843506,-7.1295166,0"/>
+     <Point Pos="-12.487671,-11.332214,0"/>
+     <Point Pos="-20.051636,-24.765076,0"/>
+     <Point Pos="-9.7150879,-27.447266,0"/>
+     <Point Pos="-10.088745,-19.812927,0"/>
+     <Point Pos="-2.4771729,-17.02301,0"/>
+     <Point Pos="-4.774292,-8.59375,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Brush" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="47db1123-0a3d-4230-baf3-cace766337ac" Name="ivy_round3" Pos="1572.7246,903.8866,46.249111" Rotate="-0.19936782,0,0,0.97992474" Scale="1,1,1" ColorRGB="16777215" UseCustomLevelLayerColor="0" Material="materials/nature/bushes/ivy/vegetation_ivy_m" MinSpec="0" MatLayersMask="0" Prefab="objects/nature/bushes/ivy/ivy_round.cgf" IgnoreVisareas="0" CastShadowMaps="0" GIMode="1" RainOccluder="0" SupportSecondVisarea="0" DynamicDistanceShadows="0" Hideable="0" LodRatio="100" ViewDistRatio="25" ExcludeFromNavigation="0" NoDynamicWater="0" AIRadius="-1" NoStaticDecals="0" RecvWind="0" Occluder="0" DrawLast="0" ShadowLodBias="0" IgnoreTerrainLayerBlend="0" IgnoreDecalBlend="0" RndFlags="180000000400">
+    <CollisionFiltering />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="581f517a-c04b-4485-8a48-461e526d9ccb" Name="NavigationArea21" Pos="1456.5614,912.03558,35" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="7" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-2.9060059,3.3369751,0"/>
+     <Point Pos="-6.9398193,4.5146484,0"/>
+     <Point Pos="-7.8435059,-1.0319214,0"/>
+     <Point Pos="-3.1934814,-2.3219604,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Brush" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="5bb13ce5-be7d-4e44-aecb-3b4b72194a45" Name="ivy_round2" Pos="1568.4196,901.99438,46.249111" Rotate="-0.19936782,0,0,0.97992474" Scale="1,1,1" ColorRGB="16777215" UseCustomLevelLayerColor="0" Material="materials/nature/bushes/ivy/vegetation_ivy_m" MinSpec="0" MatLayersMask="0" Prefab="objects/nature/bushes/ivy/ivy_round.cgf" IgnoreVisareas="0" CastShadowMaps="0" GIMode="1" RainOccluder="0" SupportSecondVisarea="0" DynamicDistanceShadows="0" Hideable="0" LodRatio="100" ViewDistRatio="25" ExcludeFromNavigation="0" NoDynamicWater="0" AIRadius="-1" NoStaticDecals="0" RecvWind="0" Occluder="0" DrawLast="0" ShadowLodBias="0" IgnoreTerrainLayerBlend="0" IgnoreDecalBlend="0" RndFlags="180000000400">
+    <CollisionFiltering />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="01369965-8533-4793-a086-99519fe7a26e" Name="NavigationArea32" Pos="1562.5287,528.22522,42.827843" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="17" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="6.9654541,22.452454,0"/>
+     <Point Pos="18.758911,22.406677,0"/>
+     <Point Pos="33.638916,27.708191,0"/>
+     <Point Pos="29.719971,33.953674,0"/>
+     <Point Pos="34.373291,38.164307,0"/>
+     <Point Pos="44.821289,29.587402,0"/>
+     <Point Pos="55.037354,30.013062,0"/>
+     <Point Pos="64.206787,46.238098,0"/>
+     <Point Pos="71.596191,43.152466,0"/>
+     <Point Pos="66.653687,28.473999,0"/>
+     <Point Pos="73.998291,23.050415,0"/>
+     <Point Pos="62.290161,23.764648,0"/>
+     <Point Pos="61.864136,18.511597,0"/>
+     <Point Pos="58.225342,19.210999,0"/>
+     <Point Pos="53.617554,20.898743,0"/>
+     <Point Pos="52.62561,15.873779,0"/>
+     <Point Pos="48.845337,21.638611,0"/>
+     <Point Pos="39.311523,21.025879,0"/>
+     <Point Pos="25.833862,12.359772,0"/>
+     <Point Pos="14.962158,14.599304,0"/>
+     <Point Pos="13.121582,0.12661743,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Side15="0" Side16="0" Side17="0" Side18="0" Side19="0" Side20="0" Side21="0" Side22="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="8abdf2a9-8ee9-41b8-b30c-ab2b38cb999c" Name="NavigationArea19" Pos="1377.3475,879.66418,35" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="8" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-3.7089844,4.6882324,0"/>
+     <Point Pos="-8.4439697,4.5640259,0"/>
+     <Point Pos="-10.071289,0.37774658,0"/>
+     <Point Pos="-6.711792,-7.1417236,0"/>
+     <Point Pos="-6.7835693,-12.897156,0"/>
+     <Point Pos="-12.117065,-18.082642,0"/>
+     <Point Pos="-10.625122,-24.358948,0"/>
+     <Point Pos="-7.786499,-26.95343,0"/>
+     <Point Pos="0.30651855,-20.332581,0"/>
+     <Point Pos="2.6656494,-22.029602,0"/>
+     <Point Pos="3.3266602,-27.969788,0"/>
+     <Point Pos="13.427612,-26.078674,0"/>
+     <Point Pos="12.522949,-21.797241,0"/>
+     <Point Pos="7.1845703,-15.213196,0"/>
+     <Point Pos="10.47522,-9.4727783,0"/>
+     <Point Pos="7.0462646,1.1868896,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Side15="0" Side16="0" Side17="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="a8408911-92ea-4760-a492-fcb8e9abe423" Name="NavigationArea2" Pos="1542.8228,841.13,39.305813" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="9846784" UseCustomLevelLayerColor="0" MinSpec="0" Height="18" Exclusion="0" RemoveInaccessibleTriangles="1" DisplayFilled="1" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-10.841919,3.5738525,0"/>
+     <Point Pos="-6.1583252,17.101807,0"/>
+     <Point Pos="-3.5230713,52.461914,0"/>
+     <Point Pos="13.738403,77.078796,0"/>
+     <Point Pos="47.047852,79.529968,0"/>
+     <Point Pos="56.960938,63.1073,0"/>
+     <Point Pos="70.925659,74.887512,0"/>
+     <Point Pos="88.334106,86.559204,0"/>
+     <Point Pos="105.14063,79.386963,0"/>
+     <Point Pos="114.72998,68.147766,0"/>
+     <Point Pos="124.90321,57.791931,0"/>
+     <Point Pos="152.85217,43.877869,0"/>
+     <Point Pos="150.52332,23.399902,0"/>
+     <Point Pos="105.85448,8.7470093,0"/>
+     <Point Pos="100.44519,23.701477,0"/>
+     <Point Pos="69.088135,30.045715,0"/>
+     <Point Pos="66.428345,47.446655,0"/>
+     <Point Pos="50.798706,32.971558,0"/>
+     <Point Pos="44.137573,17.937561,0"/>
+     <Point Pos="23.091187,-2.1636963,0"/>
+     <Point Pos="14.28833,-1.498291,0"/>
+     <Point Pos="8.1304932,-8.8870239,0"/>
+     <Point Pos="0.35852051,-6.5383911,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Side15="0" Side16="0" Side17="0" Side18="0" Side19="0" Side20="0" Side21="0" Side22="0" Side23="0" Side24="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="fece70cc-2793-40de-b057-0241f8f17554" Name="NavigationArea16" Pos="1724.7903,614.68536,52.658997" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="7" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-0.61853027,4.9194336,0"/>
+     <Point Pos="1.4346924,7.9998169,0"/>
+     <Point Pos="4.6387939,8.0857544,0"/>
+     <Point Pos="3.5767822,0.67034912,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="f7a010fb-2eb8-4372-976f-4cefa151dd26" Name="NavigationArea8" Pos="1715.4647,547.76105,51.003048" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="10" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="0.23535156,8.2977295,0"/>
+     <Point Pos="4.8869629,10.802795,0"/>
+     <Point Pos="9.9859619,9.6572876,0"/>
+     <Point Pos="13.245239,4.4071655,0"/>
+     <Point Pos="8.9742432,-0.300354,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="038198dd-0e38-4614-9498-c0e9ff7ba86f" Name="NavigationArea6" Pos="1647.3564,511.79349,51.003048" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="10" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="0.34082031,13.262238,0"/>
+     <Point Pos="9.9396973,23.321503,0"/>
+     <Point Pos="24.755371,22.53775,0"/>
+     <Point Pos="29.164063,23.613007,0"/>
+     <Point Pos="32.489258,21.074127,0"/>
+     <Point Pos="31.081177,16.557098,0"/>
+     <Point Pos="25.833862,12.359772,0"/>
+     <Point Pos="23.149536,4.3038025,0"/>
+     <Point Pos="17.250732,7.6260681,0"/>
+     <Point Pos="13.121582,0.12661743,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationSeedPoint" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="13c328f3-f047-41de-aeb2-dbf83ceecb0c" Name="NavigationSeedPoint1" Pos="1319.97,944.36505,49.665268" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="16711680" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="NavigationSeedPoint" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="SmartObject" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="9d1199de-a3ee-491e-89cd-d7889c791a06" Name="SmartObject14" Pos="1430.3704,848.08173,35.337906" Rotate="0.27563727,0,0,0.96126175" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="SmartObject" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="07cdd346-d4a9-45f5-a1f0-9a05c80f08e1" Name="NavigationArea1" Pos="1310.9136,955.37006,32.767635" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="9846784" UseCustomLevelLayerColor="0" MinSpec="0" Height="17" Exclusion="0" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="5.56604,-42.830078,0"/>
+     <Point Pos="42.124146,-73.13678,0"/>
+     <Point Pos="46.007202,-102.93927,0"/>
+     <Point Pos="69.019653,-113.02899,0"/>
+     <Point Pos="82.64978,-123.86292,0"/>
+     <Point Pos="116.94861,-130.65076,0"/>
+     <Point Pos="132.20581,-103.65381,0"/>
+     <Point Pos="124.63794,-84.946777,0"/>
+     <Point Pos="129.60034,-76.663818,0"/>
+     <Point Pos="168.52344,-87.507813,0"/>
+     <Point Pos="163.4408,-103.77997,0"/>
+     <Point Pos="201.69617,-113.04913,0"/>
+     <Point Pos="206.56873,-100.34338,0"/>
+     <Point Pos="201.19116,-96.076477,0"/>
+     <Point Pos="201.12732,-88.6026,0"/>
+     <Point Pos="197.93408,-78.431335,0"/>
+     <Point Pos="190.26453,-70.765381,0"/>
+     <Point Pos="171.50146,-67.787109,0"/>
+     <Point Pos="171.60083,-31.951843,0"/>
+     <Point Pos="139.82373,-11.998352,0"/>
+     <Point Pos="109.61572,-21.287903,0"/>
+     <Point Pos="101.52515,-16.884705,0"/>
+     <Point Pos="81.803467,-30.243347,0"/>
+     <Point Pos="72.939697,-22.933167,0"/>
+     <Point Pos="46.138062,-29.720764,0"/>
+     <Point Pos="44.069824,-13.635193,0"/>
+     <Point Pos="16.812256,1.4837646,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Side15="0" Side16="0" Side17="0" Side18="0" Side19="0" Side20="0" Side21="0" Side22="0" Side23="0" Side24="0" Side25="0" Side26="0" Side27="0" Side28="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="e64d37fc-8ecc-4ec6-a45b-06ec9e13554f" Name="NavigationArea14" Pos="1636.8666,631.0141,44.294796" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="16" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="5.4963379,3.4813843,0"/>
+     <Point Pos="26.676392,0.69537354,0"/>
+     <Point Pos="34.949951,6.7872925,0"/>
+     <Point Pos="40.430908,3.6676636,0"/>
+     <Point Pos="49.192383,-24.529968,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Shape" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="dde73c51-b422-447f-b538-859f262b84b1" Name="AB03_LS_Shape" Pos="1568.877,810.24402,0" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="255" UseCustomLevelLayerColor="0" MinSpec="0" Width="0" Height="100" InnerFadeDistance="0" AreaId="0" GroupId="0" Priority="0" Closed="1" DisplayFilled="0" DisplaySoundInfo="0" Agent_height="0" Agent_width="0" Render_voxel_grid="0" voxel_offset_x="0" voxel_offset_y="0" EntityClass="AreaShape" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="feb82854-291c-4aba-9652-ddd7f403f24a" guid="22563481-9366-0688-1d97-f90c5f6b76a0">
+      <Area Id="0" Group="0" Proximity="0" Priority="0" InnerFadeDistance="0" Height="100">
+       <Points>
+        <Point Pos="0,0,0" ObstructSound="0"/>
+        <Point Pos="-44.144653,9.6914673,-0.011726379" ObstructSound="0"/>
+        <Point Pos="-26.710938,76.789551,0.033958435" ObstructSound="0"/>
+        <Point Pos="-9.4047852,107.68787,0.059104919" ObstructSound="0"/>
+        <Point Pos="21.333008,108.22937,-0.15392303" ObstructSound="0"/>
+        <Point Pos="44.080566,58.305481,-0.042541504" ObstructSound="0"/>
+        <Point Pos="16.669067,40.039978,-0.077583313" ObstructSound="0"/>
+       </Points>
+       <Roof ObstructSound="0"/>
+       <Floor ObstructSound="0"/>
+       <Entities>
+        <Entity GUID="ebc14e5f-c7d0-43f0-997c-60f2c416f3cf"/>
+       </Entities>
+      </Area>
+     </Component>
+    </Components>
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-44.144653,9.6914673,-0.011726379"/>
+     <Point Pos="-26.710938,76.789551,0.033958435"/>
+     <Point Pos="-9.4047852,107.68787,0.059104919"/>
+     <Point Pos="21.333008,108.22937,-0.15392303"/>
+     <Point Pos="44.080566,58.305481,-0.042541504"/>
+     <Point Pos="16.669067,40.039978,-0.077583313"/>
+    </Points>
+    <Entities>
+     <Entity Id="ebc14e5f-c7d0-43f0-997c-60f2c416f3cf"/>
+    </Entities>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="096dd0c0-9047-4dff-8bb8-c8005174978f" Name="NavigationArea36" Pos="1540.5798,584.99884,46" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="7" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="0.44812012,4.755249,0"/>
+     <Point Pos="6.9000244,12.801819,0"/>
+     <Point Pos="10.577026,21.732788,0"/>
+     <Point Pos="9.0003662,30.350586,0"/>
+     <Point Pos="15.224121,34.813354,0"/>
+     <Point Pos="18.633911,32.603149,0"/>
+     <Point Pos="15.921143,10.577637,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="SmartObject" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="637480da-20c5-4f64-9ff1-15c2e0f108e3" Name="SmartObject16" Pos="1428.2584,849.41998,35.523319" Rotate="0.18223542,0,0,0.98325491" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="SmartObject" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="NavigationSeedPoint" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="f2e8579e-2f1b-4fa0-b27a-47d32d4dd8eb" Name="NavigationSeedPoint3" Pos="1683.3749,673,46.124996" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="16711680" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="NavigationSeedPoint" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="Shape" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="8493f395-e874-4ec8-9b61-82b40a90ca08" Name="AB06_LS_Shape" Pos="1480.504,650.7337,0" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="255" UseCustomLevelLayerColor="0" MinSpec="0" Width="0" Height="100" InnerFadeDistance="0" AreaId="0" GroupId="0" Priority="0" Closed="1" DisplayFilled="0" DisplaySoundInfo="0" Agent_height="0" Agent_width="0" Render_voxel_grid="0" voxel_offset_x="0" voxel_offset_y="0" EntityClass="AreaShape" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="feb82854-291c-4aba-9652-ddd7f403f24a" guid="7da5a00d-3703-d03b-5b8f-d2c7dc7c403b">
+      <Area Id="0" Group="0" Proximity="0" Priority="0" InnerFadeDistance="0" Height="100">
+       <Points>
+        <Point Pos="0,0,0" ObstructSound="0"/>
+        <Point Pos="72.803101,84.590027,0" ObstructSound="0"/>
+        <Point Pos="204.17188,116.74493,0" ObstructSound="0"/>
+        <Point Pos="220.3772,87.49353,0" ObstructSound="0"/>
+        <Point Pos="216.58203,53.74646,0" ObstructSound="0"/>
+        <Point Pos="252.42249,25.780273,0" ObstructSound="0"/>
+        <Point Pos="268.77966,-16.933105,0" ObstructSound="0"/>
+        <Point Pos="260.6106,-113.50348,0" ObstructSound="0"/>
+        <Point Pos="211.89478,-148.44839,0" ObstructSound="0"/>
+        <Point Pos="138.57312,-179.02209,0" ObstructSound="0"/>
+        <Point Pos="90.205688,-130.60345,0" ObstructSound="0"/>
+        <Point Pos="95.94043,-104.41913,0" ObstructSound="0"/>
+        <Point Pos="32.303467,-60.79834,0" ObstructSound="0"/>
+        <Point Pos="1.4981689,-51.607849,0" ObstructSound="0"/>
+       </Points>
+       <Roof ObstructSound="0"/>
+       <Floor ObstructSound="0"/>
+       <Entities>
+        <Entity GUID="8d8d20dd-df02-4a43-8e66-1d52b0998a1d"/>
+       </Entities>
+      </Area>
+     </Component>
+    </Components>
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="72.803101,84.590027,0"/>
+     <Point Pos="204.17188,116.74493,0"/>
+     <Point Pos="220.3772,87.49353,0"/>
+     <Point Pos="216.58203,53.74646,0"/>
+     <Point Pos="252.42249,25.780273,0"/>
+     <Point Pos="268.77966,-16.933105,0"/>
+     <Point Pos="260.6106,-113.50348,0"/>
+     <Point Pos="211.89478,-148.44839,0"/>
+     <Point Pos="138.57312,-179.02209,0"/>
+     <Point Pos="90.205688,-130.60345,0"/>
+     <Point Pos="95.94043,-104.41913,0"/>
+     <Point Pos="32.303467,-60.79834,0"/>
+     <Point Pos="1.4981689,-51.607849,0"/>
+    </Points>
+    <Entities>
+     <Entity Id="8d8d20dd-df02-4a43-8e66-1d52b0998a1d"/>
+    </Entities>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="34176950-8298-4da4-b88d-4d4f925b5a54" Name="NavigationArea34" Pos="1536.5419,594.0213,46" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="5" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="0.54528809,6.5973511,0"/>
+     <Point Pos="4.0095215,15.073792,0"/>
+     <Point Pos="7.6994629,16.487427,0"/>
+     <Point Pos="11.241211,12.859558,0"/>
+     <Point Pos="7.2835693,7.7929077,0"/>
+     <Point Pos="6.6207275,2.3220215,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="SmartObject" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="29fee347-b14c-4df6-84bf-8d553080210b" Name="SmartObject17" Pos="1427.8599,842.80365,37.548664" Rotate="0.0087265195,0,0,0.99996191" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="SmartObject" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="afd080ae-1eb7-4db6-963f-8a7c9ee92bfc" Name="Cutscene_Menu_ATrig" Pos="1330,930,80" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="847e8ca3-8eb0-2c6e-4cc9-d7bf08f01f8b" CryXmlVersion="2" Active="true"/>
+    </Components>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="fa3c3faa-2c29-4e41-be22-9e9ce2e4773d" Name="NavigationArea5" Pos="1412.0137,855.53235,35" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="7" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-2.7794189,2.5991211,0"/>
+     <Point Pos="-6.0507813,2.9233398,0"/>
+     <Point Pos="-7.2827148,-0.23840332,0"/>
+     <Point Pos="-4.6359863,-2.4562378,0"/>
+     <Point Pos="-3.0174561,-6.0463867,0"/>
+     <Point Pos="-2.9287109,-8.9781494,0"/>
+     <Point Pos="-1.137207,-9.6483154,0"/>
+     <Point Pos="0.7878418,-9.0492554,0"/>
+     <Point Pos="-2.2821045,-2.5579834,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="458bf009-b974-416f-961d-c32643e221a7" Name="AB04_LS_trig" Pos="1643.6455,893.78674,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="6a793525-cb6c-f35a-b89f-eb5b04e6c6e8" CryXmlVersion="2" Active="true"/>
+    </Components>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="4ccd54bb-f5ce-4387-b4b9-05bb9f15a2ab" Name="NavigationArea9" Pos="1715.4982,571.96484,51.003048" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="10" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="6.7819824,5.2642822,0"/>
+     <Point Pos="9.6132813,8.7449951,0"/>
+     <Point Pos="18.569458,-8.4193726,0"/>
+     <Point Pos="4.7092285,-4.8920288,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Brush" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="347e9441-2580-41e2-89f3-523dcb910f18" Name="ivy_round1" Pos="1569.9771,902.65546,46.272354" Rotate="-0.19936782,0,0,0.97992474" Scale="1,1,1" ColorRGB="16777215" UseCustomLevelLayerColor="0" Material="materials/nature/bushes/ivy/vegetation_ivy_m" MinSpec="0" MatLayersMask="0" Prefab="objects/nature/bushes/ivy/ivy_round.cgf" IgnoreVisareas="0" CastShadowMaps="0" GIMode="1" RainOccluder="0" SupportSecondVisarea="0" DynamicDistanceShadows="0" Hideable="0" LodRatio="100" ViewDistRatio="25" ExcludeFromNavigation="0" NoDynamicWater="0" AIRadius="-1" NoStaticDecals="0" RecvWind="0" Occluder="0" DrawLast="0" ShadowLodBias="0" IgnoreTerrainLayerBlend="0" IgnoreDecalBlend="0" RndFlags="180000000400">
+    <CollisionFiltering />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="36c4e36b-42c3-4b26-a5f2-6b0d20959c64" Name="AB5_NavigationArea1" Pos="1643.7367,861.89105,45" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="9846784" UseCustomLevelLayerColor="0" MinSpec="0" Height="8" Exclusion="0" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="6.1876221,-17.205322,0"/>
+     <Point Pos="48.561768,-5.5804443,0"/>
+     <Point Pos="28.5271,-71.28241,0"/>
+     <Point Pos="8.5805664,-97.499207,0"/>
+     <Point Pos="2.7355957,-150.784,0"/>
+     <Point Pos="-5.5974121,-170.80225,0"/>
+     <Point Pos="-30.032227,-163.30621,0"/>
+     <Point Pos="-43.396118,-138.68463,0"/>
+     <Point Pos="-47.588745,-81.702454,0"/>
+     <Point Pos="-39.66687,-11.250305,0"/>
+     <Point Pos="-27.960449,3.2371826,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="8d8d20dd-df02-4a43-8e66-1d52b0998a1d" Name="AB06_LS_trig" Pos="1618.7065,593.28021,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="8294d1aa-68f5-9f6b-1ccd-a2af8e739d96" CryXmlVersion="2" Active="true"/>
+    </Components>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="8f3f2baa-3625-4415-8b10-bc41fab16b6f" Name="NavigationArea17" Pos="1640.043,888.96191,45" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="10" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="1.0698242,5.8126831,0"/>
+     <Point Pos="3.9815674,8.0876465,0"/>
+     <Point Pos="8.3540039,7.1290283,0"/>
+     <Point Pos="10.96167,3.4414673,0"/>
+     <Point Pos="11.807007,-0.38500977,0"/>
+     <Point Pos="7.300293,-4.97229,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="96cafe23-4b52-44f5-bc9f-e4033d0ebb8f" Name="NavigationArea37" Pos="1473.335,931.09436,37" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="8" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-15.411377,8.052063,0"/>
+     <Point Pos="-12.760742,-3.9127197,0"/>
+     <Point Pos="-6.2103271,-5.4222412,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="037eb6ac-7f97-4fd9-abaf-5be38bc310c8" Name="AB02_LS_trig" Pos="1512.5591,876.78845,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="664e686f-32a8-9634-3cce-f158fbf346b5" CryXmlVersion="2" Active="true"/>
+    </Components>
+   </Object>
+   <Object Type="SmartObject" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="152041fe-0dc6-4ae4-8b09-c370d30ffdd2" Name="SmartObject15" Pos="1433.2859,853.68146,35.56686" Rotate="0.88701087,0,0,-0.46174851" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="SmartObject" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="607daa42-c439-4d52-a8eb-e4915633df9a" Name="NavigationArea31" Pos="1588.1876,889.19324,35.494041" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="12" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-1.3907471,2.489624,0"/>
+     <Point Pos="-6.02771,4.6011353,0"/>
+     <Point Pos="-16.382935,-1.4857178,0"/>
+     <Point Pos="-19.753174,-10.701233,0"/>
+     <Point Pos="-28.196289,-13.293396,0"/>
+     <Point Pos="-30.849976,-14.989319,0"/>
+     <Point Pos="-28.899048,-18.136902,0"/>
+     <Point Pos="-32.609375,-24.661499,0"/>
+     <Point Pos="-28.021729,-27.211914,0"/>
+     <Point Pos="-24.540527,-17.38916,0"/>
+     <Point Pos="-18.32666,-21.429626,0"/>
+     <Point Pos="-16.448608,-13.611084,0"/>
+     <Point Pos="-9.2385254,-6.7540894,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Side7="0" Side8="0" Side9="0" Side10="0" Side11="0" Side12="0" Side13="0" Side14="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Shape" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="76fa95dc-e6e9-4715-92fa-da33f08504e4" Name="AB04_LS_Shape" Pos="1650.4287,943.8183,0" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="255" UseCustomLevelLayerColor="0" MinSpec="0" Width="0" Height="100" InnerFadeDistance="0" AreaId="0" GroupId="0" Priority="0" Closed="1" DisplayFilled="0" DisplaySoundInfo="0" Agent_height="0" Agent_width="0" Render_voxel_grid="0" voxel_offset_x="0" voxel_offset_y="0" EntityClass="AreaShape" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="feb82854-291c-4aba-9652-ddd7f403f24a" guid="488afa1e-fa21-e286-9d64-128c959bd607">
+      <Area Id="0" Group="0" Proximity="0" Priority="0" InnerFadeDistance="0" Height="100">
+       <Points>
+        <Point Pos="0,0,0" ObstructSound="0"/>
+        <Point Pos="38.239014,-43.649597,0.28144836" ObstructSound="0"/>
+        <Point Pos="41.237671,-85.294678,-0.048294067" ObstructSound="0"/>
+        <Point Pos="19.627808,-88.227661,-0.15249634" ObstructSound="0"/>
+        <Point Pos="-36.703369,-75.09314,-0.030815125" ObstructSound="0"/>
+        <Point Pos="-53.459595,-38.145386,0.061935425" ObstructSound="0"/>
+       </Points>
+       <Roof ObstructSound="0"/>
+       <Floor ObstructSound="0"/>
+       <Entities>
+        <Entity GUID="458bf009-b974-416f-961d-c32643e221a7"/>
+       </Entities>
+      </Area>
+     </Component>
+    </Components>
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="38.239014,-43.649597,0.28144836"/>
+     <Point Pos="41.237671,-85.294678,-0.048294067"/>
+     <Point Pos="19.627808,-88.227661,-0.15249634"/>
+     <Point Pos="-36.703369,-75.09314,-0.030815125"/>
+     <Point Pos="-53.459595,-38.145386,0.061935425"/>
+    </Points>
+    <Entities>
+     <Entity Id="458bf009-b974-416f-961d-c32643e221a7"/>
+    </Entities>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="NavigationSeedPoint" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="8a464ef0-ed79-483e-a720-2204715744c1" Name="NavigationSeedPoint5" Pos="1641.0859,829.84869,46.489166" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="16711680" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="NavigationSeedPoint" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="8c80af04-b730-4b42-bdb6-e52644298859" Name="NavigationArea12" Pos="1717.9998,638.93585,49.277657" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="10" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="2.0919189,4.305542,0"/>
+     <Point Pos="5.4470215,4.6442261,0"/>
+     <Point Pos="4.6934814,0.70788574,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="c08426fd-7242-4e4c-b186-230c39c5dd02" Name="AB05_LS_trig" Pos="1618.7065,792.01624,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="cf43cb4b-07af-928f-67ed-f23b5fcf3c08" CryXmlVersion="2" Active="true"/>
+    </Components>
+   </Object>
+   <Object Type="NavigationSeedPoint" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="c67b6019-ee20-4540-a7a1-26d8fff2daec" Name="NavigationSeedPoint4" Pos="1617.1676,681.64935,46.142395" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="16711680" UseCustomLevelLayerColor="0" MinSpec="0" EntityClass="NavigationSeedPoint" HasEntity="0">
+    <Properties />
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="cb1307c1-3fe1-4d57-b9a1-bf1c3acd2f3b" Name="NavigationArea24" Pos="1415.7657,917.88098,37.69265" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="5" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="-0.55310059,3.1182861,0"/>
+     <Point Pos="-6.8529053,-0.38293457,0"/>
+     <Point Pos="-6.2828369,-1.9296875,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Roof="0" Floor="0"/>
+   </Object>
+   <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="d39a66cc-4a92-4a83-a66b-e6198d4ec093" Name="AB01_LS_trig" Pos="1392.7678,876.38586,133.03375" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="0bfdfbe1-52b2-2d1a-cbac-bdc40bc6754c" CryXmlVersion="2" Active="true"/>
+    </Components>
+   </Object>
+  </LayerObjects>
+ </Layer>
+</ObjectLayer>

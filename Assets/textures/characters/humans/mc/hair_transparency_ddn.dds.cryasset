@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="be8727b8-971c-2af8-042f-40e467442218" source="hair_transparency_ddn.tif">
+ <Files>
+  <File path="hair_transparency_ddn.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

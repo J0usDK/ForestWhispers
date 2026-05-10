@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="354da2c6-983f-e64e-3cf3-10844fbfee1d" source="rock_river_group_c.fbx">
+ <Files>
+  <File path="rock_river_group_c.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">12</Detail>
+  <Detail name="triangleCount">26380</Detail>
+  <Detail name="vertexCount">15758</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/biome/river/river.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

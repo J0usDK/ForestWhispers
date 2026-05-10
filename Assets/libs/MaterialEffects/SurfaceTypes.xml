@@ -1,0 +1,47 @@
+<SurfaceTypes>
+
+ <SurfaceType name="mat_concrete">
+  <Physics friction="1" elasticity="0.2" pierceability="3" sound_obstruction="0.5" />
+ </SurfaceType>
+ 
+ <SurfaceType name="mat_default">
+  <Physics sound_obstruction="0.5" />
+ </SurfaceType>
+ 
+ <SurfaceType name="mat_water">
+  <Physics sound_obstruction="0.5" />
+ </SurfaceType>
+ 
+ <SurfaceType name="mat_metal">
+  <Physics sound_obstruction="0.5" />
+ </SurfaceType>
+ 
+ <SurfaceType name="mat_nodraw">
+  <Physics friction="0" elasticity="0" pierceability="15" />
+ </SurfaceType>
+ 
+ <SurfaceType name="mat_obstruct">
+  <Physics friction="1.5" elasticity="0" pierceability="10" no_collide="1" sound_obstruction="1.0" />
+ </SurfaceType>
+ 
+ <SurfaceType name="mat_vegetation">
+  <Physics friction="0.5" elasticity="0" pierceability="14" no_collide="1" can_shatter="1" sound_obstruction="0.5" />
+  <AI fImpactRadius="2.5" fImpactSoundRadius="20" fFootStepRadius="30" proneMult="0.2" crouchMult="0.5" movingMult="2.5" />
+ </SurfaceType>
+ 
+ <SurfaceType name="mat_wood" type="wood">
+  <Physics friction="0.5" elasticity="0.05" pierceability="8" can_shatter="1" sound_obstruction="0.5" />
+  <AI fImpactRadius="2.5" fImpactSoundRadius="30" fFootStepRadius="20" proneMult="0.2" crouchMult="0.5" movingMult="2.5" />
+ </SurfaceType>
+ 
+ <SurfaceType name="mat_rock">
+  <Physics friction="0.7" elasticity="0" pierceability="3" sound_obstruction="0.5" />
+  <AI fImpactRadius="2.5" fImpactSoundRadius="20" fFootStepRadius="20" proneMult="0.2" crouchMult="0.5" movingMult="2.5" />
+ </SurfaceType>
+ 
+ <SurfaceType name="mat_grass" type="vegetation">
+  <Physics friction="0.6" elasticity="-2"  pierceability="14" no_collide="1" can_shatter="1" sound_obstruction="0.5" />
+  <AI fImpactRadius="2.5" fImpactSoundRadius="20" fFootStepRadius="30" proneMult="0.2" crouchMult="0.5" movingMult="2.5" />
+ </SurfaceType>
+ 
+</SurfaceTypes>

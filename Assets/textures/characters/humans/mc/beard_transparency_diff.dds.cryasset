@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="55c8db57-c130-a9c7-3455-0b2f20b95037" source="beard_transparency_diff.tif">
+ <Files>
+  <File path="beard_transparency_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,41 @@
+<AssetMetadata version="0" type="Material" guid="30552df4-66eb-20d9-5dd5-9830278c9538" source="" timestamp="1777161086">
+ <Files>
+  <File path="forest.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">14</Detail>
+  <Detail name="textureCount">30</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/nature/trees/pine/pine_trunk_diff.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/pine_trunk_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/pine_trunk_displ.dds</Path>
+  <Path usageCount="5">textures/nature/decals/moss/moss_diff.dds</Path>
+  <Path usageCount="5">textures/nature/decals/moss/moss_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/pine_trunk_blend.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/pine_leaf_diff.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/pine_leaf_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/pine_leaf_sss.dds</Path>
+  <Path usageCount="2">textures/nature/trees/pine/pine_distance_diff.dds</Path>
+  <Path usageCount="2">textures/nature/trees/pine/pine_distance_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/pine_distance_sss.dds</Path>
+  <Path usageCount="2">textures/nature/decals/moss/layer/moss_layer_diff.dds</Path>
+  <Path usageCount="2">textures/nature/decals/moss/layer/moss_layer_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/na_scots_pine_tree_trunk_rotten_diff.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/na_scots_pine_tree_trunk_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/trees/dead_wood_detail/dead_wood_detail.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/na_scots_pine_tree_stripped_diff.dds</Path>
+  <Path usageCount="1">textures/nature/trees/pine/na_scots_pine_tree_stripped_ddna.dds</Path>
+  <Path usageCount="1">textures/generic/masks/wood_fina_a_mask/wood_fine_a_mask.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_a_detail/canyon_rock_a_detail.dds</Path>
+  <Path usageCount="4">textures/nature/rocks/forest_monoliths/forest_monolith_new_diff.dds</Path>
+  <Path usageCount="3">textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_ddna.dds</Path>
+  <Path usageCount="4">textures/nature/rocks/canyon_rocks/river_rock_blend/river_rock_blend.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_b_detail/canyon_rock_b_detail.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_c_detail/canyon_rock_c_detail.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_ddna/canyon_rock_ddna.dds</Path>
+  <Path usageCount="1">textures/nature/rocks/canyon_rocks/canyon_rock_d_detail/canyon_rock_d_detail.dds</Path>
+  <Path usageCount="1">textures/nature/decals/ivy/vegetation_ivy_diff.dds</Path>
+  <Path usageCount="1">textures/nature/decals/ivy/vegetation_ivy_ddna.dds</Path>
+ </Dependencies>
+</AssetMetadata>

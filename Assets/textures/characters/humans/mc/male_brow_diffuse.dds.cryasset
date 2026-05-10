@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="bc379cdf-2af3-eb9c-2766-fe8995c68a8d" source="male_brow_diffuse.tif">
+ <Files>
+  <File path="male_brow_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

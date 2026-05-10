@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="1539b49c-a9c5-e1eb-0941-f7488454fb7f" source="std_tearline_r_diffuse.tif">
+ <Files>
+  <File path="std_tearline_r_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">64</Detail>
+  <Detail name="height">64</Detail>
+  <Detail name="mipCount">5</Detail>
+ </Details>
+</AssetMetadata>

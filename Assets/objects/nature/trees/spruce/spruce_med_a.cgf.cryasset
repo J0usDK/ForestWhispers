@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="fd93704c-f5ee-db38-b6f4-20a2b56030e4" source="spruce_med_a.fbx">
+ <Files>
+  <File path="spruce_med_a.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">12</Detail>
+  <Detail name="triangleCount">3720</Detail>
+  <Detail name="vertexCount">4170</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/nature/biome/forest/forest.mtl</Path>
+ </Dependencies>
+</AssetMetadata>
