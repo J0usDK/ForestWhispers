@@ -1,0 +1,25 @@
+# 3D Models & Skeletons
+*.cgf filter=lfs diff=lfs merge=lfs -text
+*.chr filter=lfs diff=lfs merge=lfs -text
+*.skin filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+
+# Animations
+*.caf filter=lfs diff=lfs merge=lfs -text
+*.i_caf filter=lfs diff=lfs merge=lfs -text
+
+# Textures & Images
+*.dds filter=lfs diff=lfs merge=lfs -text
+*.tif filter=lfs diff=lfs merge=lfs -text
+*.tiff filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+
+# Audio
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+
+# Engine Archives
+*.pak filter=lfs diff=lfs merge=lfs -text

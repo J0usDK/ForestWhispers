@@ -1,0 +1,39 @@
+# =========================
+# Visual Studio & C++ Cache
+# =========================
+.vs/
+*.user
+*.suo
+*.db
+*.opendb
+
+# =========================
+# CryEngine Build & CMake
+# =========================
+bin/
+# Default files
+Solutions/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.cmake
+
+# =========================
+# CryEngine Local & Temp Data
+# =========================
+# Local settings
+user/
+# Logs
+Log/
+*.log
+# Temp files
+*.tmp
+*.bak
+*.cryasset.tmp
+*.~*
+
+# =========================
+# OS Generated
+# =========================
+Thumbs.db
+.DS_Store
