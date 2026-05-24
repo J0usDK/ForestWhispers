@@ -1,4 +1,4 @@
-<AssetMetadata version="0" type="SkinnedMesh" guid="bac13686-d071-37b2-1c22-563b52a186f6" source="MC.fbx">
+<AssetMetadata version="0" type="SkinnedMesh" guid="fdb392f6-395f-b811-7116-5346d6f51a6d" source="MC.fbx">
  <Files>
   <File path="MC_Boxers.skin"/>
  </Files>
@@ -7,9 +7,9 @@
   <Detail name="triangleCount">1212</Detail>
   <Detail name="vertexCount">792</Detail>
   <Detail name="16BitPrecision">false</Detail>
-  <Detail name="bonesCount">886</Detail>
+  <Detail name="bonesCount">12</Detail>
  </Details>
  <Dependencies>
-  <Path usageCount="1">./MC.mtl</Path>
+  <Path usageCount="1">materials/characters/humans/mc/m_mc.mtl</Path>
  </Dependencies>
 </AssetMetadata>

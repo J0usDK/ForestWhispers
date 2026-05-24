@@ -1,0 +1,15 @@
+<ControllerDef>
+ <Tags filename="Animations/characters/mc/data/PlayerTags.xml"/>
+ <Fragments filename="Animations/characters/mc/data/PlayerFragmentIds.xml"/>
+ <FragmentDefs>
+  <Idle scopes="FirstPerson" flags="Persistent+AutoReinstall"/>
+  <Walk scopes="FirstPerson"/>
+  <Run scopes="FirstPerson"/>
+ </FragmentDefs>
+ <ScopeContextDefs>
+  <FirstPersonCharacter />
+ </ScopeContextDefs>
+ <ScopeDefs>
+  <FirstPerson layer="0" numLayers="3" context="FirstPersonCharacter"/>
+ </ScopeDefs>
+</ControllerDef>

@@ -1,0 +1,22 @@
+<AssetMetadata version="0" type="Character" guid="6abecda2-8b2d-3b69-58ee-1aaef616707a">
+ <Files>
+  <File path="MC.cdf"/>
+ </Files>
+ <Details />
+ <Dependencies>
+  <Path>objects/characters/humans/mc/MC.chr</Path>
+  <Path>objects/characters/humans/mc/MC_boots.skin</Path>
+  <Path>objects/characters/humans/mc/MC_Boxers.skin</Path>
+  <Path>objects/characters/humans/mc/MC_CC_Base_Body.skin</Path>
+  <Path>objects/characters/humans/mc/MC_CC_Base_Eye.skin</Path>
+  <Path>objects/characters/humans/mc/MC_CC_Base_EyeOcclusion.skin</Path>
+  <Path>objects/characters/humans/mc/MC_CC_Base_TearLine.skin</Path>
+  <Path>objects/characters/humans/mc/MC_CC_Base_Teeth.skin</Path>
+  <Path>objects/characters/humans/mc/MC_CC_Base_Tongue.skin</Path>
+  <Path>objects/characters/humans/mc/MC_Chin_Curtain_Sparse.skin</Path>
+  <Path>objects/characters/humans/mc/MC_Male_Brow_2.skin</Path>
+  <Path>objects/characters/humans/mc/MC_pants.skin</Path>
+  <Path>objects/characters/humans/mc/MC_Short_blowback.skin</Path>
+  <Path>objects/characters/humans/mc/MC_tunic.skin</Path>
+ </Dependencies>
+</AssetMetadata>

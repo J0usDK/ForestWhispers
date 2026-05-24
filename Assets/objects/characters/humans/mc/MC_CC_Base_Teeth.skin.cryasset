@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="f61f04d8-014f-117e-bb47-6b48b982ddb1" source="MC.fbx">
+ <Files>
+  <File path="MC_CC_Base_Teeth.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">28</Detail>
+  <Detail name="triangleCount">4842</Detail>
+  <Detail name="vertexCount">2902</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">14</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/characters/humans/mc/m_mc.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

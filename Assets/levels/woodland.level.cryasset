@@ -1,4 +1,4 @@
-<AssetMetadata version="0" type="Level" guid="cfabd5af-4ef0-c32a-cad0-cdca8bebf4d1" source="" timestamp="1778449766">
+<AssetMetadata version="0" type="Level" guid="cfabd5af-4ef0-c32a-cad0-cdca8bebf4d1" source="" timestamp="1778885333">
  <Files>
   <File path="woodland/woodland.level"/>
  </Files>
@@ -16,10 +16,55 @@
   <Path>%engine%/engineassets/materials/fog/fogvolumeellipsoid.mtl</Path>
   <Path>%engine%/engineassets/materials/fog/waterfogvolumeinto.mtl</Path>
   <Path>%engine%/engineassets/materials/fog/waterfogvolumeoutof.mtl</Path>
+  <Path>%engine%/engineassets/materials/physproxytoobig.mtl</Path>
   <Path>%engine%/engineassets/objects/primitive_sphere.cgf</Path>
   <Path>%engine%/engineassets/texturemsg/defaultnouvs.dds</Path>
   <Path>%engine%/engineassets/texturemsg/defaultsolids.mtl</Path>
+  <Path>%engine%/engineassets/texturemsg/physproxytoobig.dds</Path>
+  <Path>%engine%/engineassets/textures/default_probe_cm.dds</Path>
+  <Path>%engine%/engineassets/textures/default_probe_cm_diff.dds</Path>
   <Path>%engine%/engineassets/textures/skys/night/half_moon.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/beard_transparency_diff.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/boots_ddna.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/boots_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/boxers_ddn.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/boxers_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/hair_clap_transparency_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/hair_transparency_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/male_brow_base_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/male_brow_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/pants_ddna.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/pants_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_cornea_l_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_cornea_r_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_eye_l_ddn.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_eye_l_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_eye_occlusion_l_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_eye_occlusion_r_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_eye_r_ddn.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_eye_r_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_eyelash_ddn.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_eyelash_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_lower_teeth_ddn.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_lower_teeth_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_nails_ddna.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_nails_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_skin_arm_ddna.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_skin_arm_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_skin_body_ddna.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_skin_body_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_skin_head_ddna.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_skin_head_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_skin_leg_ddn.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_skin_leg_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_tearline_l_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_tearline_r_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_tongue_ddna.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_tongue_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_upper_teeth_ddna.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/std_upper_teeth_diffuse.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/tunic_ddna.dds</Path>
+  <Path>editor/resourcecache/textures/characters/humans/mc/tunic_diffuse.dds</Path>
   <Path>editor/resourcecache/textures/cubemaps/woodland/l_probe_ab1_bridge_a_root_cm.dds</Path>
   <Path>editor/resourcecache/textures/cubemaps/woodland/l_probe_ab1_bridge_a_root_cm_diff.dds</Path>
   <Path>editor/resourcecache/textures/cubemaps/woodland/l_probe_ab1_cabin_a_root_cm.dds</Path>
@@ -146,6 +191,25 @@
   <Path>objects/buildings/village/stacked_logs/stacked_logs_half_4m_a.cgf</Path>
   <Path>objects/buildings/village/stacked_logs/stacked_logs_half_4m_b.cgf</Path>
   <Path>objects/characters/animals/insects/dragonfly_body.cgf</Path>
+  <Path>objects/characters/humans/mc/mc.cdf</Path>
+  <Path>objects/characters/humans/mc/mc.cgf</Path>
+  <Path>objects/characters/humans/mc/mc.cgf</Path>
+  <Path>objects/characters/humans/mc/mc.chr</Path>
+  <Path>objects/characters/humans/mc/mc.chr</Path>
+  <Path>objects/characters/humans/mc/mc_.caf</Path>
+  <Path>objects/characters/humans/mc/mc_boots.skin</Path>
+  <Path>objects/characters/humans/mc/mc_boxers.skin</Path>
+  <Path>objects/characters/humans/mc/mc_cc_base_body.skin</Path>
+  <Path>objects/characters/humans/mc/mc_cc_base_eye.skin</Path>
+  <Path>objects/characters/humans/mc/mc_cc_base_eyeocclusion.skin</Path>
+  <Path>objects/characters/humans/mc/mc_cc_base_tearline.skin</Path>
+  <Path>objects/characters/humans/mc/mc_cc_base_teeth.skin</Path>
+  <Path>objects/characters/humans/mc/mc_cc_base_tongue.skin</Path>
+  <Path>objects/characters/humans/mc/mc_chin_curtain_sparse.skin</Path>
+  <Path>objects/characters/humans/mc/mc_male_brow_2.skin</Path>
+  <Path>objects/characters/humans/mc/mc_pants.skin</Path>
+  <Path>objects/characters/humans/mc/mc_short_blowback.skin</Path>
+  <Path>objects/characters/humans/mc/mc_tunic.skin</Path>
   <Path>objects/default/primitive_sphere_noproxy.cgf</Path>
   <Path>objects/misc/haybale.cgf</Path>
   <Path>objects/nature/bushes/bush_round_leaf_a.cgf</Path>

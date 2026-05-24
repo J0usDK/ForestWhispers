@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="291341ec-e472-9abe-d86f-e61edf5d1a4b" source="MC.fbx">
+ <Files>
+  <File path="MC_Male_Brow_2.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">28</Detail>
+  <Detail name="triangleCount">1066</Detail>
+  <Detail name="vertexCount">1347</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">9</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/characters/humans/mc/m_mc.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

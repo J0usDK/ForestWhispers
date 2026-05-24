@@ -1,14 +1,12 @@
-<AssetMetadata version="0" type="Material" guid="99d60d88-35a1-ca78-1454-432603ed30d3" source="" timestamp="1778025871">
+<AssetMetadata version="0" type="Material" guid="1099de69-78a2-91a7-d9c6-c4864763813d" source="" timestamp="1779583245">
  <Files>
-  <File path="MC.mtl"/>
+  <File path="m_mc.mtl"/>
  </Files>
  <Details>
   <Detail name="subMaterialCount">28</Detail>
   <Detail name="textureCount">43</Detail>
  </Details>
  <Dependencies>
-  <Path usageCount="1">textures/characters/humans/mc/boxers_diffuse.dds</Path>
-  <Path usageCount="1">textures/characters/humans/mc/boxers_ddn.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/std_skin_head_diffuse.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/std_skin_head_ddna.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/std_skin_body_diffuse.dds</Path>
@@ -27,11 +25,10 @@
   <Path usageCount="1">textures/characters/humans/mc/std_eye_l_diffuse.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/std_eye_l_ddn.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/std_cornea_l_diffuse.dds</Path>
-  <Path usageCount="1">./Std_Eye_Occlusion_R_Diffuse.dds</Path>
-  <Path usageCount="4">%ENGINE%/EngineAssets/Textures/white_ddn.dds</Path>
-  <Path usageCount="1">./Std_Eye_Occlusion_L_Diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eye_occlusion_r_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_eye_occlusion_l_diffuse.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/std_tearline_r_diffuse.dds</Path>
-  <Path usageCount="1">./Std_Tearline_L_Diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/std_tearline_l_diffuse.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/std_upper_teeth_diffuse.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/std_upper_teeth_ddna.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/std_lower_teeth_diffuse.dds</Path>
@@ -49,6 +46,9 @@
   <Path usageCount="1">textures/characters/humans/mc/pants_ddna.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/tunic_diffuse.dds</Path>
   <Path usageCount="1">textures/characters/humans/mc/tunic_ddna.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/boxers_diffuse.dds</Path>
+  <Path usageCount="1">textures/characters/humans/mc/boxers_ddn.dds</Path>
   <Path usageCount="1">%ENGINE%/EngineAssets/Textures/white.dds</Path>
+  <Path usageCount="1">%ENGINE%/EngineAssets/Textures/white_ddn.dds</Path>
  </Dependencies>
 </AssetMetadata>

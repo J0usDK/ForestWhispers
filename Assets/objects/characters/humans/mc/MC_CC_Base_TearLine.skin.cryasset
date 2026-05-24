@@ -1,4 +1,4 @@
-<AssetMetadata version="0" type="SkinnedMesh" guid="dc322ebf-a8aa-e6d3-3b91-9ad329945c29" source="MC.fbx">
+<AssetMetadata version="0" type="SkinnedMesh" guid="3ab3d95b-c9dc-f228-53e8-d467a806e252" source="MC.fbx">
  <Files>
   <File path="MC_CC_Base_TearLine.skin"/>
  </Files>
@@ -7,9 +7,9 @@
   <Detail name="triangleCount">272</Detail>
   <Detail name="vertexCount">196</Detail>
   <Detail name="16BitPrecision">false</Detail>
-  <Detail name="bonesCount">883</Detail>
+  <Detail name="bonesCount">9</Detail>
  </Details>
  <Dependencies>
-  <Path usageCount="1">./MC.mtl</Path>
+  <Path usageCount="1">materials/characters/humans/mc/m_mc.mtl</Path>
  </Dependencies>
 </AssetMetadata>

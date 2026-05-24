@@ -1,0 +1,18 @@
+<ParaGroup>
+ <Dimensions>
+  <Param Name="TravelAngle" Min="-3.1415901" Max="3.1415901" Cells="5"/>
+ </Dimensions>
+ <ExampleList>
+  <Example SetPara0="-3.1415901" AName="a_walkback"/>
+  <Example SetPara0="-1.5707999" AName="a_walkleft"/>
+  <Example SetPara0="0" AName="a_walkforward"/>
+  <Example SetPara0="1.5707999" AName="a_walkright"/>
+  <Example SetPara0="3.1415901" AName="a_walkback"/>
+ </ExampleList>
+ <Blendable>
+  <Face p0="0" p1="1"/>
+  <Face p0="1" p1="2"/>
+  <Face p0="2" p1="3"/>
+  <Face p0="3" p1="4"/>
+ </Blendable>
+</ParaGroup>

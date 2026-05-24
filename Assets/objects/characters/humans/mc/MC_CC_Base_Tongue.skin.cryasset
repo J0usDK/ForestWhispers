@@ -1,4 +1,4 @@
-<AssetMetadata version="0" type="SkinnedMesh" guid="51dce2b7-f361-0300-c7f3-045aa8622ea8" source="MC.fbx">
+<AssetMetadata version="0" type="SkinnedMesh" guid="85b0751a-4446-d34a-9b52-f42f9535d689" source="MC.fbx">
  <Files>
   <File path="MC_CC_Base_Tongue.skin"/>
  </Files>
@@ -7,9 +7,9 @@
   <Detail name="triangleCount">592</Detail>
   <Detail name="vertexCount">331</Detail>
   <Detail name="16BitPrecision">false</Detail>
-  <Detail name="bonesCount">888</Detail>
+  <Detail name="bonesCount">14</Detail>
  </Details>
  <Dependencies>
-  <Path usageCount="1">./MC.mtl</Path>
+  <Path usageCount="1">materials/characters/humans/mc/m_mc.mtl</Path>
  </Dependencies>
 </AssetMetadata>

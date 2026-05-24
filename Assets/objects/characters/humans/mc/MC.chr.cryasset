@@ -1,6 +1,6 @@
-<AssetMetadata version="0" type="Skeleton" guid="cb7a51c6-2c24-e47f-71f9-5dac929634af" source="MC.fbx">
+<AssetMetadata version="0" type="Skeleton" guid="1d721ea1-37ed-b620-23e8-686f2e88ccf2" source="MC.fbx" timestamp="1779578124">
  <Files>
   <File path="MC.chr"/>
+  <File path="MC.chrparams"/>
  </Files>
- <Details />
 </AssetMetadata>

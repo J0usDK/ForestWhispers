@@ -1,0 +1,9 @@
+<Params>
+ <AnimationList>
+  <Animation name="$AnimEventDatabase" path="Animations/characters/mc/data/mc_events.animevents"/>
+  <Animation name="#filepath" path="Animations/characters/mc"/>
+  <Animation name="*" path="*/*.caf"/>
+  <Animation name="*" path="*/*.bspace"/>
+  <Animation name="*" path="*/*.comb"/>
+ </AnimationList>
+</Params>

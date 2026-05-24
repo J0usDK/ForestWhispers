@@ -1,39 +1,39 @@
 <Material MtlFlags="524544" vertModifType="0">
  <SubMaterials>
-  <Material Name="Std_Skin_Head" MtlFlags="524416" Shader="Humanskin" GenMask="800000000020" StringGenMask="%NORMAL_MAP%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Skin_Head" MtlFlags="524416" Shader="Humanskin" GenMask="800000000020" StringGenMask="%NORMAL_MAP%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="46.155006" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_skin_head_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
-    <Texture Map="Bumpmap" File="textures/characters/humans/mc/std_skin_head_ddn.dds">
+    <Texture Map="Bumpmap" File="textures/characters/humans/mc/std_skin_head_ddna.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
    <PublicParams Melanin="0" SSSIndex="1" TranslucencyMultiplier="0"/>
   </Material>
-  <Material Name="Std_Skin_Body" MtlFlags="524416" Shader="Humanskin" GenMask="800000000020" StringGenMask="%NORMAL_MAP%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Skin_Body" MtlFlags="524416" Shader="Humanskin" GenMask="800000000020" StringGenMask="%NORMAL_MAP%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="48.959999" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_skin_body_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
-    <Texture Map="Bumpmap" File="textures/characters/humans/mc/std_skin_body_ddn.dds">
+    <Texture Map="Bumpmap" File="textures/characters/humans/mc/std_skin_body_ddna.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
    <PublicParams Melanin="0" SSSIndex="1" TranslucencyMultiplier="0"/>
   </Material>
-  <Material Name="Std_Skin_Arm" MtlFlags="524416" Shader="Humanskin" GenMask="800000000020" StringGenMask="%NORMAL_MAP%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Skin_Arm" MtlFlags="524416" Shader="Humanskin" GenMask="800000000020" StringGenMask="%NORMAL_MAP%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="52.274998" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_skin_arm_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
-    <Texture Map="Bumpmap" File="textures/characters/humans/mc/std_skin_arm_ddn.dds">
+    <Texture Map="Bumpmap" File="textures/characters/humans/mc/std_skin_arm_ddna.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
    <PublicParams Melanin="0" SSSIndex="1" TranslucencyMultiplier="0"/>
   </Material>
-  <Material Name="Std_Skin_Leg" MtlFlags="524416" Shader="Humanskin" GenMask="800000000020" StringGenMask="%NORMAL_MAP%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Skin_Leg" MtlFlags="524416" Shader="Humanskin" GenMask="800000000020" StringGenMask="%NORMAL_MAP%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="50.489998" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_skin_leg_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
@@ -44,18 +44,18 @@
    </Textures>
    <PublicParams Melanin="0" SSSIndex="1" TranslucencyMultiplier="0"/>
   </Material>
-  <Material Name="Std_Nails" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Nails" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="99.450005" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_nails_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
-    <Texture Map="Bumpmap" File="textures/characters/humans/mc/std_nails_ddn.dds">
+    <Texture Map="Bumpmap" File="textures/characters/humans/mc/std_nails_ddna.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
    <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="Std_Eyelash" MtlFlags="524418" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="0.2" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Eyelash" MtlFlags="526466" Shader="Hair" GenMask="20000400028" StringGenMask="%ANISO_SPECULAR%HAIR_PASS%NORMAL_MAP%THIN_HAIR" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_eyelash_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
@@ -64,7 +64,7 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
+   <PublicParams AlphaBlendMultiplier="1" DiffuseWrap="0.5" SecondaryHighlightColor="0.69803923,0.69803923,0.69803923" SecondaryHighlightShiftAmount="0.1" SecondaryHighlightWidth="1.5" ShiftVariation="0" SoftIntersection="0" ThinHairThreshold="0.050000001"/>
   </Material>
   <Material Name="Std_Eye_R" MtlFlags="524416" Shader="Eye" GenMask="3000000020" StringGenMask="%NORMAL_MAP%TEMP_EYES%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
@@ -94,7 +94,7 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams CorneaRefraction="0.0099999998" CorneaSmoothness="1" IrisColor="0.5,0.5,0.5" IrisDepth="0.0049999999" IrisSSS="0.60000002" IrisShadowing="5" ScleraSSS="0.40000001"/>
+   <PublicParams CorneaRefraction="0.0099999998" IrisDepth="0.0049999999" IrisColor="0.5,0.5,0.5" IrisShadowing="5" CorneaSmoothness="1" ScleraSSS="0.40000001" IrisSSS="0.60000002"/>
   </Material>
   <Material Name="Std_Cornea_L" MtlFlags="524416" Shader="Eye" GenMask="3000000000" StringGenMask="%TEMP_EYES%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
@@ -102,49 +102,41 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams CorneaRefraction="0.0099999998" CorneaSmoothness="1" IrisColor="0.5,0.5,0.5" IrisDepth="0.0049999999" IrisSSS="0.60000002" IrisShadowing="5" ScleraSSS="0.40000001"/>
+   <PublicParams CorneaRefraction="0.0099999998" IrisDepth="0.0049999999" IrisColor="0.5,0.5,0.5" IrisShadowing="5" CorneaSmoothness="1" ScleraSSS="0.40000001" IrisSSS="0.60000002"/>
   </Material>
-  <Material Name="Std_Eye_Occlusion_R" MtlFlags="524416" Shader="Illum" GenMask="4000000000000" StringGenMask="%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="1" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Eye_Occlusion_R" MtlFlags="524416" Shader="Eye" GenMask="3000040000" StringGenMask="%EYE_AO_OVERLAY%TEMP_EYES%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_eye_occlusion_r_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
+   <PublicParams DiffOccStrength="1" SpecOccStrength="1"/>
   </Material>
-  <Material Name="Std_Eye_Occlusion_L" MtlFlags="524416" Shader="Illum" GenMask="4000000000000" StringGenMask="%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="1" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Eye_Occlusion_L" MtlFlags="524416" Shader="Eye" GenMask="3000040000" StringGenMask="%EYE_AO_OVERLAY%TEMP_EYES%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_eye_occlusion_l_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
+   <PublicParams DiffOccStrength="1" SpecOccStrength="1"/>
   </Material>
-  <Material Name="CC_Base_Tear_Ducts" MtlFlags="524416" Shader="Humanskin" GenMask="800000000000" StringGenMask="%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
-   <Textures>
-    <Texture Map="Diffuse" File="textures/characters/humans/mc/cc_base_tear_ducts_diffuse.dds">
-     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
-    </Texture>
-   </Textures>
-   <PublicParams Melanin="0" SSSIndex="1" TranslucencyMultiplier="0"/>
-  </Material>
-  <Material Name="Std_Tearline_R" MtlFlags="524416" Shader="Eye" GenMask="3000000000" StringGenMask="%TEMP_EYES%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="1" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Tearline_R" MtlFlags="524416" Shader="Eye" GenMask="3000040000" StringGenMask="%EYE_AO_OVERLAY%TEMP_EYES%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_tearline_r_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams CorneaRefraction="0.0099999998" CorneaSmoothness="1" IrisColor="0.49803925,0.49803925,0.49803925" IrisDepth="0.0049999999" IrisSSS="0.60000002" IrisShadowing="5" ScleraSSS="0.40000001"/>
+   <PublicParams DiffOccStrength="1" SpecOccStrength="1"/>
   </Material>
-  <Material Name="Std_Tearline_L" MtlFlags="524416" Shader="Eye" GenMask="3000000000" StringGenMask="%TEMP_EYES%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="1" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Tearline_L" MtlFlags="524416" Shader="Eye" GenMask="3000040000" StringGenMask="%EYE_AO_OVERLAY%TEMP_EYES%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_tearline_l_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams CorneaRefraction="0.0099999998" CorneaSmoothness="1" IrisColor="0.5,0.5,0.5" IrisDepth="0.0049999999" IrisSSS="0.60000002" IrisShadowing="5" ScleraSSS="0.40000001"/>
+   <PublicParams DiffOccStrength="1" SpecOccStrength="1"/>
   </Material>
-  <Material Name="Std_Upper_Teeth" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Upper_Teeth" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="54.315006" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_upper_teeth_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
@@ -155,7 +147,7 @@
    </Textures>
    <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="Std_Lower_Teeth" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Lower_Teeth" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="56.355003" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_lower_teeth_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
@@ -166,7 +158,7 @@
    </Textures>
    <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="Std_Tongue" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Std_Tongue" MtlFlags="524416" Shader="Humanskin" GenMask="800000000020" StringGenMask="%NORMAL_MAP%TEMP_SKIN" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="53.295006" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/std_tongue_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
@@ -175,60 +167,93 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
+   <PublicParams Melanin="0" SSSIndex="1" TranslucencyMultiplier="0"/>
   </Material>
-  <Material Name="Hair_Transparency" MtlFlags="526466" Shader="Hair" GenMask="400008" StringGenMask="%ANISO_SPECULAR%HAIR_PASS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="76.5" AlphaTest="0.2" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Beard_Transparency" MtlFlags="526464" Shader="Hair" GenMask="20000400008" StringGenMask="%ANISO_SPECULAR%HAIR_PASS%THIN_HAIR" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
-    <Texture Map="Diffuse" File="textures/characters/humans/mc/hair_transparency_diffuse.dds">
+    <Texture Map="Diffuse" File="textures/characters/humans/mc/beard_transparency_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams AlphaBlendMultiplier="4" DiffuseWrap="0.5" SecondaryHighlightColor="0.69803923,0.69803923,0.69803923" SecondaryHighlightShiftAmount="-0.5" SecondaryHighlightWidth="1" ShiftVariation="0" SoftIntersection="0"/>
+   <PublicParams AlphaBlendMultiplier="1" DiffuseWrap="0.5" SecondaryHighlightColor="0.69803923,0.69803923,0.69803923" SecondaryHighlightShiftAmount="0.1" SecondaryHighlightWidth="1.5" ShiftVariation="0" SoftIntersection="0" ThinHairThreshold="0.050000001"/>
   </Material>
-  <Material Name="Hair_Clap_Transparency" MtlFlags="524416" Shader="Illum" GenMask="4000000000000" StringGenMask="%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="0.2" CloakAmount="0" vertModifType="0" LayerAct="1">
-   <Textures>
-    <Texture Map="Diffuse" File="textures/characters/humans/mc/hair_clap_transparency_diffuse.dds">
-     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
-    </Texture>
-   </Textures>
-   <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
-  </Material>
-  <Material Name="Male_Brow_Transparency" MtlFlags="526464" Shader="Hair" GenMask="400008" StringGenMask="%ANISO_SPECULAR%HAIR_PASS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="0.2" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Male_Brow_Transparency" MtlFlags="526464" Shader="Hair" GenMask="20000400008" StringGenMask="%ANISO_SPECULAR%HAIR_PASS%THIN_HAIR" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/male_brow_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams AlphaBlendMultiplier="1" DiffuseWrap="0.5" SecondaryHighlightColor="0.69803923,0.69803923,0.69803923" SecondaryHighlightShiftAmount="0.1" SecondaryHighlightWidth="1.5" ShiftVariation="0" SoftIntersection="0"/>
+   <PublicParams AlphaBlendMultiplier="1" DiffuseWrap="0.5" SecondaryHighlightColor="0.69803923,0.69803923,0.69803923" SecondaryHighlightShiftAmount="0.1" SecondaryHighlightWidth="1.5" ShiftVariation="0" SoftIntersection="0" ThinHairThreshold="0.050000001"/>
   </Material>
-  <Material Name="Male_Brow_Base_Transparency" MtlFlags="526464" Shader="Hair" GenMask="400008" StringGenMask="%ANISO_SPECULAR%HAIR_PASS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="0.5" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Male_Brow_Base_Transparency" MtlFlags="526464" Shader="Hair" GenMask="20000400008" StringGenMask="%ANISO_SPECULAR%HAIR_PASS%THIN_HAIR" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/male_brow_base_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams AlphaBlendMultiplier="1" DiffuseWrap="0.5" SecondaryHighlightColor="0.69803923,0.69803923,0.69803923" SecondaryHighlightShiftAmount="0.1" SecondaryHighlightWidth="1.5" ShiftVariation="0" SoftIntersection="0"/>
+   <PublicParams AlphaBlendMultiplier="1" DiffuseWrap="0.5" SecondaryHighlightColor="0.69803923,0.69803923,0.69803923" SecondaryHighlightShiftAmount="0.1" SecondaryHighlightWidth="1.5" ShiftVariation="0" SoftIntersection="0" ThinHairThreshold="0.050000001"/>
   </Material>
-  <Material Name="Beard_Transparency" MtlFlags="526464" Shader="Hair" GenMask="400008" StringGenMask="%ANISO_SPECULAR%HAIR_PASS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="0.2" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Hair_Transparency" MtlFlags="526464" Shader="Hair" GenMask="20000400008" StringGenMask="%ANISO_SPECULAR%HAIR_PASS%THIN_HAIR" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
-    <Texture Map="Diffuse" File="textures/characters/humans/mc/beard_transparency_diffuse.dds">
+    <Texture Map="Diffuse" File="textures/characters/humans/mc/hair_transparency_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams AlphaBlendMultiplier="1" DiffuseWrap="0.5" SecondaryHighlightColor="0.69803923,0.69803923,0.69803923" SecondaryHighlightShiftAmount="0.1" SecondaryHighlightWidth="1.5" ShiftVariation="0" SoftIntersection="0"/>
+   <PublicParams AlphaBlendMultiplier="1" DiffuseWrap="0.5" SecondaryHighlightColor="0.69803923,0.69803923,0.69803923" SecondaryHighlightShiftAmount="0.1" SecondaryHighlightWidth="1.5" ShiftVariation="0" SoftIntersection="0" ThinHairThreshold="0.050000001"/>
   </Material>
-  <Material Name="&lt;unassigned&gt;" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1.2377672e+30,4.5907939e-41,1.2377653e+30" Specular="0.046665091,0.046665091,0.046665091" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="Scalp_Transparency" MtlFlags="524416" Shader="Illum" GenMask="4000000000000" StringGenMask="%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" AlphaTest="1" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
-    <Texture Map="Diffuse" File="%ENGINE%/EngineAssets/Textures/white.dds">
+    <Texture Map="Diffuse" File="textures/characters/humans/mc/hair_clap_transparency_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
-    <Texture Map="Bumpmap" File="%ENGINE%/EngineAssets/Textures/white_ddn.dds">
+   </Textures>
+   <PublicParams EmittanceMapGamma="1" SSSIndex="1"/>
+  </Material>
+  <Material Name="boots_1" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="0.79910296,0.79910296,0.79910296" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="43.860001" CloakAmount="0" vertModifType="0" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="textures/characters/humans/mc/boots_diffuse.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Bumpmap" File="textures/characters/humans/mc/boots_ddna.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
    <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="Boxers" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="255" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="boots_2" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="0.79910296,0.79910296,0.79910296" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="37.485004" CloakAmount="0" vertModifType="0" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="textures/characters/humans/mc/boots_diffuse.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Bumpmap" File="textures/characters/humans/mc/boots_ddna.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+   </Textures>
+   <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
+  </Material>
+  <Material Name="object_0" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="0.79910296,0.79910296,0.79910296" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="42.840004" CloakAmount="0" vertModifType="0" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="textures/characters/humans/mc/pants_diffuse.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Bumpmap" File="textures/characters/humans/mc/pants_ddna.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+   </Textures>
+   <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
+  </Material>
+  <Material Name="tunic" MtlFlags="524418" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="0.79910296,0.79910296,0.79910296" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="42.330002" CloakAmount="0" vertModifType="0" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="textures/characters/humans/mc/tunic_diffuse.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+    <Texture Map="Bumpmap" File="textures/characters/humans/mc/tunic_ddna.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
+   </Textures>
+   <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
+  </Material>
+  <Material Name="Boxers" MtlFlags="524416" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.046665095,0.046665095,0.046665095" Opacity="1" Shininess="45.645" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/characters/humans/mc/boxers_diffuse.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>

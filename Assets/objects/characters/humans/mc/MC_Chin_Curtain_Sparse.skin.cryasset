@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="eb816987-e41f-4c6a-0ed2-925f8e37006f" source="MC.fbx">
+ <Files>
+  <File path="MC_Chin_Curtain_Sparse.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">28</Detail>
+  <Detail name="triangleCount">11768</Detail>
+  <Detail name="vertexCount">16522</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">9</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/characters/humans/mc/m_mc.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

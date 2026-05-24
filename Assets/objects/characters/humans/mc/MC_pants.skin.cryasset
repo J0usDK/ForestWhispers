@@ -1,4 +1,4 @@
-<AssetMetadata version="0" type="SkinnedMesh" guid="23f92345-1d5d-843b-f5c1-063279971650" source="MC.fbx">
+<AssetMetadata version="0" type="SkinnedMesh" guid="d04cf481-ee8e-a06d-8e62-823fb4c71373" source="MC.fbx">
  <Files>
   <File path="MC_pants.skin"/>
  </Files>
@@ -7,9 +7,9 @@
   <Detail name="triangleCount">4760</Detail>
   <Detail name="vertexCount">3141</Detail>
   <Detail name="16BitPrecision">false</Detail>
-  <Detail name="bonesCount">895</Detail>
+  <Detail name="bonesCount">21</Detail>
  </Details>
  <Dependencies>
-  <Path usageCount="1">./MC.mtl</Path>
+  <Path usageCount="1">materials/characters/humans/mc/m_mc.mtl</Path>
  </Dependencies>
 </AssetMetadata>
