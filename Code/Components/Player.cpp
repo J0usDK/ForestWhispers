@@ -2,6 +2,7 @@
 #include "StdAfx.h"
 #include "Player.h"
 #include "GamePlugin.h"
+#include "Components/Core/Global/Utils/Math.h"
 
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CryCore/StaticInstanceList.h>
@@ -23,17 +24,10 @@ namespace
 
 void CPlayerComponent::Initialize()
 {
-	m_pCameraComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCameraComponent>();
-	m_pInputComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CInputComponent>();
-	m_pCharacterController = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCharacterControllerComponent>();
-	m_pAdvancedAnimationComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CAdvancedAnimationComponent>();
-
-	m_pAdvancedAnimationComponent->SetCharacterFile("Objects/characters/humans/mc/mc.cdf");
-	m_pAdvancedAnimationComponent->SetControllerDefinitionFile("Animations/characters/mc/data/FirstPersonControllerDefinition.xml");
-	m_pAdvancedAnimationComponent->SetMannequinAnimationDatabaseFile("Animations/characters/mc/data/firstperson.adb");
-	m_pAdvancedAnimationComponent->SetDefaultScopeContextName("FirstPersonCharacter");
-	m_pAdvancedAnimationComponent->SetDefaultFragmentName("Idle");
-	m_pAdvancedAnimationComponent->SetAnimationDrivenMotion(false);
+	m_pMovement = m_pEntity->GetOrCreateComponent<CMovementComponent>();
+	m_pAnimator = m_pEntity->GetOrCreateComponent<CAnimationComponent>();
+	m_pCamera = m_pEntity->GetOrCreateComponent<CPlayerCameraComponent>();
+	m_pInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
 }
 
 Cry::Entity::EventFlags CPlayerComponent::GetEventMask() const
@@ -47,168 +41,109 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 	{
 		case Cry::Entity::EEvent::GameplayStarted:
 		{
-			InitializeInput();
 			m_bIsPlaying = true;
 			break;
 		}
 		case Cry::Entity::EEvent::Update:
 		{
-			if (!m_bIsPlaying)
+			if (!m_bIsPlaying || !m_pMovement || !m_pAnimator || !m_pCamera || !m_pInput)
 				break;
-			PlayerMovement();
-			PlayerRotation();
+
+			const SCharacterIntent& intent = m_pInput->GetCurrentIntent();
+			UpdateCamera(intent);
+			UpdateMovement(intent);
+			UpdateAnimation();
 			break;
 		}
 		case Cry::Entity::EEvent::Reset:
 		{
 			m_bIsPlaying = false;
-
-			m_movementDelta = ZERO;
-			m_mouseDeltaRotation = ZERO;
-			m_lookOrientation = IDENTITY;
 			m_headBoneID = -1;
-
-			Matrix34 camDefaultMatrix;
-			camDefaultMatrix.SetTranslation(m_cameraOffset);
-			camDefaultMatrix.SetRotation33(Matrix33(m_pEntity->GetWorldRotation()));
-			m_pCameraComponent->SetTransformMatrix(camDefaultMatrix);
+			m_currentState = EPlayerState::Idle;
 			break;
 		}
 	}
 }
 
-void CPlayerComponent::InitializeInput()
+void CPlayerComponent::UpdateCamera(const SCharacterIntent& intent)
 {
-	m_pInputComponent->RegisterAction("player", "moveforward", [this](int activationMode, float value) { m_movementDelta.y = value; });
-	m_pInputComponent->BindAction("player", "moveforward", eAID_KeyboardMouse, eKI_W);
+	m_pCamera->ApplyInputDelta(intent.lookDelta);
 
-	m_pInputComponent->RegisterAction("player", "moveback", [this](int activationMode, float value) { m_movementDelta.y = -value; });
-	m_pInputComponent->BindAction("player", "moveback", eAID_KeyboardMouse, eKI_S);
+	if (m_headBoneID == -1)
+		if (auto boneID = m_pAnimator->GetBoneID(m_kHeadBoneName))
+			m_headBoneID = *boneID;
 
-	m_pInputComponent->RegisterAction("player", "moveright", [this](int activationMode, float value) { m_movementDelta.x = value; });
-	m_pInputComponent->BindAction("player", "moveright", eAID_KeyboardMouse, eKI_D);
-
-	m_pInputComponent->RegisterAction("player", "moveleft", [this](int activationMode, float value) { m_movementDelta.x = -value; });
-	m_pInputComponent->BindAction("player", "moveleft", eAID_KeyboardMouse, eKI_A);
-
-	m_pInputComponent->RegisterAction("player", "yaw", [this](int activationMode, float value) { m_mouseDeltaRotation.y -= value; });
-	m_pInputComponent->BindAction("player", "yaw", eAID_KeyboardMouse, eKI_MouseY);
-
-	m_pInputComponent->RegisterAction("player", "pitch", [this](int activationMode, float value) { m_mouseDeltaRotation.x -= value; });
-	m_pInputComponent->BindAction("player", "pitch", eAID_KeyboardMouse, eKI_MouseX);
-
-	m_pInputComponent->RegisterAction("player", "sprint", [this](int activationMode, float value) { m_bWantsToSprint = (value > 0.0f); });
-	m_pInputComponent->BindAction("player", "sprint", eAID_KeyboardMouse, eKI_LShift);
-}
-
-void CPlayerComponent::PlayerMovement()
-{
-	float frameTime = gEnv->pTimer->GetFrameTime();
-	Vec2 inputDir = m_movementDelta;
-	if (inputDir.GetLengthSquared() > 1.0f)
-		inputDir.Normalize();
-
-	bool bCanSprint = m_bWantsToSprint && (m_movementDelta.y > 0.1f);
-	float targetMaxSpeed = bCanSprint ? m_maxRunSpeed : m_maxWalkSpeed;
-
-	Vec2 targetVelocity = inputDir * targetMaxSpeed;
-	float accelRate = (targetVelocity.GetLengthSquared() > m_currentVelocity.GetLengthSquared()) ? m_acceleration : m_deceleration;
-	m_currentVelocity = Vec2::CreateLerp(m_currentVelocity, targetVelocity, accelRate * frameTime);
-
-	float currentSpeed = m_currentVelocity.GetLength();
-	if (currentSpeed > 0.01f)
-		m_lastMoveDirection = Vec3(m_currentVelocity.x, m_currentVelocity.y, 0.0f).GetNormalizedSafe();
-
-	if (currentSpeed > 0.01f)
+	if (m_headBoneID >= 0)
 	{
-		Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(m_lookOrientation));
-		Ang3 flatAngles(ypr.x, 0.0f, 0.0f);
-		Quat flatYaw = Quat(CCamera::CreateOrientationYPR(flatAngles));
-		Vec3 velocity = flatYaw * m_lastMoveDirection * currentSpeed;
-		m_pCharacterController->SetVelocity(velocity);
+		if (auto headPos = m_pAnimator->GetBoneWorldPosition(m_headBoneID))
+			m_pCamera->SetPivotPosition(*headPos);
 	}
 	else
-		m_pCharacterController->SetVelocity(ZERO);
-	UpdateAnimationState(currentSpeed);
-}
-void CPlayerComponent::PlayerRotation()
-{
-	Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(m_lookOrientation));
-	ypr.x += m_mouseDeltaRotation.x * m_rotationSpeed;
-	ypr.y = CLAMP(ypr.y + m_mouseDeltaRotation.y * m_rotationSpeed, m_rotationLimitsMinPitch, m_rotationLimitsMaxPitch);
-	ypr.z = 0.0f;
-
-	m_lookOrientation = Quat(CCamera::CreateOrientationYPR(ypr));
-	Ang3 yawOnly(ypr.x, 0.0f, 0.0f);
-	m_pEntity->SetRotation(Quat(CCamera::CreateOrientationYPR(yawOnly)));
-
-	Ang3 pitchOnly(0.0f, ypr.y, 0.0f);
-	Matrix34 finalCamMatrix;
-	finalCamMatrix.SetRotation33(Matrix33(CCamera::CreateOrientationYPR(pitchOnly)));
-
-	Vec3 cameraPosition = m_cameraOffset;
-	if (auto boneMat = GetHeadBoneWorldMatrix())
-		cameraPosition = boneMat->TransformPoint(m_cameraOffset);
-
-	finalCamMatrix.SetTranslation(cameraPosition);
-	m_pCameraComponent->SetTransformMatrix(finalCamMatrix);
-	m_mouseDeltaRotation = ZERO;
+		m_pCamera->SetPivotPosition(m_pEntity->GetWorldPos() + m_defaultCameraPivot);
 }
 
-void CPlayerComponent::UpdateAnimationState(float currentSpeed)
+void CPlayerComponent::UpdateMovement(const SCharacterIntent& intent)
 {
-	if (!m_pAdvancedAnimationComponent) return;
+	SMovementParams moveParams;
+	SRotationParams rotParams;
 
-	float angleRad = 0.0f;
-	if (currentSpeed > 0.01f)
-		angleRad = atan2(m_lastMoveDirection.x, m_lastMoveDirection.y);
+	if (!Math::IsNearlyZero(intent.movement.GetLengthSquared()))
+	{
+		bool bCanSprint = intent.sprint && (intent.movement.y > Math::DEFAULT_EPSILON);
+		moveParams.maxSpeed = bCanSprint ? m_maxRunSpeed : m_maxWalkSpeed;
 
-	m_pAdvancedAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, currentSpeed);
-	m_pAdvancedAnimationComponent->SetMotionParameter(eMotionParamID_TravelAngle, angleRad);
+		Quat camYawRot = Quat(CCamera::CreateOrientationYPR(Ang3(m_pCamera->GetAbsoluteYaw(), 0.0f, 0.0f)));
+		
+		Vec3 localInput(intent.movement.x, intent.movement.y, 0.0f);
+		moveParams.targetDirection = camYawRot * localInput;
+	}
+
+	moveParams.acceleration = m_acceleration;
+	moveParams.deceleration = m_deceleration;
+
+	rotParams.targetRotation = Quat(CCamera::CreateOrientationYPR(Ang3(m_pCamera->GetAbsoluteYaw(), 0.0f, 0.0f)));
+	rotParams.turnSpeed = m_turnSpeed;
+
+	m_pMovement->SetMovementRequest(moveParams);
+	m_pMovement->SetRotationRequest(rotParams);
+}
+
+void CPlayerComponent::UpdateAnimation()
+{
+	float currentSpeed = m_pMovement->GetCurrentSpeed();
+	Vec3 currentVelocity = m_pMovement->GetCurrentVelocity();
+
+	float travelAngle = 0.0f;
+	if (!Math::IsNearlyZero(currentSpeed))
+	{
+		float localX = currentVelocity.Dot(m_pEntity->GetRightDir());
+		float localY = currentVelocity.Dot(m_pEntity->GetForwardDir());
+		travelAngle = atan2(localX, localY);
+	}
+
+	m_pAnimator->SetMotionParameter(eMotionParamID_TravelSpeed, currentSpeed);
+	m_pAnimator->SetMotionParameter(eMotionParamID_TravelAngle, travelAngle, 5.0f, EParamInterpType::Angle);
 
 	EPlayerState targetState = EPlayerState::Idle;
-	if (currentSpeed > m_maxWalkSpeed + 0.2f)
-		targetState = EPlayerState::Running;
-	else if (currentSpeed > 0.1f)
-		targetState = EPlayerState::Walking;
+	if (currentSpeed > m_maxWalkSpeed + Math::DEFAULT_EPSILON)
+		targetState = EPlayerState::Run;
+	else if (!Math::IsNearlyZero(currentSpeed))
+		targetState = EPlayerState::Walk;
 
 	if (m_currentState != targetState)
-		SetPlayerState(targetState);
-
-}
-
-void CPlayerComponent::SetPlayerState(EPlayerState state)
-{
-	m_currentState = state;
-	switch (m_currentState)
 	{
-		case EPlayerState::Idle:
-			m_pAdvancedAnimationComponent->QueueFragment("Idle");
-			break;
-		case EPlayerState::Walking:
-			m_pAdvancedAnimationComponent->QueueFragment("Walk");
-			break;
-		case EPlayerState::Running:
-			m_pAdvancedAnimationComponent->QueueFragment("Run");
-			break;
+		m_currentState = targetState;
+		switch (m_currentState)
+		{
+			case EPlayerState::Idle:
+				m_pAnimator->QueueFragment(m_kIdleName);
+				break;
+			case EPlayerState::Walk:
+				m_pAnimator->QueueFragment(m_kWalkName);
+				break;
+			case EPlayerState::Run:
+				m_pAnimator->QueueFragment(m_kRunName);
+				break;
+		}
 	}
-}
-
-std::optional<Matrix34> CPlayerComponent::GetHeadBoneWorldMatrix()
-{
-	if (ICharacterInstance* pCharacter = m_pAdvancedAnimationComponent->GetCharacter())
-	{
-		if (m_headBoneID == -1)
-			m_headBoneID = pCharacter->GetIDefaultSkeleton().GetJointIDByName("CC_Base_Head");
-		if (m_headBoneID >= 0)
-			if (ISkeletonPose* pSkeletonPose = pCharacter->GetISkeletonPose())
-				return GetBoneWorldMatrix(pSkeletonPose, m_headBoneID);
-	}
-	return std::nullopt;
-}
-
-Matrix34 CPlayerComponent::GetBoneWorldMatrix(ISkeletonPose* skelPose, int16 boneID)
-{
-	QuatT boneTransform = skelPose->GetAbsJointByID(boneID);
-	return m_pAdvancedAnimationComponent->GetTransformMatrix() * Matrix34(boneTransform);
 }
