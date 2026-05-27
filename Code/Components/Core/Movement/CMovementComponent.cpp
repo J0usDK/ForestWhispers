@@ -46,7 +46,7 @@ void CMovementComponent::Move(float frameTime)
 	float accelRate = (targetVelocity.GetLengthSquared() > m_currentVelocity.GetLengthSquared()) ? m_movementParams.acceleration : m_movementParams.deceleration;
 	m_currentVelocity = Vec3::CreateLerp(m_currentVelocity, targetVelocity, accelRate * frameTime);
 
-	if (Math::IsNearlyZero(m_currentVelocity.GetLength()))
+	if (!Math::IsNearlyZero(m_currentVelocity.GetLength()))
 		m_pCharacterController->SetVelocity(m_currentVelocity);
 	else
 		Stop();
