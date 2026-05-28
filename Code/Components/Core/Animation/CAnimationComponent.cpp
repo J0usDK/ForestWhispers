@@ -25,7 +25,21 @@ void CAnimationComponent::Initialize()
 
 Cry::Entity::EventFlags CAnimationComponent::GetEventMask() const
 {
-	return Cry::Entity::EEvent::Update | Cry::Entity::EEvent::Reset;
+	Cry::Entity::EventFlags flags = Cry::Entity::EEvent::Reset;
+
+	if (m_bIsUpdating)
+		flags |= Cry::Entity::EEvent::Update;
+
+	return flags;
+}
+
+void CAnimationComponent::SetUpdateActive(bool bActive)
+{
+	if (m_bIsUpdating == bActive)
+		return;
+
+	m_bIsUpdating = bActive;
+	m_pEntity->UpdateComponentEventMask(this);
 }
 
 void CAnimationComponent::ProcessEvent(const SEntityEvent& event)
@@ -41,6 +55,7 @@ void CAnimationComponent::ProcessEvent(const SEntityEvent& event)
 		case Cry::Entity::EEvent::Reset:
 		{
 			m_motionParams = {};
+			SetUpdateActive(false);
 			break;
 		}
 	}
@@ -54,7 +69,7 @@ void CAnimationComponent::QueueFragment(const char* fragmentName)
 
 void CAnimationComponent::SetMotionParameter(EMotionParamID paramID, float value, float interpSpeed, EParamInterpType interpType)
 {
-	if (!m_pAnimComponent || paramID < 0)
+	if (!m_pAnimComponent || paramID < 0 || paramID >= eMotionParamID_COUNT)
 		return;
 		
 	auto& param = m_motionParams[paramID];
@@ -62,37 +77,52 @@ void CAnimationComponent::SetMotionParameter(EMotionParamID paramID, float value
 	param.interpSpeed = interpSpeed;
 	param.type = interpType;
 
-	if (Math::IsNearlyZero(interpSpeed) || Math::IsNearlyZero(param.target - param.current))
+	float diff = 0.0f;
+	if (interpType == EParamInterpType::Angle)
+		diff = std::remainderf(param.target - param.current, 2.0f * g_PI);
+	else
+		diff = param.target - param.current;
+
+	if (Math::IsNearlyZero(interpSpeed) || Math::IsNearlyZero(diff))
 	{
 		param.current = value;
-		param.bIsActive = true;
+		param.bIsActive = false;
 		m_pAnimComponent->SetMotionParameter(paramID, param.current);
 	}
 	else
+	{
 		param.bIsActive = true;
+		SetUpdateActive(true);
+	}
 }
 
 void CAnimationComponent::UpdateParameters(float frameTime)
 {
 	if (!m_pAnimComponent) return;
 
+	bool bAnyActive = false;
+
 	for (int i = 0; i < eMotionParamID_COUNT; ++i)
 	{
 		auto& param = m_motionParams[i];
 		if (!param.bIsActive) continue;
 
+		const float t = CLAMP(frameTime * param.interpSpeed, 0.0f, 1.0f);
+		float diff = 0.0f;
+
 		switch (param.type)
 		{
 			case EParamInterpType::Angle:
 			{
-				float diff = std::remainderf(param.target - param.current, 2.0f * g_PI);
-				param.current += diff * CLAMP(frameTime * param.interpSpeed, 0.0f, 1.0f);
+				diff = std::remainderf(param.target - param.current, 2.0f * g_PI);
+				param.current += diff * t;
 				param.current = std::remainderf(param.current, 2.0f * g_PI);
 				break;
 			}
 			case EParamInterpType::Linear:
 			{
-				param.current += (param.target - param.current) * CLAMP(frameTime * param.interpSpeed, 0.0f, 1.0f);
+				diff = param.target - param.current;
+				param.current += diff * t;
 				break;
 			}
 			case EParamInterpType::None:
@@ -102,14 +132,19 @@ void CAnimationComponent::UpdateParameters(float frameTime)
 			}
 		}
 
-		m_pAnimComponent->SetMotionParameter(static_cast<EMotionParamID>(i), param.current);
-		if (Math::IsNearlyZero(param.target - param.current))
+		if (Math::IsNearlyZero(diff))
 		{
 			param.current = param.target;
-			m_pAnimComponent->SetMotionParameter(static_cast<EMotionParamID>(i), param.current);
 			param.bIsActive = false;
 		}
+		else
+			bAnyActive = true;
+
+		m_pAnimComponent->SetMotionParameter(static_cast<EMotionParamID>(i), param.current);
 	}
+
+	if (!bAnyActive)
+		SetUpdateActive(false);
 }
 
 std::optional<int16> CAnimationComponent::GetBoneID(const char* boneName) const

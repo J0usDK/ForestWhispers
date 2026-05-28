@@ -60,6 +60,8 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 			m_bIsPlaying = false;
 			m_headBoneID = -1;
 			m_currentState = EPlayerState::Idle;
+			if (m_pAnimator)
+				m_pAnimator->QueueFragment(m_kIdleName);
 			break;
 		}
 	}
@@ -87,21 +89,22 @@ void CPlayerComponent::UpdateMovement(const SCharacterIntent& intent)
 	SMovementParams moveParams;
 	SRotationParams rotParams;
 
+	Quat camYawRot = Quat::CreateRotationZ(m_pCamera->GetAbsoluteYaw());
+
 	if (!Math::IsNearlyZero(intent.movement.GetLengthSquared()))
 	{
 		bool bCanSprint = intent.sprint && (intent.movement.y > Math::DEFAULT_EPSILON);
 		moveParams.maxSpeed = bCanSprint ? m_maxRunSpeed : m_maxWalkSpeed;
-
-		Quat camYawRot = Quat(CCamera::CreateOrientationYPR(Ang3(m_pCamera->GetAbsoluteYaw(), 0.0f, 0.0f)));
 		
 		Vec3 localInput(intent.movement.x, intent.movement.y, 0.0f);
+		localInput.NormalizeSafe();
 		moveParams.targetDirection = camYawRot * localInput;
 	}
 
 	moveParams.acceleration = m_acceleration;
 	moveParams.deceleration = m_deceleration;
 
-	rotParams.targetRotation = Quat(CCamera::CreateOrientationYPR(Ang3(m_pCamera->GetAbsoluteYaw(), 0.0f, 0.0f)));
+	rotParams.targetRotation = camYawRot;
 	rotParams.turnSpeed = m_turnSpeed;
 
 	m_pMovement->SetMovementRequest(moveParams);

@@ -33,6 +33,9 @@ public:
 	std::optional<Vec3> GetBoneWorldPosition(int16 boneID) const;
 
 private:
+	void SetUpdateActive(bool bActive);
+
+private:
 	Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimComponent = nullptr;
 
 	struct SParamState
@@ -43,6 +46,8 @@ private:
 		EParamInterpType type = EParamInterpType::None;
 		bool bIsActive = false;
 	};
+
+	bool m_bIsUpdating = false;
 
 	std::array<SParamState, eMotionParamID_COUNT> m_motionParams;
 };

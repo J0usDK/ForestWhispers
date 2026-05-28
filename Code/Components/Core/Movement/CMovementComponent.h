@@ -34,12 +34,15 @@ public:
 	void SetMovementRequest(const SMovementParams& params);
 	void SetRotationRequest(const SRotationParams& params);
 	float GetCurrentSpeed() const;
+	float GetCurrentSpeedSquared() const;
 	Vec3 GetCurrentVelocity() const;
 
 private:
 	void Move(float frameTime);
 	void Rotate(float frameTime);
 	void Stop();
+
+	void SetUpdateActive(bool bActive);
 
 private:
 	Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
@@ -48,5 +51,11 @@ private:
 	SRotationParams m_rotationParams;
 
 	Vec3 m_currentVelocity = ZERO;
+
+	bool m_bIsMoving = false;
+	bool m_bIsRotating = false;
+
+	bool m_bIsUpdating = true;
+
 };
 

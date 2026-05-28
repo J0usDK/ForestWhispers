@@ -75,9 +75,9 @@ void CPlayerInputComponent::ProcessEvent(const SEntityEvent& event)
 
 void CPlayerInputComponent::FlushIntent()
 {
-	m_accumulator = SCharacterIntent();
-	m_frameIntent = SCharacterIntent();
-	m_inputAxis = SInputAxis();
+	m_accumulator = {};
+	m_frameIntent = {};
+	m_inputAxis = {};
 }
 
 void CPlayerInputComponent::SwitchContext(EInputContext newContext)

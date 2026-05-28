@@ -33,6 +33,7 @@ public:
 
 private:
 	void UpdateCameraTransform();
+	void UpdateCameraCache();
 
 private:
 	Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
@@ -42,9 +43,20 @@ private:
 		float localYaw = 0.0f;
 		float localPitch = 0.0f;
 
+		float baseYaw = 0.0f;
+		float basePitch = 0.0f;
+
 		Vec3 pivotPosition = ZERO;
 		Quat baseFrameRotation = IDENTITY;
 	} m_cameraState;
+
+	struct SCameraCache
+	{
+		Quat lookRotation = IDENTITY;
+
+		float absoluteYaw = 0.0f;
+		float absolutePitch = 0.0f;
+	} m_cameraCache;
 
 	float m_rotationSpeed = 0.0f;
 	float m_pitchMin = 0.0f;
