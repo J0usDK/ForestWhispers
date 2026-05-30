@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="aeb5f9fa-d9e0-5910-adba-3680b7997d29" source="wood_pile_c.fbx">
+<AssetMetadata version="0" type="Mesh" guid="6a6a838c-3e8e-cb72-a34f-880209f40f8e" source="wood_pile_c.fbx">
  <Files>
   <File path="wood_pile_c.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">7</Detail>
+  <Detail name="materialCount">14</Detail>
   <Detail name="triangleCount">6949</Detail>
   <Detail name="vertexCount">5525</Detail>
   <Detail name="16BitPrecision">false</Detail>

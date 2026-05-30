@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="2bde03dd-9db2-1a7e-abb8-d37d813471fd" source="stacked_logs_half_4m_a.fbx">
+<AssetMetadata version="0" type="Mesh" guid="b27e6314-c0cb-0d27-da64-5613786be481" source="stacked_logs_half_4m_a.fbx">
  <Files>
   <File path="stacked_logs_half_4m_a.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">4</Detail>
+  <Detail name="materialCount">5</Detail>
   <Detail name="triangleCount">2396</Detail>
   <Detail name="vertexCount">4318</Detail>
   <Detail name="16BitPrecision">false</Detail>

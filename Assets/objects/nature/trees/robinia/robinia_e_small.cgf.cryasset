@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="32955005-2528-555e-d941-90a43c273e39" source="robinia_e_small.fbx">
+<AssetMetadata version="0" type="Mesh" guid="2631b470-84eb-fbff-0691-51ed25daa131" source="robinia_e_small.fbx">
  <Files>
   <File path="robinia_e_small.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">3</Detail>
+  <Detail name="materialCount">5</Detail>
   <Detail name="triangleCount">2079</Detail>
   <Detail name="vertexCount">3185</Detail>
   <Detail name="16BitPrecision">false</Detail>

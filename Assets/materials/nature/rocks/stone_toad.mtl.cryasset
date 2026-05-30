@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Material" guid="281a8eac-d786-ccc1-9420-43fcf70b7fed" source="" timestamp="1776898702">
+<AssetMetadata version="0" type="Material" guid="281a8eac-d786-ccc1-9420-43fcf70b7fed" source="" timestamp="1780106639">
  <Files>
   <File path="stone_toad.mtl"/>
  </Files>
  <Details>
-  <Detail name="subMaterialCount">4</Detail>
+  <Detail name="subMaterialCount">5</Detail>
   <Detail name="textureCount">11</Detail>
  </Details>
  <Dependencies>

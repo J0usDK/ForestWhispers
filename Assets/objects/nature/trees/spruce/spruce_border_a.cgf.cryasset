@@ -1,11 +1,11 @@
-<AssetMetadata version="0" type="Mesh" guid="6b8a79bb-1511-99e6-bfd4-bff28f754c35" source="spruce_border_a.fbx">
+<AssetMetadata version="0" type="Mesh" guid="d993e9e7-8b2e-c7ef-415e-633a875ab8a5" source="spruce_border_a.fbx">
  <Files>
   <File path="spruce_border_a.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">3</Detail>
-  <Detail name="triangleCount">2992</Detail>
-  <Detail name="vertexCount">3003</Detail>
+  <Detail name="materialCount">14</Detail>
+  <Detail name="triangleCount">2976</Detail>
+  <Detail name="vertexCount">2988</Detail>
   <Detail name="16BitPrecision">false</Detail>
  </Details>
  <Dependencies>

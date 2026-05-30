@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="fd93704c-f5ee-db38-b6f4-20a2b56030e4" source="spruce_med_a.fbx">
+<AssetMetadata version="0" type="Mesh" guid="c470f078-4f2e-8c64-ca1c-5a6ce19957c6" source="spruce_med_a.fbx">
  <Files>
   <File path="spruce_med_a.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">12</Detail>
+  <Detail name="materialCount">14</Detail>
   <Detail name="triangleCount">3720</Detail>
   <Detail name="vertexCount">4170</Detail>
   <Detail name="16BitPrecision">false</Detail>

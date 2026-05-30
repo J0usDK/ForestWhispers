@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="cdbe01c8-ac52-f3e0-5135-2060b9b811a6" source="canyon_waterfall.fbx">
+<AssetMetadata version="0" type="Mesh" guid="b37d4be8-9cc0-793f-a197-bb6bbcba82f0" source="canyon_waterfall.fbx">
  <Files>
   <File path="canyon_waterfall.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">12</Detail>
+  <Detail name="materialCount">15</Detail>
   <Detail name="triangleCount">7500</Detail>
   <Detail name="vertexCount">4466</Detail>
   <Detail name="16BitPrecision">false</Detail>

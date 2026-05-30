@@ -1,11 +1,11 @@
-<AssetMetadata version="0" type="Mesh" guid="1f783386-d2a7-032a-0569-3b2d3b7f493a" source="robinia_d_large.fbx">
+<AssetMetadata version="0" type="Mesh" guid="d8f888b2-9b2c-9aac-eef7-56e43a938209" source="robinia_d_large.fbx">
  <Files>
   <File path="robinia_d_large.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">3</Detail>
+  <Detail name="materialCount">5</Detail>
   <Detail name="triangleCount">5384</Detail>
-  <Detail name="vertexCount">8892</Detail>
+  <Detail name="vertexCount">8912</Detail>
   <Detail name="16BitPrecision">false</Detail>
  </Details>
  <Dependencies>

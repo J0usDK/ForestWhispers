@@ -1,6 +1,6 @@
 <Material MtlFlags="524544" vertModifType="0">
  <SubMaterials>
-  <Material Name="outside" MtlFlags="524416" Shader="Illum" GenMask="60000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SPECULAR_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="1,1,1" Opacity="1" Shininess="35.955006" CloakAmount="0" vertModifType="0" LayerAct="1">
+  <Material Name="outside" MtlFlags="524416" Shader="Illum" GenMask="60000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SPECULAR_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="1,1,1" Opacity="1" Shininess="35.955009" CloakAmount="0" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/rocks/stone_toad/granite_tiled_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="3" TileV="3"/>
@@ -58,6 +58,9 @@
     </Texture>
    </Textures>
    <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
+  </Material>
+  <Material Name="physics_proxy" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_rock" MatTemplate="" Diffuse="1,1,1" Opacity="1" Shininess="9.9450016" CloakAmount="0" vertModifType="0" LayerAct="1">
+   <Textures />
   </Material>
  </SubMaterials>
  <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>

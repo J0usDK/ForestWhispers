@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="b3545609-53e8-ccba-ffa9-a226a67a78c4" source="toad_prestandin.fbx">
+<AssetMetadata version="0" type="Mesh" guid="8a309204-f034-ec36-1049-63b4bdaabf35" source="toad_prestandin.fbx">
  <Files>
   <File path="toad_prestandin.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">4</Detail>
+  <Detail name="materialCount">6</Detail>
   <Detail name="triangleCount">11390</Detail>
   <Detail name="vertexCount">6968</Detail>
   <Detail name="16BitPrecision">false</Detail>

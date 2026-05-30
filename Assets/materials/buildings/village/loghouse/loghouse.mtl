@@ -1,6 +1,6 @@
 <Material MtlFlags="524544" vertModifType="0">
  <SubMaterials>
-  <Material Name="proxy" MtlFlags="525442" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="" MatTemplate="" Diffuse="1,0,0" Specular="0,0,0" Opacity="1" Shininess="9.9450016" vertModifType="0" LayerAct="1">
+  <Material Name="proxy" MtlFlags="525442" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_wood" MatTemplate="" Diffuse="1,0,0" Specular="0,0,0" Opacity="1" Shininess="9.9450016" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
   <Material Name="wood" MtlFlags="524418" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.029556843,0.029556843,0.029556843" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
@@ -67,7 +67,7 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams BackLightScale="0.30000001" BumpMapTile="1" BumpScale="0" TintCloudiness="0.025" TintColor="0.18823531,0.227451,0.227451"/>
+   <PublicParams BumpMapTile="1" TintColor="0.18823531,0.227451,0.227451" TintCloudiness="0.025" BackLightScale="0.30000001" BumpScale="0"/>
   </Material>
   <Material Name="curtains" MtlFlags="524450" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.026241222,0.026241222,0.026241222" Opacity="1" Shininess="255" AlphaTest="0.69999999" vertModifType="0" LayerAct="1">
    <Textures>

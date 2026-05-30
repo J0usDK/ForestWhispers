@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="cd060796-f245-3639-f303-f262348ab3af" source="rock_forest_group_no_moss_c.fbx">
+<AssetMetadata version="0" type="Mesh" guid="fdb54e3e-c070-ce2a-27c0-63c563f34d3c" source="rock_forest_group_no_moss_c.fbx">
  <Files>
   <File path="rock_forest_group_no_moss_c.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">11</Detail>
+  <Detail name="materialCount">13</Detail>
   <Detail name="triangleCount">19326</Detail>
   <Detail name="vertexCount">11787</Detail>
   <Detail name="16BitPrecision">false</Detail>

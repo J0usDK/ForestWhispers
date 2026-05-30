@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="984afa7a-6725-74c1-36a8-07981b97345f" source="canyon_rock_d_moss.fbx">
+<AssetMetadata version="0" type="Mesh" guid="d306a612-f05c-144b-cd15-6de17006200c" source="canyon_rock_d_moss.fbx">
  <Files>
   <File path="canyon_rock_d_moss.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">10</Detail>
+  <Detail name="materialCount">15</Detail>
   <Detail name="triangleCount">3398</Detail>
   <Detail name="vertexCount">2043</Detail>
   <Detail name="16BitPrecision">false</Detail>

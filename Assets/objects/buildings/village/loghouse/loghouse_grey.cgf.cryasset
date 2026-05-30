@@ -1,11 +1,11 @@
-<AssetMetadata version="0" type="Mesh" guid="7baba89a-7cbc-b1a0-52e1-565f39e51fae" source="loghouse_grey.fbx">
+<AssetMetadata version="0" type="Mesh" guid="05ea6857-bcd1-4723-1e03-5d747ad96ae2" source="loghouse_grey.fbx">
  <Files>
   <File path="loghouse_grey.cgf"/>
  </Files>
  <Details>
   <Detail name="materialCount">12</Detail>
   <Detail name="triangleCount">49507</Detail>
-  <Detail name="vertexCount">91407</Detail>
+  <Detail name="vertexCount">91405</Detail>
   <Detail name="16BitPrecision">false</Detail>
  </Details>
  <Dependencies>

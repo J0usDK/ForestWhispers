@@ -1,11 +1,11 @@
-<AssetMetadata version="0" type="Mesh" guid="d67fbdec-dbc9-e933-b489-c4a9f1f6c86d" source="robinia_c_leaning.fbx">
+<AssetMetadata version="0" type="Mesh" guid="a11ddde0-a8ac-5050-3463-ca476c9448a7" source="robinia_c_leaning.fbx">
  <Files>
   <File path="robinia_c_leaning.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">3</Detail>
+  <Detail name="materialCount">5</Detail>
   <Detail name="triangleCount">4856</Detail>
-  <Detail name="vertexCount">7259</Detail>
+  <Detail name="vertexCount">7281</Detail>
   <Detail name="16BitPrecision">false</Detail>
  </Details>
  <Dependencies>

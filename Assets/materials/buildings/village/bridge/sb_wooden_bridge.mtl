@@ -47,6 +47,9 @@
   <Material Name="proxy" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_wood" MatTemplate="" Diffuse="1,0,0" Specular="0,0,0" Opacity="1" Shininess="10" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
+  <Material Name="proxy_mat" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_wood" MatTemplate="" Diffuse="1,1,1" Opacity="1" Shininess="9.9450016" CloakAmount="0" vertModifType="0" LayerAct="1">
+   <Textures />
+  </Material>
  </SubMaterials>
  <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
 </Material>

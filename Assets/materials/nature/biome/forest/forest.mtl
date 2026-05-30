@@ -35,7 +35,7 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams bendDetailLeafAmplitude="0.85699999" bendDetailFrequency="0.2" bendDetailBranchAmplitude="-1" VertexAlphaBlendFactor="1" NormalViewDependency="0.5" TransmittanceColor="0.67058825,0.84313732,0.54901963" CapOpacityFalloff="0" BackDiffuseMultiplier="1"/>
+   <PublicParams BackDiffuseMultiplier="1" CapOpacityFalloff="0" NormalViewDependency="0.5" TransmittanceColor="0.67058825,0.84313732,0.54901963" VertexAlphaBlendFactor="1" bendDetailBranchAmplitude="-1" bendDetailFrequency="0.2" bendDetailLeafAmplitude="0.85699999"/>
   </Material>
   <Material Name="pine_distance_alpha" MtlFlags="524418" Shader="Vegetation" GenMask="2400800020" StringGenMask="%LEAVES%NORMAL_MAP%TEMP_VEGETATION%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="255" AlphaTest="0.46000001" vertModifType="0" LayerAct="1">
    <Textures>
@@ -49,7 +49,7 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams bendDetailLeafAmplitude="0.2" bendDetailFrequency="1" bendDetailBranchAmplitude="-0.5" VertexAlphaBlendFactor="1" NormalViewDependency="0.5" TransmittanceColor="1,1,1" CapOpacityFalloff="1" BackDiffuseMultiplier="0.5"/>
+   <PublicParams BackDiffuseMultiplier="0.5" CapOpacityFalloff="1" NormalViewDependency="0.5" TransmittanceColor="1,1,1" VertexAlphaBlendFactor="1" bendDetailBranchAmplitude="-0.5" bendDetailFrequency="1" bendDetailLeafAmplitude="0.2"/>
   </Material>
   <Material Name="pine_distance_solid" MtlFlags="524418" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="0.21952623,0.21952623,0.21952623" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
    <Textures>
@@ -96,7 +96,7 @@
    </Textures>
    <PublicParams BlendFactor="3" BlendFalloff="1.5" BlendLayer2Specular="0.02" BlendLayer2Tiling="1" BlendMaskTiling="0.30000001" DetailBumpScale="0.69999999" DetailDiffuseScale="0" DetailGlossScale="0.5" EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="rock_a" MtlFlags="524418" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="51.000004" vertModifType="0" LayerAct="1">
+  <Material Name="rock_a" MtlFlags="524418" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="51.000008" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/decals/moss/moss_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="2" TileV="2"/>
@@ -117,9 +117,9 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams BlendFalloff="5.1999998" EmittanceMapGamma="1" BlendLayer2Tiling="2" DetailDiffuseScale="0" SSSIndex="0" DetailBumpScale="3" BlendMaskTiling="3" BlendFactor="2.5999999" DetailGlossScale="0" BlendLayer2Specular="0.02"/>
+   <PublicParams BlendFactor="2.5999999" BlendFalloff="5.1999998" BlendLayer2Specular="0.02" BlendLayer2Tiling="2" BlendMaskTiling="3" DetailBumpScale="3" DetailDiffuseScale="0" DetailGlossScale="0" EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="rock_b" MtlFlags="524418" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="51.000004" vertModifType="0" LayerAct="1">
+  <Material Name="rock_b" MtlFlags="524418" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="51.000008" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/decals/moss/moss_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="2" TileV="2"/>
@@ -140,9 +140,9 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams BlendFalloff="3.5" EmittanceMapGamma="1" BlendLayer2Tiling="2" DetailDiffuseScale="0" SSSIndex="0" DetailBumpScale="2" BlendMaskTiling="3" BlendFactor="2.54" DetailGlossScale="0" BlendLayer2Specular="0.02"/>
+   <PublicParams BlendFactor="2.54" BlendFalloff="3.5" BlendLayer2Specular="0.02" BlendLayer2Tiling="2" BlendMaskTiling="3" DetailBumpScale="2" DetailDiffuseScale="0" DetailGlossScale="0" EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="rock_c" MtlFlags="524418" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="51.000004" vertModifType="0" LayerAct="1">
+  <Material Name="rock_c" MtlFlags="524418" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="51.000008" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/decals/moss/moss_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="2" TileV="2"/>
@@ -163,9 +163,9 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams BlendFalloff="1.2" EmittanceMapGamma="1" BlendLayer2Tiling="2" DetailDiffuseScale="0" SSSIndex="0" DetailBumpScale="2" BlendMaskTiling="3" BlendFactor="5.1500001" DetailGlossScale="0" BlendLayer2Specular="0.02"/>
+   <PublicParams BlendFactor="5.1500001" BlendFalloff="1.2" BlendLayer2Specular="0.02" BlendLayer2Tiling="2" BlendMaskTiling="3" DetailBumpScale="2" DetailDiffuseScale="0" DetailGlossScale="0" EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="rock_d" MtlFlags="524418" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="51.000004" vertModifType="0" LayerAct="1">
+  <Material Name="rock_d" MtlFlags="524418" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="51.000008" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/decals/moss/moss_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="2" TileV="2"/>
@@ -186,9 +186,9 @@
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
     </Texture>
    </Textures>
-   <PublicParams BlendFalloff="3.0999999" EmittanceMapGamma="1" BlendLayer2Tiling="2" DetailDiffuseScale="0" SSSIndex="0" DetailBumpScale="2" BlendMaskTiling="3" BlendFactor="2.75" DetailGlossScale="0" BlendLayer2Specular="0.02"/>
+   <PublicParams BlendFactor="2.75" BlendFalloff="3.0999999" BlendLayer2Specular="0.02" BlendLayer2Tiling="2" BlendMaskTiling="3" DetailBumpScale="2" DetailDiffuseScale="0" DetailGlossScale="0" EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="moss_layer" MtlFlags="524450" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="18.105003" AlphaTest="0.40000001" vertModifType="0" LayerAct="1">
+  <Material Name="moss_layer" MtlFlags="524450" Shader="Illum" GenMask="4000000000020" StringGenMask="%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="18.105005" AlphaTest="0.40000001" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/decals/moss/layer/moss_layer_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
@@ -199,10 +199,10 @@
    </Textures>
    <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="proxy_stone" MtlFlags="525442" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0,0,0" Opacity="1" Shininess="9.9450016" vertModifType="0" LayerAct="1">
+  <Material Name="proxy_stone" MtlFlags="525442" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_rock" MatTemplate="" Diffuse="1,1,1" Specular="0,0,0" Opacity="1" Shininess="9.9450016" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
-  <Material Name="proxy_wood" MtlFlags="525442" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0,0,0" Opacity="1" Shininess="9.9450016" vertModifType="0" LayerAct="1">
+  <Material Name="proxy_wood" MtlFlags="525442" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_wood" MatTemplate="" Diffuse="1,1,1" Specular="0,0,0" Opacity="1" Shininess="9.9450026" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
   <Material Name="ivy" MtlFlags="524418" Shader="Vegetation" GenMask="2400800020" StringGenMask="%LEAVES%NORMAL_MAP%TEMP_VEGETATION%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="0.64447987,0.64447987,0.64447987" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="180.03001" AlphaTest="0.60000002" vertModifType="0" LayerAct="1">

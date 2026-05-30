@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="006c74df-fb97-8242-b843-46cd6daaf214" source="bench_a.fbx">
+<AssetMetadata version="0" type="Mesh" guid="fad4c541-7813-0968-b187-68f9c49946c9" source="bench_a.fbx">
  <Files>
   <File path="bench_a.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">6</Detail>
+  <Detail name="materialCount">7</Detail>
   <Detail name="triangleCount">423</Detail>
   <Detail name="vertexCount">348</Detail>
   <Detail name="16BitPrecision">false</Detail>

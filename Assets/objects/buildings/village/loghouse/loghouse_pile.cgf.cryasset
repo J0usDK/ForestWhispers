@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="ba0762ac-2731-b0db-10a7-d20f81c248c9" source="loghouse_pile.fbx">
+<AssetMetadata version="0" type="Mesh" guid="9bfd900b-dcbc-1f54-006f-3dfa2aa6c430" source="loghouse_pile.fbx">
  <Files>
   <File path="loghouse_pile.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">10</Detail>
+  <Detail name="materialCount">6</Detail>
   <Detail name="triangleCount">19258</Detail>
   <Detail name="vertexCount">24280</Detail>
   <Detail name="16BitPrecision">false</Detail>

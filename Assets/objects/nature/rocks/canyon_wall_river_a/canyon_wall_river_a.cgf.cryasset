@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="f573f0ec-b917-9f85-fcaa-52f9d9bfbf72" source="canyon_wall_river_a.fbx">
+<AssetMetadata version="0" type="Mesh" guid="56de20ee-ddaa-e156-b295-1fa0dceb3f31" source="canyon_wall_river_a.fbx">
  <Files>
   <File path="canyon_wall_river_a.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">12</Detail>
+  <Detail name="materialCount">15</Detail>
   <Detail name="triangleCount">3978</Detail>
   <Detail name="vertexCount">2213</Detail>
   <Detail name="16BitPrecision">false</Detail>

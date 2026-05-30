@@ -1,9 +1,9 @@
-<AssetMetadata version="0" type="Mesh" guid="dbd865ff-1364-3592-2935-d5493c58e7dd" source="haybale.fbx">
+<AssetMetadata version="0" type="Mesh" guid="c1880d3b-7672-c6e1-e653-ae6017b4fc05" source="haybale.fbx">
  <Files>
   <File path="haybale.cgf"/>
  </Files>
  <Details>
-  <Detail name="materialCount">3</Detail>
+  <Detail name="materialCount">4</Detail>
   <Detail name="triangleCount">4972</Detail>
   <Detail name="vertexCount">9291</Detail>
   <Detail name="16BitPrecision">false</Detail>
