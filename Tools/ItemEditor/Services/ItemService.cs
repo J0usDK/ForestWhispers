@@ -2,6 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using ItemEditor.Models.Item;
+using ItemEditor.Models.Schema;
 
 namespace ItemEditor.Services
 {
@@ -33,6 +34,38 @@ namespace ItemEditor.Services
             string jsonString = rootNode.ToJsonString(options);
 
             File.WriteAllText(filePath, jsonString);
+        }
+
+        public TraitInstance CreateTraitInstance(TraitDefinition schemaDefinition)
+        {
+            var instance = new TraitInstance { Id = schemaDefinition.Id };
+            foreach (var fieldDefinition in schemaDefinition.Fields)
+            {
+                object defaultValue = 0.0f; // Default
+                switch (fieldDefinition.DefaultValue.ValueKind)
+                {
+                    case JsonValueKind.Number:
+                        defaultValue = fieldDefinition.DefaultValue.GetSingle();
+                        break;
+                    case JsonValueKind.String:
+                        defaultValue = fieldDefinition.DefaultValue.GetString() ?? string.Empty;
+                        break;
+                    case JsonValueKind.True:
+                    case JsonValueKind.False:
+                        defaultValue = fieldDefinition.DefaultValue.GetBoolean();
+                        break;
+                }
+
+                instance.Fields.Add(new TraitFieldValue
+                {
+                    Name = fieldDefinition.Name,
+                    Type = fieldDefinition.Type,
+                    Min = fieldDefinition.MinValue,
+                    Max = fieldDefinition.MaxValue,
+                    Value = defaultValue
+                });
+            }
+            return instance;
         }
     }
 }
