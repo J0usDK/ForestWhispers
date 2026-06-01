@@ -11,6 +11,7 @@
 # CryEngine Build & CMake
 # =========================
 bin/
+obj/
 # Default files
 Solutions/
 CMakeCache.txt
