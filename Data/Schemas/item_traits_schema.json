@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "traits": [
+    {
+      "id": "condition",
+      "displayName": "Condition",
+      "description": "Item durability and wear parameters",
+      "fields": [
+        {
+          "name": "maxDurability",
+          "type": "float",
+          "default": 100.0,
+          "min": 0.0
+        },
+        {
+          "name": "currentDurability",
+          "type": "float",
+          "default": 100.0,
+          "min": 0.0
+        }
+      ]
+    },
+    {
+      "id": "melee_combat",
+      "displayName": "Melee Combat",
+      "description": "Base physical damage attributes",
+      "fields": [
+        {
+          "name": "baseSlashingDamage",
+          "type": "float",
+          "default": 0.0,
+          "min": 0.0
+        },
+        {
+          "name": "basePiercingDamage",
+          "type": "float",
+          "default": 0.0,
+          "min": 0.0
+        },
+        {
+          "name": "baseBluntDamage",
+          "type": "float",
+          "default": 0.0,
+          "min": 0.0
+        }
+      ]
+    }
+  ]
+}
