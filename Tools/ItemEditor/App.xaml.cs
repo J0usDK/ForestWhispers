@@ -1,5 +1,6 @@
 ﻿using ItemEditor.Services;
 using ItemEditor.ViewModels;
+using ItemEditor.Views;
 using System.Windows;
 
 namespace ItemEditor

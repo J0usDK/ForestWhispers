@@ -1,12 +1,50 @@
-﻿<Window x:Class="ItemEditor.MainWindow"
+﻿<Window x:Class="ItemEditor.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ItemEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Item Editor" Height="450" Width="600"
+        Background="#1E1E1E" Foreground="White">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <TextBlock Text="Loaded Schema:" FontSize="18" FontWeight="Bold" Foreground="#CCCCCC" Margin="0,0,0,10"/>
+
+        <ListBox Grid.Row="1" ItemsSource="{Binding Schema.Traits}"
+                 Background="#252526" Foreground="White" BorderBrush="#3E3E42" BorderThickness="1"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#3E3E42" BorderThickness="0,0,0,1" Margin="2" Padding="5">
+                        <StackPanel>
+                            <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" FontSize="14" Foreground="#4EC9B0"/>
+                            <TextBlock Text="{Binding Description}" FontStyle="Italic" Foreground="#9CDCFE" Margin="0,2,0,8"/>
+
+                            <ItemsControl ItemsSource="{Binding Fields}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="10,2,0,2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock Grid.Column="0" Text="{Binding Name}" Foreground="#D4D4D4"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding Type, StringFormat='[{0}]'}" Foreground="#569CD6"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
