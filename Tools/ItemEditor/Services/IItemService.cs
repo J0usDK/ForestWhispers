@@ -7,6 +7,7 @@ namespace ItemEditor.Services
     {
         ItemModel CreateNewItem(string id);
         void SaveItem(ItemModel item, string filePath);
+        IEnumerable<ItemModel> LoadAllItems(string directoryPath, ItemTraitsSchema schema);
 
         TraitInstance CreateTraitInstance(TraitDefinition schemaDefinition);
     }
