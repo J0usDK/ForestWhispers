@@ -101,125 +101,200 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220"/>
-            <ColumnDefinition Width="3"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3"/>
-            <ColumnDefinition Width="300"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Grid Grid.Column="0" Background="#252526">
-            <DockPanel Margin="10">
-                <Button DockPanel.Dock="Top" Content="✚ Create Item"
-                        Command="{Binding CreateItemCommand}"
-                        Style="{StaticResource PrimaryButtonStyle}"
-                        Margin="0,0,0,10"/>
-                <TextBlock DockPanel.Dock="Top" Text="OPEN ITEMS:" FontSize="11" Foreground="#858585" Margin="0,0,0,5"/>
+        <Menu Grid.Row="0" Background="#333337" Foreground="#D4D4D4" Padding="5,2">
+            <Menu.Resources>
+                <ControlTemplate x:Key="TopLevelHeaderTemplate" TargetType="MenuItem">
+                    <Border x:Name="Border" Background="Transparent" Padding="10,5">
+                        <Grid>
+                            <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" VerticalAlignment="Center"/>
+                            <Popup x:Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsSubmenuOpen}" AllowsTransparency="True" Focusable="False">
+                                <Border x:Name="SubmenuBorder" Background="#252526" BorderBrush="#3E3E42" BorderThickness="1">
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle"/>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="#3E3E42"/>
+                        </Trigger>
+                        <Trigger Property="IsSubmenuOpen" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="#252526"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+                <ControlTemplate x:Key="SubmenuItemTemplate" TargetType="MenuItem">
+                    <Border x:Name="Border" Background="Transparent" Padding="15,6,30,6">
+                        <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="#3E3E42"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="#666666"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
 
-                <ListBox ItemsSource="{Binding LoadedItems}" SelectedItem="{Binding SelectedItem}"
-                         Background="Transparent" BorderThickness="0" Foreground="#D4D4D4">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding ItemID}" Padding="5,2"/>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </DockPanel>
-        </Grid>
-        
-        <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="#3E3E42"/>
+                <Style TargetType="MenuItem">
+                    <Setter Property="Foreground" Value="#D4D4D4"/>
+                    <Style.Triggers>
+                        <Trigger Property="Role" Value="TopLevelHeader">
+                            <Setter Property="Template" Value="{StaticResource TopLevelHeaderTemplate}"/>
+                        </Trigger>
+                        <Trigger Property="Role" Value="SubmenuItem">
+                            <Setter Property="Template" Value="{StaticResource SubmenuItemTemplate}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
 
-        <Grid Grid.Column="2" Background="#1E1E1E">
-            <ScrollViewer Margin="15" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                <StackPanel>
-                    <TextBlock Text="ITEM ID" FontSize="11" Foreground="#858585" Margin="0,0,0,2"/>
-                    <TextBox Text="{Binding SelectedItem.ItemID, UpdateSourceTrigger=PropertyChanged}"
-                               Background="#333337" Foreground="White" BorderBrush="#3E3E42"
-                               FontSize="16" Padding="5" Margin="0,0,0,20"/>
-                    
-                    <TextBlock Text="COMPONENTS" FontSize="11" Foreground="#858585" Margin="0,0,0,10"/>
-                    <ItemsControl ItemsSource="{Binding SelectedItem.Traits}">
-                        <ItemsControl.ItemTemplate>
+                <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Separator">
+                                <Border Height="1" Background="#3E3E42" Margin="15,4"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Menu.Resources>
+            
+            <MenuItem Header="_File">
+                <MenuItem Header="Select Schema File..." Command="{Binding SelectSchemaCommand}"/>
+                <MenuItem Header="Select Items Folder..." Command="{Binding SelectItemsDirectoryCommand}"/>
+                <Separator/>
+                <MenuItem Header="Save All Items" Command="{Binding SaveAllCommand}" Foreground="#4EC9B0" FontWeight="Bold"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Background="#252526">
+                <DockPanel Margin="10">
+                    <Button DockPanel.Dock="Top" Content="✚ Create Item"
+                            Command="{Binding CreateItemCommand}"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Margin="0,0,0,10"/>
+                    <TextBlock DockPanel.Dock="Top" Text="OPEN ITEMS:" FontSize="11" Foreground="#858585" Margin="0,0,0,5"/>
+
+                    <ListBox ItemsSource="{Binding LoadedItems}" SelectedItem="{Binding SelectedItem}"
+                             Background="Transparent" BorderThickness="0" Foreground="#D4D4D4">
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Border BorderBrush="#3E3E42" BorderThickness="1" Background="#252526" Margin="0,0,0,15" CornerRadius="4">
-                                    <StackPanel>
-                                        <Border Background="#333337" Padding="10,5" CornerRadius="4,4,0,0">
-                                            <DockPanel>
-                                                <Button DockPanel.Dock="Right" Content="✕"
-                                                        Command="{Binding DataContext.RemoveTraitCommand, RelativeSource={RelativeSource AncestorType=Window}}"
-                                                        CommandParameter="{Binding}"
-                                                        Background="#A1260D" Foreground="White" BorderThickness="0"
-                                                        Width="22" Height="22" Cursor="Hand" ToolTip="Remove Trait"/>
-                                                <TextBlock Text="{Binding Id}" FontWeight="Bold" Foreground="#4EC9B0" VerticalAlignment="Center"/>
-                                            </DockPanel>
-                                        </Border>
+                                <TextBlock Text="{Binding ItemID}" Padding="5,2"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </Grid>
 
-                                        <ItemsControl ItemsSource="{Binding Fields}" Margin="10">
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Grid Margin="0,0,0,8">
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="150"/>
-                                                            <ColumnDefinition Width="*"/>
-                                                        </Grid.ColumnDefinitions>
+            <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="#3E3E42"/>
 
-                                                        <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                                            <TextBlock Text="{Binding Name}" Foreground="#D4D4D4"/>
-                                                            <TextBlock Text="{Binding Type}" FontSize="10" Foreground="#569CD6"/>
-                                                        </StackPanel>
-                                                        <TextBox Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
-                                                                   Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42" Padding="4" VerticalAlignment="Center"/>
-                                                    </Grid>
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
-                                    </StackPanel>
+            <Grid Grid.Column="2" Background="#1E1E1E">
+                <ScrollViewer Margin="15" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock Text="ITEM ID" FontSize="11" Foreground="#858585" Margin="0,0,0,2"/>
+                        <TextBox Text="{Binding SelectedItem.ItemID, UpdateSourceTrigger=PropertyChanged}"
+                                   Background="#333337" Foreground="White" BorderBrush="#3E3E42"
+                                   FontSize="16" Padding="5" Margin="0,0,0,20"/>
+
+                        <TextBlock Text="COMPONENTS" FontSize="11" Foreground="#858585" Margin="0,0,0,10"/>
+                        <ItemsControl ItemsSource="{Binding SelectedItem.Traits}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="#3E3E42" BorderThickness="1" Background="#252526" Margin="0,0,0,15" CornerRadius="4">
+                                        <StackPanel>
+                                            <Border Background="#333337" Padding="10,5" CornerRadius="4,4,0,0">
+                                                <DockPanel>
+                                                    <Button DockPanel.Dock="Right" Content="✕"
+                                                            Command="{Binding DataContext.RemoveTraitCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                            CommandParameter="{Binding}"
+                                                            Background="#A1260D" Foreground="White" BorderThickness="0"
+                                                            Width="22" Height="22" Cursor="Hand" ToolTip="Remove Trait"/>
+                                                    <TextBlock Text="{Binding Id}" FontWeight="Bold" Foreground="#4EC9B0" VerticalAlignment="Center"/>
+                                                </DockPanel>
+                                            </Border>
+
+                                            <ItemsControl ItemsSource="{Binding Fields}" Margin="10">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid Margin="0,0,0,8">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="150"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                                <TextBlock Text="{Binding Name}" Foreground="#D4D4D4"/>
+                                                                <TextBlock Text="{Binding Type}" FontSize="10" Foreground="#569CD6"/>
+                                                            </StackPanel>
+                                                            <TextBox Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
+                                                                       Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42" Padding="4" VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <GridSplitter Grid.Column="3" Width="3" HorizontalAlignment="Stretch" Background="#3E3E42"/>
+
+            <Grid Grid.Column="4" Background="#252526">
+                <DockPanel Margin="10">
+                    <TextBlock DockPanel.Dock="Top" Text="TRAIT LIST" FontSize="11" Foreground="#858585" Margin="0,0,0,5"/>
+
+                    <TextBox DockPanel.Dock="Top" Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
+                             Background="#333337" Foreground="#D4D4D4" BorderBrush="#3E3E42" Padding="5" Margin="0,0,0,10"/>
+
+                    <ListBox ItemsSource="{Binding FilteredTraits}"
+                             Background="Transparent" BorderThickness="0"
+                             HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#3E3E42" BorderThickness="0,0,0,1" Padding="0,8,0,8">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                                            <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" Foreground="#DCDCAA"/>
+                                            <TextBlock Text="{Binding Description}" FontSize="11" Foreground="#858585" TextWrapping="Wrap" Margin="0,2,0,0"/>
+                                        </StackPanel>
+
+                                        <Button Grid.Column="1" Content="Add"
+                                                Command="{Binding DataContext.AddTraitCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                CommandParameter="{Binding}"
+                                                Style="{StaticResource OutlineButtonStyle}"
+                                                VerticalAlignment="Center"/>
+                                    </Grid>
                                 </Border>
                             </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </ScrollViewer>
-        </Grid>
-
-        <GridSplitter Grid.Column="3" Width="3" HorizontalAlignment="Stretch" Background="#3E3E42"/>
-
-        <Grid Grid.Column="4" Background="#252526">
-            <DockPanel Margin="10">
-                <TextBlock DockPanel.Dock="Top" Text="TRAIT LIST" FontSize="11" Foreground="#858585" Margin="0,0,0,5"/>
-
-                <TextBox DockPanel.Dock="Top" Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
-                         Background="#333337" Foreground="#D4D4D4" BorderBrush="#3E3E42" Padding="5" Margin="0,0,0,10"/>
-
-                <ListBox ItemsSource="{Binding FilteredTraits}"
-                         Background="Transparent" BorderThickness="0"
-                         HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Border BorderBrush="#3E3E42" BorderThickness="0,0,0,1" Padding="0,8,0,8">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-
-                                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                                        <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" Foreground="#DCDCAA"/>
-                                        <TextBlock Text="{Binding Description}" FontSize="11" Foreground="#858585" TextWrapping="Wrap" Margin="0,2,0,0"/>
-                                    </StackPanel>
-
-                                    <Button Grid.Column="1" Content="Add"
-                                            Command="{Binding DataContext.AddTraitCommand, RelativeSource={RelativeSource AncestorType=Window}}"
-                                            CommandParameter="{Binding}"
-                                            Style="{StaticResource OutlineButtonStyle}"
-                                            VerticalAlignment="Center"/>
-                                </Grid>
-                            </Border>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </DockPanel>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

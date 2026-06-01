@@ -1,10 +1,11 @@
-﻿using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Windows.Input;
-using ItemEditor.Core;
+﻿using ItemEditor.Core;
 using ItemEditor.Models.Item;
 using ItemEditor.Models.Schema;
 using ItemEditor.Services;
+using Microsoft.Win32;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Windows.Input;
 
 namespace ItemEditor.ViewModels
 {
@@ -12,6 +13,9 @@ namespace ItemEditor.ViewModels
     {
         private readonly ISchemaService _schemaService;
         private readonly IItemService _itemService;
+        private readonly SettingsService _settingsService;
+
+        private ItemTraitsSchema? _currentSchema;
 
         // Left Panel: items list
         public ObservableCollection<ItemModel> LoadedItems { get; } = new();
@@ -62,33 +66,114 @@ namespace ItemEditor.ViewModels
         public ICommand AddTraitCommand { get; }
         public ICommand RemoveTraitCommand { get; }
 
-        public MainViewModel(ISchemaService schemaService, IItemService itemService)
+        public ICommand SelectSchemaCommand { get; }
+        public ICommand SelectItemsDirectoryCommand { get; }
+        public ICommand SaveAllCommand { get; }
+
+        public MainViewModel(ISchemaService schemaService, IItemService itemService, SettingsService settingsService)
         {
             _schemaService = schemaService;
             _itemService = itemService;
+            _settingsService = settingsService;
 
             CreateItemCommand = new RelayCommand(_ => CreateNewItem());
             AddTraitCommand = new RelayCommand(ExecuteAddTrait, CanExecuteAddTrait);
             RemoveTraitCommand = new RelayCommand(ExecuteRemoveTrait);
 
-            LoadSchema();
+            SelectSchemaCommand = new RelayCommand(_ => ExecuteSelectSchema());
+            SelectItemsDirectoryCommand = new RelayCommand(_ => ExecuteSelectItemsDirectory());
+            SaveAllCommand = new RelayCommand(_ => ExecuteSaveAll());
+
+            LoadWorkspaceFromSettings();
         }
 
-        private void LoadSchema()
+        private void LoadWorkspaceFromSettings()
+        {
+            var settings = _settingsService.LoadSettings();
+
+            if (!string.IsNullOrEmpty(settings.LastSchemaPath))
+                LoadSchema(settings.LastSchemaPath);
+            if (!string.IsNullOrEmpty(settings.LastItemsDirectory) && _currentSchema != null)
+                LoadItemsFromDirectory(settings.LastItemsDirectory);
+        }
+
+        private void ExecuteSelectSchema()
+        {
+            var dialog = new OpenFileDialog
+            {
+                Title = "Select schema json file",
+                Filter = "JSON Files (*.json)|*.json|All Files (*.*)|*.*"
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                var settings = _settingsService.LoadSettings();
+                settings.LastSchemaPath = dialog.FileName;
+                _settingsService.SaveSettings(settings);
+
+                LoadSchema(dialog.FileName);
+
+                if (!string.IsNullOrEmpty(settings.LastItemsDirectory))
+                    LoadItemsFromDirectory(settings.LastItemsDirectory);
+            }
+        }
+
+        private void ExecuteSelectItemsDirectory()
+        {
+            var dialog = new OpenFolderDialog
+            {
+                Title = "Select folder with Items (.json)"
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                var settings = _settingsService.LoadSettings();
+                settings.LastItemsDirectory = dialog.FolderName;
+                _settingsService.SaveSettings(settings);
+
+                LoadItemsFromDirectory(dialog.FolderName);
+            }
+        }
+
+        private void ExecuteSaveAll()
+        {
+            var settings = _settingsService.LoadSettings();
+            if (string.IsNullOrEmpty(settings.LastItemsDirectory)) return;
+
+            foreach (var item in LoadedItems)
+            {
+                string filePath = System.IO.Path.Combine(settings.LastItemsDirectory, $"{item.ItemID}.json");
+                _itemService.SaveItem(item, filePath);
+            }
+
+            Debug.WriteLine("[SUCCESS] All items saved.");
+        }
+
+        private void LoadSchema(string path)
         {
             try
             {
-                string schemaPath = @"C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Data\Schemas\item_traits_schema.json";
-                var schema = _schemaService.LoadSchema(schemaPath);
-
+                _currentSchema = _schemaService.LoadSchema(path);
                 AvaliableTraits.Clear();
-                foreach (var trait in schema.Traits)
+
+                foreach (var trait in _currentSchema.Traits)
                     AvaliableTraits.Add(trait);
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"[ERROR] Schema load failed: {ex.Message}");
             }
+        }
+
+        private void LoadItemsFromDirectory(string directoryPath)
+        {
+            if (_currentSchema == null)
+                return;
+
+            LoadedItems.Clear();
+            var items = _itemService.LoadAllItems(directoryPath, _currentSchema);
+            foreach (var item in items)
+                LoadedItems.Add(item);
         }
 
         private void CreateNewItem()
