@@ -208,18 +208,19 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0" Background="#252526">
-                <DockPanel Margin="10">
+                <DockPanel Margin="10,10,0,10">
                     <Button DockPanel.Dock="Top" Content="✚ Create Item"
                             Command="{Binding CreateItemCommand}"
                             Style="{StaticResource PrimaryButtonStyle}"
-                            Margin="0,0,0,10"/>
-                    <TextBlock DockPanel.Dock="Top" Text="OPEN ITEMS:" FontSize="11" Foreground="#858585" Margin="0,0,0,5"/>
+                            Margin="0,0,10,10"/>
+                    <TextBlock DockPanel.Dock="Top" Text="OPEN ITEMS:" FontSize="11" Foreground="#858585" Margin="0,0,10,5"/>
 
                     <ListBox ItemsSource="{Binding LoadedItems}" SelectedItem="{Binding SelectedItem}"
-                             Background="Transparent" BorderThickness="0" Foreground="#D4D4D4">
+                             Background="Transparent" BorderThickness="0" Foreground="#D4D4D4"
+                             Padding="0,0,15,0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding ItemID}" Padding="5,2"/>
+                                <TextBlock Text="{Binding ItemID}" Padding="5,4"/>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
@@ -229,7 +230,33 @@
             <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="#3E3E42"/>
 
             <Grid Grid.Column="2" Background="#1E1E1E">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SelectedItem}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+
+                    <TextBlock Text="No Item Selected" FontSize="20" Foreground="#858585" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Select an item from the left panel or create a new one." FontSize="14" Foreground="#555555" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                </StackPanel>
+
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <ScrollViewer.Style>
+                        <Style TargetType="ScrollViewer">
+                            <Setter Property="Visibility" Value="Visible"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SelectedItem}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ScrollViewer.Style>
                     <StackPanel Margin="15,15,15,15">
                         <TextBlock Text="ITEM ID" FontSize="11" Foreground="#858585" Margin="0,0,0,2"/>
                         <TextBox Text="{Binding SelectedItem.ItemID, UpdateSourceTrigger=PropertyChanged}"
@@ -284,14 +311,14 @@
             <GridSplitter Grid.Column="3" Width="3" HorizontalAlignment="Stretch" Background="#3E3E42"/>
 
             <Grid Grid.Column="4" Background="#252526">
-                <DockPanel Margin="10">
-                    <TextBlock DockPanel.Dock="Top" Text="TRAIT LIST" FontSize="11" Foreground="#858585" Margin="0,0,0,5"/>
+                <DockPanel Margin="10,10,0,10">
+                    <TextBlock DockPanel.Dock="Top" Text="TRAIT LIST" FontSize="11" Foreground="#858585" Margin="0,0,10,5"/>
 
                     <TextBox DockPanel.Dock="Top" Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
-                             Background="#333337" Foreground="#D4D4D4" BorderBrush="#3E3E42" Padding="5" Margin="0,0,0,10"/>
+                             Background="#333337" Foreground="#D4D4D4" BorderBrush="#3E3E42" Padding="5" Margin="0,0,10,10"/>
 
                     <ListBox ItemsSource="{Binding FilteredTraits}"
-                             Background="Transparent" BorderThickness="0"
+                             Background="Transparent" BorderThickness="0" Padding="0,0,15,0"
                              HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
