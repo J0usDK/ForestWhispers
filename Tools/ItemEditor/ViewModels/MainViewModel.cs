@@ -138,7 +138,24 @@ namespace ItemEditor.ViewModels
         private void ExecuteSaveAll()
         {
             var settings = _settingsService.LoadSettings();
-            if (string.IsNullOrEmpty(settings.LastItemsDirectory)) return;
+
+            if (string.IsNullOrEmpty(settings.LastItemsDirectory))
+            {
+                var dialog = new OpenFolderDialog
+                { 
+                    Title = "Select destination folder to save Items"
+                };
+
+                if (dialog.ShowDialog() == true)
+                {
+                    settings.LastItemsDirectory = dialog.FolderName;
+                    _settingsService.SaveSettings(settings);
+                }
+                else
+                {
+                    return;
+                }
+            }
 
             foreach (var item in LoadedItems)
             {
