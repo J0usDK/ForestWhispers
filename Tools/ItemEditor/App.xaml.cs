@@ -15,7 +15,9 @@ namespace ItemEditor
             base.OnStartup(e);
 
             var schemaService = new SchemaService();
-            var mainViewModel = new MainViewModel(schemaService);
+            var itemService = new ItemService();
+
+            var mainViewModel = new MainViewModel(schemaService, itemService);
             var mainWindow = new MainWindow
             {
                 DataContext = mainViewModel
