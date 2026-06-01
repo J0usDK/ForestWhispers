@@ -5,46 +5,221 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ItemEditor"
         mc:Ignorable="d"
-        Title="Item Editor" Height="450" Width="600"
+        Title="Whispers Item Editor" Height="450" Width="1000"
         Background="#1E1E1E" Foreground="White">
+    <Window.Resources>
+        <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#007ACC"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0,8"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0098FF"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#1E2D3D"/>
+                                <Setter Property="Foreground" Value="#555555"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="OutlineButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#333337"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#569CD6"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#3E3E42"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#252526"/>
+                                <Setter Property="BorderBrush" Value="#333337"/>
+                                <Setter Property="Foreground" Value="#666666"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ScrollBar">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollBar">
+                        <Border Background="{TemplateBinding Background}">
+                            <Track x:Name="PART_Track" IsDirectionReversed="true">
+                                <Track.Thumb>
+                                    <Thumb>
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Border x:Name="ThumbBorder" Background="#3E3E42" CornerRadius="4" Margin="2,0"/>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="ThumbBorder" Property="Background" Value="#555558"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsDragging" Value="True">
+                                                        <Setter TargetName="ThumbBorder" Property="Background" Value="#007ACC"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+                            </Track>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Loaded Schema:" FontSize="18" FontWeight="Bold" Foreground="#CCCCCC" Margin="0,0,0,10"/>
+        <Grid Grid.Column="0" Background="#252526">
+            <DockPanel Margin="10">
+                <Button DockPanel.Dock="Top" Content="✚ Create Item"
+                        Command="{Binding CreateItemCommand}"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Margin="0,0,0,10"/>
+                <TextBlock DockPanel.Dock="Top" Text="OPEN ITEMS:" FontSize="11" Foreground="#858585" Margin="0,0,0,5"/>
 
-        <ListBox Grid.Row="1" ItemsSource="{Binding Schema.Traits}"
-                 Background="#252526" Foreground="White" BorderBrush="#3E3E42" BorderThickness="1"
-                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="#3E3E42" BorderThickness="0,0,0,1" Margin="2" Padding="5">
-                        <StackPanel>
-                            <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" FontSize="14" Foreground="#4EC9B0"/>
-                            <TextBlock Text="{Binding Description}" FontStyle="Italic" Foreground="#9CDCFE" Margin="0,2,0,8"/>
+                <ListBox ItemsSource="{Binding LoadedItems}" SelectedItem="{Binding SelectedItem}"
+                         Background="Transparent" BorderThickness="0" Foreground="#D4D4D4">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ItemID}" Padding="5,2"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Grid>
+        
+        <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="#3E3E42"/>
 
-                            <ItemsControl ItemsSource="{Binding Fields}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid Margin="10,2,0,2">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="150"/>
-                                                <ColumnDefinition Width="Auto"/>
-                                            </Grid.ColumnDefinitions>
+        <Grid Grid.Column="2" Background="#1E1E1E">
+            <ScrollViewer Margin="15" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBlock Text="ITEM ID" FontSize="11" Foreground="#858585" Margin="0,0,0,2"/>
+                    <TextBox Text="{Binding SelectedItem.ItemID, UpdateSourceTrigger=PropertyChanged}"
+                               Background="#333337" Foreground="White" BorderBrush="#3E3E42"
+                               FontSize="16" Padding="5" Margin="0,0,0,20"/>
+                    
+                    <TextBlock Text="COMPONENTS" FontSize="11" Foreground="#858585" Margin="0,0,0,10"/>
+                    <ItemsControl ItemsSource="{Binding SelectedItem.Traits}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#3E3E42" BorderThickness="1" Background="#252526" Margin="0,0,0,15" CornerRadius="4">
+                                    <StackPanel>
+                                        <Border Background="#333337" Padding="10,5" CornerRadius="4,4,0,0">
+                                            <DockPanel>
+                                                <Button DockPanel.Dock="Right" Content="✕"
+                                                        Command="{Binding DataContext.RemoveTraitCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                        CommandParameter="{Binding}"
+                                                        Background="#A1260D" Foreground="White" BorderThickness="0"
+                                                        Width="22" Height="22" Cursor="Hand" ToolTip="Remove Trait"/>
+                                                <TextBlock Text="{Binding Id}" FontWeight="Bold" Foreground="#4EC9B0" VerticalAlignment="Center"/>
+                                            </DockPanel>
+                                        </Border>
 
-                                            <TextBlock Grid.Column="0" Text="{Binding Name}" Foreground="#D4D4D4"/>
-                                            <TextBlock Grid.Column="1" Text="{Binding Type, StringFormat='[{0}]'}" Foreground="#569CD6"/>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
+                                        <ItemsControl ItemsSource="{Binding Fields}" Margin="10">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid Margin="0,0,0,8">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="150"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
 
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                                                        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                            <TextBlock Text="{Binding Name}" Foreground="#D4D4D4"/>
+                                                            <TextBlock Text="{Binding Type}" FontSize="10" Foreground="#569CD6"/>
+                                                        </StackPanel>
+                                                        <TextBox Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
+                                                                   Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42" Padding="4" VerticalAlignment="Center"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <GridSplitter Grid.Column="3" Width="3" HorizontalAlignment="Stretch" Background="#3E3E42"/>
+
+        <Grid Grid.Column="4" Background="#252526">
+            <DockPanel Margin="10">
+                <TextBlock DockPanel.Dock="Top" Text="TRAIT LIST" FontSize="11" Foreground="#858585" Margin="0,0,0,5"/>
+
+                <TextBox DockPanel.Dock="Top" Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
+                         Background="#333337" Foreground="#D4D4D4" BorderBrush="#3E3E42" Padding="5" Margin="0,0,0,10"/>
+
+                <ListBox ItemsSource="{Binding FilteredTraits}"
+                         Background="Transparent" BorderThickness="0"
+                         HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="#3E3E42" BorderThickness="0,0,0,1" Padding="0,8,0,8">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                                        <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" Foreground="#DCDCAA"/>
+                                        <TextBlock Text="{Binding Description}" FontSize="11" Foreground="#858585" TextWrapping="Wrap" Margin="0,2,0,0"/>
+                                    </StackPanel>
+
+                                    <Button Grid.Column="1" Content="Add"
+                                            Command="{Binding DataContext.AddTraitCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource OutlineButtonStyle}"
+                                            VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Grid>
     </Grid>
 </Window>
