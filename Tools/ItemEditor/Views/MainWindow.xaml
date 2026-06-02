@@ -437,7 +437,16 @@
                                  Padding="0,0,15,0">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding ItemID}" Padding="5,4"/>
+                                    <TextBlock Text="{Binding ItemID}" Padding="5,4"
+                                               Tag="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListBox}}">
+                                        <TextBlock.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Header="Delete Item"
+                                                          Command="{Binding PlacementTarget.Tag.DeleteItemCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                                          CommandParameter="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource AncestorType=ContextMenu}}"/>
+                                            </ContextMenu>
+                                        </TextBlock.ContextMenu>
+                                    </TextBlock>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
@@ -475,7 +484,45 @@
                             </Style>
                         </ScrollViewer.Style>
                         <StackPanel Margin="15,15,15,15">
-                            <TextBlock Text="ITEM ID" FontSize="11" Foreground="#858585" Margin="0,0,0,2"/>
+                            <Grid Margin="0,0,0,8">
+                                <TextBlock Text="ITEM ID" FontSize="11" Foreground="#858585" VerticalAlignment="Bottom"/>
+
+                                <Button Command="{Binding DataContext.DeleteItemCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                        CommandParameter="{Binding SelectedItem}"
+                                        Width="32" Height="32"
+                                        HorizontalAlignment="Right"
+                                        ToolTip="Delete Current Item">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border x:Name="BtnBorder" Background="Transparent" CornerRadius="4">
+                                                            <Path x:Name="TrashIcon"
+                                                                  Data="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+                                                                  Fill="#858585" Width="18" Height="18" Stretch="Uniform"
+                                                                  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                        </Border>
+
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="BtnBorder" Property="Background" Value="#A1260D"/>
+                                                                <Setter TargetName="TrashIcon" Property="Fill" Value="White"/>
+                                                            </Trigger>
+                                                            <Trigger Property="IsPressed" Value="True">
+                                                                <Setter TargetName="BtnBorder" Property="Background" Value="#821E0A"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </Grid>
                             <TextBox Text="{Binding SelectedItem.ItemID, UpdateSourceTrigger=PropertyChanged}"
                                        Background="#333337" Foreground="White" BorderBrush="#3E3E42"
                                        FontSize="16" Padding="5" Margin="0,0,0,20"/>

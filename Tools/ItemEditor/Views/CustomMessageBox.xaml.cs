@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Documents;
 
 namespace ItemEditor.Views
 {
@@ -13,12 +14,17 @@ namespace ItemEditor.Views
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            DialogResult = true;
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            DialogResult = false;
         }
 
         private void Header_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -37,6 +43,21 @@ namespace ItemEditor.Views
                 msgBox.Owner = Application.Current.MainWindow;
 
             msgBox.ShowDialog();
+        }
+
+        public static bool ShowConfirm(string message, string title, Window? owner = null)
+        {
+            var msgBox = new CustomMessageBox(message, title);
+            msgBox.CancelBtn.Visibility = Visibility.Visible;
+            msgBox.CancelBtn.Content = "No";
+            msgBox.OkBtn.Content = "Yes";
+
+            if (owner != null)
+                msgBox.Owner = owner;
+            else if (Application.Current.MainWindow != null && Application.Current.MainWindow.IsVisible)
+                msgBox.Owner = Application.Current.MainWindow;
+
+            return msgBox.ShowDialog() == true;
         }
     }
 }

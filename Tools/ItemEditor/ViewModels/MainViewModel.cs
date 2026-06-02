@@ -65,6 +65,7 @@ namespace ItemEditor.ViewModels
         public ICommand CreateItemCommand { get; }
         public ICommand AddTraitCommand { get; }
         public ICommand RemoveTraitCommand { get; }
+        public ICommand DeleteItemCommand { get; }
 
         public ICommand SelectSchemaCommand { get; }
         public ICommand SelectItemsDirectoryCommand { get; }
@@ -79,6 +80,7 @@ namespace ItemEditor.ViewModels
             CreateItemCommand = new RelayCommand(_ => CreateNewItem());
             AddTraitCommand = new RelayCommand(ExecuteAddTrait, CanExecuteAddTrait);
             RemoveTraitCommand = new RelayCommand(ExecuteRemoveTrait);
+            DeleteItemCommand = new RelayCommand(ExecuteDeleteItem);
 
             SelectSchemaCommand = new RelayCommand(_ => ExecuteSelectSchema());
             SelectItemsDirectoryCommand = new RelayCommand(_ => ExecuteSelectItemsDirectory());
@@ -238,6 +240,34 @@ namespace ItemEditor.ViewModels
             if (SelectedItem == null || parameter is not TraitInstance traitInstance)
                 return;
             SelectedItem.Traits.Remove(traitInstance);
+        }
+
+        private void ExecuteDeleteItem(object? parameter)
+        {
+            if (parameter == null || parameter is not ItemModel item)
+                return;
+
+            bool confirm = ItemEditor.Views.CustomMessageBox.ShowConfirm(
+                $"Are you sure you want to delete '{item.ItemID}'?\nThis action cannot be undone and will delete the file from your drive.",
+                "Delete Item");
+
+            if (!confirm)
+                return;
+
+            LoadedItems.Remove(item);
+            if (SelectedItem == item)
+                SelectedItem = null;
+
+            var settings = _settingsService.LoadSettings();
+            if (!string.IsNullOrEmpty(settings.LastItemsDirectory))
+            {
+                string filePath = System.IO.Path.Combine(settings.LastItemsDirectory, $"{item.ItemID}.json");
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                    System.Diagnostics.Debug.WriteLine($"[DELETE] Removed file: {filePath}");
+                }
+            }
         }
     }
 }
