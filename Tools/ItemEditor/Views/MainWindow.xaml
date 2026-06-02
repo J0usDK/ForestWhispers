@@ -302,6 +302,9 @@
     </Window.Resources>
 
     <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="S" Command="{Binding SaveItemCommand}"/>
+        <KeyBinding Modifiers="Ctrl+Shift" Key="S" Command="{Binding SaveAllCommand}"/>
+
         <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding UndoCommand}"/>
         <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding RedoCommand}"/>
     </Window.InputBindings>
@@ -427,7 +430,8 @@
                     <MenuItem Header="Select Schema File" Command="{Binding SelectSchemaCommand}"/>
                     <MenuItem Header="Select Items Folder" Command="{Binding SelectItemsDirectoryCommand}"/>
                     <Separator/>
-                    <MenuItem Header="Save All Items" Command="{Binding SaveAllCommand}" Foreground="#4EC9B0" FontWeight="Bold"/>
+                    <MenuItem Header="Save Current Item" Command="{Binding SaveItemCommand}" InputGestureText="Ctrl+S" Foreground="#4EC9B0" FontWeight="Bold"/>
+                    <MenuItem Header="Save All Items" Command="{Binding SaveAllCommand}" InputGestureText="Ctrl+Shift+S" Foreground="#4EC9B0" FontWeight="Bold"/>
                 </MenuItem>
                 <MenuItem Header="_Edit">
                     <MenuItem Header="Undo" Command="{Binding UndoCommand}" InputGestureText="Ctrl+Z"/>
