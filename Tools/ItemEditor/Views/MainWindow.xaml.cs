@@ -33,6 +33,39 @@ namespace ItemEditor.Views
             return IntPtr.Zero;
         }
 
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            if (DataContext == null)
+                return;
+
+            dynamic viewModel = DataContext;
+            bool hasUnsavedChanges = false;
+
+            try
+            {
+                foreach (dynamic item in viewModel.LoadedItems)
+                {
+                    if (item.IsDirty)
+                    {
+                        hasUnsavedChanges = true;
+                        break;
+                    }
+                }
+            }
+            catch { }
+
+            if (hasUnsavedChanges)
+            {
+                bool confirmExit = CustomMessageBox.ShowConfirm(
+                    "You have unsaved changes!\nAre you sure you want to exit and lose all unsaved progress?",
+                    "Unsaved Changes", this);
+
+                if (!confirmExit)
+                    e.Cancel = true;
+            }
+        }
+
         private void MinimizeWindow_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -45,7 +78,7 @@ namespace ItemEditor.Views
 
         private void CloseWindow_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            Close();
         }
     }
 }
