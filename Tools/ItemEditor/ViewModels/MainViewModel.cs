@@ -1,11 +1,13 @@
-﻿using Microsoft.Win32;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Windows.Input;
-using ItemEditor.Core;
+﻿using ItemEditor.Core;
 using ItemEditor.Models.Item;
 using ItemEditor.Models.Schema;
 using ItemEditor.Services;
+using Microsoft.Win32;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Windows.Data;
+using System.Windows.Input;
 
 namespace ItemEditor.ViewModels
 {
@@ -31,34 +33,56 @@ namespace ItemEditor.ViewModels
             }
         }
 
-        // Right Panel: traits list and search
-        public ObservableCollection<TraitDefinition> AvaliableTraits { get; } = new();
-
-        private string _searchQuery = string.Empty;
-        public string SearchQuery
+        public ICollectionView ItemsView { get; }
+        private string _searchItemText = string.Empty;
+        public string SearchItemText
         {
-            get => _searchQuery;
+            get => _searchItemText;
             set
             {
-                _searchQuery = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(FilteredTraits));
+                if (_searchItemText != value)
+                {
+                    _searchItemText = value;
+                    OnPropertyChanged();
+                    ItemsView.Refresh();
+                }
             }
         }
 
-        public IEnumerable<TraitDefinition> FilteredTraits
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(SearchQuery))
-                    return AvaliableTraits;
+        // Right Panel: traits list and search
+        public ObservableCollection<TraitDefinition> AvaliableTraits { get; } = new();
 
-                var q = SearchQuery.ToLower();
-                return AvaliableTraits.Where(t =>
-                    t.DisplayName.ToLower().Contains(q) ||
-                    t.Id.ToLower().Contains(q) ||
-                    t.Fields.Any(f => f.Name.ToLower().Contains(q)));
+        public ICollectionView TraitsView { get; }
+        private string _searchTraitText = string.Empty;
+        public string SearchTraitText
+        {
+            get => _searchTraitText;
+            set
+            {
+                _searchTraitText = value;
+                OnPropertyChanged();
+                TraitsView.Refresh();
             }
+        }
+
+        private bool FilterItems(object obj)
+        {
+            if (string.IsNullOrEmpty(SearchItemText))
+                return true;
+            if (obj is ItemModel item)
+                return item.ItemID.Contains(SearchItemText, StringComparison.OrdinalIgnoreCase);
+            return false;
+        }
+
+        private bool FilterTraits(object obj)
+        {
+            if (string.IsNullOrEmpty(SearchTraitText))
+                return true;
+            if (obj is TraitDefinition trait)
+                return trait.DisplayName.Contains(SearchTraitText, StringComparison.OrdinalIgnoreCase) ||
+                    trait.Id.Contains(SearchTraitText, StringComparison.OrdinalIgnoreCase) ||
+                    trait.Fields.Any(f => f.Name.Contains(SearchTraitText, StringComparison.OrdinalIgnoreCase));
+            return false;
         }
 
         // Commands
@@ -80,6 +104,12 @@ namespace ItemEditor.ViewModels
             _schemaService = schemaService;
             _itemService = itemService;
             _settingsService = settingsService;
+
+            ItemsView = CollectionViewSource.GetDefaultView(LoadedItems);
+            ItemsView.Filter = FilterItems;
+
+            TraitsView = CollectionViewSource.GetDefaultView(AvaliableTraits);
+            TraitsView.Filter = FilterTraits;
 
             CreateItemCommand = new RelayCommand(_ => CreateNewItem());
             AddTraitCommand = new RelayCommand(ExecuteAddTrait, CanExecuteAddTrait);

@@ -450,6 +450,29 @@
 
                 <Border Grid.Column="0" Background="#252526" CornerRadius="0,0,0,5">
                     <DockPanel Margin="10,10,0,10">
+                        <Grid DockPanel.Dock="Top" Margin="0,0,15,10">
+                            <TextBox x:Name="SearchItemBox"
+                                     Text="{Binding SearchItemText, UpdateSourceTrigger=PropertyChanged}"
+                                     Background="#333337" Foreground="#D4D4D4"
+                                     BorderBrush="#3E3E42" BorderThickness="1"
+                                     Padding="5" VerticalContentAlignment="Center"/>
+
+                            <TextBlock IsHitTestVisible="False" Text="Search items..."
+                                       Foreground="#858585" VerticalAlignment="Center" Margin="7,0,0,0">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text.Length, ElementName=SearchItemBox}" Value="0">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                        
                         <Button DockPanel.Dock="Top" Content="✚ Create Item"
                                 Command="{Binding CreateItemCommand}"
                                 Style="{StaticResource PrimaryButtonStyle}"
@@ -695,12 +718,32 @@
 
                 <Border Grid.Column="4" Background="#252526" CornerRadius="0,0,5,0">
                     <DockPanel Margin="10,10,0,10">
-                        <TextBlock DockPanel.Dock="Top" Text="TRAIT LIST" FontSize="11" Foreground="#858585" Margin="0,0,10,5"/>
+                        <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
+                            <TextBox x:Name="SearchTraitsBox"
+                                     Text="{Binding SearchTraitText, UpdateSourceTrigger=PropertyChanged}"
+                                     Background="#333337" Foreground="#D4D4D4"
+                                     BorderBrush="#3E3E42" BorderThickness="1"
+                                     Padding="5" VerticalContentAlignment="Center"/>
 
-                        <TextBox DockPanel.Dock="Top" Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
-                                 Background="#333337" Foreground="#D4D4D4" BorderBrush="#3E3E42" Padding="5" Margin="0,0,10,10"/>
+                            <TextBlock IsHitTestVisible="False" Text="Search traits..."
+                                       Foreground="#858585" VerticalAlignment="Center" Margin="7,0,0,0">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
 
-                        <ListBox ItemsSource="{Binding FilteredTraits}"
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text.Length, ElementName=SearchTraitsBox}" Value="0">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+
+                        <TextBlock DockPanel.Dock="Top" Text="TRAITS LIST:" FontSize="11" Foreground="#858585" Margin="0,0,10,5"/>
+
+                        <ListBox ItemsSource="{Binding TraitsView}"
                                  Background="Transparent" BorderThickness="0" Padding="0,0,15,0"
                                  HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListBox.ItemTemplate>
