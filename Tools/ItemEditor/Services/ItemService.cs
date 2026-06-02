@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization.Metadata;
 using ItemEditor.Models.Item;
 using ItemEditor.Models.Schema;
 
@@ -26,12 +27,34 @@ namespace ItemEditor.Services
             {
                 var fieldsNode = new JsonObject();
                 foreach (var field in trait.Fields)
-                    fieldsNode[field.Name] = JsonValue.Create(field.Value);
+                {
+                    string strValue = field.Value?.ToString() ?? string.Empty;
+                    if (field.Type.ToLower() == "float")
+                    {
+                        if (float.TryParse(strValue, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float fVal))
+                            fieldsNode[field.Name] = JsonValue.Create(fVal);
+                        else
+                            fieldsNode[field.Name] = JsonValue.Create(0.0f);
+                    }
+                    else if (field.Type.ToLower() == "bool" || field.Type.ToLower() == "boolean")
+                    {
+                        if (bool.TryParse(strValue, out bool bVal))
+                            fieldsNode[field.Name] = JsonValue.Create(bVal);
+                        else
+                            fieldsNode[field.Name] = JsonValue.Create(false);
+                    }
+                    else if (field.Type.ToLower() == "string")
+                        fieldsNode[field.Name] = JsonValue.Create(strValue);
+                }
                 traitsNode[trait.Id] = fieldsNode;
             }
             rootNode["traits"] = traitsNode;
 
-            var options = new JsonSerializerOptions { WriteIndented = true };
+            var options = new JsonSerializerOptions
+            { 
+                WriteIndented = true,
+                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
+            };
             string jsonString = rootNode.ToJsonString(options);
 
             File.WriteAllText(filePath, jsonString);

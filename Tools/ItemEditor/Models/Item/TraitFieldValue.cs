@@ -6,6 +6,9 @@ namespace ItemEditor.Models.Item
 {
     internal class TraitFieldValue : ViewModelBase, INotifyDataErrorInfo
     {
+        private static readonly float floatMax = 1000000f;
+        private static readonly float floatMin = 0.000001f;
+
         public string Name { get; init; } = string.Empty;
         public string Type { get; init; } = string.Empty;
 
@@ -64,7 +67,10 @@ namespace ItemEditor.Models.Item
 
             if (Type.ToLower() == "float")
             {
-                if (!float.TryParse(strValue, out float floatVal))
+                if (!float.TryParse(strValue,
+                    System.Globalization.NumberStyles.Float,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    out float floatVal))
                 {
                     AddError(nameof(Value), "Must be a valid float number.");
                     return;
@@ -74,6 +80,10 @@ namespace ItemEditor.Models.Item
                     AddError(nameof(Value), $"Value cannot be less than {Min.Value}.");
                 if (Max.HasValue && floatVal > Max.Value)
                     AddError(nameof(Value), $"Value cannot be greater than {Max.Value}.");
+                if (floatVal != 0.0f && MathF.Abs(floatVal) < floatMin)
+                    AddError(nameof(Value), $"Value cannot be less then {floatMin}");
+                if (MathF.Abs(floatVal) > floatMax)
+                    AddError(nameof(Value), $"Value cannot be greater than {floatMax}");
             }
             else if (Type.ToLower() == "bool" || Type.ToLower() == "boolean")
             {
