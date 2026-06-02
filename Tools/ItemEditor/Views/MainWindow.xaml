@@ -540,42 +540,84 @@
                             <Grid Margin="0,0,0,8">
                                 <TextBlock Text="ITEM ID" FontSize="11" Foreground="#858585" VerticalAlignment="Bottom"/>
 
-                                <Button Command="{Binding DataContext.DeleteItemCommand, RelativeSource={RelativeSource AncestorType=Window}}"
-                                        CommandParameter="{Binding SelectedItem}"
-                                        Width="32" Height="32"
-                                        HorizontalAlignment="Right"
-                                        ToolTip="Delete Current Item">
-                                    <Button.Style>
-                                        <Style TargetType="Button">
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="BorderThickness" Value="0"/>
-                                            <Setter Property="Cursor" Value="Hand"/>
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="Button">
-                                                        <Border x:Name="BtnBorder" Background="Transparent" CornerRadius="4">
-                                                            <Path x:Name="TrashIcon"
-                                                                  Data="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
-                                                                  Fill="#858585" Width="18" Height="18" Stretch="Uniform"
-                                                                  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                        </Border>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Command="{Binding DataContext.SaveItemCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                            CommandParameter="{Binding SelectedItem}"
+                                            IsEnabled="{Binding SelectedItem.IsDirty}"
+                                            Width="32" Height="32" Margin="0,0,5,0"
+                                            ToolTip="Save Current Item">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border x:Name="BtnBorder" Background="Transparent" CornerRadius="4">
+                                                                <Path x:Name="SaveIcon"
+                                                                      Data="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"
+                                                                      Fill="#858585" Width="18" Height="18" Stretch="Uniform"
+                                                                      VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </Border>
 
-                                                        <ControlTemplate.Triggers>
-                                                            <Trigger Property="IsMouseOver" Value="True">
-                                                                <Setter TargetName="BtnBorder" Property="Background" Value="#A1260D"/>
-                                                                <Setter TargetName="TrashIcon" Property="Fill" Value="White"/>
-                                                            </Trigger>
-                                                            <Trigger Property="IsPressed" Value="True">
-                                                                <Setter TargetName="BtnBorder" Property="Background" Value="#821E0A"/>
-                                                            </Trigger>
-                                                        </ControlTemplate.Triggers>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </Button.Style>
-                                </Button>
+                                                            <ControlTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter TargetName="BtnBorder" Property="Background" Value="#333337"/>
+                                                                    <Setter TargetName="SaveIcon" Property="Fill" Value="#4EC9B0"/>
+                                                                </Trigger>
+                                                                <Trigger Property="IsPressed" Value="True">
+                                                                    <Setter TargetName="BtnBorder" Property="Background" Value="#252526"/>
+                                                                </Trigger>
+                                                                <Trigger Property="IsEnabled" Value="False">
+                                                                    <Setter TargetName="SaveIcon" Property="Fill" Value="#404040"/>
+                                                                </Trigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+
+                                    <Button Command="{Binding DataContext.DeleteItemCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                    CommandParameter="{Binding SelectedItem}"
+                                                    Width="32" Height="32"
+                                                    HorizontalAlignment="Right"
+                                                    ToolTip="Delete Current Item">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border x:Name="BtnBorder" Background="Transparent" CornerRadius="4">
+                                                                <Path x:Name="TrashIcon"
+                                                                      Data="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+                                                                      Fill="#858585" Width="18" Height="18" Stretch="Uniform"
+                                                                      VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </Border>
+
+                                                            <ControlTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter TargetName="BtnBorder" Property="Background" Value="#A1260D"/>
+                                                                    <Setter TargetName="TrashIcon" Property="Fill" Value="White"/>
+                                                                </Trigger>
+                                                                <Trigger Property="IsPressed" Value="True">
+                                                                    <Setter TargetName="BtnBorder" Property="Background" Value="#821E0A"/>
+                                                                </Trigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                </StackPanel>
                             </Grid>
+                            
                             <TextBox Text="{Binding SelectedItem.ItemID, UpdateSourceTrigger=PropertyChanged}"
                                        Background="#333337" Foreground="White" BorderBrush="#3E3E42"
                                        FontSize="16" Padding="5" Margin="0,0,0,20"/>

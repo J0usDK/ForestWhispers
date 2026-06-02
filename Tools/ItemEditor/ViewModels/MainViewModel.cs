@@ -66,6 +66,7 @@ namespace ItemEditor.ViewModels
         public ICommand AddTraitCommand { get; }
         public ICommand RemoveTraitCommand { get; }
         public ICommand DeleteItemCommand { get; }
+        public ICommand SaveItemCommand { get; }
 
         public ICommand SelectSchemaCommand { get; }
         public ICommand SelectItemsDirectoryCommand { get; }
@@ -81,6 +82,7 @@ namespace ItemEditor.ViewModels
             AddTraitCommand = new RelayCommand(ExecuteAddTrait, CanExecuteAddTrait);
             RemoveTraitCommand = new RelayCommand(ExecuteRemoveTrait);
             DeleteItemCommand = new RelayCommand(ExecuteDeleteItem);
+            SaveItemCommand = new RelayCommand(ExecuteSaveItem);
 
             SelectSchemaCommand = new RelayCommand(_ => ExecuteSelectSchema());
             SelectItemsDirectoryCommand = new RelayCommand(_ => ExecuteSelectItemsDirectory());
@@ -179,6 +181,27 @@ namespace ItemEditor.ViewModels
             }
 
             Debug.WriteLine("[SUCCESS] All items saved.");
+        }
+
+        private void ExecuteSaveItem(object? parameter)
+        {
+            var target = parameter ?? SelectedItem;
+            if (target == null || target is not ItemModel item)
+                return;
+
+            var settings = _settingsService.LoadSettings();
+            if (string.IsNullOrEmpty(settings.LastItemsDirectory))
+                return;
+
+            string filePath = System.IO.Path.Combine(settings.LastItemsDirectory, $"{item.ItemID}.json");
+            try
+            {
+                _itemService.SaveItem(item, filePath);
+            }
+            catch (Exception ex)
+            {
+                ItemEditor.Views.CustomMessageBox.Show($"Failed to save item: {ex.Message}", "Save Error");
+            }
         }
 
         private void LoadSchema(string path)
