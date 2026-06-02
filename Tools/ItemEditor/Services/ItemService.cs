@@ -58,6 +58,8 @@ namespace ItemEditor.Services
             string jsonString = rootNode.ToJsonString(options);
 
             File.WriteAllText(filePath, jsonString);
+
+            item.AcceptChanges();
         }
 
         public IEnumerable<ItemModel> LoadAllItems(string directoryPath, ItemTraitsSchema schema)
@@ -107,6 +109,8 @@ namespace ItemEditor.Services
                         item.Traits.Add(traitInstance);
                 }
             }
+
+            item.AcceptChanges();
             return item;
         }
 

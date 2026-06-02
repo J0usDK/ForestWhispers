@@ -9,6 +9,8 @@ namespace ItemEditor.Models.Item
         private static readonly float floatMax = 1000000f;
         private static readonly float floatMin = 0.000001f;
 
+        private object? _originalValue;
+
         public string Name { get; init; } = string.Empty;
         public string Type { get; init; } = string.Empty;
 
@@ -24,6 +26,17 @@ namespace ItemEditor.Models.Item
                 _value = value;
                 OnPropertyChanged();
                 ValidateValue();
+                OnPropertyChanged(nameof(IsDirty));
+            }
+        }
+
+        public bool IsDirty
+        {
+            get
+            {
+                string currentStr = _value?.ToString() ?? string.Empty;
+                string originalStr = _originalValue?.ToString() ?? string.Empty;
+                return currentStr != originalStr;
             }
         }
 
@@ -31,6 +44,12 @@ namespace ItemEditor.Models.Item
 
         public bool HasErrors => _errorsByPropertyName.Any();
         public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
+
+        public void AcceptChanges()
+        {
+            _originalValue = _value;
+            OnPropertyChanged(nameof(IsDirty));
+        }
 
         public IEnumerable GetErrors(string? propertyName)
         {

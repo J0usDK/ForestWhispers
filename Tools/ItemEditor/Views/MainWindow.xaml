@@ -434,19 +434,72 @@
 
                         <ListBox ItemsSource="{Binding LoadedItems}" SelectedItem="{Binding SelectedItem}"
                                  Background="Transparent" BorderThickness="0" Foreground="#D4D4D4"
-                                 Padding="0,0,15,0">
+                                 Padding="0,0,15,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                            
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding ItemID}" Padding="5,4"
-                                               Tag="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListBox}}">
-                                        <TextBlock.ContextMenu>
+                                    <Border Padding="5,4" Background="Transparent"
+                                            Tag="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListBox}}">
+                                        <Border.ContextMenu>
                                             <ContextMenu>
                                                 <MenuItem Header="Delete Item"
                                                           Command="{Binding PlacementTarget.Tag.DeleteItemCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
                                                           CommandParameter="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource AncestorType=ContextMenu}}"/>
                                             </ContextMenu>
-                                        </TextBlock.ContextMenu>
-                                    </TextBlock>
+                                        </Border.ContextMenu>
+
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock Grid.Column="0" Text="{Binding ItemID}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                                            
+                                            <TextBlock Grid.Column="1" Width="12" TextAlignment="Center" FontWeight="Bold" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0,0,0">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="RenderTransform">
+                                                            <Setter.Value>
+                                                                <TranslateTransform Y="0"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsDirty}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                                <Setter Property="Text" Value="*"/>
+                                                                <Setter Property="Foreground" Value="#D4D4D4"/>
+                                                                <Setter Property="RenderTransform">
+                                                                    <Setter.Value>
+                                                                        <TranslateTransform Y="2"/>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </DataTrigger>
+
+                                                            <DataTrigger Binding="{Binding HasErrors}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                                <Setter Property="Text" Value="!"/>
+                                                                <Setter Property="Foreground" Value="#A1260D"/>
+                                                                <Setter Property="RenderTransform">
+                                                                    <Setter.Value>
+                                                                        <TranslateTransform Y="0"/>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Grid>
+                                    </Border>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
