@@ -91,6 +91,7 @@ namespace ItemEditor.ViewModels
         public ICommand RemoveTraitCommand { get; }
         public ICommand DeleteItemCommand { get; }
         public ICommand SaveItemCommand { get; }
+        public ICommand DuplicateItemCommand { get; }
 
         public ICommand SelectSchemaCommand { get; }
         public ICommand SelectItemsDirectoryCommand { get; }
@@ -116,6 +117,7 @@ namespace ItemEditor.ViewModels
             RemoveTraitCommand = new RelayCommand(ExecuteRemoveTrait);
             DeleteItemCommand = new RelayCommand(ExecuteDeleteItem);
             SaveItemCommand = new RelayCommand(ExecuteSaveItem);
+            DuplicateItemCommand = new RelayCommand(ExecuteDuplicateItem);
 
             SelectSchemaCommand = new RelayCommand(_ => ExecuteSelectSchema());
             SelectItemsDirectoryCommand = new RelayCommand(_ => ExecuteSelectItemsDirectory());
@@ -256,6 +258,33 @@ namespace ItemEditor.ViewModels
             {
                 ItemEditor.Views.CustomMessageBox.Show($"Failed to save item: {ex.Message}", "Save Error");
             }
+        }
+
+        private void ExecuteDuplicateItem(object? parameter)
+        {
+            var sourceItem = (parameter as ItemModel) ?? SelectedItem;
+            if (sourceItem == null) return;
+
+            string newID = $"{sourceItem.ItemID}_copy";
+
+            var duplicateItem = _itemService.CreateNewItem(newID);
+            foreach (var sourceTrait in sourceItem.Traits)
+            {
+                var traitDefinition = AvaliableTraits.FirstOrDefault(t => t.Id == sourceTrait.Id);
+                if (traitDefinition != null)
+                {
+                    var newTrait = _itemService.CreateTraitInstance(traitDefinition);
+                    foreach (var sourceField in sourceTrait.Fields)
+                    {
+                        var newField = newTrait.Fields.FirstOrDefault(f => f.Name == sourceField.Name);
+                        if (newField != null)
+                            newField.Value = sourceField.Value;
+                    }
+                    duplicateItem.Traits.Add(newTrait);
+                }
+            }
+            LoadedItems.Add(duplicateItem);
+            SelectedItem = duplicateItem;
         }
 
         private void LoadSchema(string path)

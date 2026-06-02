@@ -495,6 +495,10 @@
                                             Tag="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListBox}}">
                                         <Border.ContextMenu>
                                             <ContextMenu>
+                                                <MenuItem Header="Duplicate Item"
+                                                          Command="{Binding PlacementTarget.Tag.DuplicateItemCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                                          CommandParameter="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource AncestorType=ContextMenu}}"/>
+                                                
                                                 <MenuItem Header="Delete Item"
                                                           Command="{Binding PlacementTarget.Tag.DeleteItemCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
                                                           CommandParameter="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource AncestorType=ContextMenu}}"/>
@@ -618,6 +622,41 @@
                                                                 </Trigger>
                                                                 <Trigger Property="IsEnabled" Value="False">
                                                                     <Setter TargetName="SaveIcon" Property="Fill" Value="#404040"/>
+                                                                </Trigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+
+                                    <Button Command="{Binding DataContext.DuplicateItemCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                            CommandParameter="{Binding SelectedItem}"
+                                            Width="32" Height="32" Margin="0,0,5,0"
+                                            ToolTip="Duplicate Current Item">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border x:Name="BtnBorder" Background="Transparent" CornerRadius="4">
+                                                                <Path x:Name="DupIcon"
+                                                                      Data="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+                                                                      Fill="#858585" Width="16" Height="16" Stretch="Uniform"
+                                                                      VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </Border>
+
+                                                            <ControlTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter TargetName="BtnBorder" Property="Background" Value="#333337"/>
+                                                                    <Setter TargetName="DupIcon" Property="Fill" Value="#569CD6"/>
+                                                                </Trigger>
+                                                                <Trigger Property="IsPressed" Value="True">
+                                                                    <Setter TargetName="BtnBorder" Property="Background" Value="#252526"/>
                                                                 </Trigger>
                                                             </ControlTemplate.Triggers>
                                                         </ControlTemplate>
