@@ -1,11 +1,11 @@
-﻿using ItemEditor.Core;
-using ItemEditor.Models.Item;
-using ItemEditor.Models.Schema;
-using ItemEditor.Services;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
+using ItemEditor.Core;
+using ItemEditor.Models.Item;
+using ItemEditor.Models.Schema;
+using ItemEditor.Services;
 
 namespace ItemEditor.ViewModels
 {
@@ -137,6 +137,19 @@ namespace ItemEditor.ViewModels
 
         private void ExecuteSaveAll()
         {
+            bool hasErrors = LoadedItems
+                .SelectMany(item => item.Traits)
+                .SelectMany(trait => trait.Fields)
+                .Any(field => field.HasErrors);
+
+            if (hasErrors)
+            {
+                ItemEditor.Views.CustomMessageBox.Show(
+                    "Cannot save items. There are validation errors in one or more fields.\nPlease fix the highlighted red fields and try again.",
+                    "Validation Error");
+                return;
+            }
+
             var settings = _settingsService.LoadSettings();
 
             if (string.IsNullOrEmpty(settings.LastItemsDirectory))

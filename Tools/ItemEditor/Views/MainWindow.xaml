@@ -123,6 +123,59 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style TargetType="ToolTip">
+            <Setter Property="Background" Value="#252526"/>
+            <Setter Property="Foreground" Value="#E2E2E2"/>
+            <Setter Property="BorderBrush" Value="#555555"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToolTip">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="8" ShadowDepth="3" Opacity="0.4"/>
+                            </Border.Effect>
+                            <ContentPresenter Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="ValidatedTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="#1E1E1E"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#3E3E42"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <AdornedElementPlaceholder x:Name="placeholder"/>
+                            <Border BorderBrush="#A1260D" BorderThickness="1" IsHitTestVisible="False"/>
+                            <TextBlock Foreground="#A1260D" FontSize="16" FontWeight="Bold"
+                                       HorizontalAlignment="Right" VerticalAlignment="Center"
+                                       Margin="0,0,8,0" IsHitTestVisible="False">!
+                            </TextBlock>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -293,8 +346,8 @@
                                                                 <TextBlock Text="{Binding Name}" Foreground="#D4D4D4"/>
                                                                 <TextBlock Text="{Binding Type}" FontSize="10" Foreground="#569CD6"/>
                                                             </StackPanel>
-                                                            <TextBox Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
-                                                                       Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42" Padding="4" VerticalAlignment="Center"/>
+                                                            <TextBox Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"
+                                                                       Style="{StaticResource ValidatedTextBoxStyle}"/>
                                                         </Grid>
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>
