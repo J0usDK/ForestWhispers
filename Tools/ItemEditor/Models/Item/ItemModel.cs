@@ -7,6 +7,8 @@ namespace ItemEditor.Models.Item
 {
     internal class ItemModel : ViewModelBase
     {
+        public UndoRedoManager History { get; } = new UndoRedoManager(50);
+
         private string _itemID = string.Empty;
         public string ItemID
         {
@@ -17,14 +19,35 @@ namespace ItemEditor.Models.Item
                 {
                     _itemID = value;
                     OnPropertyChanged();
-                    _isStructurallyDirty = true;
                     OnPropertyChanged(nameof(IsDirty));
                 }
             }
         }
 
-        private bool _isStructurallyDirty;
-        public bool IsDirty => _isStructurallyDirty || Traits.Any(t => t.Fields.Any(f => f.IsDirty));
+        private string? _originalItemID;
+        private List<string> _originalTraitIDs = new List<string>();
+        public bool IsDirty
+        {
+            get
+            {
+                if (_originalItemID == null)
+                    return true;
+
+                if (ItemID != _originalItemID)
+                    return true;
+
+                if (Traits.Count != _originalTraitIDs.Count)
+                    return true;
+
+                for (int i = 0; i < Traits.Count; i++)
+                {
+                    if (Traits[i].Id != _originalTraitIDs[i])
+                        return true;
+                }
+
+                return Traits.Any(t => t.Fields.Any(f => f.IsDirty));
+            }
+        }
 
         public ObservableCollection<TraitInstance> Traits { get; }
         public bool HasErrors => Traits.Any(t => t.Fields.Any(f => f.HasErrors));
@@ -37,7 +60,9 @@ namespace ItemEditor.Models.Item
 
         public void AcceptChanges()
         {
-            _isStructurallyDirty = false;
+            _originalItemID = ItemID;
+            _originalTraitIDs = Traits.Select(t => t.Id).ToList();
+
             foreach (var trait in Traits)
             {
                 foreach (var field in trait.Fields)
@@ -48,7 +73,6 @@ namespace ItemEditor.Models.Item
 
         private void Traits_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
         {
-            _isStructurallyDirty = true;
             OnPropertyChanged(nameof(IsDirty));
             OnPropertyChanged(nameof(HasErrors));
 
@@ -59,6 +83,8 @@ namespace ItemEditor.Models.Item
                     trait.Fields.CollectionChanged += Fields_CollectionChanged;
                     foreach (var field in trait.Fields)
                         SubscribeToField(field);
+
+                    History.Push(new TraitCollectionCommand(this, trait, isAdded: true));
                 }
             }
             if (e.OldItems != null)
@@ -68,13 +94,14 @@ namespace ItemEditor.Models.Item
                     trait.Fields.CollectionChanged -= Fields_CollectionChanged;
                     foreach (var field in trait.Fields)
                         UnsubscribeFromField(field);
+
+                    History.Push(new TraitCollectionCommand(this, trait, isAdded: false));
                 }
             }
         }
 
         private void Fields_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
         {
-            _isStructurallyDirty = true;
             OnPropertyChanged(nameof(IsDirty));
 
             if (e.NewItems != null)
@@ -93,12 +120,20 @@ namespace ItemEditor.Models.Item
         {
             field.ErrorsChanged += Field_ErrorsChanged;
             field.PropertyChanged += Field_PropertyChanged;
+            field.FieldValueChanged += Field_FieldValueChanged;
         }
 
         private void UnsubscribeFromField(TraitFieldValue field)
         {
             field.ErrorsChanged -= Field_ErrorsChanged;
             field.PropertyChanged -= Field_PropertyChanged;
+            field.FieldValueChanged -= Field_FieldValueChanged;
+        }
+
+        private void Field_FieldValueChanged(object? sender, FieldValueChangedEventArgs e)
+        {
+            if (sender is TraitFieldValue field)
+                History.Push(new FieldValueChangeCommand(field, e.OldValue, e.NewValue));
         }
 
         private void Field_ErrorsChanged(object? sender, DataErrorsChangedEventArgs e)

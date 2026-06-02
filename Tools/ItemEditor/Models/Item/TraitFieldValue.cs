@@ -4,12 +4,26 @@ using ItemEditor.Core;
 
 namespace ItemEditor.Models.Item
 {
+    internal class FieldValueChangedEventArgs : EventArgs
+    {
+        public object OldValue { get; }
+        public object NewValue { get; }
+
+        public FieldValueChangedEventArgs(object oldValue, object newValue)
+        {
+            OldValue = oldValue;
+            NewValue = newValue;
+        }
+    }
+
     internal class TraitFieldValue : ViewModelBase, INotifyDataErrorInfo
     {
         private static readonly float floatMax = 1000000f;
         private static readonly float floatMin = 0.000001f;
 
         private object? _originalValue;
+
+        public event EventHandler<FieldValueChangedEventArgs>? FieldValueChanged;
 
         public string Name { get; init; } = string.Empty;
         public string Type { get; init; } = string.Empty;
@@ -23,10 +37,17 @@ namespace ItemEditor.Models.Item
             get => _value;
             set
             {
+                if (Equals(_value, value))
+                    return;
+
+                object oldValue = _value;
                 _value = value;
+
                 OnPropertyChanged();
                 ValidateValue();
                 OnPropertyChanged(nameof(IsDirty));
+
+                FieldValueChanged?.Invoke(this, new FieldValueChangedEventArgs(oldValue, value));
             }
         }
 

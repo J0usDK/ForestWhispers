@@ -295,11 +295,16 @@
 
             <Style.Triggers>
                 <Trigger Property="Validation.HasError" Value="True">
-                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)/ErrorContent}"/>
                 </Trigger>
             </Style.Triggers>
         </Style>    
     </Window.Resources>
+
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding UndoCommand}"/>
+        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding RedoCommand}"/>
+    </Window.InputBindings>
 
     <Border BorderBrush="#1E1E1E">
         <Border.Style>
@@ -370,9 +375,20 @@
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                     <ControlTemplate x:Key="SubmenuItemTemplate" TargetType="MenuItem">
-                        <Border x:Name="Border" Background="Transparent" Padding="15,6,30,6">
-                            <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" VerticalAlignment="Center"/>
+                        <Border x:Name="Border" Background="Transparent" Padding="15,6,10,6">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <ContentPresenter Grid.Column="0" ContentSource="Header" RecognizesAccessKey="True" VerticalAlignment="Center"/>
+
+                                <ContentPresenter Grid.Column="1" ContentSource="InputGestureText" Margin="30,0,5,0"
+                                                  VerticalAlignment="Center" TextElement.Foreground="#858585"/>
+                            </Grid>
                         </Border>
+                        
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsHighlighted" Value="True">
                                 <Setter TargetName="Border" Property="Background" Value="#3E3E42"/>
@@ -412,6 +428,10 @@
                     <MenuItem Header="Select Items Folder" Command="{Binding SelectItemsDirectoryCommand}"/>
                     <Separator/>
                     <MenuItem Header="Save All Items" Command="{Binding SaveAllCommand}" Foreground="#4EC9B0" FontWeight="Bold"/>
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Header="Undo" Command="{Binding UndoCommand}" InputGestureText="Ctrl+Z"/>
+                    <MenuItem Header="Redo" Command="{Binding RedoCommand}" InputGestureText="Ctrl+Shift+Z"/>
                 </MenuItem>
             </Menu>
 

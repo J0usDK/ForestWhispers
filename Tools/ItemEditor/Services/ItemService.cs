@@ -111,6 +111,7 @@ namespace ItemEditor.Services
             }
 
             item.AcceptChanges();
+            item.History.Clear();
             return item;
         }
 

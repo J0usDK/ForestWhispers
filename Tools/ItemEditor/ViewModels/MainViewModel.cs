@@ -72,6 +72,9 @@ namespace ItemEditor.ViewModels
         public ICommand SelectItemsDirectoryCommand { get; }
         public ICommand SaveAllCommand { get; }
 
+        public ICommand UndoCommand { get; }
+        public ICommand RedoCommand { get; }
+
         public MainViewModel(ISchemaService schemaService, IItemService itemService, SettingsService settingsService)
         {
             _schemaService = schemaService;
@@ -87,6 +90,27 @@ namespace ItemEditor.ViewModels
             SelectSchemaCommand = new RelayCommand(_ => ExecuteSelectSchema());
             SelectItemsDirectoryCommand = new RelayCommand(_ => ExecuteSelectItemsDirectory());
             SaveAllCommand = new RelayCommand(_ => ExecuteSaveAll());
+
+            UndoCommand = new RelayCommand(
+                execute: _ =>
+                {
+                    SelectedItem?.History.Undo();
+                },
+                canExecute: _ =>
+                {
+                    return SelectedItem != null && SelectedItem.History.CanUndo;
+                }
+            );
+            RedoCommand = new RelayCommand(
+                execute: _ =>
+                {
+                    SelectedItem?.History.Redo();
+                },
+                canExecute: _ =>
+                {
+                    return SelectedItem != null && SelectedItem.History.CanRedo;
+                }
+            );
 
             LoadWorkspaceFromSettings();
         }
