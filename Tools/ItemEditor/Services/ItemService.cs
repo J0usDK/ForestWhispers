@@ -1,181 +1,179 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
+using System.Collections.Concurrent;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Text.Json.Serialization.Metadata;
 using ItemEditor.Models.Item;
 using ItemEditor.Models.Schema;
+using ItemEditor.Core;
 
-namespace ItemEditor.Services
+namespace ItemEditor.Services;
+
+internal sealed class ItemService : IItemService
 {
-    internal class ItemService : IItemService
+    private readonly JsonSerializerOptions _jsonOptions = new() { WriteIndented = true };
+
+    public ItemModel CreateNewItem(string id) => new() { ItemID = id };
+
+    public async Task SaveItemAsync(ItemModel item, string filePath, CancellationToken cancellationToken = default)
     {
-        public ItemModel CreateNewItem(string id)
+        var traitsNode = new JsonObject();
+        foreach (var trait in item.Traits)
         {
-            return new ItemModel { ItemID = id };
+            var fieldsNode = new JsonObject();
+            foreach (var field in trait.Fields)
+            {
+                string strValue = field.Value?.ToString() ?? string.Empty;
+                var dataType = FieldTypeParser.Parse(field.Type);
+
+                fieldsNode[field.Name] = dataType switch
+                {
+                    FieldDataType.Float => float.TryParse(strValue, NumberStyles.Float, CultureInfo.InvariantCulture, out float fVal) ? JsonValue.Create(fVal) : JsonValue.Create(0.0f),
+                    FieldDataType.Boolean => bool.TryParse(strValue, out bool bVal) ? JsonValue.Create(bVal) : JsonValue.Create(false),
+                    FieldDataType.String => JsonValue.Create(strValue),
+                    _ => JsonValue.Create(strValue)
+                };
+            }
+            traitsNode[trait.Id] = fieldsNode;
         }
 
-        public void SaveItem(ItemModel item, string filePath)
+        var rootNode = new JsonObject
         {
-            var rootNode = new JsonObject
+            ["ItemID"] = item.ItemID,
+            ["traits"] = traitsNode
+        };
+
+        if (item.OriginalItemID != null && item.OriginalItemID != item.ItemID)
+        {
+            string? directory = Path.GetDirectoryName(filePath);
+            if (!string.IsNullOrEmpty(directory))
             {
-                ["ItemID"] = item.ItemID
+                string oldFilePath = Path.Combine(directory, $"{item.OriginalItemID}.json");
+                if (File.Exists(oldFilePath))
+                    File.Delete(oldFilePath);
+            }
+        }
+
+        await using var stream = File.Create(filePath);
+        await JsonSerializer.SerializeAsync(stream, rootNode, _jsonOptions, cancellationToken).ConfigureAwait(false);
+
+        item.AcceptChanges();
+    }
+
+    public async Task<IReadOnlyList<ItemModel>> LoadAllItemsParallelAsync(string directoryPath, ItemTraitsSchema schema, CancellationToken cancellationToken = default)
+    {
+        if (string.IsNullOrWhiteSpace(directoryPath) || !Directory.Exists(directoryPath))
+            return [];
+
+        var files = Directory.EnumerateFiles(directoryPath, "*.json");
+        var items = new ConcurrentBag<ItemModel>();
+
+        var options = new ParallelOptions
+        {
+            MaxDegreeOfParallelism = Environment.ProcessorCount,
+            CancellationToken = cancellationToken
+        };
+
+        await Parallel.ForEachAsync(files, options, async (file, ct) =>
+        {
+            var item = await LoadSingleItemAsync(file, schema, ct).ConfigureAwait(false);
+            if (item != null)
+                items.Add(item);
+        }).ConfigureAwait(false);
+
+        return [.. items];
+    }
+
+    private async Task<ItemModel?> LoadSingleItemAsync(string filePath, ItemTraitsSchema schema, CancellationToken cancellationToken)
+    {
+        try
+        {
+            await using var stream = File.OpenRead(filePath);
+            var rootNode = await JsonNode.ParseAsync(stream, cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            if (rootNode?.AsObject() is not { } rootObject) return null;
+            return ParseItemModel(rootObject, filePath, schema);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"[ERROR] Failed to load item {filePath}: {ex.Message}");
+            return null;
+        }
+    }
+
+    private ItemModel ParseItemModel(JsonObject rootNode, string filePath, ItemTraitsSchema schema)
+    {
+        string itemID = rootNode["itemID"]?.ToString() ?? Path.GetFileNameWithoutExtension(filePath);
+        var item = new ItemModel { ItemID = itemID };
+
+        if (rootNode.TryGetPropertyValue("traits", out var traitNode) && traitNode is JsonObject traitsObject)
+        {
+            foreach (var traitProp in traitsObject)
+            {
+                var traitInstance = ParseTraitInstance(traitProp.Key, traitProp.Value as JsonObject, schema);
+                if (traitInstance != null) item.Traits.Add(traitInstance);
+            }
+        }
+
+        item.AcceptChanges();
+        item.History.Clear();
+        return item;
+    }
+
+    private TraitInstance? ParseTraitInstance(string traitID, JsonObject? fieldObject, ItemTraitsSchema schema)
+    {
+        if (fieldObject == null) return null;
+
+        var schemaDefinition = schema.Traits.FirstOrDefault(t => t.Id == traitID);
+        if (schemaDefinition == null) return null;
+
+        var traitInstance = CreateTraitInstance(schemaDefinition);
+        foreach (var field in traitInstance.Fields)
+        {
+            if (fieldObject.TryGetPropertyValue(field.Name, out var savedValueNode) && savedValueNode != null)
+                AssignFieldValue(field, savedValueNode);
+        }
+        return traitInstance;
+    }
+
+    private static void AssignFieldValue(TraitFieldValue field, JsonNode savedValueNode)
+    {
+        string savedString = savedValueNode.ToString();
+        var dataType = FieldTypeParser.Parse(field.Type);
+
+        field.Value = dataType switch
+        {
+            FieldDataType.Float => float.TryParse(savedString, NumberStyles.Float, CultureInfo.InvariantCulture, out float fVal) ? JsonValue.Create(fVal) : JsonValue.Create(0.0f),
+            FieldDataType.Boolean => bool.TryParse(savedString, out bool bVal) ? JsonValue.Create(bVal) : JsonValue.Create(false),
+            FieldDataType.String => JsonValue.Create(savedString),
+            _ => JsonValue.Create(savedString)
+        };
+    }
+
+    public TraitInstance CreateTraitInstance(TraitDefinition schemaDefinition)
+    {
+        var instance = new TraitInstance { Id = schemaDefinition.Id };
+        foreach (var fieldDefinition in schemaDefinition.Fields)
+        {
+            object defaultValue = fieldDefinition.DefaultValue.ValueKind switch
+            {
+                JsonValueKind.Number => fieldDefinition.DefaultValue.GetSingle(),
+                JsonValueKind.String => fieldDefinition.DefaultValue.GetString() ?? string.Empty,
+                JsonValueKind.True => true,
+                JsonValueKind.False => false,
+                _ => 0.0f
             };
 
-            var traitsNode = new JsonObject();
-            foreach (var trait in item.Traits)
+            instance.Fields.Add(new TraitFieldValue
             {
-                var fieldsNode = new JsonObject();
-                foreach (var field in trait.Fields)
-                {
-                    string strValue = field.Value?.ToString() ?? string.Empty;
-                    if (field.Type.ToLower() == "float")
-                    {
-                        if (float.TryParse(strValue, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float fVal))
-                            fieldsNode[field.Name] = JsonValue.Create(fVal);
-                        else
-                            fieldsNode[field.Name] = JsonValue.Create(0.0f);
-                    }
-                    else if (field.Type.ToLower() == "bool" || field.Type.ToLower() == "boolean")
-                    {
-                        if (bool.TryParse(strValue, out bool bVal))
-                            fieldsNode[field.Name] = JsonValue.Create(bVal);
-                        else
-                            fieldsNode[field.Name] = JsonValue.Create(false);
-                    }
-                    else if (field.Type.ToLower() == "string")
-                        fieldsNode[field.Name] = JsonValue.Create(strValue);
-                }
-                traitsNode[trait.Id] = fieldsNode;
-            }
-            rootNode["traits"] = traitsNode;
-
-            var options = new JsonSerializerOptions
-            { 
-                WriteIndented = true,
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
-            };
-            string jsonString = rootNode.ToJsonString(options);
-
-            File.WriteAllText(filePath, jsonString);
-
-            item.AcceptChanges();
+                Name = fieldDefinition.Name,
+                Type = fieldDefinition.Type,
+                Min = fieldDefinition.MinValue,
+                Max = fieldDefinition.MaxValue,
+                Value = defaultValue
+            });
         }
-
-        public IEnumerable<ItemModel> LoadAllItems(string directoryPath, ItemTraitsSchema schema)
-        {
-            var items = new List<ItemModel>();
-
-            if (string.IsNullOrWhiteSpace(directoryPath) || !Directory.Exists(directoryPath))
-                return items;
-
-            foreach (var file in Directory.GetFiles(directoryPath, "*.json"))
-            {
-                var item = LoadSingleItem(file, schema);
-                if (item != null)
-                    items.Add(item);
-            }
-            return items;
-        }
-
-        private ItemModel? LoadSingleItem(string filePath, ItemTraitsSchema schema)
-        {
-            try
-            {
-                string json = File.ReadAllText(filePath);
-                var rootNode = JsonNode.Parse(json)?.AsObject();
-                if (rootNode == null)
-                    return null;
-                return ParseItemModel(rootNode, filePath, schema);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"[ERROR] Failed to load item {filePath}: {ex.Message}");
-                return null;
-            }
-        }
-
-        private ItemModel ParseItemModel(JsonObject rootNode, string filePath, ItemTraitsSchema schema)
-        {
-            string itemID = rootNode["itemID"]?.ToString() ?? Path.GetFileNameWithoutExtension(filePath);
-            var item = new ItemModel { ItemID = itemID };
-
-            if (rootNode.TryGetPropertyValue("traits", out var traitNode) && traitNode is JsonObject traitsObject)
-            {
-                foreach (var traitProp in traitsObject)
-                {
-                    var traitInstance = ParseTraitInstance(traitProp.Key, traitProp.Value as JsonObject, schema);
-                    if (traitInstance != null)
-                        item.Traits.Add(traitInstance);
-                }
-            }
-
-            item.AcceptChanges();
-            item.History.Clear();
-            return item;
-        }
-
-        private TraitInstance? ParseTraitInstance(string traitID, JsonObject? fieldObject, ItemTraitsSchema schema)
-        {
-            if (fieldObject == null)
-                return null;
-
-            var schemaDefinition = schema.Traits.FirstOrDefault(t => t.Id == traitID);
-            if (schemaDefinition == null)
-                return null;
-
-            var traitInstance = CreateTraitInstance(schemaDefinition);
-            foreach (var field in traitInstance.Fields)
-            {
-                if (fieldObject.TryGetPropertyValue(field.Name, out var savedValueNode) && savedValueNode != null)
-                    AssignFieldValue(field, savedValueNode);
-            }
-            return traitInstance;
-        }
-
-        private void AssignFieldValue(TraitFieldValue field, JsonNode savedValueNode)
-        {
-            string savedString = savedValueNode.ToString();
-            string fieldType = field.Type.ToLower();
-
-            if (fieldType == "float" && float.TryParse(savedString, out float fVal))
-                field.Value = fVal;
-            else if (fieldType == "string")
-                field.Value = savedString;
-            else if ((fieldType == "bool" || fieldType == "boolean") && bool.TryParse(savedString, out bool bVal))
-                field.Value = bVal;
-        }
-
-        public TraitInstance CreateTraitInstance(TraitDefinition schemaDefinition)
-        {
-            var instance = new TraitInstance { Id = schemaDefinition.Id };
-            foreach (var fieldDefinition in schemaDefinition.Fields)
-            {
-                object defaultValue = 0.0f; // Default
-                switch (fieldDefinition.DefaultValue.ValueKind)
-                {
-                    case JsonValueKind.Number:
-                        defaultValue = fieldDefinition.DefaultValue.GetSingle();
-                        break;
-                    case JsonValueKind.String:
-                        defaultValue = fieldDefinition.DefaultValue.GetString() ?? string.Empty;
-                        break;
-                    case JsonValueKind.True:
-                    case JsonValueKind.False:
-                        defaultValue = fieldDefinition.DefaultValue.GetBoolean();
-                        break;
-                }
-
-                instance.Fields.Add(new TraitFieldValue
-                {
-                    Name = fieldDefinition.Name,
-                    Type = fieldDefinition.Type,
-                    Min = fieldDefinition.MinValue,
-                    Max = fieldDefinition.MaxValue,
-                    Value = defaultValue
-                });
-            }
-            return instance;
-        }
+        return instance;
     }
 }

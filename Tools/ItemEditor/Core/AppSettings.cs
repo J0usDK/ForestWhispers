@@ -1,8 +1,7 @@
-﻿namespace ItemEditor.Core
+﻿namespace ItemEditor.Core;
+
+internal sealed class AppSettings
 {
-    internal class AppSettings
-    {
-        public string LastSchemaPath { get; set; } = string.Empty;
-        public string LastItemsDirectory { get; set; } = string.Empty;
-    }
+    public string LastSchemaPath { get; set; } = string.Empty;
+    public string LastItemsDirectory { get; set; } = string.Empty;
 }

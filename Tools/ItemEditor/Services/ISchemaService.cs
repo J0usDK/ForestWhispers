@@ -1,9 +1,8 @@
 ﻿using ItemEditor.Models.Schema;
 
-namespace ItemEditor.Services
+namespace ItemEditor.Services;
+
+internal interface ISchemaService
 {
-    internal interface ISchemaService
-    {
-        ItemTraitsSchema LoadSchema(string filePath);
-    }
+    Task<ItemTraitsSchema> LoadSchemaAsync(string filePath, CancellationToken cancellationToken = default);
 }

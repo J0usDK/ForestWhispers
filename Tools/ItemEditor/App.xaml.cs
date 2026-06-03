@@ -17,8 +17,9 @@ namespace ItemEditor
             var schemaService = new SchemaService();
             var itemService = new ItemService();
             var settingsService = new SettingsService();
+            var dialogService = new DialogService();
 
-            var mainViewModel = new MainViewModel(schemaService, itemService, settingsService);
+            var mainViewModel = new MainViewModel(schemaService, itemService, settingsService, dialogService);
             var mainWindow = new MainWindow
             {
                 DataContext = mainViewModel

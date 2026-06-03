@@ -2,24 +2,28 @@
 using System.Text.Json;
 using ItemEditor.Models.Schema;
 
-namespace ItemEditor.Services
+namespace ItemEditor.Services;
+
+internal sealed class SchemaService : ISchemaService
 {
-    internal class SchemaService : ISchemaService
+    private readonly JsonSerializerOptions _serializerOptions = new()
     {
-        public ItemTraitsSchema LoadSchema(string filePath)
-        {
-            if (!File.Exists(filePath))
-                throw new FileNotFoundException($"Schema file not found: {filePath}");
+        ReadCommentHandling = JsonCommentHandling.Skip,
+        AllowTrailingCommas = true
+    };
 
-            string json = File.ReadAllText(filePath);
-            var option = new JsonSerializerOptions
-            {
-                ReadCommentHandling = JsonCommentHandling.Skip,
-                AllowTrailingCommas = true
-            };
+    public async Task<ItemTraitsSchema> LoadSchemaAsync(string filePath, CancellationToken cancellationToken = default)
+    {
+        if (!File.Exists(filePath))
+            throw new FileNotFoundException($"Schema file not found: {filePath}");
 
-            var schema = JsonSerializer.Deserialize<ItemTraitsSchema>(json, option);
-            return schema ?? throw new InvalidDataException("Filed to deserialize schema. File might be empty or invalid.");
-        }
+        await using FileStream stream = File.OpenRead(filePath);
+
+        var schema = await JsonSerializer.DeserializeAsync<ItemTraitsSchema>(
+            stream,
+            _serializerOptions,
+            cancellationToken).ConfigureAwait(false);
+
+        return schema ?? throw new InvalidDataException("Failed to deserialize schema. File might be empty or invalid.");
     }
 }
