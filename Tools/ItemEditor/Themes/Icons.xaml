@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <Geometry x:Key="Icon.Window.Minimize" po:Freeze="True">M0,4 H10 V5 H0 Z</Geometry>
+    <Geometry x:Key="Icon.Window.Close" po:Freeze="True">M0,0 L10,10 M0,10 L10,0</Geometry>
+    
+    <Geometry x:Key="Icon.Action.Save" po:Freeze="True">M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z</Geometry>
+    <Geometry x:Key="Icon.Action.Duplicate" po:Freeze="True">M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z</Geometry>
+    <Geometry x:Key="Icon.Action.Delete" po:Freeze="True">M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z</Geometry>
+    <Geometry x:Key="Icon.Action.Add" po:Freeze="True">M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z</Geometry>
+
+    <Geometry x:Key="Icon.Alert.Warning" po:Freeze="True">M12,2L22,20H2L12,2M11,10V15H13V10H11M11,17V19H13V17H11Z</Geometry>
+    
+</ResourceDictionary>

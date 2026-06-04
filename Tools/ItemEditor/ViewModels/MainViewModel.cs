@@ -400,4 +400,16 @@ internal sealed class MainViewModel : ViewModelBase
             }
         }
     }
+
+    public bool RequestApplicationClose()
+    {
+        bool hasUnsavedChanges = LoadedItems.Any(item => item.IsDirty);
+        if (hasUnsavedChanges)
+        {
+            return _dialogService.ShowConfirm(
+                "You have unsaved changes!\nAre you sure you want to exit and lose all unsaved progress?",
+                "Unsaved Changes");
+        }
+        return true;
+    }
 }
