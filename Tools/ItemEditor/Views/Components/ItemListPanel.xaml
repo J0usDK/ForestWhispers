@@ -116,6 +116,24 @@
                                                         </Setter.Value>
                                                     </Setter>
                                                 </DataTrigger>
+
+                                                <DataTrigger Value="True">
+                                                    <DataTrigger.Binding>
+                                                        <MultiBinding Converter="{StaticResource ItemIDDup}">
+                                                            <Binding Path="ItemID"/>
+                                                            <Binding Path="DataContext.RegistryService" RelativeSource="{RelativeSource AncestorType=UserControl}"/>
+                                                            <Binding Path="DataContext.RegistryService.RegistryVersion" RelativeSource="{RelativeSource AncestorType=UserControl}"/>
+                                                        </MultiBinding>
+                                                    </DataTrigger.Binding>
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                    <Setter Property="Text" Value="!"/>
+                                                    <Setter Property="Foreground" Value="{StaticResource AccentRed}"/>
+                                                    <Setter Property="RenderTransform">
+                                                        <Setter.Value>
+                                                            <TranslateTransform Y="0"/>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </TextBlock.Style>

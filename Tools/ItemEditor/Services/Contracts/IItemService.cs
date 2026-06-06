@@ -1,7 +1,7 @@
 ﻿using ItemEditor.Models.Item;
 using ItemEditor.Models.Schema;
 
-namespace ItemEditor.Services;
+namespace ItemEditor.Services.Contracts;
 
 internal interface IItemService
 {

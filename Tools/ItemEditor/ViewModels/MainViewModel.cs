@@ -9,6 +9,8 @@ using ItemEditor.Core;
 using ItemEditor.Models.Item;
 using ItemEditor.Models.Schema;
 using ItemEditor.Services;
+using ItemEditor.Services.Contracts;
+using ItemEditor.Core.Commands;
 
 namespace ItemEditor.ViewModels;
 
@@ -18,6 +20,9 @@ internal sealed class MainViewModel : ViewModelBase
     private readonly IItemService _itemService;
     private readonly ISettingsService _settingsService;
     private readonly IDialogService _dialogService;
+    private readonly ItemIDRegistryService _registryService;
+
+    public ItemIDRegistryService RegistryService => _registryService;
 
     private ItemTraitsSchema? _currentSchema;
 
@@ -57,10 +62,18 @@ internal sealed class MainViewModel : ViewModelBase
         get => _selectedItem;
         set
         {
+            if (_selectedItem != null) _selectedItem.PropertyChanged -= SelectedItem_PropertyChanged;
             _selectedItem = value;
+            if (_selectedItem != null) _selectedItem.PropertyChanged += SelectedItem_PropertyChanged;
+
             OnPropertyChanged();
+            OnPropertyChanged(nameof(IsSelectedItemIDDuplicate));
+            OnPropertyChanged(nameof(CanSaveSelected));
         }
     }
+
+    public bool IsSelectedItemIDDuplicate => _registryService.IsIDDuplicate(SelectedItem?.ItemID);
+    public bool CanSaveSelected => SelectedItem != null && SelectedItem.IsDirty && !IsSelectedItemIDDuplicate && !SelectedItem.HasErrors;
 
     public ICollectionView ItemsView { get; private set; }
 
@@ -112,12 +125,16 @@ internal sealed class MainViewModel : ViewModelBase
     public ICommand UndoCommand { get; }
     public ICommand RedoCommand { get; }
 
-    public MainViewModel(ISchemaService schemaService, IItemService itemService, ISettingsService settingsService, IDialogService dialogService)
+    public MainViewModel(ISchemaService schemaService, IItemService itemService, ISettingsService settingsService, IDialogService dialogService, ItemIDRegistryService registryService)
     {
         _schemaService = schemaService;
         _itemService = itemService;
         _settingsService = settingsService;
         _dialogService = dialogService;
+
+        _registryService = registryService;
+        _registryService.ConflictsChanged += () => CommandManager.InvalidateRequerySuggested();
+
 
         ItemsView = CollectionViewSource.GetDefaultView(LoadedItems);
         ItemsView.Filter = FilterItems;
@@ -133,7 +150,14 @@ internal sealed class MainViewModel : ViewModelBase
         SelectSchemaCommand = new RelayCommand(async _ => await ExecuteSelectSchemaAsync());
         SelectItemsDirectoryCommand = new RelayCommand(async _ => await ExecuteSelectItemsDirectoryAsync());
         SaveAllCommand = new RelayCommand(async _ => await ExecuteSaveAllAsync());
-        SaveItemCommand = new RelayCommand(async parameter => await ExecuteSaveItemAsync(parameter));
+        SaveItemCommand = new RelayCommand(
+            async parameter => await ExecuteSaveItemAsync(parameter),
+            parameter =>
+            {
+                var item = parameter as ItemModel ?? SelectedItem;
+                return item != null && item.IsDirty && !_registryService.IsIDDuplicate(item.ItemID) && !item.HasErrors;
+            }
+        );
         DeleteItemCommand = new RelayCommand(ExecuteDeleteItem);
 
         UndoCommand = new RelayCommand(_ => SelectedItem?.History.Undo(), _ => SelectedItem?.History.CanUndo ?? false);
@@ -233,7 +257,7 @@ internal sealed class MainViewModel : ViewModelBase
 
     private async Task ExecuteSaveAllAsync()
     {
-        if (LoadedItems.Any(item => item.HasErrors))
+        if (_registryService.TotalConflicts > 0 || LoadedItems.Any(item => item.HasErrors))
         {
             _dialogService.ShowError(
                 "Cannot save items. There are validation errors in one or more fields.\nPlease fix the highlighted red fields and try again.",
@@ -324,6 +348,7 @@ internal sealed class MainViewModel : ViewModelBase
         try
         {
             var items = await _itemService.LoadAllItemsParallelAsync(directoryPath, _currentSchema);
+            foreach (var item in items) RegisterModel(item);
 
             LoadedItems = new ObservableCollection<ItemModel>(items);
             ItemsView = CollectionViewSource.GetDefaultView(LoadedItems);
@@ -339,9 +364,9 @@ internal sealed class MainViewModel : ViewModelBase
 
     private void CreateNewItem()
     {
-        string newId = $"new_item_{LoadedItems.Count + 1}";
-        var newItem = _itemService.CreateNewItem(newId);
+        var newItem = _itemService.CreateNewItem($"new_item");
 
+        RegisterModel(newItem);
         LoadedItems.Add(newItem);
         SelectedItem = newItem;
     }
@@ -352,6 +377,7 @@ internal sealed class MainViewModel : ViewModelBase
 
         var duplicateItem = sourceItem.Clone($"{sourceItem.ItemID}_copy");
 
+        RegisterModel(duplicateItem);
         LoadedItems.Add(duplicateItem);
         SelectedItem = duplicateItem;
     }
@@ -386,6 +412,7 @@ internal sealed class MainViewModel : ViewModelBase
             $"Are you sure you want to delete '{item.ItemID}'?\nThis action cannot be undone and will delete the file from your drive.",
             "Delete Item")) return;
 
+        UnregisterModel(item);
         LoadedItems.Remove(item);
         if (SelectedItem == item) SelectedItem = null;
 
@@ -411,5 +438,35 @@ internal sealed class MainViewModel : ViewModelBase
                 "Unsaved Changes");
         }
         return true;
+    }
+
+    private void RegisterModel(ItemModel item)
+    {
+        _registryService.Register(item);
+        item.ItemIDChanged += OnModelItemIDChanged;
+    }
+
+    private void UnregisterModel(ItemModel item)
+    {
+        item.ItemIDChanged -= OnModelItemIDChanged;
+        _registryService.Unregister(item);
+    }
+
+    private void OnModelItemIDChanged(object? sender, (string oldID, string newID) e)
+    {
+        if (sender is ItemModel item)
+            _registryService.UpdateItemID(item, e.oldID, e.newID);
+
+        if (sender == SelectedItem)
+        {
+            OnPropertyChanged(nameof(IsSelectedItemIDDuplicate));
+            OnPropertyChanged(nameof(CanSaveSelected));
+        }
+    }
+
+    private void SelectedItem_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName is nameof(ItemModel.IsDirty) or nameof(ItemModel.HasErrors))
+            OnPropertyChanged(nameof(CanSaveSelected));
     }
 }

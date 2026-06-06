@@ -1,6 +1,6 @@
 ﻿using ItemEditor.Core;
 
-namespace ItemEditor.Services;
+namespace ItemEditor.Services.Contracts;
 
 internal interface ISettingsService
 {

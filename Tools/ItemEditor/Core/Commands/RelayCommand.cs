@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace ItemEditor.Core;
+namespace ItemEditor.Core.Commands;
 
 internal sealed class RelayCommand(Action<object?> execute, Predicate<object?>? canExecute = null) : ICommand
 {

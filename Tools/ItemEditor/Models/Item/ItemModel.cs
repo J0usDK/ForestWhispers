@@ -2,12 +2,15 @@
 using System.Collections.Specialized;
 using System.ComponentModel;
 using ItemEditor.Core;
+using ItemEditor.Core.UndoRedo;
 
 namespace ItemEditor.Models.Item;
 
 internal sealed class ItemModel : ViewModelBase
 {
     public UndoRedoManager History { get; } = new(50);
+
+    public event EventHandler<(string OldID, string NewID)>? ItemIDChanged;
 
     private string _itemID = string.Empty;
     public string ItemID
@@ -17,9 +20,11 @@ internal sealed class ItemModel : ViewModelBase
         {
             if (_itemID != value)
             {
+                string oldID = _itemID;
                 _itemID = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(IsDirty));
+                ItemIDChanged?.Invoke(this, (oldID, value));
             }
         }
     }
@@ -61,6 +66,7 @@ internal sealed class ItemModel : ViewModelBase
 
     public ItemModel()
     {
+
         Traits = [];
         Traits.CollectionChanged += Traits_CollectionChanged;
     }

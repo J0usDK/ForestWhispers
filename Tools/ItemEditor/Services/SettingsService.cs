@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text.Json;
 using ItemEditor.Core;
+using ItemEditor.Services.Contracts;
 
 namespace ItemEditor.Services;
 

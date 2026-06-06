@@ -1,4 +1,4 @@
-﻿namespace ItemEditor.Core;
+﻿namespace ItemEditor.Core.Types;
 
 internal enum FieldDataType
 {

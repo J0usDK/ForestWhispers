@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 using ItemEditor.Core;
+using ItemEditor.Core.Types;
 
 namespace ItemEditor.Models.Item;
 

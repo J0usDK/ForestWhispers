@@ -6,7 +6,8 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using ItemEditor.Models.Item;
 using ItemEditor.Models.Schema;
-using ItemEditor.Core;
+using ItemEditor.Core.Types;
+using ItemEditor.Services.Contracts;
 
 namespace ItemEditor.Services;
 

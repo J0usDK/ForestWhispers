@@ -148,25 +148,4 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <Style x:Key="ValidatedTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
-        <Setter Property="Background" Value="{StaticResource BgDark}"/>
-        <Setter Property="Foreground" Value="{StaticResource TextWhite}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderMedium}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="4"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Validation.ErrorTemplate">
-            <Setter.Value>
-                <ControlTemplate>
-                    <Grid>
-                        <AdornedElementPlaceholder x:Name="placeholder"/>
-                        <Border BorderBrush="{StaticResource AccentRed}" BorderThickness="1" IsHitTestVisible="False"/>
-                        <TextBlock Foreground="{StaticResource AccentRed}" FontSize="16" FontWeight="Bold"
-                               HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,8,0" IsHitTestVisible="False">!</TextBlock>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 </ResourceDictionary>

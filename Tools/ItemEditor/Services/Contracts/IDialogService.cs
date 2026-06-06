@@ -1,4 +1,4 @@
-﻿namespace ItemEditor.Services;
+﻿namespace ItemEditor.Services.Contracts;
 
 internal interface IDialogService
 {
