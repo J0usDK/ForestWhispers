@@ -9,12 +9,12 @@
              d:DesignHeight="450" d:DesignWidth="480">
 
     <Grid Background="{StaticResource BgDark}">
-        <StackPanel Visibility="{Binding SelectedItem, Converter={StaticResource NullToVis}}" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Visibility="{Binding ItemEditor.CurrentItem, Converter={StaticResource NullToVis}}" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="No Item Selected" FontSize="20" Foreground="{StaticResource TextMuted}" FontWeight="Bold" HorizontalAlignment="Center"/>
             <TextBlock Text="Select an item from the left panel or create a new one." FontSize="14" Foreground="#555555" HorizontalAlignment="Center" Margin="0,5,0,0"/>
         </StackPanel>
 
-        <Grid Visibility="{Binding SelectedItem, Converter={StaticResource NotNullToVis}}">
+        <Grid Visibility="{Binding ItemEditor.CurrentItem, Converter={StaticResource NotNullToVis}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -25,31 +25,36 @@
                     <TextBlock Text="ITEM ID" FontSize="11" Foreground="{StaticResource TextMuted}" VerticalAlignment="Bottom"/>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button Command="{Binding SaveItemCommand}" CommandParameter="{Binding SelectedItem}"
-                                IsEnabled="{Binding CanSaveSelected}" ToolTip="Save Current Item"
+                        <Button Command="{Binding ItemEditor.SaveItemCommand}" CommandParameter="{Binding ItemEditor.CurrentItem}"
+                                IsEnabled="{Binding ItemEditor.CanSave}" ToolTip="Save Current Item"
                                 Style="{StaticResource IconButtonStyle}" Margin="0,0,5,0">
                             <Path Data="{StaticResource Icon.Action.Save}" Fill="{StaticResource HighlightCyan}" Width="18" Height="18" Stretch="Uniform"/>
                         </Button>
 
-                        <Button Command="{Binding DuplicateItemCommand}" CommandParameter="{Binding SelectedItem}"
+                        <Button Command="{Binding ItemsList.DuplicateItemCommand}" CommandParameter="{Binding ItemEditor.CurrentItem}"
                                 Style="{StaticResource IconButtonStyle}" ToolTip="Duplicate Current Item" Margin="0,0,5,0">
                             <Path Data="{StaticResource Icon.Action.Duplicate}" Fill="{StaticResource HighlightBlue}" Width="18" Height="18" Stretch="Uniform"/>
                         </Button>
 
-                        <Button Command="{Binding DeleteItemCommand}" CommandParameter="{Binding SelectedItem}"
+                        <Button Command="{Binding ItemsList.DeleteItemCommand}" CommandParameter="{Binding ItemEditor.CurrentItem}"
                                 Style="{StaticResource IconButtonStyle}" ToolTip="Delete Current Item">
                             <Path Data="{StaticResource Icon.Action.Delete}" Fill="{StaticResource AccentRed}" Width="18" Height="18" Stretch="Uniform"/>
                         </Button>
                     </StackPanel>
                 </Grid>
 
-                <TextBox Text="{Binding SelectedItem.ItemID, UpdateSourceTrigger=PropertyChanged}"
-                         Style="{StaticResource ItemIDTextBoxStyle}" Margin="0,0,0,20"/>
+                <TextBox Text="{Binding ItemEditor.CurrentItem.ItemID, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource ItemIDTextBoxStyle}" Margin="0,0,0,20" TextChanged="OnTextBoxTextChanged">
+                    <TextBox.InputBindings>
+                        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                    </TextBox.InputBindings>
+                </TextBox>
 
                 <TextBlock Text="COMPONENTS" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
             </StackPanel>
 
-            <ListBox Grid.Row="1" ItemsSource="{Binding SelectedItem.Traits}"
+            <ListBox Grid.Row="1" ItemsSource="{Binding ItemEditor.CurrentItem.Traits}"
                         Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Stretch"
                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                         VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.ScrollUnit="Pixel"
@@ -76,7 +81,7 @@
                                 <Border Background="{StaticResource BgLite}" Padding="10,5" CornerRadius="4,4,0,0">
                                     <DockPanel>
                                         <Button DockPanel.Dock="Right" Content="✕"
-                                                Command="{Binding DataContext.RemoveTraitCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                Command="{Binding DataContext.ItemEditor.RemoveTraitCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                                 CommandParameter="{Binding}" Style="{StaticResource DangerButtonStyle}" Width="22" Height="22" ToolTip="Remove Trait"/>
                                         <TextBlock Text="{Binding Id}" FontWeight="Bold" Foreground="{StaticResource HighlightCyan}" VerticalAlignment="Center"/>
                                     </DockPanel>
@@ -96,8 +101,13 @@
                                                     <TextBlock Text="{Binding Type}" FontSize="10" Foreground="{StaticResource HighlightBlue}"/>
                                                 </StackPanel>
 
-                                                <TextBox Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"
-                                                            Style="{StaticResource ValidatedTextBoxStyle}"/>
+                                                <TextBox Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
+                                                            Style="{StaticResource ValidatedTextBoxStyle}" TextChanged="OnTextBoxTextChanged">
+                                                    <TextBox.InputBindings>
+                                                        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                                                        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                                                    </TextBox.InputBindings>
+                                                </TextBox>
                                             </Grid>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>

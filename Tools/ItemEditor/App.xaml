@@ -15,7 +15,6 @@
 
             <converters:NullToVisibilityConverter x:Key="NullToVis"/>
             <converters:NotNullToVisibilityConverter x:Key="NotNullToVis"/>
-            <converters:ItemIDDuplicatedConverter x:Key="ItemIDDup"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

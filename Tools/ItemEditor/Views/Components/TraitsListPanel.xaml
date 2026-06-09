@@ -11,7 +11,7 @@
         <DockPanel Margin="10,10,0,10">
             <Grid DockPanel.Dock="Top" Margin="0,0,10,10">
                 <TextBox x:Name="SearchTraitsBox"
-                     Text="{Binding SearchTraitText, UpdateSourceTrigger=PropertyChanged}"
+                     Text="{Binding TraitsList.SearchText, UpdateSourceTrigger=PropertyChanged, Delay=250}"
                      Background="{StaticResource BgLite}" Foreground="{StaticResource TextPrimary}"
                      BorderBrush="{StaticResource BorderMedium}" BorderThickness="1"
                      Padding="5" VerticalContentAlignment="Center"/>
@@ -31,7 +31,7 @@
 
             <TextBlock DockPanel.Dock="Top" Text="TRAITS LIST:" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,10,5"/>
 
-            <ListBox ItemsSource="{Binding TraitsView}" Background="Transparent" BorderThickness="0" Padding="0,0,15,0"
+            <ListBox ItemsSource="{Binding TraitsList.TraitsView}" Background="Transparent" BorderThickness="0" Padding="0,0,15,0"
                  HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                  VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
                 <ListBox.ItemContainerStyle>
@@ -68,7 +68,7 @@
                                     <TextBlock Text="{Binding Description}" FontSize="11" Foreground="{StaticResource TextMuted}" TextWrapping="Wrap" Margin="0,2,0,0"/>
                                 </StackPanel>
 
-                                <Button Grid.Column="1" Command="{Binding DataContext.AddTraitCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                <Button Grid.Column="1" Command="{Binding DataContext.TraitsList.AddTraitCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                     CommandParameter="{Binding}" Style="{StaticResource OutlineButtonStyle}" Background="Transparent"
                                     BorderBrush="{StaticResource BorderMedium}" Width="24" Height="24" Padding="0" VerticalAlignment="Center" ToolTip="Add Trait">
                                     <Path Data="{StaticResource Icon.Action.Add}" Width="12" Height="12" Stretch="Uniform">

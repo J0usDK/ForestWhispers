@@ -1,13 +1,14 @@
-﻿using System.Diagnostics;
-using System.Globalization;
+﻿using ItemEditor.Core.Types;
+using ItemEditor.Models.Contracts;
+using ItemEditor.Models.Item;
+using ItemEditor.Models.Schema;
+using ItemEditor.Services.Contracts;
 using System.Collections.Concurrent;
+using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using ItemEditor.Models.Item;
-using ItemEditor.Models.Schema;
-using ItemEditor.Core.Types;
-using ItemEditor.Services.Contracts;
 
 namespace ItemEditor.Services;
 
@@ -15,60 +16,49 @@ internal sealed class ItemService : IItemService
 {
     private readonly JsonSerializerOptions _jsonOptions = new() { WriteIndented = true };
 
-    public ItemModel CreateNewItem(string id) => new() { ItemID = id };
-
-    public async Task SaveItemAsync(ItemModel item, string filePath, CancellationToken cancellationToken = default)
+    public IItemModel CreateNewItem(string id)
     {
-        var traitsNode = new JsonObject();
-        foreach (var trait in item.Traits)
-        {
-            var fieldsNode = new JsonObject();
-            foreach (var field in trait.Fields)
-            {
-                string strValue = field.Value?.ToString() ?? string.Empty;
-                var dataType = FieldTypeParser.Parse(field.Type);
-
-                fieldsNode[field.Name] = dataType switch
-                {
-                    FieldDataType.Float => float.TryParse(strValue, NumberStyles.Float, CultureInfo.InvariantCulture, out float fVal) ? JsonValue.Create(fVal) : JsonValue.Create(0.0f),
-                    FieldDataType.Boolean => bool.TryParse(strValue, out bool bVal) ? JsonValue.Create(bVal) : JsonValue.Create(false),
-                    FieldDataType.String => JsonValue.Create(strValue),
-                    _ => JsonValue.Create(strValue)
-                };
-            }
-            traitsNode[trait.Id] = fieldsNode;
-        }
-
-        var rootNode = new JsonObject
-        {
-            ["ItemID"] = item.ItemID,
-            ["traits"] = traitsNode
-        };
-
-        if (item.OriginalItemID != null && item.OriginalItemID != item.ItemID)
-        {
-            string? directory = Path.GetDirectoryName(filePath);
-            if (!string.IsNullOrEmpty(directory))
-            {
-                string oldFilePath = Path.Combine(directory, $"{item.OriginalItemID}.json");
-                if (File.Exists(oldFilePath))
-                    File.Delete(oldFilePath);
-            }
-        }
-
-        await using var stream = File.Create(filePath);
-        await JsonSerializer.SerializeAsync(stream, rootNode, _jsonOptions, cancellationToken).ConfigureAwait(false);
-
-        item.AcceptChanges();
+        var item = new ItemModel { ItemID = id };
+        item.ClearHistory();
+        return item;
     }
 
-    public async Task<IReadOnlyList<ItemModel>> LoadAllItemsParallelAsync(string directoryPath, ItemTraitsSchema schema, CancellationToken cancellationToken = default)
+    public async Task SaveItemAsync(IItemData item, string filePath, CancellationToken cancellationToken = default)
+    {
+        DeleteOldFileIfNeeded(item, filePath);
+
+        await using var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, useAsync: true);
+
+        var writerOptions = new JsonWriterOptions { Indented = true };
+        await using var writer = new Utf8JsonWriter(stream, writerOptions);
+
+        writer.WriteStartObject();
+        writer.WriteString("ItemID", item.ItemID);
+        writer.WriteStartObject("traits");
+
+        foreach (var trait in item.Traits)
+        {
+            writer.WriteStartObject(trait.Id);
+            foreach (var field in trait.Fields)
+            {
+                writer.WritePropertyName(field.Name);
+                WriteFieldValue(writer, field.Value, field.DataType);
+            }
+            writer.WriteEndObject();
+        }
+        writer.WriteEndObject();
+        writer.WriteEndObject();
+
+        await writer.FlushAsync(cancellationToken).ConfigureAwait(false);
+    }
+
+    public async Task<IReadOnlyList<IItemModel>> LoadAllItemsParallelAsync(string directoryPath, ItemTraitsSchema schema, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(directoryPath) || !Directory.Exists(directoryPath))
             return [];
 
         var files = Directory.EnumerateFiles(directoryPath, "*.json");
-        var items = new ConcurrentBag<ItemModel>();
+        var items = new ConcurrentBag<IItemModel>();
 
         var options = new ParallelOptions
         {
@@ -86,7 +76,7 @@ internal sealed class ItemService : IItemService
         return [.. items];
     }
 
-    private async Task<ItemModel?> LoadSingleItemAsync(string filePath, ItemTraitsSchema schema, CancellationToken cancellationToken)
+    private async Task<IItemModel?> LoadSingleItemAsync(string filePath, ItemTraitsSchema schema, CancellationToken cancellationToken)
     {
         try
         {
@@ -103,22 +93,22 @@ internal sealed class ItemService : IItemService
         }
     }
 
-    private ItemModel ParseItemModel(JsonObject rootNode, string filePath, ItemTraitsSchema schema)
+    private IItemModel ParseItemModel(JsonObject rootNode, string filePath, ItemTraitsSchema schema)
     {
         string itemID = rootNode["itemID"]?.ToString() ?? Path.GetFileNameWithoutExtension(filePath);
-        var item = new ItemModel { ItemID = itemID };
+        IItemModel item = new ItemModel { ItemID = itemID };
 
         if (rootNode.TryGetPropertyValue("traits", out var traitNode) && traitNode is JsonObject traitsObject)
         {
             foreach (var traitProp in traitsObject)
             {
                 var traitInstance = ParseTraitInstance(traitProp.Key, traitProp.Value as JsonObject, schema);
-                if (traitInstance != null) item.Traits.Add(traitInstance);
+                if (traitInstance != null) item.AddTrait(traitInstance);
             }
         }
 
         item.AcceptChanges();
-        item.History.Clear();
+        item.ClearHistory();
         return item;
     }
 
@@ -141,9 +131,8 @@ internal sealed class ItemService : IItemService
     private static void AssignFieldValue(TraitFieldValue field, JsonNode savedValueNode)
     {
         string savedString = savedValueNode.ToString();
-        var dataType = FieldTypeParser.Parse(field.Type);
 
-        field.Value = dataType switch
+        field.Value = field.DataType switch
         {
             FieldDataType.Float => float.TryParse(savedString, NumberStyles.Float, CultureInfo.InvariantCulture, out float fVal) ? JsonValue.Create(fVal) : JsonValue.Create(0.0f),
             FieldDataType.Boolean => bool.TryParse(savedString, out bool bVal) ? JsonValue.Create(bVal) : JsonValue.Create(false),
@@ -176,5 +165,60 @@ internal sealed class ItemService : IItemService
             });
         }
         return instance;
+    }
+
+    private static void WriteFieldValue(Utf8JsonWriter writer, object? value, FieldDataType fieldType)
+    {
+        switch (value)
+        {
+            case float f:
+                writer.WriteNumberValue(f);
+                break;
+            case bool b:
+                writer.WriteBooleanValue(b);
+                break;
+            case string s:
+                WriteParsedStringValue(writer, s, fieldType);
+                break;
+            default:
+                writer.WriteNullValue();
+                break;
+        }
+    }
+
+    private static void WriteParsedStringValue(Utf8JsonWriter writer, string strValue, FieldDataType dataType)
+    {
+        switch (dataType)
+        {
+            case FieldDataType.Float:
+                if (float.TryParse(strValue, NumberStyles.Float, CultureInfo.InvariantCulture, out float fValue))
+                    writer.WriteNumberValue(fValue);
+                else
+                    writer.WriteNumberValue(0.0f);
+                break;
+            case FieldDataType.Boolean:
+                if (bool.TryParse(strValue, out bool bValue))
+                    writer.WriteBooleanValue(bValue);
+                else
+                    writer.WriteBooleanValue(false);
+                break;
+            default:
+                writer.WriteStringValue(strValue);
+                break;
+        }
+    }
+
+    private static void DeleteOldFileIfNeeded(IItemData item, string newFilePath)
+    {
+        if (item.OriginalItemID != null && item.OriginalItemID != item.ItemID)
+        {
+            string? directory = Path.GetDirectoryName(newFilePath);
+            if (!string.IsNullOrEmpty(directory))
+            {
+                string oldFilePath = Path.Combine(directory, $"{item.OriginalItemID}.json");
+                if (File.Exists(oldFilePath))
+                    File.Delete(oldFilePath);
+            }
+        }
     }
 }

@@ -1,9 +1,9 @@
-﻿using System.Collections.ObjectModel;
-using ItemEditor.Core;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace ItemEditor.Models.Item;
 
-internal sealed class TraitInstance : ViewModelBase
+internal sealed partial class TraitInstance : ObservableObject
 {
     public string Id { get; init; } = string.Empty;
     public ObservableCollection<TraitFieldValue> Fields { get; } = [];

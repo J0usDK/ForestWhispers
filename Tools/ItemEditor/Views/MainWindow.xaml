@@ -10,10 +10,10 @@
     </WindowChrome.WindowChrome>
 
     <Window.InputBindings>
-        <KeyBinding Modifiers="Ctrl" Key="S" Command="{Binding SaveItemCommand}"/>
+        <KeyBinding Modifiers="Ctrl" Key="S" Command="{Binding ItemEditor.SaveItemCommand}"/>
         <KeyBinding Modifiers="Ctrl+Shift" Key="S" Command="{Binding SaveAllCommand}"/>
-        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding UndoCommand}"/>
-        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding RedoCommand}"/>
+        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding ItemEditor.UndoCommand}"/>
+        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding ItemEditor.RedoCommand}"/>
     </Window.InputBindings>
 
     <Border BorderBrush="{StaticResource BgDark}">
@@ -62,12 +62,12 @@
                     <MenuItem Header="Select Schema File" Command="{Binding SelectSchemaCommand}"/>
                     <MenuItem Header="Select Items Folder" Command="{Binding SelectItemsDirectoryCommand}"/>
                     <Separator/>
-                    <MenuItem Header="Save Current Item" Command="{Binding SaveItemCommand}" InputGestureText="Ctrl+S" Foreground="{StaticResource HighlightCyan}" FontWeight="Bold"/>
-                    <MenuItem Header="Save All Items" Command="{Binding SaveAllCommand}" InputGestureText="Ctrl+Shift+S" Foreground="#4EC9B0" FontWeight="Bold"/>
+                    <MenuItem Header="Save Current Item" Command="{Binding ItemEditor.SaveItemCommand}" InputGestureText="Ctrl+S" Style="{StaticResource EmphasizedMenuItemStyle}"/>
+                    <MenuItem Header="Save All Items" Command="{Binding SaveAllCommand}" InputGestureText="Ctrl+Shift+S" Style="{StaticResource EmphasizedMenuItemStyle}"/>
                 </MenuItem>
                 <MenuItem Header="_Edit">
-                    <MenuItem Header="Undo" Command="{Binding UndoCommand}" InputGestureText="Ctrl+Z"/>
-                    <MenuItem Header="Redo" Command="{Binding RedoCommand}" InputGestureText="Ctrl+Shift+Z"/>
+                    <MenuItem Header="Undo" Command="{Binding ItemEditor.UndoCommand}" InputGestureText="Ctrl+Z"/>
+                    <MenuItem Header="Redo" Command="{Binding ItemEditor.RedoCommand}" InputGestureText="Ctrl+Shift+Z"/>
                 </MenuItem>
             </Menu>
 

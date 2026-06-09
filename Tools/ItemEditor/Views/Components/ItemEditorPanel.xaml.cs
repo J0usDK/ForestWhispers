@@ -8,4 +8,10 @@ public partial class ItemEditorPanel : UserControl
     {
         InitializeComponent();
     }
+
+    private void OnTextBoxTextChanged(object sender, TextChangedEventArgs args)
+    {
+        if (sender is TextBox textBox && textBox.IsFocused && args.Changes.Any(c => c.Offset == 0 && c.AddedLength == textBox.Text.Length))
+            textBox.CaretIndex = textBox.Text.Length;
+    }
 }

@@ -12,7 +12,7 @@
         <DockPanel Margin="10,10,0,10">
             <Grid DockPanel.Dock="Top" Margin="0,0,15,10">
                 <TextBox x:Name="SearchItemBox"
-                     Text="{Binding SearchItemText, UpdateSourceTrigger=PropertyChanged}"
+                     Text="{Binding ItemsList.SearchText, UpdateSourceTrigger=PropertyChanged, Delay=250}"
                      Background="{StaticResource BgLite}" Foreground="{StaticResource TextPrimary}"
                      BorderBrush="{StaticResource BorderMedium}" BorderThickness="1"
                      Padding="5" VerticalContentAlignment="Center"/>
@@ -30,10 +30,10 @@
                 </TextBlock>
             </Grid>
 
-            <Button DockPanel.Dock="Top" Content="✚ Create Item" Command="{Binding CreateItemCommand}" Style="{StaticResource PrimaryButtonStyle}" Margin="0,0,10,10"/>
+            <Button DockPanel.Dock="Top" Content="✚ Create Item" Command="{Binding ItemsList.CreateItemCommand}" Style="{StaticResource PrimaryButtonStyle}" Margin="0,0,10,10"/>
             <TextBlock DockPanel.Dock="Top" Text="OPEN ITEMS:" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,10,5"/>
 
-            <ListBox ItemsSource="{Binding ItemsView}" SelectedItem="{Binding SelectedItem}"
+            <ListBox ItemsSource="{Binding ItemsList.ItemsView}" SelectedItem="{Binding ItemsList.SelectedItem}"
                  Background="Transparent" BorderThickness="0" Foreground="{StaticResource TextPrimary}"
                  Padding="0,0,15,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                  VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
@@ -69,10 +69,10 @@
                             <Border.ContextMenu>
                                 <ContextMenu>
                                     <MenuItem Header="Duplicate Item"
-                                          Command="{Binding PlacementTarget.Tag.DuplicateItemCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                          Command="{Binding PlacementTarget.Tag.ItemsList.DuplicateItemCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
                                           CommandParameter="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource AncestorType=ContextMenu}}"/>
                                     <MenuItem Header="Delete Item"
-                                          Command="{Binding PlacementTarget.Tag.DeleteItemCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                          Command="{Binding PlacementTarget.Tag.ItemsList.DeleteItemCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
                                           CommandParameter="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource AncestorType=ContextMenu}}"/>
                                 </ContextMenu>
                             </Border.ContextMenu>
@@ -117,14 +117,7 @@
                                                     </Setter>
                                                 </DataTrigger>
 
-                                                <DataTrigger Value="True">
-                                                    <DataTrigger.Binding>
-                                                        <MultiBinding Converter="{StaticResource ItemIDDup}">
-                                                            <Binding Path="ItemID"/>
-                                                            <Binding Path="DataContext.RegistryService" RelativeSource="{RelativeSource AncestorType=UserControl}"/>
-                                                            <Binding Path="DataContext.RegistryService.RegistryVersion" RelativeSource="{RelativeSource AncestorType=UserControl}"/>
-                                                        </MultiBinding>
-                                                    </DataTrigger.Binding>
+                                                <DataTrigger Binding="{Binding IsIDDuplicate}" Value="True">
                                                     <Setter Property="Visibility" Value="Visible"/>
                                                     <Setter Property="Text" Value="!"/>
                                                     <Setter Property="Foreground" Value="{StaticResource AccentRed}"/>

@@ -72,6 +72,7 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="4"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="IsUndoEnabled" Value="False"/>
         <Setter Property="Validation.ErrorTemplate">
             <Setter.Value>
                 <ControlTemplate>
@@ -93,6 +94,7 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="5,5,25,5"/>
         <Setter Property="FontSize" Value="16"/>
+        <Setter Property="IsUndoEnabled" Value="False"/>
         <Setter Property="ContextMenu">
             <Setter.Value>
                 <ContextMenu>
@@ -110,9 +112,12 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
+
                         <Border x:Name="border" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
                             Background="{TemplateBinding Background}" SnapsToDevicePixels="True" Panel.ZIndex="0"/>
+
                         <ScrollViewer Grid.Column="0" x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Panel.ZIndex="1"/>
+
                         <TextBlock Grid.Column="1" x:Name="errorIcon" Text="!" Foreground="{StaticResource AccentRed}" FontSize="18" FontWeight="Bold"
                                    HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,6,0" IsHitTestVisible="False" 
                                    Panel.ZIndex="2" Visibility="Collapsed" ToolTip="Item ID already exists!"/>
@@ -127,45 +132,14 @@
                         <Trigger Property="IsKeyboardFocused" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource AccentBlue}"/>
                         </Trigger>
+
+                        <DataTrigger Binding="{Binding ItemEditor.IsCurrentItemIDDuplicate}" Value="True">
+                            <Setter Property="Visibility" TargetName="errorIcon" Value="Visible"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource AccentRed}"/>
+                        </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <DataTrigger Binding="{Binding IsSelectedItemIDDuplicate}" Value="True">
-                <Setter Property="BorderBrush" Value="{StaticResource AccentRed}"/>
-            </DataTrigger>
-            <DataTrigger Binding="{Binding IsSelectedItemIDDuplicate}" Value="True">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="TextBox">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Border x:Name="border" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
-                                    Background="{TemplateBinding Background}" SnapsToDevicePixels="True" Panel.ZIndex="0"/>
-                                <ScrollViewer Grid.Column="0" x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Panel.ZIndex="1"/>
-                                <TextBlock Grid.Column="1" x:Name="errorIcon" Text="!" Foreground="{StaticResource AccentRed}" FontSize="18" FontWeight="Bold"
-                                           HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,6,0" IsHitTestVisible="False" 
-                                           Panel.ZIndex="2" Visibility="Visible" ToolTip="Item ID already exists!"/>
-                            </Grid>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsEnabled" Value="false">
-                                    <Setter Property="Opacity" TargetName="border" Value="0.56"/>
-                                </Trigger>
-                                <Trigger Property="IsMouseOver" Value="true">
-                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource AccentRed}"/>
-                                </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="true">
-                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource AccentRed}"/>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </DataTrigger>
-        </Style.Triggers>
     </Style>
 </ResourceDictionary>

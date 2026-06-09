@@ -1,19 +1,20 @@
-﻿using ItemEditor.Models.Item;
+﻿using ItemEditor.Models.Contracts;
+using ItemEditor.Models.Item;
 
 namespace ItemEditor.Core.UndoRedo;
 
-internal sealed class TraitCollectionCommand(ItemModel item, TraitInstance trait, bool isAdded) : IUndoRedoCommand
+internal sealed class TraitCollectionCommand(IItemModel item, TraitInstance trait, bool isAdded) : IUndoRedoCommand
 {
     public void Undo()
     {
-        if (isAdded) item.Traits.Remove(trait);
-        else item.Traits.Add(trait);
+        if (isAdded) item.RemoveTrait(trait);
+        else item.AddTrait(trait);
     }
 
     public void Redo()
     {
-        if (isAdded) item.Traits.Add(trait);
-        else item.Traits.Remove(trait);
+        if (isAdded) item.AddTrait(trait);
+        else item.RemoveTrait(trait);
     }
 
     public bool CanMerge(IUndoRedoCommand nextCommand) => false;

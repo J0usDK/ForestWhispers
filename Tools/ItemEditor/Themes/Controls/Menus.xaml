@@ -83,6 +83,16 @@
         </Setter>
     </Style>
 
+    <Style x:Key="EmphasizedMenuItemStyle" TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
+        <Setter Property="Foreground" Value="{StaticResource HighlightCyan}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="#666666"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <Style TargetType="Separator">
         <Setter Property="Template">
             <Setter.Value>
