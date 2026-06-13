@@ -3,7 +3,7 @@
 #include <memory>
 #include <vector>
 
-using TItemID = uint32_t;
+using TItemID = uint64_t;
 
 class CItem
 {

@@ -15,4 +15,9 @@ public:
 	{
 		return (maxDurability > 0.0f) ? (currentDurability / maxDurability) : 0.0f;
 	}
+
+	std::unique_ptr<IItemTrait> Clone() const override
+	{
+		return std::make_unique<TConditionTrait>(*this);
+	}
 };

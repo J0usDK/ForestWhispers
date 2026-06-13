@@ -119,6 +119,11 @@ PRIVATE
     "${CRYENGINE_DIR}/Code/CryPlugins/CryDefaultEntities/Module"
 )
 
+target_include_directories(${THIS_PROJECT}
+SYSTEM PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Includes"
+)
+
 if(CMAKE_CXX_COMPILER_ID MATCHES "[Cc]lang")
     target_compile_options(${THIS_PROJECT} PRIVATE
         -Wno-unused-variable
