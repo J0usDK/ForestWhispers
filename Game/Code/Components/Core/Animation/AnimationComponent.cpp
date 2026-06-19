@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "CAnimationComponent.h"
+#include "AnimationComponent.h"
 #include "Global/Utils/Math.h"
 
 #include <CryCore/StaticInstanceList.h>

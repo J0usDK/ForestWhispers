@@ -1,5 +1,5 @@
 #pragma once
-#include "CItemDatabase.h"
+#include "Systems/Items/Database/ItemDatabase.h"
 
 class IItemLoader
 {

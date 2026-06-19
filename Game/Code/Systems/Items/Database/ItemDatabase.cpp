@@ -1,4 +1,5 @@
-#include "CItemDatabase.h"
+#include "StdAfx.h"
+#include "ItemDatabase.h"
 
 void CItemDatabase::RegisterDefinition(SItemDefinition&& def)
 {
@@ -12,7 +13,7 @@ void CItemDatabase::RegisterDefinitionsBatch(std::vector<SItemDefinition>&& batc
 		m_itemDatabase[def.id] = std::move(def);
 }
 
-const SItemDefinition* CItemDatabase::GetItemDefinition(TItemID id) const
+const SItemDefinition* CItemDatabase::GetItemDefinition(TItemDefinitionID id) const
 {
 	auto it = m_itemDatabase.find(id);
 	return it != m_itemDatabase.end() ? &it->second : nullptr;

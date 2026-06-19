@@ -1,12 +1,13 @@
 #pragma once
 #include "Base/IItemTrait.h"
 
-constexpr TTraitID TRAIT_CONDITION = MAKE_TRAIT_ID("condition");
 
 class TConditionTrait final : public IItemTrait
 {
 public:
-	TTraitID GetTraitID() const override { return TRAIT_CONDITION; }
+	static constexpr TTraitID ID = MAKE_TRAIT_ID("condition");
+
+	TTraitID GetTraitID() const override { return ID; }
 
 	float maxDurability = 0.0f;
 	float currentDurability = 0.0f;
@@ -19,5 +20,11 @@ public:
 	std::unique_ptr<IItemTrait> Clone() const override
 	{
 		return std::make_unique<TConditionTrait>(*this);
+	}
+
+	bool IsEqual(const IItemTrait* pOther) const override
+	{
+		const auto* pOtherCond = static_cast<const TConditionTrait*>(pOther);
+		return maxDurability == pOtherCond->maxDurability && currentDurability == pOtherCond->currentDurability;
 	}
 };

@@ -1,10 +1,10 @@
 // Copyright 2017-2020 Crytek GmbH / Crytek Group. All rights reserved.
 #pragma once
 
-#include "Components/Core/Movement/CMovementComponent.h"
-#include "Components/Core/Animation/CAnimationComponent.h"
-#include "Components/Player/Camera/CPlayerCameraComponent.h"
-#include "Components/Player/Input/CPlayerInputComponent.h"
+#include "Components/Core/Movement/MovementComponent.h"
+#include "Components/Core/Animation/AnimationComponent.h"
+#include "Components/Player/Camera/PlayerCameraComponent.h"
+#include "Components/Player/Input/PlayerInputComponent.h"
 
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay

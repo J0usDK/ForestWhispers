@@ -12,5 +12,7 @@ class IItemTrait
 public:
 	virtual ~IItemTrait() = default;
 	virtual TTraitID GetTraitID() const = 0;
+
 	virtual std::unique_ptr<IItemTrait> Clone() const = 0;
+	virtual bool IsEqual(const IItemTrait* pOther) const = 0;
 };

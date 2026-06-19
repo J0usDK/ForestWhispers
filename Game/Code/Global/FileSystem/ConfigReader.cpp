@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "CConfigReader.h"
+#include "ConfigReader.h"
 #include <CrySystem/ISystem.h>
 #include <CrySystem/File/ICryPak.h>
 

@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "CPlayerInputComponent.h"
+#include "PlayerInputComponent.h"
 
 #include <CryCore/StaticInstanceList.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>

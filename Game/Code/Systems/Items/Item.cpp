@@ -1,13 +1,14 @@
+#include "StdAfx.h"
 #include "Item.h"
 
-CItem::CItem(TItemID itemID) : m_itemID(itemID)
+CItem::CItem(TItemDefinitionID defID) : m_defID(defID)
 {
 	m_traits.reserve(4); // Reserve space for a few traits to avoid frequent reallocations
 }
 
-TItemID CItem::GetItemID() const
+TItemDefinitionID CItem::GetDefinitionID() const
 {
-	return m_itemID;
+	return m_defID;
 }
 
 void CItem::AddTrait(std::unique_ptr<IItemTrait> pTrait)
@@ -16,9 +17,9 @@ void CItem::AddTrait(std::unique_ptr<IItemTrait> pTrait)
 		return;
 
 	TTraitID newTraitID = pTrait->GetTraitID();
-	TraitVec::iterator it = FindTrait(newTraitID);
+	auto it = FindTrait(newTraitID);
 
-	if (it != m_traits.end() && (*it)->GetTraitID() == newTraitID)
+	if (it != m_traits.end())
 		*it = std::move(pTrait);
 	else
 		m_traits.insert(it, std::move(pTrait));
@@ -26,19 +27,49 @@ void CItem::AddTrait(std::unique_ptr<IItemTrait> pTrait)
 
 bool CItem::HasTrait(TTraitID traitID) const
 {
-	TraitVec::const_iterator it = FindTrait(traitID);
+	TTraitVec::const_iterator it = FindTrait(traitID);
 	return it != m_traits.end() && (*it)->GetTraitID() == traitID;
 }
 
-CItem::TraitVec::const_iterator CItem::FindTrait(TTraitID traitID) const
+CItem::TTraitVec::const_iterator CItem::FindTrait(TTraitID traitID) const
 {
 	return std::lower_bound(m_traits.begin(), m_traits.end(), traitID,
 		[](const std::unique_ptr<IItemTrait>& trait, TTraitID id)
 		{ return trait->GetTraitID() < id; });
 }
-CItem::TraitVec::iterator CItem::FindTrait(TTraitID traitID)
+CItem::TTraitVec::iterator CItem::FindTrait(TTraitID traitID)
 {
 	return std::lower_bound(m_traits.begin(), m_traits.end(), traitID,
 		[](const std::unique_ptr<IItemTrait>& trait, TTraitID id)
 		{ return trait->GetTraitID() < id; });
+}
+
+bool CItem::IsEqual(const CItem& pOther) const
+{
+	if (m_defID != pOther.m_defID) return false;
+	if (m_traits.size() != pOther.m_traits.size()) return false;
+
+	for (const auto& pTrait : m_traits)
+	{
+		const IItemTrait* pOtherTrait = pOther.TryGetTraitRaw(pTrait->GetTraitID());
+		if (!pOtherTrait || !pTrait->IsEqual(pOtherTrait))
+			return false;
+	}
+	return true;
+}
+
+const IItemTrait* CItem::TryGetTraitRaw(TTraitID traitID) const
+{
+	auto it = FindTrait(traitID);
+	if (it != m_traits.end())
+		return (*it).get();
+	return nullptr;
+}
+
+IItemTrait* CItem::TryGetTraitRaw(TTraitID traitID)
+{
+	auto it = FindTrait(traitID);
+	if (it != m_traits.end())
+		return (*it).get();
+	return nullptr;
 }

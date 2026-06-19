@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "CPlayerCameraComponent.h"
+#include "PlayerCameraComponent.h"
 #include "Global/Utils/Math.h"
 
 #include <CryCore/StaticInstanceList.h>

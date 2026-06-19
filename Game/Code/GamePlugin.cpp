@@ -9,8 +9,14 @@
 #include <CrySchematyc/Env/EnvPackage.h>
 #include <CrySchematyc/Utils/SharedString.h>
 
+// User libs
+#include "Systems/Items/Database/ItemLoader.h"
+#include "Global/GameEnv.h"
+
 // Included only once per DLL module.
 #include <CryCore/Platform/platform_impl.inl>
+
+SGameEnvironment* gGameEnv = nullptr;
 
 CGamePlugin::~CGamePlugin()
 {
@@ -20,13 +26,39 @@ CGamePlugin::~CGamePlugin()
 	{
 		gEnv->pSchematyc->GetEnvRegistry().DeregisterPackage(CGamePlugin::GetCID());
 	}
+
+	if (gGameEnv)
+	{
+		gGameEnv->pItemDatabase = nullptr;
+		gGameEnv->pItemFactory = nullptr;
+		delete gGameEnv;
+		gGameEnv = nullptr;
+	}
 }
 
 bool CGamePlugin::Initialize(SSystemGlobalEnvironment& env, const SSystemInitParams& initParams)
 {
 	// Register for engine system events, in our case we need ESYSTEM_EVENT_GAME_POST_INIT to load the map
 	gEnv->pSystem->GetISystemEventDispatcher()->RegisterListener(this, "CGamePlugin");
+
+	if (!gGameEnv)
+		gGameEnv = new SGameEnvironment();
+
+	m_pItemDatabase = std::make_unique<CItemDatabase>();
+	m_pItemFactory = std::make_unique<CItemFactory>(*m_pItemDatabase);
+	{
+		CItemParser itemParser;
+		CItemLoader itemLoader("GameData/Items", itemParser);
+
+		if (itemLoader.LoadItems(*m_pItemDatabase))
+			CryLogAlways("Items' configs loaded.");
+		else
+			CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "Failed to load items' configs");
+	}
 	
+	gGameEnv->pItemDatabase = m_pItemDatabase.get();
+	gGameEnv->pItemFactory = m_pItemFactory.get();
+
 	return true;
 }
 

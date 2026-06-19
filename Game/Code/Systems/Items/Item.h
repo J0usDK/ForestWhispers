@@ -1,39 +1,62 @@
 #pragma once
-#include "Systems/Items/Traits/Base/IItemTrait.h"
 #include <memory>
 #include <vector>
-
-using TItemID = uint64_t;
+#include "Systems/Items/Database/ItemDefinition.h"
 
 class CItem
 {
 private:
-	using TraitVec = std::vector<std::unique_ptr<IItemTrait>>;
+	using TTraitVec = std::vector<std::unique_ptr<IItemTrait>>;
 
 public:
-	explicit CItem(TItemID itemID);
+	explicit CItem(TItemDefinitionID defID);
 
-	TItemID GetItemID() const;
+	TItemDefinitionID GetDefinitionID() const;
 
 	bool HasTrait(TTraitID traitID) const;
 	void AddTrait(std::unique_ptr<IItemTrait> pTrait);
 
+	bool IsEqual(const CItem& pOther) const;
+
 	template<typename T>
-	T* GetTrait(TTraitID traitID) const
+	const T* TryGetTrait() const
 	{
-		TraitVec::const_iterator it = FindTrait(traitID);
-		if (it != m_traits.end() && (*it)->GetTraitID() == traitID)
+		static_assert(std::is_base_of_v<IItemTrait, T>, "Type must derive from IItemTrait");
+
+		TTraitVec::const_iterator it = FindTrait(T::ID);
+		if (it != m_traits.end())
+			return static_cast<const T*>((*it).get());
+		return nullptr;
+	}
+
+	template<typename T>
+	T* TryGetTrait()
+	{
+		static_assert(std::is_base_of_v<IItemTrait, T>, "Type must derive from IItemTrait");
+
+		TTraitVec::iterator it = FindTrait(T::ID);
+		if (it != m_traits.end())
 			return static_cast<T*>((*it).get());
 		return nullptr;
 	}
 
+	template<class F>
+	void ForEachTrait(F&& f) const
+	{
+		for (const auto& t : m_traits)
+			f(*t);
+	}
+
+	const IItemTrait* TryGetTraitRaw(TTraitID traitID) const;
+	IItemTrait* TryGetTraitRaw(TTraitID traitID);
+
 
 private:
 	// Binary search
-	TraitVec::const_iterator FindTrait(TTraitID traitID) const;
-	TraitVec::iterator FindTrait(TTraitID traitID);
+	TTraitVec::const_iterator FindTrait(TTraitID traitID) const;
+	TTraitVec::iterator FindTrait(TTraitID traitID);
 
 private:
-	TItemID m_itemID;
-	TraitVec m_traits;
+	TItemDefinitionID m_defID;
+	TTraitVec m_traits;
 };

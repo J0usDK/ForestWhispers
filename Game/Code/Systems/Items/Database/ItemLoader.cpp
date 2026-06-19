@@ -1,11 +1,11 @@
 #include "StdAfx.h"
-#include "CItemLoader.h"
-#include "Global/Utils/FileSystem/CConfigReader.h"
-#include "CItemParser.h"
+#include "ItemLoader.h"
+#include "Global/FileSystem/ConfigReader.h"
+#include "Systems/Items/Parser/ItemParser.h"
 
 #include <CryThreading/IJobManager.h>
 
-CItemLoader::CItemLoader(const string& directoryPath) : m_directoryPath(directoryPath)
+CItemLoader::CItemLoader(const string& directoryPath, const CItemParser& parser) : m_directoryPath(directoryPath), m_parser(parser)
 {
 }
 
@@ -22,9 +22,9 @@ bool CItemLoader::LoadItems(CItemDatabase& database)
 		auto sharedBuffer = std::make_shared<std::vector<char>>(CConfigReader::ReadFile(files[i].c_str()));
 		if (sharedBuffer->empty()) continue;
 
-		gEnv->pJobManager->AddLambdaJob("ParseItemConfig", [sharedBuffer, &parsedItems, i]()
+		gEnv->pJobManager->AddLambdaJob("ParseItemConfig", [this, sharedBuffer, &parsedItems, i]()
 		{
-			CItemParser::Parse(*sharedBuffer, parsedItems[i]);
+			m_parser.Parse(*sharedBuffer, parsedItems[i]);
 		}, JobManager::eRegularPriority, &jobSyncState);
 	}
 	gEnv->pJobManager->WaitForJob(jobSyncState);

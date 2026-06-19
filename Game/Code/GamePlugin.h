@@ -5,6 +5,9 @@
 #include <CryGame/IGameFramework.h>
 #include <CryEntitySystem/IEntityClass.h>
 
+#include "Systems/Items/Database/ItemDatabase.h"
+#include "Systems/Items/Factory/ItemFactory.h"
+
 // The entry-point of the application
 // An instance of CGamePlugin is automatically created when the library is loaded
 // We then construct the local player entity and CPlayerComponent instance when OnClientConnectionReceived is first called.
@@ -33,4 +36,8 @@ public:
 	{
 		return cryinterface_cast<CGamePlugin>(CGamePlugin::s_factory.CreateClassInstance().get());
 	}
+	
+private:
+	std::unique_ptr<CItemDatabase> m_pItemDatabase;
+	std::unique_ptr<CItemFactory> m_pItemFactory;
 };
