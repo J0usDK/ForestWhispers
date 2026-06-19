@@ -2,13 +2,13 @@
   "ItemID": "test_sword",
   "traits": {
     "condition": {
-      "maxDurability": 100,
-      "currentDurability": 100
+      "maxDurability": null,
+      "currentDurability": null
     },
     "melee_combat": {
-      "baseSlashingDamage": 15,
-      "basePiercingDamage": 10,
-      "baseBluntDamage": 5
+      "baseSlashingDamage": null,
+      "basePiercingDamage": 8,
+      "baseBluntDamage": 2
     }
   }
 }

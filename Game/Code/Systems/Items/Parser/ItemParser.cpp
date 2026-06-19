@@ -28,7 +28,12 @@ void CItemParser::Parse(std::vector<char>& buffer, SItemDefinition& outDef) cons
 	string itemID;
 	if (!JsonUtils::TryGetString(doc, "ItemID", itemID))
 		return;
+	outDef.name = itemID;
 	outDef.id = StringUtils::GenerateID(itemID);
+
+	JsonUtils::TryGetString(doc, "description", outDef.description);
+	JsonUtils::TryGetString(doc, "geometry", outDef.geometryPath);
+	JsonUtils::TryGetString(doc, "icon", outDef.iconPath);
 
 	ParseItemTraits(doc, outDef);
 }
