@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using ItemEditor.Core.Types;
 using ItemEditor.Core.UndoRedo;
 using ItemEditor.Models.Contracts;
 using System.Collections.ObjectModel;
@@ -22,21 +23,15 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
     private string? _originalItemID;
     public string? OriginalItemID => _originalItemID;
 
-    [ObservableProperty]
-    private string _description = string.Empty;
-
-    [ObservableProperty]
-    private string _geometryPath = string.Empty;
-
-    [ObservableProperty]
-    private string _iconPath = string.Empty;
+    public MetadataFieldValue Description { get; } = new() { FieldType = MetadataFieldType.None };
+    public MetadataFieldValue GeometryPath { get; } = new() { FieldType = MetadataFieldType.GeometryPath };
+    public MetadataFieldValue IconPath { get; } = new() { FieldType = MetadataFieldType.IconPath };
 
     public bool IsDirty => History.IsDirty;
 
-    [ObservableProperty]
-    public bool _hasErrors;
+    public bool HasErrors => _invalidFields.Count > 0;
 
-    private readonly HashSet<TraitFieldValue> _invalidFields = [];
+    private readonly HashSet<INotifyDataErrorInfo> _invalidFields = [];
 
     private readonly ObservableCollection<TraitInstance> _traits = [];
     public ReadOnlyObservableCollection<TraitInstance> Traits { get; }
@@ -49,38 +44,24 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
         History.Push(new ItemMetadataChangeCommand(this, nameof(ItemID), val => ItemID = val, oldValue, newValue));
     }
 
-    partial void OnDescriptionChanged(string? oldValue, string newValue)
-    {
-        if (oldValue == null || oldValue == newValue) return;
-
-        History.Push(new ItemMetadataChangeCommand(this, nameof(Description), val => Description = val, oldValue, newValue));
-    }
-
-    partial void OnGeometryPathChanged(string? oldValue, string newValue)
-    {
-        if (oldValue == null || oldValue == newValue) return;
-
-        History.Push(new ItemMetadataChangeCommand(this, nameof(GeometryPath), val =>  GeometryPath = val, oldValue, newValue));
-    }
-
-    partial void OnIconPathChanged(string? oldValue, string newValue)
-    {
-        if (oldValue == null || oldValue == newValue) return;
-
-        History.Push(new ItemMetadataChangeCommand(this, nameof(IconPath), val =>  IconPath = val, oldValue, newValue));
-    }
-
     public ItemModel()
     {
-
         Traits = new ReadOnlyObservableCollection<TraitInstance>(_traits);
         _traits.CollectionChanged += Traits_CollectionChanged;
         History.StateChanged += () => OnPropertyChanged(nameof(IsDirty));
+
+        HookMetadataField(Description, nameof(Description), val => Description.Value = val);
+        HookMetadataField(GeometryPath, nameof(GeometryPath), val => GeometryPath.Value = val);
+        HookMetadataField(IconPath, nameof(IconPath), val => IconPath.Value = val);
     }
 
     public IItemModel Clone(string newID)
     {
-        var clone = new ItemModel { ItemID = newID, Description=this.Description, GeometryPath=this.GeometryPath, IconPath=this.IconPath };
+        var clone = new ItemModel { ItemID = newID };
+        clone.Description.Value = this.Description.Value;
+        clone.GeometryPath.Value = this.GeometryPath.Value;
+        clone.IconPath.Value = this.IconPath.Value;
+
         foreach (var trait in Traits)
             clone.AddTrait(trait.Clone());
         clone.ClearHistory();
@@ -161,6 +142,22 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
         field.ErrorsChanged -= Field_ErrorsChanged;
         field.FieldValueChanged -= Field_FieldValueChanged;
         if (_invalidFields.Remove(field)) OnPropertyChanged(nameof(HasErrors));
+    }
+
+    private void HookMetadataField(MetadataFieldValue field, string propertyName, Action<string> setter)
+    {
+        field.FieldValueChanged += (sender, e) =>
+        {
+            if (e.OldValue != null && e.NewValue != null)
+                History.Push(new ItemMetadataChangeCommand(this, propertyName, setter, (string)e.OldValue, (string)e.NewValue));
+        };
+
+        field.ErrorsChanged += (sender, e) =>
+        {
+            if (field.HasErrors) _invalidFields.Add(field);
+            else _invalidFields.Remove(field);
+            OnPropertyChanged(nameof(HasErrors));
+        };
     }
 
     private void Field_FieldValueChanged(object? sender, FieldValueChangedEventArgs e)

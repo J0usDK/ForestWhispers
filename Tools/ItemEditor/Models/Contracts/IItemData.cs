@@ -9,9 +9,9 @@ internal interface IItemData : INotifyPropertyChanged
     string ItemID { get; }
     string? OriginalItemID { get; }
 
-    string Description { get; }
-    string GeometryPath { get; }
-    string IconPath { get; }
+    MetadataFieldValue Description { get; }
+    MetadataFieldValue GeometryPath { get; }
+    MetadataFieldValue IconPath { get; }
 
     ReadOnlyObservableCollection<TraitInstance> Traits { get; }
 }

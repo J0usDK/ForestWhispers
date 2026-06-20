@@ -34,9 +34,9 @@ internal sealed class ItemService : IItemService
 
         writer.WriteStartObject();
         writer.WriteString("ItemID", item.ItemID);
-        writer.WriteString("Description", item.Description);
-        writer.WriteString("GeometryPath", item.GeometryPath);
-        writer.WriteString("IconPath", item.IconPath);
+        writer.WriteString("Description", item.Description.Value);
+        writer.WriteString("GeometryPath", item.GeometryPath.Value);
+        writer.WriteString("IconPath", item.IconPath.Value);
         writer.WriteStartObject("traits");
 
         foreach (var trait in item.Traits)
@@ -102,7 +102,12 @@ internal sealed class ItemService : IItemService
         string description = rootNode["Description"]?.ToString() ?? String.Empty;
         string geometryPath = rootNode["GeometryPath"]?.ToString() ?? String.Empty;
         string iconPath = rootNode["IconPath"]?.ToString() ?? String.Empty;
-        IItemModel item = new ItemModel { ItemID = itemID, Description = description, GeometryPath = geometryPath, IconPath = iconPath };
+
+        IItemModel item = new ItemModel { ItemID = itemID };
+
+        item.Description.Value = description;
+        item.GeometryPath.Value = geometryPath;
+        item.IconPath.Value = iconPath;
 
         if (rootNode.TryGetPropertyValue("traits", out var traitNode) && traitNode is JsonObject traitsObject)
         {
