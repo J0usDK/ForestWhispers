@@ -1,14 +1,17 @@
 {
   "ItemID": "test_sword",
+  "Description": "sdadadasss",
+  "GeometryPath": "",
+  "IconPath": "",
   "traits": {
     "condition": {
-      "maxDurability": null,
-      "currentDurability": null
+      "maxDurability": 100,
+      "currentDurability": 100
     },
     "melee_combat": {
-      "baseSlashingDamage": null,
-      "basePiercingDamage": 8,
-      "baseBluntDamage": 2
+      "baseSlashingDamage": 15,
+      "basePiercingDamage": 10,
+      "baseBluntDamage": 5
     }
   }
 }

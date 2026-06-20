@@ -34,6 +34,9 @@ internal sealed class ItemService : IItemService
 
         writer.WriteStartObject();
         writer.WriteString("ItemID", item.ItemID);
+        writer.WriteString("Description", item.Description);
+        writer.WriteString("GeometryPath", item.GeometryPath);
+        writer.WriteString("IconPath", item.IconPath);
         writer.WriteStartObject("traits");
 
         foreach (var trait in item.Traits)
@@ -95,8 +98,11 @@ internal sealed class ItemService : IItemService
 
     private IItemModel ParseItemModel(JsonObject rootNode, string filePath, ItemTraitsSchema schema)
     {
-        string itemID = rootNode["itemID"]?.ToString() ?? Path.GetFileNameWithoutExtension(filePath);
-        IItemModel item = new ItemModel { ItemID = itemID };
+        string itemID = rootNode["ItemID"]?.ToString() ?? Path.GetFileNameWithoutExtension(filePath);
+        string description = rootNode["Description"]?.ToString() ?? String.Empty;
+        string geometryPath = rootNode["GeometryPath"]?.ToString() ?? String.Empty;
+        string iconPath = rootNode["IconPath"]?.ToString() ?? String.Empty;
+        IItemModel item = new ItemModel { ItemID = itemID, Description = description, GeometryPath = geometryPath, IconPath = iconPath };
 
         if (rootNode.TryGetPropertyValue("traits", out var traitNode) && traitNode is JsonObject traitsObject)
         {
@@ -134,10 +140,10 @@ internal sealed class ItemService : IItemService
 
         field.Value = field.DataType switch
         {
-            FieldDataType.Float => float.TryParse(savedString, NumberStyles.Float, CultureInfo.InvariantCulture, out float fVal) ? JsonValue.Create(fVal) : JsonValue.Create(0.0f),
-            FieldDataType.Boolean => bool.TryParse(savedString, out bool bVal) ? JsonValue.Create(bVal) : JsonValue.Create(false),
-            FieldDataType.String => JsonValue.Create(savedString),
-            _ => JsonValue.Create(savedString)
+            FieldDataType.Float => float.TryParse(savedString, NumberStyles.Float, CultureInfo.InvariantCulture, out float fVal) ? fVal : 0.0f,
+            FieldDataType.Boolean => bool.TryParse(savedString, out bool bVal) ? bVal : false,
+            FieldDataType.String => savedString,
+            _ => savedString
         };
     }
 
