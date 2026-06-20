@@ -115,6 +115,32 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
     [RelayCommand(CanExecute = nameof(CanRedo))]
     private void Redo() => CurrentItem?.Redo();
 
+    [RelayCommand]
+    private void SelectGeometryPath()
+    {
+        if (CurrentItem == null) return;
+
+        string? selectedPath = _dialogService.ShowOpenFileDialog(
+            filter: "CryEngine Geometry (*.cgf)|*.cgf|All Files (*.*)|*.*",
+            title: "Select Geometry File");
+
+        if (!string.IsNullOrWhiteSpace(selectedPath))
+            CurrentItem.GeometryPath.Value = selectedPath;
+    }
+
+    [RelayCommand]
+    private void SelectIconPath()
+    {
+        if (CurrentItem == null) return;
+
+        string? selectedPath = _dialogService.ShowOpenFileDialog(
+            filter: "CryEngine Surface (*.dds)|*.dds|All Files (*.*)|*.*",
+            title: "Select Icon File");
+
+        if (!string.IsNullOrWhiteSpace(selectedPath))
+            CurrentItem.IconPath.Value = selectedPath;
+    }
+
     private void OnItemPropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
         if (e.PropertyName is nameof(ITrackableItem.IsDirty) or nameof(ITrackableItem.HasErrors) or nameof(IItemData.ItemID))

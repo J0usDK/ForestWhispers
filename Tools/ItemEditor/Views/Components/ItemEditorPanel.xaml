@@ -58,22 +58,35 @@
                 </TextBox>
 
                 <TextBlock Text="GEOMETRY PATH" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
-                <TextBox Text="{Binding ItemEditor.CurrentItem.GeometryPath.Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
-                         Style="{StaticResource ValidatedTextBoxStyle}" Margin="0,0,0,20" TextChanged="OnTextBoxTextChanged">
-                    <TextBox.InputBindings>
-                        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-                        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-                    </TextBox.InputBindings>
-                </TextBox>
+                <Grid Margin="0,0,0,20">
+                    <TextBox Text="{Binding ItemEditor.CurrentItem.GeometryPath.Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
+                             Style="{StaticResource PathTextBoxStyle}" TextChanged="OnTextBoxTextChanged"/>
+
+                    <Button Command="{Binding ItemEditor.SelectGeometryPathCommand}" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                            Style="{StaticResource IconButtonStyle}" Width="24" Height="24" Cursor="Hand" 
+                            Background="Transparent" BorderThickness="0" ToolTip="Browse for .cgf geometry file">
+                        <Path Data="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+                              Fill="{StaticResource TextMuted}" Stretch="Uniform" Width="14" Height="14"/>
+                    </Button>
+                </Grid>
 
                 <TextBlock Text="ICON PATH" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
-                <TextBox Text="{Binding ItemEditor.CurrentItem.IconPath.Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
-                         Style="{StaticResource ValidatedTextBoxStyle}" Margin="0,0,0,20" TextChanged="OnTextBoxTextChanged">
-                    <TextBox.InputBindings>
-                        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-                        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-                    </TextBox.InputBindings>
-                </TextBox>
+                <Grid Margin="0,0,0,20">
+                    <TextBox Text="{Binding ItemEditor.CurrentItem.IconPath.Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
+                             Style="{StaticResource PathTextBoxStyle}" TextChanged="OnTextBoxTextChanged">
+                        <TextBox.InputBindings>
+                            <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                            <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                        </TextBox.InputBindings>
+                    </TextBox>
+
+                    <Button Command="{Binding ItemEditor.SelectIconPathCommand}" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                            Style="{StaticResource IconButtonStyle}" Width="24" Height="24" Cursor="Hand" 
+                            Background="Transparent" BorderThickness="0" ToolTip="Browse for .dds icon file">
+                        <Path Data="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+                              Fill="{StaticResource TextMuted}" Stretch="Uniform" Width="14" Height="14"/>
+                    </Button>
+                </Grid>
 
                 <TextBlock Text="COMPONENTS" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
 
