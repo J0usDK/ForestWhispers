@@ -87,7 +87,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="ItemIDTextBoxStyle" TargetType="TextBox">
+    <Style x:Key="MetadataTextBoxStyle" TargetType="TextBox">
         <Setter Property="Background" Value="{StaticResource BgLite}"/>
         <Setter Property="Foreground" Value="{StaticResource TextWhite}"/>
         <Setter Property="BorderBrush" Value="{StaticResource BorderMedium}"/>
@@ -131,6 +131,9 @@
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource AccentBlue}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource AccentBlueHover}"/>
                         </Trigger>
 
                         <DataTrigger Binding="{Binding ItemEditor.IsCurrentItemIDDuplicate}" Value="True">

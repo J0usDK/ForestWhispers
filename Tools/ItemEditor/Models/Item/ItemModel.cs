@@ -22,6 +22,15 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
     private string? _originalItemID;
     public string? OriginalItemID => _originalItemID;
 
+    [ObservableProperty]
+    private string _description = string.Empty;
+
+    [ObservableProperty]
+    private string _geometryPath = string.Empty;
+
+    [ObservableProperty]
+    private string _iconPath = string.Empty;
+
     public bool IsDirty => History.IsDirty;
 
     [ObservableProperty]
@@ -34,11 +43,31 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
 
     partial void OnItemIDChanged(string? oldValue, string newValue)
     {
-        if (oldValue != null)
-        {
-            ItemIDChanged?.Invoke(this, (oldValue, newValue));
-            History.Push(new ItemIDChangeCommand(this, oldValue, newValue));
-        }
+        if (oldValue == null || oldValue == newValue) return;
+
+        ItemIDChanged?.Invoke(this, (oldValue, newValue));
+        History.Push(new ItemMetadataChangeCommand(this, nameof(ItemID), val => ItemID = val, oldValue, newValue));
+    }
+
+    partial void OnDescriptionChanged(string? oldValue, string newValue)
+    {
+        if (oldValue == null || oldValue == newValue) return;
+
+        History.Push(new ItemMetadataChangeCommand(this, nameof(Description), val => Description = val, oldValue, newValue));
+    }
+
+    partial void OnGeometryPathChanged(string? oldValue, string newValue)
+    {
+        if (oldValue == null || oldValue == newValue) return;
+
+        History.Push(new ItemMetadataChangeCommand(this, nameof(GeometryPath), val =>  GeometryPath = val, oldValue, newValue));
+    }
+
+    partial void OnIconPathChanged(string? oldValue, string newValue)
+    {
+        if (oldValue == null || oldValue == newValue) return;
+
+        History.Push(new ItemMetadataChangeCommand(this, nameof(IconPath), val =>  IconPath = val, oldValue, newValue));
     }
 
     public ItemModel()
@@ -51,7 +80,7 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
 
     public IItemModel Clone(string newID)
     {
-        var clone = new ItemModel { ItemID = newID };
+        var clone = new ItemModel { ItemID = newID, Description=this.Description, GeometryPath=this.GeometryPath, IconPath=this.IconPath };
         foreach (var trait in Traits)
             clone.AddTrait(trait.Clone());
         clone.ClearHistory();

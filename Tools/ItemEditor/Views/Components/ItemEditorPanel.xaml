@@ -13,12 +13,9 @@
             <TextBlock Text="No Item Selected" FontSize="20" Foreground="{StaticResource TextMuted}" FontWeight="Bold" HorizontalAlignment="Center"/>
             <TextBlock Text="Select an item from the left panel or create a new one." FontSize="14" Foreground="#555555" HorizontalAlignment="Center" Margin="0,5,0,0"/>
         </StackPanel>
-
-        <Grid Visibility="{Binding ItemEditor.CurrentItem, Converter={StaticResource NotNullToVis}}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <ScrollViewer Visibility="{Binding ItemEditor.CurrentItem, Converter={StaticResource NotNullToVis}}"
+                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
+                          VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
 
             <StackPanel Grid.Row="0" Margin="15,15,15,0">
                 <Grid Margin="0,0,0,8">
@@ -44,7 +41,34 @@
                 </Grid>
 
                 <TextBox Text="{Binding ItemEditor.CurrentItem.ItemID, UpdateSourceTrigger=PropertyChanged}"
-                         Style="{StaticResource ItemIDTextBoxStyle}" Margin="0,0,0,20" TextChanged="OnTextBoxTextChanged">
+                         Style="{StaticResource MetadataTextBoxStyle}" Margin="0,0,0,20" TextChanged="OnTextBoxTextChanged">
+                    <TextBox.InputBindings>
+                        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                    </TextBox.InputBindings>
+                </TextBox>
+
+                <TextBlock Text="DESCRIPTION" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
+                <TextBox Text="{Binding ItemEditor.CurrentItem.Description, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource MetadataTextBoxStyle}" Margin="0,0,0,20" TextChanged="OnTextBoxTextChanged">
+                    <TextBox.InputBindings>
+                        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                    </TextBox.InputBindings>
+                </TextBox>
+
+                <TextBlock Text="GEOMETRY PATH" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
+                <TextBox Text="{Binding ItemEditor.CurrentItem.GeometryPath, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource MetadataTextBoxStyle}" Margin="0,0,0,20" TextChanged="OnTextBoxTextChanged">
+                    <TextBox.InputBindings>
+                        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                    </TextBox.InputBindings>
+                </TextBox>
+
+                <TextBlock Text="ICON PATH" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
+                <TextBox Text="{Binding ItemEditor.CurrentItem.IconPath, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource MetadataTextBoxStyle}" Margin="0,0,0,20" TextChanged="OnTextBoxTextChanged">
                     <TextBox.InputBindings>
                         <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                         <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
@@ -52,71 +76,53 @@
                 </TextBox>
 
                 <TextBlock Text="COMPONENTS" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
+
+                <ItemsControl ItemsSource="{Binding ItemEditor.CurrentItem.Traits}"
+                              Background="Transparent" BorderThickness="0" Padding="0">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="{StaticResource BorderMedium}" BorderThickness="1" Background="{StaticResource BgMedium}" Margin="0,0,0,15" CornerRadius="4">
+                                <StackPanel>
+                                    <Border Background="{StaticResource BgLite}" Padding="10,5" CornerRadius="4,4,0,0">
+                                        <DockPanel>
+                                            <Button DockPanel.Dock="Right" Content="✕"
+                                                    Command="{Binding DataContext.ItemEditor.RemoveTraitCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                    CommandParameter="{Binding}" Style="{StaticResource DangerButtonStyle}" Width="22" Height="22" ToolTip="Remove Trait"/>
+                                            <TextBlock Text="{Binding Id}" FontWeight="Bold" Foreground="{StaticResource HighlightCyan}" VerticalAlignment="Center"/>
+                                        </DockPanel>
+                                    </Border>
+
+                                    <ItemsControl ItemsSource="{Binding Fields}" Margin="10">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="0,0,0,8">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="150"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                        <TextBlock Text="{Binding Name}" Foreground="{StaticResource TextPrimary}"/>
+                                                        <TextBlock Text="{Binding Type}" FontSize="10" Foreground="{StaticResource HighlightBlue}"/>
+                                                    </StackPanel>
+
+                                                    <TextBox Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
+                                                             Style="{StaticResource ValidatedTextBoxStyle}" TextChanged="OnTextBoxTextChanged">
+                                                        <TextBox.InputBindings>
+                                                            <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                                                            <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                                                        </TextBox.InputBindings>
+                                                    </TextBox>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
-
-            <ListBox Grid.Row="1" ItemsSource="{Binding ItemEditor.CurrentItem.Traits}"
-                        Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Stretch"
-                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                        VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.ScrollUnit="Pixel"
-                        Padding="0" Margin="15,0,15,15">
-
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="ListBoxItem">
-                        <Setter Property="Focusable" Value="False"/>
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="ListBoxItem">
-                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ListBox.ItemContainerStyle>
-
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="{StaticResource BorderMedium}" BorderThickness="1" Background="{StaticResource BgMedium}" Margin="0,0,0,15" CornerRadius="4">
-                            <StackPanel>
-                                <Border Background="{StaticResource BgLite}" Padding="10,5" CornerRadius="4,4,0,0">
-                                    <DockPanel>
-                                        <Button DockPanel.Dock="Right" Content="✕"
-                                                Command="{Binding DataContext.ItemEditor.RemoveTraitCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                                CommandParameter="{Binding}" Style="{StaticResource DangerButtonStyle}" Width="22" Height="22" ToolTip="Remove Trait"/>
-                                        <TextBlock Text="{Binding Id}" FontWeight="Bold" Foreground="{StaticResource HighlightCyan}" VerticalAlignment="Center"/>
-                                    </DockPanel>
-                                </Border>
-
-                                <ItemsControl ItemsSource="{Binding Fields}" Margin="10">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid Margin="0,0,0,8">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="150"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
-
-                                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                                    <TextBlock Text="{Binding Name}" Foreground="{StaticResource TextPrimary}"/>
-                                                    <TextBlock Text="{Binding Type}" FontSize="10" Foreground="{StaticResource HighlightBlue}"/>
-                                                </StackPanel>
-
-                                                <TextBox Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
-                                                            Style="{StaticResource ValidatedTextBoxStyle}" TextChanged="OnTextBoxTextChanged">
-                                                    <TextBox.InputBindings>
-                                                        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-                                                        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-                                                    </TextBox.InputBindings>
-                                                </TextBox>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>
