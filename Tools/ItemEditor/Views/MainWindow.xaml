@@ -60,6 +60,7 @@
             <Menu Grid.Row="1" Background="{StaticResource BgLite}" Foreground="{StaticResource TextPrimary}" Padding="5,2">
                 <MenuItem Header="_File">
                     <MenuItem Header="Select Schema File" Command="{Binding SelectSchemaCommand}"/>
+                    <MenuItem Header="Select Assets Folder" Command="{Binding SelectProjectDirectoryCommand}"/>
                     <MenuItem Header="Select Items Folder" Command="{Binding SelectItemsDirectoryCommand}"/>
                     <Separator/>
                     <MenuItem Header="Save Current Item" Command="{Binding ItemEditor.SaveItemCommand}" InputGestureText="Ctrl+S" Style="{StaticResource EmphasizedMenuItemStyle}"/>

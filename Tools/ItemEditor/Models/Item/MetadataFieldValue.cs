@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using ItemEditor.Core.Types;
 using ItemEditor.Core.Validation;
+using ItemEditor.Core.Validation.Context;
 using System.Collections;
 using System.ComponentModel;
 using System.Xml;
@@ -15,6 +16,8 @@ internal sealed partial class MetadataFieldValue : ObservableObject, INotifyData
     public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
 
     public MetadataFieldType FieldType { get; init; } = MetadataFieldType.None;
+
+    public IPathValidationContext? PathValidationContext { get; init; }
 
     [ObservableProperty]
     private string _value = string.Empty;
@@ -62,7 +65,7 @@ internal sealed partial class MetadataFieldValue : ObservableObject, INotifyData
     private void ValidateValue()
     {
         ClearErrors(nameof(Value));
-        var errors = MetadataFieldValidator.Validate(FieldType, Value);
+        var errors = MetadataFieldValidator.Validate(FieldType, Value, PathValidationContext);
 
         foreach (var error in errors)
             AddError(nameof(Value), error);

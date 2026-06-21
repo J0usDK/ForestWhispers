@@ -60,7 +60,12 @@
                 <TextBlock Text="GEOMETRY PATH" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
                 <Grid Margin="0,0,0,20">
                     <TextBox Text="{Binding ItemEditor.CurrentItem.GeometryPath.Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
-                             Style="{StaticResource PathTextBoxStyle}" TextChanged="OnTextBoxTextChanged"/>
+                             Style="{StaticResource PathTextBoxStyle}" TextChanged="OnTextBoxTextChanged">
+                        <TextBox.InputBindings>
+                            <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                            <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                        </TextBox.InputBindings>
+                    </TextBox>
 
                     <Button Command="{Binding ItemEditor.SelectGeometryPathCommand}" HorizontalAlignment="Right" VerticalAlignment="Center" 
                             Style="{StaticResource IconButtonStyle}" Width="24" Height="24" Cursor="Hand" 

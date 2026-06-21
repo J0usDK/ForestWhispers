@@ -1,4 +1,5 @@
 ﻿using ItemEditor.Core.Types;
+using ItemEditor.Core.Validation.Context;
 using ItemEditor.Models.Contracts;
 using ItemEditor.Models.Item;
 using ItemEditor.Models.Schema;
@@ -12,13 +13,15 @@ using System.Text.Json.Nodes;
 
 namespace ItemEditor.Services;
 
-internal sealed class ItemService : IItemService
+internal sealed class ItemService(IPathValidationContext? pathValidationContext) : IItemService
 {
     private readonly JsonSerializerOptions _jsonOptions = new() { WriteIndented = true };
 
+    private readonly IPathValidationContext? _pathValidationContext = pathValidationContext;
+
     public IItemModel CreateNewItem(string id)
     {
-        var item = new ItemModel { ItemID = id };
+        var item = new ItemModel(_pathValidationContext) { ItemID = id };
         item.ClearHistory();
         return item;
     }
@@ -103,7 +106,7 @@ internal sealed class ItemService : IItemService
         string geometryPath = rootNode["GeometryPath"]?.ToString() ?? String.Empty;
         string iconPath = rootNode["IconPath"]?.ToString() ?? String.Empty;
 
-        IItemModel item = new ItemModel { ItemID = itemID };
+        IItemModel item = new ItemModel(_pathValidationContext) { ItemID = itemID };
 
         item.Description.Value = description;
         item.GeometryPath.Value = geometryPath;

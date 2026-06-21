@@ -9,6 +9,13 @@ internal sealed record AppSettings
         init => _lastSchemaPath = value ?? string.Empty;
     }
 
+    private readonly string _lastProjectDirectory = string.Empty;
+    public string LastProjectDirectory
+    {
+        get => _lastProjectDirectory;
+        init => _lastProjectDirectory = value ?? string.Empty;
+    }
+
     private readonly string _lastItemsDirectory = string.Empty;
     public string LastItemsDirectory
     {

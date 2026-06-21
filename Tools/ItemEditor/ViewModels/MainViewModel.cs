@@ -89,6 +89,19 @@ internal sealed partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
+    private void SelectProjectDirectory()
+    {
+        string? selectedPath = _dialogService.ShowOpenFolderDialog("Select CryEngine Project Assets Folder");
+
+        if (!string.IsNullOrEmpty(selectedPath))
+        {
+            var currentSettings = _settingsService.LoadSettings();
+            var newSettings = currentSettings with { LastProjectDirectory = selectedPath };
+            _settingsService.SaveSettings(newSettings);
+        }
+    }
+
+    [RelayCommand]
     private async Task SelectItemsDirectoryAsync()
     {
         var folderPath = _dialogService.ShowOpenFolderDialog("Select folder with Items (.json)");

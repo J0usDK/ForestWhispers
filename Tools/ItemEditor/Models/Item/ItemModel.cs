@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using ItemEditor.Core.Types;
 using ItemEditor.Core.UndoRedo;
+using ItemEditor.Core.Validation.Context;
 using ItemEditor.Models.Contracts;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -24,8 +25,8 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
     public string? OriginalItemID => _originalItemID;
 
     public MetadataFieldValue Description { get; } = new() { FieldType = MetadataFieldType.None };
-    public MetadataFieldValue GeometryPath { get; } = new() { FieldType = MetadataFieldType.GeometryPath };
-    public MetadataFieldValue IconPath { get; } = new() { FieldType = MetadataFieldType.IconPath };
+    public MetadataFieldValue GeometryPath { get; }
+    public MetadataFieldValue IconPath { get; }
 
     public bool IsDirty => History.IsDirty;
 
@@ -36,16 +37,11 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
     private readonly ObservableCollection<TraitInstance> _traits = [];
     public ReadOnlyObservableCollection<TraitInstance> Traits { get; }
 
-    partial void OnItemIDChanged(string? oldValue, string newValue)
+    public ItemModel(IPathValidationContext? pathValidationContext = null)
     {
-        if (oldValue == null || oldValue == newValue) return;
+        GeometryPath = new() { FieldType = MetadataFieldType.GeometryPath, PathValidationContext = pathValidationContext };
+        IconPath = new() { FieldType = MetadataFieldType.IconPath, PathValidationContext = pathValidationContext };
 
-        ItemIDChanged?.Invoke(this, (oldValue, newValue));
-        History.Push(new ItemMetadataChangeCommand(this, nameof(ItemID), val => ItemID = val, oldValue, newValue));
-    }
-
-    public ItemModel()
-    {
         Traits = new ReadOnlyObservableCollection<TraitInstance>(_traits);
         _traits.CollectionChanged += Traits_CollectionChanged;
         History.StateChanged += () => OnPropertyChanged(nameof(IsDirty));
@@ -55,9 +51,9 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
         HookMetadataField(IconPath, nameof(IconPath), val => IconPath.Value = val);
     }
 
-    public IItemModel Clone(string newID)
+    public IItemModel Clone(string newID, IPathValidationContext? pathValidationContext = null)
     {
-        var clone = new ItemModel { ItemID = newID };
+        var clone = new ItemModel(pathValidationContext) { ItemID = newID };
         clone.Description.Value = this.Description.Value;
         clone.GeometryPath.Value = this.GeometryPath.Value;
         clone.IconPath.Value = this.IconPath.Value;
@@ -93,6 +89,14 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
     public bool CanRedo() => History.CanRedo;
     public void Redo() => History.Redo();
     public void ClearHistory() => History.Clear();
+
+    partial void OnItemIDChanged(string? oldValue, string newValue)
+    {
+        if (oldValue == null || oldValue == newValue) return;
+
+        ItemIDChanged?.Invoke(this, (oldValue, newValue));
+        History.Push(new ItemMetadataChangeCommand(this, nameof(ItemID), val => ItemID = val, oldValue, newValue));
+    }
 
     private void Traits_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
     {

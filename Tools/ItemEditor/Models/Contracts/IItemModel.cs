@@ -1,4 +1,5 @@
-﻿using ItemEditor.Models.Item;
+﻿using ItemEditor.Core.Validation.Context;
+using ItemEditor.Models.Item;
 
 namespace ItemEditor.Models.Contracts;
 
@@ -12,5 +13,5 @@ internal interface IItemModel : IItemData, ITrackableItem, IRevertibleItem
     void AddTrait(TraitInstance trait);
     void RemoveTrait(TraitInstance trait);
 
-    IItemModel Clone(string newID);
+    IItemModel Clone(string newID, IPathValidationContext? pathValidationContext = null);
 }

@@ -16,6 +16,7 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
     private readonly ISettingsService _settingsService;
     private readonly IDialogService _dialogService;
     private readonly IItemIDRegistryService _registryService;
+    private readonly IEnginePathService _enginePathService;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(HasItem))]
@@ -32,12 +33,13 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
 
     public event EventHandler? TraitsChanged;
 
-    public ItemEditorViewModel(IItemService itemService, ISettingsService settingsService, IDialogService dialogService, IItemIDRegistryService registryService)
+    public ItemEditorViewModel(IItemService itemService, ISettingsService settingsService, IDialogService dialogService, IItemIDRegistryService registryService, IEnginePathService enginePathService)
     {
         _itemService = itemService;
         _settingsService = settingsService;
         _dialogService = dialogService;
         _registryService = registryService;
+        _enginePathService = enginePathService;
 
         _registryService.ItemIDCollisionStateChanged += (changedID) =>
         {
@@ -125,7 +127,7 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
             title: "Select Geometry File");
 
         if (!string.IsNullOrWhiteSpace(selectedPath))
-            CurrentItem.GeometryPath.Value = selectedPath;
+            CurrentItem.GeometryPath.Value = _enginePathService.ConvertToEnginePath(selectedPath, _settingsService.LoadSettings().LastProjectDirectory);
     }
 
     [RelayCommand]
@@ -138,7 +140,7 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
             title: "Select Icon File");
 
         if (!string.IsNullOrWhiteSpace(selectedPath))
-            CurrentItem.IconPath.Value = selectedPath;
+            CurrentItem.IconPath.Value = _enginePathService.ConvertToEnginePath(selectedPath, _settingsService.LoadSettings().LastProjectDirectory);
     }
 
     private void OnItemPropertyChanged(object? sender, PropertyChangedEventArgs e)
