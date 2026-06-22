@@ -143,6 +143,20 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
             CurrentItem.IconPath.Value = _enginePathService.ConvertToEnginePath(selectedPath, _settingsService.LoadSettings().LastProjectDirectory);
     }
 
+    [RelayCommand]
+    private void ConvertGeometryPath()
+    {
+        if (CurrentItem == null) return;
+        TryConvertFieldToRelativePath(CurrentItem.GeometryPath);
+    }
+
+    [RelayCommand]
+    private void ConvertIconPath()
+    {
+        if (CurrentItem == null) return;
+        TryConvertFieldToRelativePath(CurrentItem.IconPath);
+    }
+
     private void OnItemPropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
         if (e.PropertyName is nameof(ITrackableItem.IsDirty) or nameof(ITrackableItem.HasErrors) or nameof(IItemData.ItemID))
@@ -157,5 +171,22 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
         SaveItemCommand.NotifyCanExecuteChanged();
         UndoCommand.NotifyCanExecuteChanged();
         RedoCommand.NotifyCanExecuteChanged();
+    }
+
+    private void TryConvertFieldToRelativePath(MetadataFieldValue field)
+    {
+        if (string.IsNullOrWhiteSpace(field.Value))
+            return;
+
+        string rootDir = _settingsService.LoadSettings().LastProjectDirectory;
+        if (string.IsNullOrWhiteSpace(rootDir))
+        {
+            _dialogService.ShowError("The project root directory should be selected.");
+            return;
+        }
+
+        string converted = _enginePathService.ConvertToEnginePath(field.Value, rootDir);
+        if (!string.IsNullOrEmpty(converted) && converted != field.Value)
+            field.Value = converted;
     }
 }

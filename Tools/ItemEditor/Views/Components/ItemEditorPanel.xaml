@@ -60,8 +60,10 @@
                 <TextBlock Text="GEOMETRY PATH" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
                 <Grid Margin="0,0,0,20">
                     <TextBox Text="{Binding ItemEditor.CurrentItem.GeometryPath.Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
-                             Style="{StaticResource PathTextBoxStyle}" TextChanged="OnTextBoxTextChanged">
+                             Style="{StaticResource PathTextBoxStyle}" TextChanged="OnTextBoxTextChanged" LostFocus="GeometryPathTextBox_LostFocus">
+
                         <TextBox.InputBindings>
+                            <KeyBinding Key="Return" Command="{Binding DataContext.ItemEditor.ConvertGeometryPathCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                             <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                             <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                         </TextBox.InputBindings>
@@ -78,8 +80,9 @@
                 <TextBlock Text="ICON PATH" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
                 <Grid Margin="0,0,0,20">
                     <TextBox Text="{Binding ItemEditor.CurrentItem.IconPath.Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
-                             Style="{StaticResource PathTextBoxStyle}" TextChanged="OnTextBoxTextChanged">
+                             Style="{StaticResource PathTextBoxStyle}" TextChanged="OnTextBoxTextChanged" LostFocus="IconPathTextBox_LostFocus">
                         <TextBox.InputBindings>
+                            <KeyBinding Key="Return" Command="{Binding DataContext.ItemEditor.ConvertIconPathCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                             <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                             <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                         </TextBox.InputBindings>

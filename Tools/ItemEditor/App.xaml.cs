@@ -17,7 +17,8 @@ namespace ItemEditor
             var dialogService = new DialogService();
             var itemIDRegistryService = new ItemIDRegistryService();
             var enginePathService = new EnginePathService(dialogService);
-            var pathValidationContext = new PathValidationContext(settingsService, enginePathService);
+            var pathConverterService = new PathConverterService();
+            var pathValidationContext = new PathValidationContext(settingsService, enginePathService, pathConverterService);
             var itemService = new ItemService(pathValidationContext);
 
             var itemsListViewModel = new ItemsListViewModel(itemService, dialogService, settingsService, itemIDRegistryService);

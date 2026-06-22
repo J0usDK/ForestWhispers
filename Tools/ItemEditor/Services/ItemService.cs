@@ -15,8 +15,6 @@ namespace ItemEditor.Services;
 
 internal sealed class ItemService(IPathValidationContext? pathValidationContext) : IItemService
 {
-    private readonly JsonSerializerOptions _jsonOptions = new() { WriteIndented = true };
-
     private readonly IPathValidationContext? _pathValidationContext = pathValidationContext;
 
     public IItemModel CreateNewItem(string id)
@@ -38,8 +36,8 @@ internal sealed class ItemService(IPathValidationContext? pathValidationContext)
         writer.WriteStartObject();
         writer.WriteString("ItemID", item.ItemID);
         writer.WriteString("Description", item.Description.Value);
-        writer.WriteString("GeometryPath", item.GeometryPath.Value);
-        writer.WriteString("IconPath", item.IconPath.Value);
+        writer.WriteString("GeometryPath", NormalizePath(item.GeometryPath.Value));
+        writer.WriteString("IconPath", NormalizePath(item.IconPath.Value));
         writer.WriteStartObject("traits");
 
         foreach (var trait in item.Traits)
@@ -234,5 +232,19 @@ internal sealed class ItemService(IPathValidationContext? pathValidationContext)
                     File.Delete(oldFilePath);
             }
         }
+    }
+
+    private string NormalizePath(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path))
+            return path;
+
+        if (_pathValidationContext == null)
+            return path;
+
+        if (!_pathValidationContext.IsAbsolutePath(path))
+            return path;
+
+        return _pathValidationContext.ToRelativePath(path) ?? path;
     }
 }
