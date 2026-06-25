@@ -1,13 +1,9 @@
-<AssetMetadata version="0" type="Level" guid="cfabd5af-4ef0-c32a-cad0-cdca8bebf4d1" source="" timestamp="1778885333">
+<AssetMetadata version="0" type="Level" guid="cfabd5af-4ef0-c32a-cad0-cdca8bebf4d1" source="" timestamp="1782431526">
  <Files>
   <File path="woodland/woodland.level"/>
  </Files>
  <Dependencies>
   <Path usageCount="1">%ENGINE%/EngineAssets/Shading/default.env</Path>
-  <Path>%editor%/objects/anchor.cgf</Path>
-  <Path>%editor%/objects/gradf.dds</Path>
-  <Path>%editor%/objects/helper.mtl</Path>
-  <Path>%editor%/objects/helper_illum.mtl</Path>
   <Path>%engine%/engineassets/icons/averagememoryusage.dds</Path>
   <Path>%engine%/engineassets/icons/highmemoryusage.dds</Path>
   <Path>%engine%/engineassets/icons/livepreview.dds</Path>
@@ -16,14 +12,17 @@
   <Path>%engine%/engineassets/materials/fog/fogvolumeellipsoid.mtl</Path>
   <Path>%engine%/engineassets/materials/fog/waterfogvolumeinto.mtl</Path>
   <Path>%engine%/engineassets/materials/fog/waterfogvolumeoutof.mtl</Path>
-  <Path>%engine%/engineassets/materials/physproxytoobig.mtl</Path>
-  <Path>%engine%/engineassets/objects/primitive_sphere.cgf</Path>
-  <Path>%engine%/engineassets/texturemsg/defaultnouvs.dds</Path>
   <Path>%engine%/engineassets/texturemsg/defaultsolids.mtl</Path>
-  <Path>%engine%/engineassets/texturemsg/physproxytoobig.dds</Path>
-  <Path>%engine%/engineassets/textures/default_probe_cm.dds</Path>
-  <Path>%engine%/engineassets/textures/default_probe_cm_diff.dds</Path>
   <Path>%engine%/engineassets/textures/skys/night/half_moon.dds</Path>
+  <Path>animations/characters/mc/a_idle.caf</Path>
+  <Path>animations/characters/mc/a_run.caf</Path>
+  <Path>animations/characters/mc/a_walkback.caf</Path>
+  <Path>animations/characters/mc/a_walkforward.caf</Path>
+  <Path>animations/characters/mc/a_walkleft.caf</Path>
+  <Path>animations/characters/mc/a_walkright.caf</Path>
+  <Path>animations/characters/mc/data/firstpersoncontrollerdefinition.xml</Path>
+  <Path>animations/characters/mc/data/playerfragmentids.xml</Path>
+  <Path>animations/characters/mc/data/playertags.xml</Path>
   <Path>editor/resourcecache/textures/characters/humans/mc/beard_transparency_diff.dds</Path>
   <Path>editor/resourcecache/textures/characters/humans/mc/boots_ddna.dds</Path>
   <Path>editor/resourcecache/textures/characters/humans/mc/boots_diffuse.dds</Path>
@@ -161,6 +160,7 @@
   <Path>editor/resourcecache/textures/cubemaps/woodland/l_probe_global_night_cm_diff.dds</Path>
   <Path>engineassets/materials/water/ocean_default.mtl</Path>
   <Path>engineassets/texturemsg/defaultsolids.mtl</Path>
+  <Path>libs/config/defaultprofile.xml</Path>
   <Path>libs/particles/environment_fx.xml</Path>
   <Path>libs/particles/water.xml</Path>
   <Path>materials/decals/default.mtl</Path>
@@ -168,6 +168,7 @@
   <Path>materials/default/black_reflective.mtl</Path>
   <Path>materials/default/collision_proxy_entitiesonly.mtl</Path>
   <Path>materials/default/material_default.mtl</Path>
+  <Path>materials/items/weapons/melee/swords/starting_sword.mtl</Path>
   <Path>materials/nature/bushes/bush_round_leaf_dark.mtl</Path>
   <Path>materials/nature/grass/tall/grass_tall_dark.mtl</Path>
   <Path>materials/nature/rocks/canyon_weathered.mtl</Path>
@@ -192,11 +193,7 @@
   <Path>objects/buildings/village/stacked_logs/stacked_logs_half_4m_b.cgf</Path>
   <Path>objects/characters/animals/insects/dragonfly_body.cgf</Path>
   <Path>objects/characters/humans/mc/mc.cdf</Path>
-  <Path>objects/characters/humans/mc/mc.cgf</Path>
-  <Path>objects/characters/humans/mc/mc.cgf</Path>
   <Path>objects/characters/humans/mc/mc.chr</Path>
-  <Path>objects/characters/humans/mc/mc.chr</Path>
-  <Path>objects/characters/humans/mc/mc_.caf</Path>
   <Path>objects/characters/humans/mc/mc_boots.skin</Path>
   <Path>objects/characters/humans/mc/mc_boxers.skin</Path>
   <Path>objects/characters/humans/mc/mc_cc_base_body.skin</Path>

@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="11ba5acf-85e6-0391-7f7d-bfc8a16a031f" source="starting_sword.fbx">
+ <Files>
+  <File path="starting_sword.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">862</Detail>
+  <Detail name="vertexCount">838</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">materials/items/weapons/melee/swords/starting_sword.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

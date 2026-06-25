@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="c8ddbd66-2802-6bc4-2900-a228d708dbf7" source="starting_sword_diffuse.tif">
+ <Files>
+  <File path="starting_sword_diffuse.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>

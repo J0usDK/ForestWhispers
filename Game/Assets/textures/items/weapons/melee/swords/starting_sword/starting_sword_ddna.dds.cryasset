@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="8bead666-14cd-161c-59ef-cbf3e532e4c9" source="starting_sword_ddna.tif">
+ <Files>
+  <File path="starting_sword_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>
