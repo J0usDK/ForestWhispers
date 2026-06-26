@@ -1,11 +1,28 @@
 #pragma once
+
+#include <CryEntitySystem/IEntityComponent.h>
+
 #include "IInventory.h"
 
-class CInventoryComponent final : public IInventory
+class CInventoryComponent final : public IEntityComponent, public IInventory
 {
 public:
-	explicit CInventoryComponent(uint32_t maxSlots);
-	~CInventoryComponent() override = default;
+	CInventoryComponent() = default;
+	virtual ~CInventoryComponent() = default;
+
+	CInventoryComponent(const CInventoryComponent&) = delete;
+	CInventoryComponent& operator=(const CInventoryComponent&) = delete;
+
+	static void ReflectType(Schematyc::CTypeDesc<CInventoryComponent>& desc)
+	{
+		desc.SetGUID("{FF853761-BA2C-4387-B4AA-59850A5E7D09}"_cry_guid);
+
+		desc.SetEditorCategory("RPG Systems");
+		desc.SetLabel("Inventory");
+		desc.SetDescription("Container for items (Player, NPCs, Chests, etc.)");
+
+		desc.AddMember(&CInventoryComponent::m_maxSlots, 'maxs', "MaxSlots", "Maximum Slots", "How many items this inventory can hold", 0u);
+	}
 
 	bool CanAddItem(const CItemInstance* pInstance) const override;
 	bool TryAddItem(std::unique_ptr<CItemInstance> pInstance) override;

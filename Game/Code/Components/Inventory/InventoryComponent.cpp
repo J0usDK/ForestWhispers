@@ -1,10 +1,24 @@
 #include "StdAfx.h"
+
+#include <CrySchematyc/Env/Elements/EnvComponent.h>
+#include <CryCore/StaticInstanceList.h>
+#include <CrySchematyc/Env/IEnvRegistrar.h>
+
 #include "InventoryComponent.h"
 #include "Global/GameEnv.h"
 #include "Systems/Items/Factory/ItemFactory.h"
 
-CInventoryComponent::CInventoryComponent(uint32_t maxSlots) : m_maxSlots(maxSlots)
+namespace
 {
+	static void RegisterInventoryComponent(Schematyc::IEnvRegistrar& registrar)
+	{
+		Schematyc::CEnvRegistrationScope scope = registrar.Scope(IEntity::GetEntityScopeGUID());
+		{
+			Schematyc::CEnvRegistrationScope componentScope = scope.Register(SCHEMATYC_MAKE_ENV_COMPONENT(CInventoryComponent));
+		}
+	}
+
+	CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterInventoryComponent);
 }
 
 bool CInventoryComponent::CanAddItem(const CItemInstance* pInstance) const
