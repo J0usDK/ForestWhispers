@@ -1,14 +1,14 @@
 #pragma once
 #include "IInventory.h"
 
-class CInventory final : public IInventory
+class CInventoryComponent final : public IInventory
 {
 public:
-	explicit CInventory(uint32_t maxSlots);
-	~CInventory() override = default;
+	explicit CInventoryComponent(uint32_t maxSlots);
+	~CInventoryComponent() override = default;
 
 	bool CanAddItem(const CItemInstance* pInstance) const override;
-	bool AddItem(std::unique_ptr<CItemInstance> pInstance) override;
+	bool TryAddItem(std::unique_ptr<CItemInstance> pInstance) override;
 	std::unique_ptr<CItemInstance> RemoveItem(TItemInstanceID instanceID, uint32_t count) override;
 
 	const CItemInstance* GetItem(TItemInstanceID instanceID) const override;

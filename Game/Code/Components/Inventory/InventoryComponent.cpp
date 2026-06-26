@@ -1,13 +1,13 @@
 #include "StdAfx.h"
-#include "Inventory.h"
+#include "InventoryComponent.h"
 #include "Global/GameEnv.h"
 #include "Systems/Items/Factory/ItemFactory.h"
 
-CInventory::CInventory(uint32_t maxSlots) : m_maxSlots(maxSlots)
+CInventoryComponent::CInventoryComponent(uint32_t maxSlots) : m_maxSlots(maxSlots)
 {
 }
 
-bool CInventory::CanAddItem(const CItemInstance* pInstance) const
+bool CInventoryComponent::CanAddItem(const CItemInstance* pInstance) const
 {
 	if (!pInstance) return false;
 	for (const auto& instance : m_instances)
@@ -17,7 +17,7 @@ bool CInventory::CanAddItem(const CItemInstance* pInstance) const
 	return true;
 }
 
-bool CInventory::AddItem(std::unique_ptr<CItemInstance> pInstance)
+bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance> pInstance)
 {
 	if (!pInstance) return false;
 	for (const auto& instance : m_instances)
@@ -33,7 +33,7 @@ bool CInventory::AddItem(std::unique_ptr<CItemInstance> pInstance)
 	return true;
 }
 
-std::unique_ptr<CItemInstance> CInventory::RemoveItem(TItemInstanceID instanceID, uint32_t count)
+std::unique_ptr<CItemInstance> CInventoryComponent::RemoveItem(TItemInstanceID instanceID, uint32_t count)
 {
 	auto it = std::find_if(m_instances.begin(), m_instances.end(),
 		[instanceID](const std::unique_ptr<CItemInstance>& item)
@@ -55,7 +55,7 @@ std::unique_ptr<CItemInstance> CInventory::RemoveItem(TItemInstanceID instanceID
 	return gGameEnv->pItemFactory->SplitInstance(*pSource, count);
 }
 
-const CItemInstance* CInventory::GetItem(TItemInstanceID instanceID) const
+const CItemInstance* CInventoryComponent::GetItem(TItemInstanceID instanceID) const
 {
 	auto it = std::find_if(m_instances.begin(), m_instances.end(),
 		[instanceID](const std::unique_ptr<CItemInstance>& item)
@@ -64,14 +64,14 @@ const CItemInstance* CInventory::GetItem(TItemInstanceID instanceID) const
 	return (it != m_instances.end()) ? it->get() : nullptr;
 }
 
-const CItemInstance* CInventory::GetItemAt(uint32_t index) const
+const CItemInstance* CInventoryComponent::GetItemAt(uint32_t index) const
 {
 	if (index < m_instances.size())
 		return m_instances[index].get();
 	return nullptr;
 }
 
-uint32_t CInventory::GetTotalCountOf(TItemDefinitionID definitionID) const
+uint32_t CInventoryComponent::GetTotalCountOf(TItemDefinitionID definitionID) const
 {
 	uint32_t total = 0;
 	for (const auto& instance : m_instances)
@@ -82,12 +82,12 @@ uint32_t CInventory::GetTotalCountOf(TItemDefinitionID definitionID) const
 	return total;
 }
 
-uint32_t CInventory::GetCurrentItemCount() const
+uint32_t CInventoryComponent::GetCurrentItemCount() const
 {
 	return static_cast<uint32_t>(m_instances.size());
 }
 
-uint32_t CInventory::GetMaxSlots() const
+uint32_t CInventoryComponent::GetMaxSlots() const
 {
 	return m_maxSlots;
 }
