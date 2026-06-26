@@ -136,7 +136,7 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
         if (CurrentItem == null) return;
 
         string? selectedPath = _dialogService.ShowOpenFileDialog(
-            filter: "CryEngine Surface (*.dds)|*.dds|All Files (*.*)|*.*",
+            filter: "CryEngine Surface (*.tif)|*.tif|All Files (*.*)|*.*",
             title: "Select Icon File");
 
         if (!string.IsNullOrWhiteSpace(selectedPath))

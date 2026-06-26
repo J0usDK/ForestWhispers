@@ -71,7 +71,7 @@ internal static class MetadataFieldValidator
 
     private static IEnumerable<string> ValidateIconPath(string value)
     {
-        return ValidateFilePath(value, ".dds");
+        return ValidateFilePath(value, ".tif");
     }
 
     private static IEnumerable<string> ValidateFilePath(string value, string requiredExtension)
