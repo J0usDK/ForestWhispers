@@ -1,14 +1,14 @@
-<AssetMetadata version="0" type="Material" guid="71c15182-fa90-a7d9-d0b8-376ad1cadd8d" source="" timestamp="1782431404">
+<AssetMetadata version="0" type="Material" guid="71c15182-fa90-a7d9-d0b8-376ad1cadd8d" source="" timestamp="1782587900">
  <Files>
   <File path="starting_sword.mtl"/>
  </Files>
  <Details>
-  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="subMaterialCount">2</Detail>
   <Detail name="textureCount">3</Detail>
  </Details>
  <Dependencies>
-  <Path usageCount="1">textures/items/weapons/melee/swords/starting_sword/starting_sword_diffuse.dds</Path>
-  <Path usageCount="1">textures/items/weapons/melee/swords/starting_sword/starting_sword_ddna.dds</Path>
-  <Path usageCount="1">textures/items/weapons/melee/swords/starting_sword/starting_sword_spec.dds</Path>
+  <Path usageCount="2">textures/items/weapons/melee/swords/starting_sword/starting_sword_diffuse.dds</Path>
+  <Path usageCount="2">textures/items/weapons/melee/swords/starting_sword/starting_sword_ddna.dds</Path>
+  <Path usageCount="2">textures/items/weapons/melee/swords/starting_sword/starting_sword_spec.dds</Path>
  </Dependencies>
 </AssetMetadata>

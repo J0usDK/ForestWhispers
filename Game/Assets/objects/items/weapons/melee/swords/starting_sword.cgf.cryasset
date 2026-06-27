@@ -1,11 +1,11 @@
-<AssetMetadata version="0" type="Mesh" guid="11ba5acf-85e6-0391-7f7d-bfc8a16a031f" source="starting_sword.fbx">
+<AssetMetadata version="0" type="Mesh" guid="dfb92ec6-4a13-389a-4d67-a393df7351d8" source="starting_sword.fbx">
  <Files>
   <File path="starting_sword.cgf"/>
  </Files>
  <Details>
   <Detail name="materialCount">3</Detail>
   <Detail name="triangleCount">862</Detail>
-  <Detail name="vertexCount">838</Detail>
+  <Detail name="vertexCount">827</Detail>
   <Detail name="16BitPrecision">false</Detail>
  </Details>
  <Dependencies>
