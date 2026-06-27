@@ -6,9 +6,8 @@
 #include <CryPhysics/physinterface.h>
 
 #include "Global/GameEnv.h"
-#include "Global/Utils/StringUtils.h"
 #include "Systems/Items/Database/ItemDatabase.h"
-#include "Systems/Items/Factory/ItemFactory.h"
+#include "Systems/Items/Factory/PhysicalItemFactory.h"
 #include "ItemComponent.h"
 
 namespace
@@ -27,7 +26,7 @@ namespace
 void CItemComponent::Initialize()
 {
 	if (!m_editorStringID.empty())
-		InitFromEditor();
+		gGameEnv->pPhysicalItemFactory->InitEditorItem(m_pEntity, m_editorStringID.c_str());
 }
 
 Cry::Entity::EventFlags CItemComponent::GetEventMask() const
@@ -41,17 +40,9 @@ void CItemComponent::ProcessEvent(const SEntityEvent& event)
 	{
 		case Cry::Entity::EEvent::Reset:
 			if (!m_editorStringID.empty())
-				InitFromEditor();
+				gGameEnv->pPhysicalItemFactory->InitEditorItem(m_pEntity, m_editorStringID.c_str());
 			break;
 	}
-}
-
-void CItemComponent::InitFromEditor()
-{
-	TItemDefinitionID defID = StringUtils::GenerateID(m_editorStringID.c_str());
-	auto pNewInstance = gGameEnv->pItemFactory->CreateInstance(defID);
-
-	SetInstance(std::move(pNewInstance));
 }
 
 void CItemComponent::SetInstance(std::unique_ptr<CItemInstance> pInstance)

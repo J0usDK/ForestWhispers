@@ -7,6 +7,7 @@
 
 #include "Systems/Items/Database/ItemDatabase.h"
 #include "Systems/Items/Factory/ItemFactory.h"
+#include "Systems/Items/Factory/PhysicalItemFactory.h"
 
 // The entry-point of the application
 // An instance of CGamePlugin is automatically created when the library is loaded
@@ -40,4 +41,5 @@ public:
 private:
 	std::unique_ptr<CItemDatabase> m_pItemDatabase;
 	std::unique_ptr<CItemFactory> m_pItemFactory;
+	std::unique_ptr<CPhysicalItemFactory> m_pPhysicalItemFactory;
 };

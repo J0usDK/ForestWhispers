@@ -28,7 +28,6 @@ public:
 private:
 	void Physicalize();
 	void Unphysicalize();
-	void InitFromEditor();
 
 	Schematyc::CSharedString m_editorStringID;
 	std::unique_ptr<CItemInstance> m_pInstance;

@@ -31,6 +31,7 @@ CGamePlugin::~CGamePlugin()
 	{
 		gGameEnv->pItemDatabase = nullptr;
 		gGameEnv->pItemFactory = nullptr;
+		gGameEnv->pPhysicalItemFactory = nullptr;
 		delete gGameEnv;
 		gGameEnv = nullptr;
 	}
@@ -46,6 +47,7 @@ bool CGamePlugin::Initialize(SSystemGlobalEnvironment& env, const SSystemInitPar
 
 	m_pItemDatabase = std::make_unique<CItemDatabase>();
 	m_pItemFactory = std::make_unique<CItemFactory>(*m_pItemDatabase);
+	m_pPhysicalItemFactory = std::make_unique<CPhysicalItemFactory>();
 	{
 		CItemParser itemParser;
 		CItemLoader itemLoader("GameData/Items", itemParser);
