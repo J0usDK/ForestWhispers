@@ -45,23 +45,41 @@ bool CGamePlugin::Initialize(SSystemGlobalEnvironment& env, const SSystemInitPar
 	if (!gGameEnv)
 		gGameEnv = new SGameEnvironment();
 
+	InitGlobalObjects();
+	InitInteractionHandlers();
+	LoadItemConfigs();
+
+	return true;
+}
+
+void CGamePlugin::InitGlobalObjects()
+{
 	m_pItemDatabase = std::make_unique<CItemDatabase>();
 	m_pItemFactory = std::make_unique<CItemFactory>(*m_pItemDatabase);
 	m_pPhysicalItemFactory = std::make_unique<CPhysicalItemFactory>();
-	{
-		CItemParser itemParser;
-		CItemLoader itemLoader("GameData/Items", itemParser);
+	m_pInteractionService = std::make_unique<CInteractionService>();
 
-		if (itemLoader.LoadItems(*m_pItemDatabase))
-			CryLogAlways("Items' configs loaded.");
-		else
-			CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "Failed to load items' configs");
-	}
-	
 	gGameEnv->pItemDatabase = m_pItemDatabase.get();
 	gGameEnv->pItemFactory = m_pItemFactory.get();
+	gGameEnv->pPhysicalItemFactory = m_pPhysicalItemFactory.get();
+	gGameEnv->pInteractionService = m_pInteractionService.get();
+}
 
-	return true;
+void CGamePlugin::InitInteractionHandlers()
+{
+	m_pLootService = std::make_unique<CLootInteractionHandler>();
+	m_pInteractionService->RegisterHandler(EInteractionType::Item, m_pLootService.get());
+}
+
+void CGamePlugin::LoadItemConfigs()
+{
+	CItemParser itemParser;
+	CItemLoader itemLoader("GameData/Items", itemParser);
+
+	if (itemLoader.LoadItems(*m_pItemDatabase))
+		CryLogAlways("Items' configs loaded.");
+	else
+		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "Failed to load items' configs");
 }
 
 void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lparam)

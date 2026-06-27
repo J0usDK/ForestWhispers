@@ -25,7 +25,7 @@ public:
 	}
 
 	bool CanAddItem(const CItemInstance* pInstance) const override;
-	bool TryAddItem(std::unique_ptr<CItemInstance> pInstance) override;
+	bool TryAddItem(std::unique_ptr<CItemInstance>& pInstance) override;
 	std::unique_ptr<CItemInstance> RemoveItem(TItemInstanceID instanceID, uint32_t count) override;
 
 	const CItemInstance* GetItem(TItemInstanceID instanceID) const override;
@@ -38,5 +38,5 @@ public:
 private:
 	std::vector<std::unique_ptr<CItemInstance>> m_instances;
 
-	uint32_t m_maxSlots;
+	uint32_t m_maxSlots = 0u;
 };

@@ -64,6 +64,11 @@ std::unique_ptr<CItemInstance> CItemComponent::TakeInstance()
 	return std::move(m_pInstance);
 }
 
+const CItemInstance* CItemComponent::GetInstance() const
+{
+	return m_pInstance.get();
+}
+
 void CItemComponent::Physicalize()
 {
 	SEntityPhysicalizeParams physicParams;

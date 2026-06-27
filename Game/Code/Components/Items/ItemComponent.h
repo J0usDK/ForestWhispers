@@ -25,6 +25,8 @@ public:
 	void SetInstance(std::unique_ptr<CItemInstance> pInstance);
 	std::unique_ptr<CItemInstance> TakeInstance();
 
+	const CItemInstance* GetInstance() const;
+
 private:
 	void Physicalize();
 	void Unphysicalize();

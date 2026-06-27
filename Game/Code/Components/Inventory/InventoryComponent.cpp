@@ -31,7 +31,7 @@ bool CInventoryComponent::CanAddItem(const CItemInstance* pInstance) const
 	return true;
 }
 
-bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance> pInstance)
+bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance>& pInstance)
 {
 	if (!pInstance) return false;
 	for (const auto& instance : m_instances)
@@ -39,6 +39,7 @@ bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance> pInstance)
 		if (instance->CanUnite(*pInstance))
 		{
 			instance->AddCount(pInstance->GetCount());
+			pInstance.reset();
 			return true;
 		}
 	}
