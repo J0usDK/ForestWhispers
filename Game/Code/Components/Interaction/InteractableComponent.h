@@ -21,7 +21,7 @@ public:
 		desc.AddMember(&CInteractableComponent::m_type, 'type', "Type", "Interaction Type", "Defines which service will handle this entity", EInteractionType::None);
 	}
 
-	void Setup(EInteractionType type);
+	void SetInteractionType(EInteractionType type);
 	EInteractionType GetInteractionType() const;
 
 private:

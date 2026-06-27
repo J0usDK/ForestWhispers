@@ -36,21 +36,58 @@ void CInteractionComponent::ProcessEvent(const SEntityEvent& event)
 	switch (event.event)
 	{
 		case Cry::Entity::EEvent::Update:
-			PerformRaycast();
+			RefreshFocus();
 			break;
 		case Cry::Entity::EEvent::Reset:
-			m_focusedEntityID = INVALID_ENTITYID;
+			m_focus.Reset();
 			break;
 	}
 }
 
-void CInteractionComponent::PerformRaycast()
+void CInteractionComponent::RefreshFocus()
 {
-	const CCamera& camera = gEnv->pSystem->GetViewCamera();
+	Vec3 pos, dir;
 
-	Vec3 pos = camera.GetPosition();
-	Vec3 dir = camera.GetViewdir() * m_interactionRange;
+	if (!GetRayParams(pos, dir))
+	{
+		m_focus.Reset();
+		return;
+	}
 
+	EntityId entityID;
+	EInteractionType type;
+
+	IEntity* pHitEntity = PerformRaycast(pos, dir);
+	if (TryResolveInteraction(pHitEntity, entityID, type))
+		UpdateFocus(entityID, type);
+	else
+		m_focus.Reset();
+}
+
+bool CInteractionComponent::GetRayParams(Vec3& outPos, Vec3& outDir) const
+{
+	switch (m_raySource)
+	{
+		case ERaycastSource::Camera:
+		{
+			const CCamera& camera = gEnv->pSystem->GetViewCamera();
+			outPos = camera.GetPosition();
+			outDir = camera.GetViewdir() * m_interactionRange;
+			return true;
+		}
+		case ERaycastSource::EntityTransform:
+		{
+			outPos = m_pEntity->GetWorldPos();
+			outDir = m_pEntity->GetForwardDir() * m_interactionRange;
+			return true;
+		}
+		default:
+			return false;
+	}
+}
+
+IEntity* CInteractionComponent::PerformRaycast(const Vec3& pos, const Vec3& dir) const
+{
 	ray_hit hit;
 
 	int objTypes = ent_static | ent_rigid | ent_sleeping_rigid;
@@ -58,27 +95,32 @@ void CInteractionComponent::PerformRaycast()
 
 	int hits = gEnv->pPhysicalWorld->RayWorldIntersection(pos, dir, objTypes, flags, &hit, 1);
 
-	if (hits == 0 || !hit.pCollider)
-	{
-		m_focusedEntityID = INVALID_ENTITYID;
-		return;
-	}
-
-	IEntity* pEntity = gEnv->pEntitySystem->GetEntityFromPhysics(hit.pCollider);
-	if (!pEntity)
-	{
-		m_focusedEntityID = INVALID_ENTITYID;
-		return;
-	}
-
-	if (pEntity->GetComponent<CInteractableComponent>())
-		m_focusedEntityID = pEntity->GetId();
-	else
-		m_focusedEntityID = INVALID_ENTITYID;
-
+	if (hits > 0 && hit.pCollider)
+		return gEnv->pEntitySystem->GetEntityFromPhysics(hit.pCollider);
+	return nullptr;
 }
 
-EntityId CInteractionComponent::GetFocusedEntityID() const
+bool CInteractionComponent::TryResolveInteraction(const IEntity* pHitEntity, EntityId& outID, EInteractionType& outType) const
 {
-	return m_focusedEntityID;
+	if (!pHitEntity)
+		return false;
+
+	if (auto* pInteractable = pHitEntity->GetComponent<CInteractableComponent>())
+	{
+		outID = pHitEntity->GetId();
+		outType = pInteractable->GetInteractionType();
+		return true;
+	}
+	return false;
+}
+
+void CInteractionComponent::UpdateFocus(const EntityId entityID, const EInteractionType type)
+{
+	m_focus.entityID = entityID;
+	m_focus.type = type;
+}
+
+const SInteractionFocus& CInteractionComponent::GetFocus() const
+{
+	return m_focus;
 }

@@ -19,7 +19,7 @@ namespace
 	CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterInteractableComponent);
 }
 
-void CInteractableComponent::Setup(EInteractionType type)
+void CInteractableComponent::SetInteractionType(EInteractionType type)
 {
 	m_type = type;
 }

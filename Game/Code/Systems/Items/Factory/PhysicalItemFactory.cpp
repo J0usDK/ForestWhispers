@@ -44,5 +44,5 @@ void CPhysicalItemFactory::InitPhysicalItem(IEntity* pTargetEntity, std::unique_
 	pItem->SetInstance(std::move(pInstance));
 
 	auto* pInteractable = pTargetEntity->GetOrCreateComponent<CInteractableComponent>();
-	pInteractable->Setup(EInteractionType::Item);
+	pInteractable->SetInteractionType(EInteractionType::Item);
 }
