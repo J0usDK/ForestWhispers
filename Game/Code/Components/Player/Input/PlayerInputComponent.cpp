@@ -41,6 +41,8 @@ void CPlayerInputComponent::InitializeActionMaps()
 
 	m_actionHandler.AddHandler(ActionId("yaw"), &CPlayerInputComponent::OnYaw);
 	m_actionHandler.AddHandler(ActionId("pitch"), &CPlayerInputComponent::OnPitch);
+
+	m_actionHandler.AddHandler(ActionId("interact"), &CPlayerInputComponent::OnInteract);
 }
 
 CPlayerInputComponent::~CPlayerInputComponent()
@@ -64,7 +66,9 @@ void CPlayerInputComponent::ProcessEvent(const SEntityEvent& event)
 			m_accumulator.movement.x = (m_inputAxis.inputRgt - m_inputAxis.inputLft);
 
 			m_frameIntent = m_accumulator;
+
 			m_accumulator.lookDelta = ZERO;
+			m_accumulator.interact = false;
 			break;
 		case Cry::Entity::EEvent::Reset:
 			FlushIntent();
@@ -136,5 +140,12 @@ bool CPlayerInputComponent::OnYaw(EntityId entityId, const ActionId& actionId, i
 bool CPlayerInputComponent::OnPitch(EntityId entityId, const ActionId& actionId, int activationMode, float value)
 {
 	m_accumulator.lookDelta.x -= value;
+	return true;
+}
+
+bool CPlayerInputComponent::OnInteract(EntityId entityId, const ActionId& actionId, int activationMode, float value)
+{
+	if (activationMode == eAAM_OnPress)
+		m_accumulator.interact = true;
 	return true;
 }

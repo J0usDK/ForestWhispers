@@ -7,6 +7,7 @@ struct SCharacterIntent
 	Vec2 movement = ZERO;
 	Vec2 lookDelta = ZERO;
 	bool sprint = false;
+	bool interact = false;
 };
 
 enum class EInputContext
@@ -48,6 +49,8 @@ private:
 	bool OnSprint(EntityId entityId, const ActionId& actionId, int activationMode, float value);
 	bool OnYaw(EntityId entityId, const ActionId& actionId, int activationMode, float value);
 	bool OnPitch(EntityId entityId, const ActionId& actionId, int activationMode, float value);
+
+	bool OnInteract(EntityId entityId, const ActionId& actionId, int activationMode, float value);
 		
 private:
 	IActionMapManager* m_pActionMapManager = nullptr;
@@ -56,7 +59,7 @@ private:
 	SCharacterIntent m_accumulator;
 	SCharacterIntent m_frameIntent;
 
-	EInputContext m_currentContext;
+	EInputContext m_currentContext = EInputContext::OnFoot;
 
 	struct SInputAxis
 	{

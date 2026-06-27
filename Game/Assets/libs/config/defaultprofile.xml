@@ -23,5 +23,7 @@
 		<action name="controller_movex" xboxpad="xi_thumblx" ps4pad="pad_sticklx"/>
 		<action name="controller_rotateyaw" xboxpad="xi_thumbrx" ps4pad="pad_stickrx"/>
 		<action name="controller_rotatepitch" xboxpad="xi_thumbry" ps4pad="pad_stickry"/>
+		
+		<action name="interact" onPress="1" onRelease="1" keyboard="e" xboxpad="xi_a" ps4pad="pad_cross"/>
 	</actionmap>  
 </profile>

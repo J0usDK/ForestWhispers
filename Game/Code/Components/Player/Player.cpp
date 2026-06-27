@@ -3,6 +3,8 @@
 #include "Player.h"
 #include "GamePlugin.h"
 #include "Global/Utils/Math.h"
+#include "Global/GameEnv.h"
+#include "Services/Base/InteractionService.h"
 
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CryCore/StaticInstanceList.h>
@@ -28,6 +30,7 @@ void CPlayerComponent::Initialize()
 	m_pAnimator = m_pEntity->GetOrCreateComponent<CAnimationComponent>();
 	m_pCamera = m_pEntity->GetOrCreateComponent<CPlayerCameraComponent>();
 	m_pInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
+	m_pInteractor = m_pEntity->GetOrCreateComponent<CInteractionComponent>();
 }
 
 Cry::Entity::EventFlags CPlayerComponent::GetEventMask() const
@@ -52,6 +55,7 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 			const SCharacterIntent& intent = m_pInput->GetCurrentIntent();
 			UpdateCamera(intent);
 			UpdateMovement(intent);
+			UpdateInteraction(intent);
 			UpdateAnimation();
 			break;
 		}
@@ -109,6 +113,21 @@ void CPlayerComponent::UpdateMovement(const SCharacterIntent& intent)
 
 	m_pMovement->SetMovementRequest(moveParams);
 	m_pMovement->SetRotationRequest(rotParams);
+}
+
+void CPlayerComponent::UpdateInteraction(const SCharacterIntent& intent)
+{
+	if (!intent.interact || !m_pInteractor)
+		return;
+
+	const SInteractionFocus& focus = m_pInteractor->GetFocus();
+	if (!focus.IsValid())
+		return;
+
+	SInteractionContext ctx;
+	ctx.actor = m_pEntity;
+	ctx.target = gEnv->pEntitySystem->GetEntity(focus.entityID);
+	gGameEnv->pInteractionService->ExecuteInteraction(ctx, focus.type);
 }
 
 void CPlayerComponent::UpdateAnimation()
