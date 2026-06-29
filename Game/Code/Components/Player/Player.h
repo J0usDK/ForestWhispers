@@ -41,6 +41,9 @@ private:
 	void UpdateAnimation();
 	void UpdateInteraction(const SCharacterIntent& intent);
 
+	void ShowPlayerHUD();
+	void HidePlayerHUD();
+
 private:
 	CMovementComponent* m_pMovement = nullptr;
 	CAnimationComponent* m_pAnimator = nullptr;

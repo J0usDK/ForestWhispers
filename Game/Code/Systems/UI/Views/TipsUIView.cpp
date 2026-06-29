@@ -19,11 +19,8 @@ bool CTipsUIView::Initialize()
 
 void CTipsUIView::OnTipsStateChanged(const char* prompt, bool isVisible)
 {
-	if (!m_pUIElement)
-	{
-		if (!Initialize())
-			return;
-	}
+	if (!m_pUIElement && !Initialize())
+		return;
 
 	if (isVisible && prompt)
 	{

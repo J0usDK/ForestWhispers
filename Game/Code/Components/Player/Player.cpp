@@ -49,6 +49,7 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 		case Cry::Entity::EEvent::GameplayStarted:
 		{
 			m_bIsPlaying = true;
+			ShowPlayerHUD();
 			break;
 		}
 		case Cry::Entity::EEvent::Update:
@@ -169,6 +170,22 @@ void CPlayerComponent::UpdateAnimation()
 				break;
 		}
 	}
+}
+
+void CPlayerComponent::ShowPlayerHUD()
+{
+	SShowHUDEvent event;
+	event.isVisible = true;
+
+	gGameEnv->pUISystem->HandleEvent(event);
+}
+
+void CPlayerComponent::HidePlayerHUD()
+{
+	SShowHUDEvent event;
+	event.isVisible = false;
+
+	gGameEnv->pUISystem->HandleEvent(event);
 }
 
 void CPlayerComponent::OnFocusChanged(const SInteractionFocus& newFocus)

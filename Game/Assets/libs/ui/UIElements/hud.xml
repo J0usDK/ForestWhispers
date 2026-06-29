@@ -1,0 +1,15 @@
+<UIElements name="HUD">
+	<UIElement name="BasicHUD">
+		<GFx file="textures/ui/hud/hud.gfx" layer="0">
+			<Constraints>
+				<Align mode="dynamic" valign="center" halign="center" scale="0" max="0"/>
+			</Constraints>
+		</GFx>
+		<functions>
+			<function name="ShowCrosshair" funcname="ShowCrosshair" desc="Shows the crosshair"/>
+			<function name="HideCrosshair" funcname="HideCrosshair" desc="Hides the crosshair"/>
+			<function name="ShowHUD" funcname="ShowHUD" desc="Show all hud elements"/>
+			<function name="HideHUD" funcname="HideHUD" desc="Hides all hud elements"/>
+		</functions>
+	</UIElement>
+</UIElements>
