@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
 ////////////////////////////////////////////////////////
-class CPlayerComponent final : public IEntityComponent
+class CPlayerComponent final : public IEntityComponent, public IInteractionFocusListener
 {	
 public:
 	CPlayerComponent() = default;
@@ -32,6 +32,8 @@ public:
 		desc.AddMember(&CPlayerComponent::m_deceleration, 'dec', "deceleration", "Deceleration", "How fast the player stops", 0.0f);
 		desc.AddMember(&CPlayerComponent::m_turnSpeed, 'ts', "turnspeed", "Turn Speed", "How fast the player's body rotates", 0.0f);
 	}
+
+	virtual void OnFocusChanged(const SInteractionFocus& newFocus) override;
 
 private:
 	void UpdateCamera(const SCharacterIntent& intent);

@@ -1,10 +1,12 @@
 // Copyright 2017-2020 Crytek GmbH / Crytek Group. All rights reserved.
 #include "StdAfx.h"
 #include "Player.h"
-#include "GamePlugin.h"
+
 #include "Global/Utils/Math.h"
 #include "Global/GameEnv.h"
 #include "Services/Base/InteractionService.h"
+#include "Systems/UI/UISystem.h"
+#include "Systems/UI/UIStringTable.h"
 
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CryCore/StaticInstanceList.h>
@@ -31,6 +33,8 @@ void CPlayerComponent::Initialize()
 	m_pCamera = m_pEntity->GetOrCreateComponent<CPlayerCameraComponent>();
 	m_pInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
 	m_pInteractor = m_pEntity->GetOrCreateComponent<CInteractionComponent>();
+
+	m_pInteractor->AddListener(this);
 }
 
 Cry::Entity::EventFlags CPlayerComponent::GetEventMask() const
@@ -124,10 +128,7 @@ void CPlayerComponent::UpdateInteraction(const SCharacterIntent& intent)
 	if (!focus.IsValid())
 		return;
 
-	SInteractionContext ctx;
-	ctx.actor = m_pEntity;
-	ctx.target = gEnv->pEntitySystem->GetEntity(focus.entityID);
-	gGameEnv->pInteractionService->ExecuteInteraction(ctx, focus.type);
+	gGameEnv->pInteractionService->ExecuteInteraction(m_pEntity, focus);
 }
 
 void CPlayerComponent::UpdateAnimation()
@@ -168,4 +169,17 @@ void CPlayerComponent::UpdateAnimation()
 				break;
 		}
 	}
+}
+
+void CPlayerComponent::OnFocusChanged(const SInteractionFocus& newFocus)
+{
+	SShowHintEvent event;
+	if (newFocus.IsValid())
+	{
+		event.stringKey = newFocus.interactionStringKey;
+		event.isVisible = true;
+	}
+	else event.isVisible = false;
+
+	gGameEnv->pUISystem->HandleEvent(event);
 }

@@ -11,6 +11,7 @@
 
 // User libs
 #include "Systems/Items/Database/ItemLoader.h"
+#include "Systems/UI/Parser/UIStringLoader.h"
 #include "Global/GameEnv.h"
 
 // Included only once per DLL module.
@@ -47,6 +48,7 @@ bool CGamePlugin::Initialize(SSystemGlobalEnvironment& env, const SSystemInitPar
 
 	InitGlobalObjects();
 	InitInteractionHandlers();
+	LoadLocalizationConfig();
 	LoadItemConfigs();
 
 	return true;
@@ -54,21 +56,34 @@ bool CGamePlugin::Initialize(SSystemGlobalEnvironment& env, const SSystemInitPar
 
 void CGamePlugin::InitGlobalObjects()
 {
+	m_pUIStringTable = std::make_unique<CUIStringTable>();
 	m_pItemDatabase = std::make_unique<CItemDatabase>();
 	m_pItemFactory = std::make_unique<CItemFactory>(*m_pItemDatabase);
 	m_pPhysicalItemFactory = std::make_unique<CPhysicalItemFactory>();
 	m_pInteractionService = std::make_unique<CInteractionService>();
+	m_pUISystem = std::make_unique<CUISystem>();
 
+	gGameEnv->pUIStringTable = m_pUIStringTable.get();
 	gGameEnv->pItemDatabase = m_pItemDatabase.get();
 	gGameEnv->pItemFactory = m_pItemFactory.get();
 	gGameEnv->pPhysicalItemFactory = m_pPhysicalItemFactory.get();
 	gGameEnv->pInteractionService = m_pInteractionService.get();
+	gGameEnv->pUISystem = m_pUISystem.get();
 }
 
 void CGamePlugin::InitInteractionHandlers()
 {
 	m_pLootService = std::make_unique<CLootInteractionHandler>();
 	m_pInteractionService->RegisterHandler(EInteractionType::Item, m_pLootService.get());
+}
+
+void CGamePlugin::LoadLocalizationConfig()
+{
+	CUIStringLoader localLoader("GameData/Locals", ELanguage::English);
+	if (localLoader.LoadLocalization(*m_pUIStringTable))
+		CryLogAlways("Localization loaded.");
+	else
+		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "Failed to load localization.");
 }
 
 void CGamePlugin::LoadItemConfigs()

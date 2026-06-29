@@ -44,6 +44,16 @@ void CInteractionComponent::ProcessEvent(const SEntityEvent& event)
 	}
 }
 
+void CInteractionComponent::AddListener(IInteractionFocusListener* pListener)
+{
+	m_listeners.emplace_back(pListener);
+}
+
+void CInteractionComponent::RemoveListener(IInteractionFocusListener* pListener)
+{
+	m_listeners.erase(std::remove(m_listeners.begin(), m_listeners.end(), pListener), m_listeners.end());
+}
+
 void CInteractionComponent::RefreshFocus()
 {
 	Vec3 pos, dir;
@@ -56,12 +66,11 @@ void CInteractionComponent::RefreshFocus()
 
 	EntityId entityID;
 	EInteractionType type;
+	uint64 interactionStringKey;
 
 	IEntity* pHitEntity = PerformRaycast(pos, dir);
-	if (TryResolveInteraction(pHitEntity, entityID, type))
-		UpdateFocus(entityID, type);
-	else
-		m_focus.Reset();
+	TryResolveInteraction(pHitEntity, entityID, type, interactionStringKey);
+	UpdateFocus(entityID, type, interactionStringKey);
 }
 
 bool CInteractionComponent::GetRayParams(Vec3& outPos, Vec3& outDir) const
@@ -100,24 +109,42 @@ IEntity* CInteractionComponent::PerformRaycast(const Vec3& pos, const Vec3& dir)
 	return nullptr;
 }
 
-bool CInteractionComponent::TryResolveInteraction(const IEntity* pHitEntity, EntityId& outID, EInteractionType& outType) const
+bool CInteractionComponent::TryResolveInteraction(const IEntity* pHitEntity, EntityId& outID, EInteractionType& outType, uint64& outInteractionStringKey) const
 {
 	if (!pHitEntity)
+	{
+		outID = INVALID_ENTITYID;
+		outType = EInteractionType::None;
+		outInteractionStringKey = 0u;
 		return false;
+	}
 
 	if (auto* pInteractable = pHitEntity->GetComponent<CInteractableComponent>())
 	{
 		outID = pHitEntity->GetId();
 		outType = pInteractable->GetInteractionType();
+		outInteractionStringKey = pInteractable->GetInteractionStringKey();
 		return true;
 	}
-	return false;
+	else
+	{
+		outID = INVALID_ENTITYID;
+		outType = EInteractionType::None;
+		outInteractionStringKey = 0u;
+		return false;
+	}
 }
 
-void CInteractionComponent::UpdateFocus(const EntityId entityID, const EInteractionType type)
+void CInteractionComponent::UpdateFocus(const EntityId entityID, const EInteractionType type, uint64 interactionStringKey)
 {
+	if (m_focus.IsEqual(entityID, type))
+		return;
+
 	m_focus.entityID = entityID;
 	m_focus.type = type;
+	m_focus.interactionStringKey = interactionStringKey;
+	for (auto* pListener : m_listeners)
+		pListener->OnFocusChanged(m_focus);
 }
 
 const SInteractionFocus& CInteractionComponent::GetFocus() const

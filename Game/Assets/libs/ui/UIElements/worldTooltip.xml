@@ -1,0 +1,15 @@
+<UIElements name="HUD">
+	<UIElement name="worldTooltip">
+		<GFx file="textures/ui/tooltip/worldTooltip.gfx" layer="1">
+			<Constraints>
+				<Align mode="dynamic" valign="center" halign="center" scale="0" max="0"/>
+			</Constraints>
+		</GFx>
+		<functions>
+			<function name="Show" funcname="Show" desc="Shows tooltip and starts animation">
+				<param name="text" type="String"/>
+			</function>
+			<function name="Hide" funcname="Hide" desc="Hides tooltip immediately"/>
+		</functions>
+	</UIElement>
+</UIElements>

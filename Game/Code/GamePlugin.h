@@ -8,6 +8,8 @@
 #include "Systems/Items/Database/ItemDatabase.h"
 #include "Systems/Items/Factory/ItemFactory.h"
 #include "Systems/Items/Factory/PhysicalItemFactory.h"
+#include "Systems/UI/UIStringTable.h"
+#include "Systems/UI/UISystem.h"
 #include "Services/Base/InteractionService.h"
 #include "Services/Handlers/LootInteractionHandler.h"
 
@@ -43,12 +45,15 @@ public:
 private:
 	void InitGlobalObjects();
 	void InitInteractionHandlers();
+	void LoadLocalizationConfig();
 	void LoadItemConfigs();
 
 private:
 	std::unique_ptr<CItemDatabase> m_pItemDatabase;
 	std::unique_ptr<CItemFactory> m_pItemFactory;
 	std::unique_ptr<CPhysicalItemFactory> m_pPhysicalItemFactory;
+	std::unique_ptr<CUIStringTable> m_pUIStringTable;
+	std::unique_ptr<CUISystem> m_pUISystem;
 
 	std::unique_ptr<CInteractionService> m_pInteractionService;
 	std::unique_ptr<CLootInteractionHandler> m_pLootService;

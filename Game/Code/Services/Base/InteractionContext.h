@@ -1,7 +1,7 @@
 #pragma once
 
 #include <CryEntitySystem/IEntity.h>
-#include "Components/Interaction/InteractionTypes.h"
+#include "Components/Interaction/Types/InteractionTypes.h"
 
 struct SInteractionContext
 {

@@ -2,16 +2,8 @@
 
 #include <CryEntitySystem/IEntitySystem.h>
 
-#include "InteractionTypes.h"
-
-struct SInteractionFocus
-{
-	EntityId entityID = INVALID_ENTITYID;
-	EInteractionType type = EInteractionType::None;
-
-	bool IsValid() const { return entityID != INVALID_ENTITYID && type != EInteractionType::None; }
-	void Reset() { entityID = INVALID_ENTITYID; type = EInteractionType::None; }
-};
+#include "Types/InteractionFocus.h"
+#include "IInteractionFocusListener.h"
 
 enum class ERaycastSource
 {
@@ -50,18 +42,22 @@ public:
 		desc.AddMember(&CInteractionComponent::m_interactionRange, 'rng', "Range", "Interaction Range", "Max distance in meters to interact with items", 0.0f);
 	}
 
+	void AddListener(IInteractionFocusListener* pListener);
+	void RemoveListener(IInteractionFocusListener* pListener);
+
 	const SInteractionFocus& GetFocus() const;
 
 private:
 	void RefreshFocus();
 	bool GetRayParams(Vec3& outPos, Vec3& outDir) const;
 	IEntity* PerformRaycast(const Vec3& pos, const Vec3& dir) const;
-	bool TryResolveInteraction(const IEntity* pHitEntity, EntityId& outID, EInteractionType& outType) const;
-	void UpdateFocus(const EntityId entityID, const EInteractionType type);
+	bool TryResolveInteraction(const IEntity* pHitEntity, EntityId& outID, EInteractionType& outType, uint64& outInteractionStringKey) const;
+	void UpdateFocus(const EntityId entityID, const EInteractionType type, uint64 interactionStringKey);
 
 private:
 	float m_interactionRange = 0.0f;
 	ERaycastSource m_raySource = ERaycastSource::Camera;
 
 	SInteractionFocus m_focus;
+	std::vector<IInteractionFocusListener*> m_listeners;
 };

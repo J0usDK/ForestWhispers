@@ -5,7 +5,7 @@
 #include "Global/GameEnv.h"
 #include "Systems/Items/Factory/ItemFactory.h"
 #include "Systems/Items/Database/ItemDefinition.h"
-#include "Components/Interaction/InteractionTypes.h"
+#include "Components/Interaction/Types/InteractionTypes.h"
 #include "Components/Interaction/InteractableComponent.h"
 #include "Components/Items/ItemComponent.h"
 

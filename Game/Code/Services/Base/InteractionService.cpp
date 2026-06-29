@@ -12,14 +12,18 @@ void CInteractionService::UnregisterHandler(EInteractionType type)
 	m_handlers.erase(type);
 }
 
-void CInteractionService::ExecuteInteraction(const SInteractionContext& ctx, EInteractionType type)
+void CInteractionService::ExecuteInteraction(IEntity* actor, const SInteractionFocus& focus)
 {
-	if (!ctx.IsValid())
+	if (!actor || !focus.IsValid())
 		return;
 
-	auto it = m_handlers.find(type);
+	auto it = m_handlers.find(focus.type);
 	if (it == m_handlers.end() || !it->second)
 		return;
+
+	SInteractionContext ctx;
+	ctx.actor = actor;
+	ctx.target = gEnv->pEntitySystem->GetEntity(focus.entityID);
 
 	IInteractionHandler* pHandler = it->second;
 	if (pHandler->CanInteract(ctx))

@@ -12,7 +12,7 @@ public:
 	void RegisterHandler(EInteractionType type, IInteractionHandler* pHandler);
 	void UnregisterHandler(EInteractionType type);
 
-	void ExecuteInteraction(const SInteractionContext& ctx, EInteractionType type);
+	void ExecuteInteraction(IEntity* actor, const SInteractionFocus& focus);
 
 private:
 	std::unordered_map<EInteractionType, IInteractionHandler*> m_handlers;

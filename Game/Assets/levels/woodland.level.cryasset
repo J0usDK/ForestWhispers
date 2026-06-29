@@ -1,4 +1,4 @@
-<AssetMetadata version="0" type="Level" guid="cfabd5af-4ef0-c32a-cad0-cdca8bebf4d1" source="" timestamp="1782431526">
+<AssetMetadata version="0" type="Level" guid="cfabd5af-4ef0-c32a-cad0-cdca8bebf4d1" source="" timestamp="1782671225">
  <Files>
   <File path="woodland/woodland.level"/>
  </Files>
@@ -12,6 +12,8 @@
   <Path>%engine%/engineassets/materials/fog/fogvolumeellipsoid.mtl</Path>
   <Path>%engine%/engineassets/materials/fog/waterfogvolumeinto.mtl</Path>
   <Path>%engine%/engineassets/materials/fog/waterfogvolumeoutof.mtl</Path>
+  <Path>%engine%/engineassets/objects/primitive_sphere.cgf</Path>
+  <Path>%engine%/engineassets/texturemsg/defaultnouvs.dds</Path>
   <Path>%engine%/engineassets/texturemsg/defaultsolids.mtl</Path>
   <Path>%engine%/engineassets/textures/skys/night/half_moon.dds</Path>
   <Path>animations/characters/mc/a_idle.caf</Path>
@@ -168,7 +170,6 @@
   <Path>materials/default/black_reflective.mtl</Path>
   <Path>materials/default/collision_proxy_entitiesonly.mtl</Path>
   <Path>materials/default/material_default.mtl</Path>
-  <Path>materials/items/weapons/melee/swords/starting_sword.mtl</Path>
   <Path>materials/nature/bushes/bush_round_leaf_dark.mtl</Path>
   <Path>materials/nature/grass/tall/grass_tall_dark.mtl</Path>
   <Path>materials/nature/rocks/canyon_weathered.mtl</Path>
@@ -282,7 +283,6 @@
   <Path>objects/nature/water/water_foam/water_foam_01.cgf</Path>
   <Path>objects/nature/water/waterfall/waterfall.cgf</Path>
   <Path>objects/sky/forest_skydome.cgf</Path>
-  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/woodland/l_probe_ab1_bridge_a_root_cm.dds</Path>
   <Path>textures/cubemaps/woodland/l_probe_ab1_bridge_a_root_cm_diff.dds</Path>
   <Path>textures/cubemaps/woodland/l_probe_ab1_cabin_a_root_cm.dds</Path>
