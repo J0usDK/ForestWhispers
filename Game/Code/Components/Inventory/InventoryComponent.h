@@ -3,8 +3,10 @@
 #include <CryEntitySystem/IEntityComponent.h>
 
 #include "IInventory.h"
+#include "IInventoryEventSender.h"
+#include "IInventoryListener.h"
 
-class CInventoryComponent final : public IEntityComponent, public IInventory
+class CInventoryComponent final : public IEntityComponent, public IInventory, public IInventoryEventSender
 {
 public:
 	CInventoryComponent() = default;
@@ -12,6 +14,9 @@ public:
 
 	CInventoryComponent(const CInventoryComponent&) = delete;
 	CInventoryComponent& operator=(const CInventoryComponent&) = delete;
+
+	void RegisterListener(IInventoryListener* pListener) override;
+	void UnregisterListener(IInventoryListener* pListener) override;
 
 	static void ReflectType(Schematyc::CTypeDesc<CInventoryComponent>& desc)
 	{
@@ -36,6 +41,10 @@ public:
 	uint32_t GetMaxSlots() const override;
 
 private:
+	void NotifyItemAdded(const SUIItemData& itemData);
+
+private:
+	std::vector<IInventoryListener*> m_listeners;
 	std::vector<std::unique_ptr<CItemInstance>> m_instances;
 
 	uint32_t m_maxSlots = 0u;

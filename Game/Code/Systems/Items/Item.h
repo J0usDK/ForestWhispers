@@ -9,8 +9,9 @@ private:
 	using TTraitVec = std::vector<std::unique_ptr<IItemTrait>>;
 
 public:
-	explicit CItem(TItemDefinitionID defID);
+	explicit CItem(TItemDefinitionID defID, uint32 nameStringID);
 
+	uint32 GetNameStringID() const;
 	TItemDefinitionID GetDefinitionID() const;
 
 	bool HasTrait(TTraitID traitID) const;
@@ -58,5 +59,6 @@ private:
 
 private:
 	TItemDefinitionID m_defID;
+	uint32 m_nameStringID;
 	TTraitVec m_traits;
 };

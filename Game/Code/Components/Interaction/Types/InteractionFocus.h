@@ -6,7 +6,7 @@ struct SInteractionFocus
 {
 	EntityId entityID = INVALID_ENTITYID;
 	EInteractionType type = EInteractionType::None;
-	uint64 interactionStringKey = 0u;
+	uint32 interactionStringKey = 0u;
 
 	bool IsValid() const { return entityID != INVALID_ENTITYID && type != EInteractionType::None; }
 	void Reset() { entityID = INVALID_ENTITYID; type = EInteractionType::None; }

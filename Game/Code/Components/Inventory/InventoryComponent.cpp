@@ -21,6 +21,19 @@ namespace
 	CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterInventoryComponent);
 }
 
+void CInventoryComponent::RegisterListener(IInventoryListener* pListener)
+{
+	if (!pListener) return;
+	if (std::find(m_listeners.begin(), m_listeners.end(), pListener) == m_listeners.end())
+		m_listeners.push_back(pListener);
+}
+
+void CInventoryComponent::UnregisterListener(IInventoryListener* pListener)
+{
+	if (!pListener) return;
+	m_listeners.erase(std::remove(m_listeners.begin(), m_listeners.end(), pListener), m_listeners.end());
+}
+
 bool CInventoryComponent::CanAddItem(const CItemInstance* pInstance) const
 {
 	if (!pInstance) return false;
@@ -44,7 +57,18 @@ bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance>& pInstance)
 		}
 	}
 	if (m_instances.size() >= m_maxSlots) return false;
+
+	if (!m_listeners.empty())
+	{
+		SUIItemData uiData;
+		uiData.nameStringID = pInstance->GetItemData().GetNameStringID();
+		uiData.weight = 0;
+		uiData.rowType = UITypes::EInventoryUIRowType::ROW_ITEM;
+		NotifyItemAdded(uiData);
+	}
+
 	m_instances.push_back(std::move(pInstance));
+
 	return true;
 }
 
@@ -105,4 +129,10 @@ uint32_t CInventoryComponent::GetCurrentItemCount() const
 uint32_t CInventoryComponent::GetMaxSlots() const
 {
 	return m_maxSlots;
+}
+
+void CInventoryComponent::NotifyItemAdded(const SUIItemData& itemData)
+{
+	for (auto* listener : m_listeners)
+		listener->OnInventoryItemAdded(itemData);
 }

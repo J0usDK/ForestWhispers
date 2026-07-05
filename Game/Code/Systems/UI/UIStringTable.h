@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include <CryString/CryString.h>
 
-using UIStringID = uint64;
+using UIStringID = uint32;
 
 class CUIStringTable
 {
@@ -10,7 +10,7 @@ public:
 	CUIStringTable() = default;
 	~CUIStringTable() = default;
 
-	void Reserve(uint64 size);
+	void Reserve(uint32 size);
 	void Register(const char* key, const char* localizedText);
 	const char* Resolve(UIStringID id) const;
 

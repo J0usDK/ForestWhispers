@@ -33,6 +33,7 @@ void CPlayerComponent::Initialize()
 	m_pCamera = m_pEntity->GetOrCreateComponent<CPlayerCameraComponent>();
 	m_pInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
 	m_pInteractor = m_pEntity->GetOrCreateComponent<CInteractionComponent>();
+	m_pInventory = m_pEntity->GetOrCreateComponent<CInventoryComponent>();
 
 	m_pInteractor->AddListener(this);
 }
@@ -50,6 +51,9 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 		{
 			m_bIsPlaying = true;
 			ShowPlayerHUD();
+			SLocalPlayerReadyEvent readyEvent;
+			readyEvent.pInventoryEventSender = m_pInventory;
+			gGameEnv->pUISystem->HandleEvent(readyEvent);
 			break;
 		}
 		case Cry::Entity::EEvent::Update:
@@ -58,10 +62,13 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 				break;
 
 			const SCharacterIntent& intent = m_pInput->GetCurrentIntent();
+			const SCharacterCommands& actions = m_pInput->GetCurrentCommands();
 			UpdateCamera(intent);
 			UpdateMovement(intent);
-			UpdateInteraction(intent);
 			UpdateAnimation();
+
+			UpdateInteraction(actions);
+			UpdateUICommands(actions);
 			break;
 		}
 		case Cry::Entity::EEvent::Reset:
@@ -120,9 +127,9 @@ void CPlayerComponent::UpdateMovement(const SCharacterIntent& intent)
 	m_pMovement->SetRotationRequest(rotParams);
 }
 
-void CPlayerComponent::UpdateInteraction(const SCharacterIntent& intent)
+void CPlayerComponent::UpdateInteraction(const SCharacterCommands& actions)
 {
-	if (!intent.interact || !m_pInteractor)
+	if (!actions.interact || !m_pInteractor)
 		return;
 
 	const SInteractionFocus& focus = m_pInteractor->GetFocus();
@@ -130,6 +137,20 @@ void CPlayerComponent::UpdateInteraction(const SCharacterIntent& intent)
 		return;
 
 	gGameEnv->pInteractionService->ExecuteInteraction(m_pEntity, focus);
+}
+
+void CPlayerComponent::UpdateUICommands(const SCharacterCommands& actions)
+{
+	if (!actions.toggleBook)
+		return;
+
+	SToggleBookEvent event;
+	gGameEnv->pUISystem->HandleEvent(event);
+
+	if (m_pInput->GetInputContext() == EInputContext::UI)
+		m_pInput->SwitchContext(EInputContext::OnFoot);
+	else
+		m_pInput->SwitchContext(EInputContext::UI);
 }
 
 void CPlayerComponent::UpdateAnimation()

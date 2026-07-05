@@ -43,6 +43,7 @@ void CPlayerInputComponent::InitializeActionMaps()
 	m_actionHandler.AddHandler(ActionId("pitch"), &CPlayerInputComponent::OnPitch);
 
 	m_actionHandler.AddHandler(ActionId("interact"), &CPlayerInputComponent::OnInteract);
+	m_actionHandler.AddHandler(ActionId("togglebook"), &CPlayerInputComponent::OnToggleBook);
 }
 
 CPlayerInputComponent::~CPlayerInputComponent()
@@ -62,15 +63,17 @@ void CPlayerInputComponent::ProcessEvent(const SEntityEvent& event)
 	switch (event.event)
 	{
 		case Cry::Entity::EEvent::Update:
-			m_accumulator.movement.y = (m_inputAxis.inputFwd - m_inputAxis.inputBck);
-			m_accumulator.movement.x = (m_inputAxis.inputRgt - m_inputAxis.inputLft);
+			m_accumulatedIntent.movement.y = (m_inputAxis.inputFwd - m_inputAxis.inputBck);
+			m_accumulatedIntent.movement.x = (m_inputAxis.inputRgt - m_inputAxis.inputLft);
 
-			m_frameIntent = m_accumulator;
+			m_frameIntent = m_accumulatedIntent;
+			m_frameCommands = m_accumulatedCommands;
 
-			m_accumulator.lookDelta = ZERO;
-			m_accumulator.interact = false;
+			m_accumulatedIntent.lookDelta = ZERO;
+			m_accumulatedCommands = {};
 			break;
 		case Cry::Entity::EEvent::Reset:
+			FlushCommands();
 			FlushIntent();
 			SwitchContext(EInputContext::OnFoot);
 			break;
@@ -79,21 +82,29 @@ void CPlayerInputComponent::ProcessEvent(const SEntityEvent& event)
 
 void CPlayerInputComponent::FlushIntent()
 {
-	m_accumulator = {};
+	m_accumulatedIntent = {};
 	m_frameIntent = {};
 	m_inputAxis = {};
+}
+
+void CPlayerInputComponent::FlushCommands()
+{
+	m_accumulatedCommands = {};
+	m_frameCommands = {};
 }
 
 void CPlayerInputComponent::SwitchContext(EInputContext newContext)
 {
 	m_currentContext = newContext;
 	FlushIntent();
+	FlushCommands();
 
 	m_pActionMapManager->EnableActionMap("player", (m_currentContext == EInputContext::OnFoot));
 	m_pActionMapManager->EnableActionMap("ui", (m_currentContext == EInputContext::UI));
 }
 
 const SCharacterIntent& CPlayerInputComponent::GetCurrentIntent() const { return m_frameIntent; }
+const SCharacterCommands& CPlayerInputComponent::GetCurrentCommands() const { return m_frameCommands; }
 EInputContext CPlayerInputComponent::GetInputContext() const { return m_currentContext; }
 
 void CPlayerInputComponent::OnAction(const ActionId& action, int activationMode, float value)
@@ -127,25 +138,31 @@ bool CPlayerInputComponent::OnMoveLeft(EntityId entityId, const ActionId& action
 
 bool CPlayerInputComponent::OnSprint(EntityId entityId, const ActionId& actionId, int activationMode, float value)
 {
-	m_accumulator.sprint = (value > 0.0f);
+	m_accumulatedIntent.sprint = (value > 0.0f);
 	return true;
 }
 
 bool CPlayerInputComponent::OnYaw(EntityId entityId, const ActionId& actionId, int activationMode, float value)
 {
-	m_accumulator.lookDelta.y -= value;
+	m_accumulatedIntent.lookDelta.y -= value;
 	return true;
 }
 
 bool CPlayerInputComponent::OnPitch(EntityId entityId, const ActionId& actionId, int activationMode, float value)
 {
-	m_accumulator.lookDelta.x -= value;
+	m_accumulatedIntent.lookDelta.x -= value;
 	return true;
 }
 
 bool CPlayerInputComponent::OnInteract(EntityId entityId, const ActionId& actionId, int activationMode, float value)
 {
 	if (activationMode == eAAM_OnPress)
-		m_accumulator.interact = true;
+		m_accumulatedCommands.interact = true;
+	return true;
+}
+
+bool CPlayerInputComponent::OnToggleBook(EntityId entityId, const ActionId& actionId, int activationMode, float value)
+{
+	m_accumulatedCommands.toggleBook = true;
 	return true;
 }

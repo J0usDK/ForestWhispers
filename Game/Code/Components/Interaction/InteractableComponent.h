@@ -29,10 +29,10 @@ public:
 	EInteractionType GetInteractionType() const;
 
 	void SetInteractionStringKey(const char* key);
-	uint64 GetInteractionStringKey() const;
+	uint32 GetInteractionStringKey() const;
 
 private:
 	EInteractionType m_type;
 	Schematyc::CSharedString m_editorStringKey = "";
-	uint64 m_interactionStringKey;
+	uint32 m_interactionStringKey;
 };

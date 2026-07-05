@@ -6,6 +6,7 @@
 #include "Components/Player/Camera/PlayerCameraComponent.h"
 #include "Components/Player/Input/PlayerInputComponent.h"
 #include "Components/Interaction/InteractionComponent.h"
+#include "Components/Inventory/InventoryComponent.h"
 
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
@@ -39,7 +40,9 @@ private:
 	void UpdateCamera(const SCharacterIntent& intent);
 	void UpdateMovement(const SCharacterIntent& intent);
 	void UpdateAnimation();
-	void UpdateInteraction(const SCharacterIntent& intent);
+
+	void UpdateInteraction(const SCharacterCommands& actions);
+	void UpdateUICommands(const SCharacterCommands& actions);
 
 	void ShowPlayerHUD();
 	void HidePlayerHUD();
@@ -50,6 +53,7 @@ private:
 	CPlayerCameraComponent* m_pCamera = nullptr;
 	CPlayerInputComponent* m_pInput = nullptr;
 	CInteractionComponent* m_pInteractor = nullptr;
+	CInventoryComponent* m_pInventory = nullptr;
 
 	Vec3 m_defaultCameraPivot = ZERO;
 

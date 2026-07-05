@@ -41,7 +41,7 @@ void CInteractableComponent::SetInteractionStringKey(const char* key)
 	m_interactionStringKey = StringUtils::GenerateID(key);
 }
 
-uint64 CInteractableComponent::GetInteractionStringKey() const
+uint32 CInteractableComponent::GetInteractionStringKey() const
 {
 	return m_interactionStringKey;
 }

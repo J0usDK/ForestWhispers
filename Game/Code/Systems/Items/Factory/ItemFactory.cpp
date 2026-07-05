@@ -17,7 +17,7 @@ std::unique_ptr<CItemInstance> CItemFactory::CreateInstance(TItemDefinitionID it
 	}
 
 	TItemInstanceID newID = m_idCounter.fetch_add(1);
-	CItem itemData(itemDefinitionID);
+	CItem itemData(itemDefinitionID, StringUtils::GenerateID(pDef->name));
 	for (const auto& pTraitTemplate : pDef->traits)
 	{
 		if (pTraitTemplate)
@@ -34,8 +34,9 @@ std::unique_ptr<CItemInstance> CItemFactory::SplitInstance(CItemInstance& source
 	sourceInstance.RemoveCount(countToSplit);
 
 	TItemInstanceID newID = m_idCounter.fetch_add(1);
-	CItem clonedItemData(sourceInstance.GetItemData().GetDefinitionID());
+	const SItemDefinition* pDef = m_database.GetItemDefinition(sourceInstance.GetItemData().GetDefinitionID());
+	CItem clonedItemData(pDef->id, StringUtils::GenerateID(pDef->name));
 	sourceInstance.GetItemData().ForEachTrait([&](const IItemTrait& trait)
-		{ clonedItemData.AddTrait(trait.Clone()); });;
+		{ clonedItemData.AddTrait(trait.Clone()); });
 	return std::make_unique<CItemInstance>(std::move(clonedItemData), newID, countToSplit);
 }

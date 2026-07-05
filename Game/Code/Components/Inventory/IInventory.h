@@ -1,5 +1,6 @@
 #pragma once
 #include "Systems/Items/ItemInstance.h"
+#include "IInventoryListener.h"
 
 class IInventory
 {

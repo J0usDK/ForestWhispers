@@ -51,8 +51,8 @@ private:
 	void RefreshFocus();
 	bool GetRayParams(Vec3& outPos, Vec3& outDir) const;
 	IEntity* PerformRaycast(const Vec3& pos, const Vec3& dir) const;
-	bool TryResolveInteraction(const IEntity* pHitEntity, EntityId& outID, EInteractionType& outType, uint64& outInteractionStringKey) const;
-	void UpdateFocus(const EntityId entityID, const EInteractionType type, uint64 interactionStringKey);
+	bool TryResolveInteraction(const IEntity* pHitEntity, EntityId& outID, EInteractionType& outType, uint32& outInteractionStringKey) const;
+	void UpdateFocus(const EntityId entityID, const EInteractionType type, uint32 interactionStringKey);
 
 private:
 	float m_interactionRange = 0.0f;

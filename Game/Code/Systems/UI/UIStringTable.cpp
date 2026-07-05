@@ -2,7 +2,7 @@
 #include "UIStringTable.h"
 #include "Global/Utils/StringUtils.h"
 
-void CUIStringTable::Reserve(uint64 size)
+void CUIStringTable::Reserve(uint32 size)
 {
 	m_table.reserve(size);
 }

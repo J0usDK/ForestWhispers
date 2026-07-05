@@ -66,7 +66,7 @@ void CInteractionComponent::RefreshFocus()
 
 	EntityId entityID;
 	EInteractionType type;
-	uint64 interactionStringKey;
+	uint32 interactionStringKey;
 
 	IEntity* pHitEntity = PerformRaycast(pos, dir);
 	TryResolveInteraction(pHitEntity, entityID, type, interactionStringKey);
@@ -109,7 +109,7 @@ IEntity* CInteractionComponent::PerformRaycast(const Vec3& pos, const Vec3& dir)
 	return nullptr;
 }
 
-bool CInteractionComponent::TryResolveInteraction(const IEntity* pHitEntity, EntityId& outID, EInteractionType& outType, uint64& outInteractionStringKey) const
+bool CInteractionComponent::TryResolveInteraction(const IEntity* pHitEntity, EntityId& outID, EInteractionType& outType, uint32& outInteractionStringKey) const
 {
 	if (!pHitEntity)
 	{
@@ -135,7 +135,7 @@ bool CInteractionComponent::TryResolveInteraction(const IEntity* pHitEntity, Ent
 	}
 }
 
-void CInteractionComponent::UpdateFocus(const EntityId entityID, const EInteractionType type, uint64 interactionStringKey)
+void CInteractionComponent::UpdateFocus(const EntityId entityID, const EInteractionType type, uint32 interactionStringKey)
 {
 	if (m_focus.IsEqual(entityID, type))
 		return;

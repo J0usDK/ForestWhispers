@@ -7,7 +7,12 @@ struct SCharacterIntent
 	Vec2 movement = ZERO;
 	Vec2 lookDelta = ZERO;
 	bool sprint = false;
+};
+
+struct SCharacterCommands
+{
 	bool interact = false;
+	bool toggleBook = false;
 };
 
 enum class EInputContext
@@ -34,6 +39,7 @@ public:
 	}
 
 	const SCharacterIntent& GetCurrentIntent() const;
+	const SCharacterCommands& GetCurrentCommands() const;
 
 	void SwitchContext(EInputContext newContext);
 	EInputContext GetInputContext() const;
@@ -41,6 +47,7 @@ public:
 private:
 	void InitializeActionMaps();
 	void FlushIntent();
+	void FlushCommands();
 
 	bool OnMoveForward(EntityId entityId, const ActionId& actionId, int activationMode, float value);
 	bool OnMoveBack(EntityId entityId, const ActionId& actionId, int activationMode, float value);
@@ -51,13 +58,17 @@ private:
 	bool OnPitch(EntityId entityId, const ActionId& actionId, int activationMode, float value);
 
 	bool OnInteract(EntityId entityId, const ActionId& actionId, int activationMode, float value);
+	bool OnToggleBook(EntityId entityId, const ActionId& actionId, int activationMode, float value);
 		
 private:
 	IActionMapManager* m_pActionMapManager = nullptr;
 	TActionHandler<CPlayerInputComponent> m_actionHandler;
 	
-	SCharacterIntent m_accumulator;
+	SCharacterIntent m_accumulatedIntent;
 	SCharacterIntent m_frameIntent;
+
+	SCharacterCommands m_accumulatedCommands;
+	SCharacterCommands m_frameCommands;
 
 	EInputContext m_currentContext = EInputContext::OnFoot;
 

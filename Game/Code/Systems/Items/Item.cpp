@@ -1,9 +1,14 @@
 #include "StdAfx.h"
 #include "Item.h"
 
-CItem::CItem(TItemDefinitionID defID) : m_defID(defID)
+CItem::CItem(TItemDefinitionID defID, uint32 nameStringID) : m_defID(defID), m_nameStringID(nameStringID)
 {
 	m_traits.reserve(4); // Reserve space for a few traits to avoid frequent reallocations
+}
+
+uint32 CItem::GetNameStringID() const
+{
+	return m_nameStringID;
 }
 
 TItemDefinitionID CItem::GetDefinitionID() const

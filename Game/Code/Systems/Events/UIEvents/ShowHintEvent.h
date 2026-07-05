@@ -3,5 +3,5 @@
 struct SShowHintEvent
 {
 	bool isVisible;
-	uint64 stringKey;
+	uint32 stringKey;
 };

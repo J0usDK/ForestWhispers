@@ -25,5 +25,10 @@
 		<action name="controller_rotatepitch" xboxpad="xi_thumbry" ps4pad="pad_stickry"/>
 		
 		<action name="interact" onPress="1" onRelease="1" keyboard="e" xboxpad="xi_a" ps4pad="pad_cross"/>
-	</actionmap>  
+		<action name="togglebook" onPress="1" onRelease="0" keyboard="i" xboxpad="xi_back" ps4pad="pad_select"/>
+	</actionmap>
+
+	<actionmap name="ui" version="1">
+		<action name="togglebook" onPress="1" onRelease="0" keyboard="i" xboxpad="xi_back" ps4pad="pad_select"/>
+	</actionmap>
 </profile>

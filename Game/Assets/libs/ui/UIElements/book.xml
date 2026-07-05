@@ -1,0 +1,21 @@
+<UIElements name="Menus">
+	<UIElement name="BookUI">
+		<GFx file="textures/ui/bookbase/BookUI.gfx" layer="2">
+			<Constraints>
+				<Align mode="dynamic" valign="center" halign="center" scale="1" max="0"/>
+			</Constraints>
+		</GFx>
+		<functions>
+			<function name="OpenBook" funcname="_root.book_mc.openBook" desc="Shows the book"/>
+			<function name="CloseBook" funcname="_root.book_mc.closeBook" desc="Closes the book"/>
+			<function name="Inv_SetItems" funcname="_root.book_mc.inventory_mc.setItems">
+				<param name="Items" desc="Flat array of items"/>
+			</function>
+		</functions>
+		<events>
+            <event name="UI_OnSortName" fscommand="0"/>
+            <event name="UI_OnSortWeight" fscommand="0"/>
+            <event name="UI_OnSortType" fscommand="0"/>
+        </events>
+	</UIElement>
+</UIElements>
