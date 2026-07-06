@@ -10,8 +10,11 @@
 #include <CrySchematyc/Utils/SharedString.h>
 
 // User libs
-#include "Systems/Items/Database/ItemLoader.h"
-#include "Systems/UI/Parser/UIStringLoader.h"
+#include "Bootstrap/Modules/LocalizationModule.h"
+#include "Bootstrap/Modules/ItemSystemModule.h"
+#include "Bootstrap/Modules/InteractionModule.h"
+#include "Bootstrap/Modules/LocalPlayerModule.h"
+#include "Bootstrap/Modules/UISystemModule.h"
 #include "Global/GameEnv.h"
 
 // Included only once per DLL module.
@@ -28,11 +31,14 @@ CGamePlugin::~CGamePlugin()
 		gEnv->pSchematyc->GetEnvRegistry().DeregisterPackage(CGamePlugin::GetCID());
 	}
 
+	if (m_pBootstrap)
+	{
+		m_pBootstrap->Shutdown();
+		m_pBootstrap.reset();
+	}
+
 	if (gGameEnv)
 	{
-		gGameEnv->pItemDatabase = nullptr;
-		gGameEnv->pItemFactory = nullptr;
-		gGameEnv->pPhysicalItemFactory = nullptr;
 		delete gGameEnv;
 		gGameEnv = nullptr;
 	}
@@ -40,76 +46,53 @@ CGamePlugin::~CGamePlugin()
 
 bool CGamePlugin::Initialize(SSystemGlobalEnvironment& env, const SSystemInitParams& initParams)
 {
-	// Register for engine system events, in our case we need ESYSTEM_EVENT_GAME_POST_INIT to load the map
 	gEnv->pSystem->GetISystemEventDispatcher()->RegisterListener(this, "CGamePlugin");
 
 	if (!gGameEnv)
 		gGameEnv = new SGameEnvironment();
 
-	InitGlobalObjects();
-	InitInteractionHandlers();
-	LoadLocalizationConfig();
-	LoadItemConfigs();
+	m_pBootstrap = std::make_unique<CBootstrap>();
+
+	m_pBootstrap->RegisterModule(EModuleID::Localization, std::make_unique<CLocalizationModule>());
+	m_pBootstrap->RegisterModule(EModuleID::ItemSystem, std::make_unique<CItemSystemModule>());
+	m_pBootstrap->RegisterModule(EModuleID::Interaction, std::make_unique<CInteractionModule>());
+	m_pBootstrap->RegisterModule(EModuleID::LocalPlayer, std::make_unique<CLocalPlayerModule>());
+	m_pBootstrap->RegisterModule(EModuleID::UISystem, std::make_unique<CUISystemModule>());
+
+	if (!m_pBootstrap->InitializePhase(EBootstrapPhase::CoreSystems))
+	{
+		CryFatalError("[Bootstrap] CoreSystems initialization phase failed!");
+		return false;
+	}
+
+	auto* pLocal = m_pBootstrap->GetModule<CLocalizationModule>(EModuleID::Localization);
+	auto* pItems = m_pBootstrap->GetModule<CItemSystemModule>(EModuleID::ItemSystem);
+	auto* pInteract = m_pBootstrap->GetModule<CInteractionModule>(EModuleID::Interaction);
+	auto* pPlayer = m_pBootstrap->GetModule<CLocalPlayerModule>(EModuleID::LocalPlayer);
+
+	gGameEnv->pUIStringTable = pLocal->GetStringTable();
+	gGameEnv->pItemDatabase = pItems->GetDatabase();
+	gGameEnv->pItemFactory = pItems->GetItemFactory();
+	gGameEnv->pPhysicalItemFactory = pItems->GetPhysicalItemFactory();
+	gGameEnv->pInteractionService = pInteract->GetService();
+	gGameEnv->pLocalPlayerService = pPlayer->GetService();
 
 	return true;
-}
-
-void CGamePlugin::InitGlobalObjects()
-{
-	m_pUIStringTable = std::make_unique<CUIStringTable>();
-	m_pItemDatabase = std::make_unique<CItemDatabase>();
-	m_pItemFactory = std::make_unique<CItemFactory>(*m_pItemDatabase);
-	m_pPhysicalItemFactory = std::make_unique<CPhysicalItemFactory>();
-	m_pInteractionService = std::make_unique<CInteractionService>();
-	m_pUISystem = std::make_unique<CUISystem>();
-
-	gGameEnv->pUIStringTable = m_pUIStringTable.get();
-	gGameEnv->pItemDatabase = m_pItemDatabase.get();
-	gGameEnv->pItemFactory = m_pItemFactory.get();
-	gGameEnv->pPhysicalItemFactory = m_pPhysicalItemFactory.get();
-	gGameEnv->pInteractionService = m_pInteractionService.get();
-	gGameEnv->pUISystem = m_pUISystem.get();
-}
-
-void CGamePlugin::InitInteractionHandlers()
-{
-	m_pLootService = std::make_unique<CLootInteractionHandler>();
-	m_pInteractionService->RegisterHandler(EInteractionType::Item, m_pLootService.get());
-}
-
-void CGamePlugin::LoadLocalizationConfig()
-{
-	CUIStringLoader localLoader("GameData/Locals", ELanguage::English);
-	if (localLoader.LoadLocalization(*m_pUIStringTable))
-		CryLogAlways("Localization loaded.");
-	else
-		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "Failed to load localization.");
-}
-
-void CGamePlugin::LoadItemConfigs()
-{
-	CItemParser itemParser;
-	CItemLoader itemLoader("GameData/Items", itemParser);
-
-	if (itemLoader.LoadItems(*m_pItemDatabase))
-		CryLogAlways("Items' configs loaded.");
-	else
-		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "Failed to load items' configs");
 }
 
 void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lparam)
 {
 	switch (event)
 	{
-		// Called when the game framework has initialized and we are ready for game logic to start
 		case ESYSTEM_EVENT_GAME_POST_INIT:
 		{
-			// Don't need to load the map in editor
-			if (!gEnv->IsEditor())
-			{
-				// Load the example map in client server mode
-				gEnv->pConsole->ExecuteString("map example s", false, true);
-			}
+			if (!m_pBootstrap->InitializePhase(EBootstrapPhase::PostInit))
+				CryFatalError("[Bootstrap] PostInit initialization phase failed!");
+
+			auto pUI = m_pBootstrap->GetModule<CUISystemModule>(EModuleID::UISystem);
+			gGameEnv->pUISystem = pUI->GetUISystem();
+
+			m_pBootstrap->Finish();
 		}
 		break;
 

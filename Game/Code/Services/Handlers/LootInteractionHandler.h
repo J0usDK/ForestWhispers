@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Services/Base/IInteractionHandler.h"
+#include "Services/Base/Interaction/IInteractionHandler.h"
 
 class CLootInteractionHandler : public IInteractionHandler
 {

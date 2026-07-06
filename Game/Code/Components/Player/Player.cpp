@@ -4,7 +4,8 @@
 
 #include "Global/Utils/Math.h"
 #include "Global/GameEnv.h"
-#include "Services/Base/InteractionService.h"
+#include "Services/Base/Interaction/InteractionService.h"
+#include "Services/Base/LocalPlayer/LocalPlayerService.h"
 #include "Systems/UI/UISystem.h"
 #include "Systems/UI/UIStringTable.h"
 
@@ -33,7 +34,6 @@ void CPlayerComponent::Initialize()
 	m_pCamera = m_pEntity->GetOrCreateComponent<CPlayerCameraComponent>();
 	m_pInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
 	m_pInteractor = m_pEntity->GetOrCreateComponent<CInteractionComponent>();
-	m_pInventory = m_pEntity->GetOrCreateComponent<CInventoryComponent>();
 
 	m_pInteractor->AddListener(this);
 }
@@ -49,11 +49,9 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 	{
 		case Cry::Entity::EEvent::GameplayStarted:
 		{
+			gGameEnv->pLocalPlayerService->NotifyPlayerReady(this);
 			m_bIsPlaying = true;
 			ShowPlayerHUD();
-			SLocalPlayerReadyEvent readyEvent;
-			readyEvent.pInventoryEventSender = m_pInventory;
-			gGameEnv->pUISystem->HandleEvent(readyEvent);
 			break;
 		}
 		case Cry::Entity::EEvent::Update:
@@ -73,6 +71,7 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 		}
 		case Cry::Entity::EEvent::Reset:
 		{
+			gGameEnv->pLocalPlayerService->NotifyPlayerRemoved();
 			m_bIsPlaying = false;
 			m_headBoneID = -1;
 			m_currentState = EPlayerState::Idle;

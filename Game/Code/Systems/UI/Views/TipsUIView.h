@@ -11,8 +11,5 @@ public:
 	virtual void OnTipsStateChanged(const char* prompt, bool isVisible) override;
 
 private:
-	bool Initialize();
-
-private:
 	IUIElement* m_pUIElement = nullptr;
 };

@@ -8,6 +8,7 @@ public:
 	CInventoryPageViewModel() = default;
 	~CInventoryPageViewModel() = default;
 
+
 	void SetListener(IInventoryPageViewListener* listener);
 
 	void OnInventoryUpdated(const std::vector<SUIItemData>& itemsSnapshot) override;

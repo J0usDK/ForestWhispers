@@ -1,9 +1,11 @@
 #pragma once
+#include "Services/Base/LocalPlayer/ILocalPlayerListener.h"
+#include "Components/Inventory/IInventoryDataProvider.h"
+
 #include "ViewModels/HUDViewModel.h"
 #include "ViewModels/TipsViewModel.h"
 #include "ViewModels/BookViewModel.h"
 #include "ViewModels/InventoryPageViewModel.h"
-
 
 #include "Views/HUDUIView.h"
 #include "Views/TipsUIView.h"
@@ -15,13 +17,15 @@
 #include "Systems/Events/UIEvents/ShowHintEvent.h"
 #include "Systems/Events/UIEvents/ToggleBookEvent.h"
 #include "Systems/Events/UIEvents/InventoryEvents.h"
-#include "Systems/Events/UIEvents/LocalPlayerReadyEvent.h"
 
-class CUISystem
+class CUISystem : public ILocalPlayerListener
 {
 public:
 	CUISystem();
-	~CUISystem() = default;
+	~CUISystem();
+
+	void OnLocalPlayerReady(CPlayerComponent* pPlayer) override;
+	void OnLocalPlayerRemoved() override;
 
 	void HandleEvent(const SShowHUDEvent& event);
 	void HandleEvent(const SShowCrosshairEvent& event);
@@ -30,9 +34,10 @@ public:
 	void HandleEvent(const SInventoryUpdateEvent& event);
 	void HandleEvent(const SInventoryItemAddedEvent& event);
 	void HandleEvent(const SInventoryItemRemovedEvent& event);
-	void HandleEvent(const SLocalPlayerReadyEvent& event);
 
 private:
+	IInventoryDataProvider* m_pInventoryDataProvider = nullptr;
+
 	std::unique_ptr<CHUDViewModel> m_pHUDVM;
 	std::unique_ptr<CTipsViewModel> m_pTipsVM;
 	std::unique_ptr<CBookViewModel> m_pBookVM;

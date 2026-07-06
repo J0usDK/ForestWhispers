@@ -3,10 +3,10 @@
 #include <CryEntitySystem/IEntityComponent.h>
 
 #include "IInventory.h"
-#include "IInventoryEventSender.h"
+#include "IInventoryDataProvider.h"
 #include "IInventoryListener.h"
 
-class CInventoryComponent final : public IEntityComponent, public IInventory, public IInventoryEventSender
+class CInventoryComponent final : public IEntityComponent, public IInventory, public IInventoryDataProvider
 {
 public:
 	CInventoryComponent() = default;

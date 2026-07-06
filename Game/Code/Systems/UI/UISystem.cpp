@@ -1,11 +1,15 @@
 #include "StdAfx.h"
 #include "UISystem.h"
-#include "Global/GameEnv.h"
+
 #include <CryGame/IGameFramework.h>
 #include <CryEntitySystem/IEntitySystem.h>
 #include <CryEntitySystem/IEntity.h>
+
+#include "Components/Player/Player.h"
+#include "Components/Inventory/InventoryComponent.h"
+#include "Global/GameEnv.h"
 #include "Systems/UI/UIStringTable.h"
-#include "Components/Inventory/IInventoryEventSender.h"
+#include "Components/Inventory/IInventoryDataProvider.h"
 
 CUISystem::CUISystem()
 {
@@ -23,6 +27,27 @@ CUISystem::CUISystem()
 	m_pBookVM->SetListener(m_pBookView.get());
 	m_pTipsVM->SetListener(m_pTipsView.get());
 	m_pInventoryPageViewModel->SetListener(m_pInventoryPageView.get());
+}
+
+CUISystem::~CUISystem()
+{
+	OnLocalPlayerRemoved();
+}
+
+void CUISystem::OnLocalPlayerReady(CPlayerComponent* pPlayer)
+{
+	if (!pPlayer) return;
+
+	m_pInventoryDataProvider = pPlayer->GetEntity()->GetComponent<CInventoryComponent>();
+	if (m_pInventoryDataProvider)
+		m_pInventoryDataProvider->RegisterListener(m_pInventoryPageViewModel.get());
+}
+
+void CUISystem::OnLocalPlayerRemoved()
+{
+	if (m_pInventoryDataProvider)
+		m_pInventoryDataProvider->UnregisterListener(m_pInventoryPageViewModel.get());
+	m_pInventoryDataProvider = nullptr;
 }
 
 void CUISystem::HandleEvent(const SShowHUDEvent& event)
@@ -71,9 +96,4 @@ void CUISystem::HandleEvent(const SInventoryItemRemovedEvent& event)
 	// In a real implementation, you might want to handle this more efficiently.
 	// Here we will just log the removal for demonstration purposes.
 	CryLog("Inventory item removed at index: %d", event.itemIndex);
-}
-
-void CUISystem::HandleEvent(const SLocalPlayerReadyEvent& event)
-{
-	event.pInventoryEventSender->RegisterListener(m_pInventoryPageViewModel.get());
 }

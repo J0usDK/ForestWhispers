@@ -11,7 +11,6 @@ void CInventoryPageViewModel::SetListener(IInventoryPageViewListener* listener)
 
 void CInventoryPageViewModel::OnInventoryUpdated(const std::vector<SUIItemData>& itemsSnapshot)
 {
-	CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "CInventoryPageViewModel::OnInventoryUpdated: Inventory updated event received.");
 	m_cachedItems = itemsSnapshot;
 	ApplyCurrentSort();
 	PushDataToView();
@@ -19,7 +18,6 @@ void CInventoryPageViewModel::OnInventoryUpdated(const std::vector<SUIItemData>&
 
 void CInventoryPageViewModel::OnInventoryItemAdded(const SUIItemData& newItem)
 {
-	CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "CInventoryPageViewModel::OnInventoryItemAdded: Inventory item added event received.");
 	m_cachedItems.push_back(newItem);
 	ApplyCurrentSort();
 	PushDataToView();

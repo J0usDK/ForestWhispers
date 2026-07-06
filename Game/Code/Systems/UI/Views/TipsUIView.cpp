@@ -3,25 +3,12 @@
 
 CTipsUIView::CTipsUIView()
 {
-}
-
-bool CTipsUIView::Initialize()
-{
-	if (gEnv->pFlashUI)
-		m_pUIElement = gEnv->pFlashUI->GetUIElement("worldTooltip");
-
-	if (!m_pUIElement)
-		return false;
-
+	m_pUIElement = gEnv->pFlashUI->GetUIElement("worldTooltip");
 	m_pUIElement->SetVisible(true);
-	return true;
 }
 
 void CTipsUIView::OnTipsStateChanged(const char* prompt, bool isVisible)
 {
-	if (!m_pUIElement && !Initialize())
-		return;
-
 	if (isVisible && prompt)
 	{
 		SUIArguments args;

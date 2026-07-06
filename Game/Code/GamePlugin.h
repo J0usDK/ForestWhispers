@@ -5,13 +5,7 @@
 #include <CryGame/IGameFramework.h>
 #include <CryEntitySystem/IEntityClass.h>
 
-#include "Systems/Items/Database/ItemDatabase.h"
-#include "Systems/Items/Factory/ItemFactory.h"
-#include "Systems/Items/Factory/PhysicalItemFactory.h"
-#include "Systems/UI/UIStringTable.h"
-#include "Systems/UI/UISystem.h"
-#include "Services/Base/InteractionService.h"
-#include "Services/Handlers/LootInteractionHandler.h"
+#include "Bootstrap/Bootstrap.h"
 
 // The entry-point of the application
 // An instance of CGamePlugin is automatically created when the library is loaded
@@ -26,17 +20,11 @@ public:
 
 	virtual ~CGamePlugin();
 	
-	// Cry::IEnginePlugin
 	virtual const char* GetCategory() const override { return "Game"; }
 	virtual bool Initialize(SSystemGlobalEnvironment& env, const SSystemInitParams& initParams) override;
-	// ~Cry::IEnginePlugin
 
-	// ISystemEventListener
 	virtual void OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lparam) override;
-	// ~ISystemEventListener
 
-	// Helper function to get the CGamePlugin instance
-	// Note that CGamePlugin is declared as a singleton, so the CreateClassInstance will always return the same pointer
 	static CGamePlugin* GetInstance()
 	{
 		return cryinterface_cast<CGamePlugin>(CGamePlugin::s_factory.CreateClassInstance().get());
@@ -49,12 +37,5 @@ private:
 	void LoadItemConfigs();
 
 private:
-	std::unique_ptr<CItemDatabase> m_pItemDatabase;
-	std::unique_ptr<CItemFactory> m_pItemFactory;
-	std::unique_ptr<CPhysicalItemFactory> m_pPhysicalItemFactory;
-	std::unique_ptr<CUIStringTable> m_pUIStringTable;
-	std::unique_ptr<CUISystem> m_pUISystem;
-
-	std::unique_ptr<CInteractionService> m_pInteractionService;
-	std::unique_ptr<CLootInteractionHandler> m_pLootService;
+	std::unique_ptr<CBootstrap> m_pBootstrap;
 };

@@ -5,13 +5,10 @@
 class CBookUIView final : public IBookViewListener
 {
 public:
-	CBookUIView() = default;
+	CBookUIView();
 	~CBookUIView() = default;
 
 	virtual void OnBookStateChanged(bool isVisible) override;
-
-private:
-	bool Initialize();
 
 private:
 	IUIElement* m_pUIElement = nullptr;
