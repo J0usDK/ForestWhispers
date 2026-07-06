@@ -8,8 +8,8 @@ public:
 	CHUDUIView();
 	~CHUDUIView() = default;
 
-	virtual void OnCrosshairStateChanged(bool isVisible) override;
-	virtual void OnHUDStateChanged(bool isVisible) override;
+	void OnCrosshairStateChanged(bool isVisible) override;
+	void OnHUDStateChanged(bool isVisible) override;
 
 private:
 	IUIElement* m_pUIElement = nullptr;

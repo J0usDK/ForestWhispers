@@ -8,7 +8,7 @@ public:
 	CInventoryPageUIView();
 	~CInventoryPageUIView() = default;
 
-	virtual void OnInventoryDataUpdated(const std::vector<SUIItemData>& itemsSnapshot) override;
+	void OnInventoryDataUpdated(const std::vector<SUIItemData>& itemsSnapshot) override;
 
 private:
 	IUIElement* m_pUIElement = nullptr;

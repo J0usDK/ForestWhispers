@@ -2,13 +2,19 @@
 #include <CrySystem/Scaleform/IFlashUI.h>
 #include "Systems/UI/Listeners/IBookViewListener.h"
 
-class CBookUIView final : public IBookViewListener
+
+class CBookUIView final : public IBookViewListener, public IUIElementEventListener
 {
 public:
 	CBookUIView();
-	~CBookUIView() = default;
+	~CBookUIView();
 
-	virtual void OnBookStateChanged(bool isVisible) override;
+	void OnBookStateChanged(bool isVisible) override;
+
+	void OnInit(IUIElement* pSender, IFlashPlayer* pFlashPlayer) override;
+
+private:
+	void PushStringTable();
 
 private:
 	IUIElement* m_pUIElement = nullptr;

@@ -6,6 +6,9 @@
 			</Constraints>
 		</GFx>
 		<functions>
+			<function name="SetStringTable" funcname="SetStringTable" desc="Push localization table">
+			    <param name="Table" desc="Flat array [id, str, id, str, ...]"/>
+			</function>
 			<function name="OpenBook" funcname="_root.book_mc.openBook" desc="Shows the book"/>
 			<function name="CloseBook" funcname="_root.book_mc.closeBook" desc="Closes the book"/>
 			<function name="Inv_SetItems" funcname="_root.book_mc.inventory_mc.setItems">
