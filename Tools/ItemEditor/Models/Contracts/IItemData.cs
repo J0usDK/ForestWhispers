@@ -8,6 +8,7 @@ internal interface IItemData : INotifyPropertyChanged
 {
     string ItemID { get; }
     string? OriginalItemID { get; }
+    int ItemType { get; }
 
     MetadataFieldValue Description { get; }
     MetadataFieldValue GeometryPath { get; }

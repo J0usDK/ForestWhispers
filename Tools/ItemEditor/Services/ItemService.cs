@@ -35,6 +35,7 @@ internal sealed class ItemService(IPathValidationContext? pathValidationContext)
 
         writer.WriteStartObject();
         writer.WriteString("ItemID", item.ItemID);
+        writer.WriteNumber("ItemType", item.ItemType);
         writer.WriteString("Description", item.Description.Value);
         writer.WriteString("GeometryPath", NormalizePath(item.GeometryPath.Value));
         writer.WriteString("IconPath", NormalizePath(item.IconPath.Value));
@@ -100,12 +101,13 @@ internal sealed class ItemService(IPathValidationContext? pathValidationContext)
     private IItemModel ParseItemModel(JsonObject rootNode, string filePath, ItemTraitsSchema schema)
     {
         string itemID = rootNode["ItemID"]?.ToString() ?? Path.GetFileNameWithoutExtension(filePath);
+        int itemType = rootNode["ItemType"]?.GetValue<int>() ?? 0;
         string description = rootNode["Description"]?.ToString() ?? String.Empty;
         string geometryPath = rootNode["GeometryPath"]?.ToString() ?? String.Empty;
         string iconPath = rootNode["IconPath"]?.ToString() ?? String.Empty;
 
         IItemModel item = new ItemModel(_pathValidationContext) { ItemID = itemID };
-
+        item.ItemType = itemType;
         item.Description.Value = description;
         item.GeometryPath.Value = geometryPath;
         item.IconPath.Value = iconPath;

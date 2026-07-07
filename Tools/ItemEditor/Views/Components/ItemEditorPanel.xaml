@@ -57,6 +57,11 @@
                     </TextBox.InputBindings>
                 </TextBox>
 
+                <TextBlock Text="ITEM TYPE" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
+                <ComboBox ItemsSource="{Binding ItemEditor.ItemTypesView}"  DisplayMemberPath="Name" SelectedValuePath="Value"
+                          SelectedValue="{Binding ItemEditor.CurrentItem.ItemType, UpdateSourceTrigger=PropertyChanged}"
+                          Style="{StaticResource DarkComboBoxStyle}" Margin="0,0,0,20"/>
+
                 <TextBlock Text="GEOMETRY PATH" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
                 <Grid Margin="0,0,0,20">
                     <TextBox Text="{Binding ItemEditor.CurrentItem.GeometryPath.Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"

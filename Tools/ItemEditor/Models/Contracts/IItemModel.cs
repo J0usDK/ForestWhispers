@@ -10,6 +10,8 @@ internal interface IItemModel : IItemData, ITrackableItem, IRevertibleItem
 
     event EventHandler<(string OldID, string NewID)>? ItemIDChanged;
 
+    new int ItemType { get; set; }
+
     void AddTrait(TraitInstance trait);
     void RemoveTrait(TraitInstance trait);
 

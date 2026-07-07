@@ -162,6 +162,7 @@ internal sealed partial class MainViewModel : ObservableObject
         {
             _currentSchema = await _schemaService.LoadSchemaAsync(path);
             TraitsList.Initialize(_currentSchema.Traits);
+            ItemEditor.Initialize(_currentSchema.ItemTypes);
         }
         catch (Exception ex)
         {

@@ -24,6 +24,9 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
     private string? _originalItemID;
     public string? OriginalItemID => _originalItemID;
 
+    [ObservableProperty]
+    private int _itemType;
+
     public MetadataFieldValue Description { get; } = new() { FieldType = MetadataFieldType.None };
     public MetadataFieldValue GeometryPath { get; }
     public MetadataFieldValue IconPath { get; }
@@ -54,6 +57,7 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
     public IItemModel Clone(string newID, IPathValidationContext? pathValidationContext = null)
     {
         var clone = new ItemModel(pathValidationContext) { ItemID = newID };
+        clone.ItemType = this.ItemType;
         clone.Description.Value = this.Description.Value;
         clone.GeometryPath.Value = this.GeometryPath.Value;
         clone.IconPath.Value = this.IconPath.Value;
@@ -96,6 +100,12 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
 
         ItemIDChanged?.Invoke(this, (oldValue, newValue));
         History.Push(new ItemMetadataChangeCommand(this, nameof(ItemID), val => ItemID = val, oldValue, newValue));
+    }
+
+    partial void OnItemTypeChanged(int oldValue, int newValue)
+    {
+        if (oldValue == newValue) return;
+        History.Push(new ItemTypeChangeCommand(this, oldValue, newValue));
     }
 
     private void Traits_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)

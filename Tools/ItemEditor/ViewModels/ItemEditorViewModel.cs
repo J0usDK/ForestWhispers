@@ -4,8 +4,10 @@ using ItemEditor.Models.Contracts;
 using ItemEditor.Models.Item;
 using ItemEditor.Models.Schema;
 using ItemEditor.Services.Contracts;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace ItemEditor.ViewModels;
@@ -17,6 +19,9 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
     private readonly IDialogService _dialogService;
     private readonly IItemIDRegistryService _registryService;
     private readonly IEnginePathService _enginePathService;
+
+    public ObservableCollection<ItemTypeDefinition> AvaliableItemTypes { get; } = [];
+    public ICollectionView ItemTypesView { get; }
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(HasItem))]
@@ -41,11 +46,20 @@ internal sealed partial class ItemEditorViewModel : ObservableObject
         _registryService = registryService;
         _enginePathService = enginePathService;
 
+        ItemTypesView = CollectionViewSource.GetDefaultView(AvaliableItemTypes);
+
         _registryService.ItemIDCollisionStateChanged += (changedID) =>
         {
             if (CurrentItem != null && string.Equals(CurrentItem.ItemID, changedID, StringComparison.OrdinalIgnoreCase))
                 RefreshEditorState();
         };
+    }
+
+    public void Initialize(IEnumerable<ItemTypeDefinition> itemTypes)
+    {
+        AvaliableItemTypes.Clear();
+        foreach (var itemType in itemTypes)
+            AvaliableItemTypes.Add(itemType);
     }
 
     partial void OnCurrentItemChanging(IItemModel? oldValue, IItemModel? newValue)

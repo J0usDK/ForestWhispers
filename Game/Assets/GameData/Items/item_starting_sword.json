@@ -1,5 +1,6 @@
 {
   "ItemID": "item_starting_sword",
+  "ItemType": 0,
   "Description": "The starting sword.",
   "GeometryPath": "objects/items/weapons/melee/swords/starting_sword.cgf",
   "IconPath": "textures/ui/icons/weapons/melee/icon_sword_generic.tif",
