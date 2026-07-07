@@ -101,6 +101,15 @@
                     </Button>
                 </Grid>
 
+                <TextBlock Text="WEIGHT (KG)" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
+                <TextBox Text="{Binding ItemEditor.CurrentItem.Weight.Value, UpdateSourceTrigger=PropertyChanged, Delay=250, ValidatesOnNotifyDataErrors=True}"
+                         Style="{StaticResource ValidatedTextBoxStyle}" Margin="0,0,0,20" TextChanged="OnTextBoxTextChanged">
+                    <TextBox.InputBindings>
+                        <KeyBinding Modifiers="Ctrl" Key="Z" Command="{Binding DataContext.ItemEditor.UndoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                        <KeyBinding Modifiers="Ctrl+Shift" Key="Z" Command="{Binding DataContext.ItemEditor.RedoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                    </TextBox.InputBindings>
+                </TextBox>
+
                 <TextBlock Text="COMPONENTS" FontSize="11" Foreground="{StaticResource TextMuted}" Margin="0,0,0,10"/>
 
                 <ItemsControl ItemsSource="{Binding ItemEditor.CurrentItem.Traits}"

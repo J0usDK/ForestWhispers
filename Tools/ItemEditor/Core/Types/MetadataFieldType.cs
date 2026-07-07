@@ -4,5 +4,6 @@ internal enum MetadataFieldType
 {
     None,
     GeometryPath,
-    IconPath
+    IconPath,
+    Weight
 }

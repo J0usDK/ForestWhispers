@@ -35,10 +35,14 @@ internal sealed class ItemService(IPathValidationContext? pathValidationContext)
 
         writer.WriteStartObject();
         writer.WriteString("ItemID", item.ItemID);
-        writer.WriteNumber("ItemType", item.ItemType);
         writer.WriteString("Description", item.Description.Value);
         writer.WriteString("GeometryPath", NormalizePath(item.GeometryPath.Value));
         writer.WriteString("IconPath", NormalizePath(item.IconPath.Value));
+        writer.WriteNumber("ItemType", item.ItemType);
+
+        writer.WritePropertyName("Weight");
+        WriteParsedStringValue(writer, item.Weight.Value, FieldDataType.Float);
+
         writer.WriteStartObject("traits");
 
         foreach (var trait in item.Traits)
@@ -106,11 +110,16 @@ internal sealed class ItemService(IPathValidationContext? pathValidationContext)
         string geometryPath = rootNode["GeometryPath"]?.ToString() ?? String.Empty;
         string iconPath = rootNode["IconPath"]?.ToString() ?? String.Empty;
 
+        float weight = 0f;
+        if (float.TryParse(rootNode["Weight"]?.ToString(), NumberStyles.Float, CultureInfo.InvariantCulture, out float wVal))
+            weight = wVal;
+
         IItemModel item = new ItemModel(_pathValidationContext) { ItemID = itemID };
         item.ItemType = itemType;
         item.Description.Value = description;
         item.GeometryPath.Value = geometryPath;
         item.IconPath.Value = iconPath;
+        item.Weight.Value = weight.ToString(CultureInfo.InvariantCulture);
 
         if (rootNode.TryGetPropertyValue("traits", out var traitNode) && traitNode is JsonObject traitsObject)
         {

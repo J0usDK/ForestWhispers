@@ -10,7 +10,8 @@ internal static class MetadataFieldValidator
     {
         { MetadataFieldType.None, ValidateNone },
         { MetadataFieldType.GeometryPath, ValidateGeometryPath },
-        { MetadataFieldType.IconPath, ValidateIconPath }
+        { MetadataFieldType.IconPath, ValidateIconPath },
+        { MetadataFieldType.Weight, ValidateWeight }
     };
 
     public static IEnumerable<string> Validate(MetadataFieldType type, string value)
@@ -88,5 +89,10 @@ internal static class MetadataFieldValidator
         string extension = Path.GetExtension(value);
         if (!string.Equals(extension, requiredExtension, StringComparison.OrdinalIgnoreCase))
             yield return $"File must be a '{requiredExtension}' extension.";
+    }
+
+    private static IEnumerable<string> ValidateWeight(string value)
+    {
+        return FieldValidator.Validate(FieldDataType.Float, value, 0f, null);
     }
 }

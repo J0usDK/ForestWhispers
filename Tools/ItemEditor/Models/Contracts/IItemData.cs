@@ -13,6 +13,7 @@ internal interface IItemData : INotifyPropertyChanged
     MetadataFieldValue Description { get; }
     MetadataFieldValue GeometryPath { get; }
     MetadataFieldValue IconPath { get; }
+    MetadataFieldValue Weight { get; }
 
     ReadOnlyObservableCollection<TraitInstance> Traits { get; }
 }

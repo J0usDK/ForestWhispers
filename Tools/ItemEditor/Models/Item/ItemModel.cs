@@ -27,9 +27,10 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
     [ObservableProperty]
     private int _itemType;
 
-    public MetadataFieldValue Description { get; } = new() { FieldType = MetadataFieldType.None };
+    public MetadataFieldValue Description { get; }
     public MetadataFieldValue GeometryPath { get; }
     public MetadataFieldValue IconPath { get; }
+    public MetadataFieldValue Weight { get; }
 
     public bool IsDirty => History.IsDirty;
 
@@ -42,8 +43,10 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
 
     public ItemModel(IPathValidationContext? pathValidationContext = null)
     {
+        Description = new() { FieldType = MetadataFieldType.None };
         GeometryPath = new() { FieldType = MetadataFieldType.GeometryPath, PathValidationContext = pathValidationContext };
         IconPath = new() { FieldType = MetadataFieldType.IconPath, PathValidationContext = pathValidationContext };
+        Weight = new() { FieldType = MetadataFieldType.Weight };
 
         Traits = new ReadOnlyObservableCollection<TraitInstance>(_traits);
         _traits.CollectionChanged += Traits_CollectionChanged;
@@ -52,6 +55,7 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
         HookMetadataField(Description, nameof(Description), val => Description.Value = val);
         HookMetadataField(GeometryPath, nameof(GeometryPath), val => GeometryPath.Value = val);
         HookMetadataField(IconPath, nameof(IconPath), val => IconPath.Value = val);
+        HookMetadataField(Weight, nameof(Weight), val => Weight.Value = val);
     }
 
     public IItemModel Clone(string newID, IPathValidationContext? pathValidationContext = null)
@@ -61,6 +65,7 @@ internal sealed partial class ItemModel : ObservableObject, IItemModel
         clone.Description.Value = this.Description.Value;
         clone.GeometryPath.Value = this.GeometryPath.Value;
         clone.IconPath.Value = this.IconPath.Value;
+        clone.Weight.Value = this.Weight.Value;
 
         foreach (var trait in Traits)
             clone.AddTrait(trait.Clone());
