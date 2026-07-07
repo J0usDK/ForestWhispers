@@ -2,13 +2,18 @@
 #include "Systems/UI/Listeners/ITipsViewListener.h"
 #include <CrySystem/Scaleform/IFlashUI.h>
 
-class CTipsUIView final : public ITipsViewListener
+class CTipsUIView final : public ITipsViewListener, public IUIElementEventListener
 {
 public:
 	CTipsUIView();
-	~CTipsUIView() = default;
+	~CTipsUIView();
 
-	void OnTipsStateChanged(const char* prompt, bool isVisible) override;
+	void OnTipsStateChanged(uint32 stringID, bool isVisible) override;
+
+	void OnInit(IUIElement* pSender, IFlashPlayer* pFlashPlayer) override;
+
+private:
+	void PushStringTable();
 
 private:
 	IUIElement* m_pUIElement = nullptr;

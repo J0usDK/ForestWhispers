@@ -6,9 +6,9 @@ void CTipsViewModel::SetListener(ITipsViewListener* pListener)
 	m_pListener = pListener;
 }
 
-void CTipsViewModel::Show(const char* text)
+void CTipsViewModel::Show(uint32 stringID)
 {
-	m_prompt = text ? text : "";
+	m_prompt = stringID;
 	m_isVisible = true;
 	NotifyListener();
 }
@@ -25,5 +25,5 @@ void CTipsViewModel::Hide()
 void CTipsViewModel::NotifyListener()
 {
 	if (m_pListener)
-		m_pListener->OnTipsStateChanged(m_prompt.c_str(), m_isVisible);
+		m_pListener->OnTipsStateChanged(m_prompt, m_isVisible);
 }

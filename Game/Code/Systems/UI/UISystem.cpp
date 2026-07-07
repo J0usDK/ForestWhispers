@@ -68,9 +68,8 @@ void CUISystem::HandleEvent(const SShowCrosshairEvent& event)
 
 void CUISystem::HandleEvent(const SShowHintEvent& event)
 {
-	string text = gGameEnv->pUIStringTable->Resolve(event.stringKey);
 	if (event.isVisible)
-		m_pTipsVM->Show(text.c_str());
+		m_pTipsVM->Show(event.stringKey);
 	else
 		m_pTipsVM->Hide();
 }

@@ -1,7 +1,4 @@
 #pragma once
-
-#include <CryString/CryString.h>
-
 #include "Systems/UI/Listeners/ITipsViewListener.h"
 
 class CTipsViewModel
@@ -12,7 +9,7 @@ public:
 
 	void SetListener(ITipsViewListener* pListener);
 	
-	void Show(const char* text);
+	void Show(uint32 stringID);
 	void Hide();
 
 private:
@@ -20,6 +17,6 @@ private:
 
 private:
 	ITipsViewListener* m_pListener = nullptr;
-	string m_prompt = "";
+	uint32 m_prompt;
 	bool m_isVisible = false;
 };

@@ -4,5 +4,5 @@ class ITipsViewListener
 {
 public:
 	virtual ~ITipsViewListener() = default;
-	virtual void OnTipsStateChanged(const char* prompt, bool isVisible) = 0;
+	virtual void OnTipsStateChanged(uint32 stringID, bool isVisible) = 0;
 };
