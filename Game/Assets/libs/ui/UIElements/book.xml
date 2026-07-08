@@ -1,5 +1,5 @@
 <UIElements name="Menus">
-	<UIElement name="BookUI">
+	<UIElement name="BookUI" mouseevents="1">
 		<GFx file="textures/ui/bookbase/BookUI.gfx" layer="2">
 			<Constraints>
 				<Align mode="dynamic" valign="center" halign="center" scale="1" max="0"/>
@@ -16,9 +16,9 @@
 			</function>
 		</functions>
 		<events>
-            <event name="UI_OnSortName" fscommand="0"/>
-            <event name="UI_OnSortWeight" fscommand="0"/>
-            <event name="UI_OnSortType" fscommand="0"/>
+            <event name="OnSortName" fscommand="UI_OnSortName" desc="An request for sort items by their names"/>
+            <event name="OnSortWeight" fscommand="UI_OnSortWeight" desc="An request for sort items by their weight"/>
+            <event name="OnSortType" fscommand="UI_OnSortType" desc="An request for sort items by their type"/>
         </events>
 	</UIElement>
 </UIElements>

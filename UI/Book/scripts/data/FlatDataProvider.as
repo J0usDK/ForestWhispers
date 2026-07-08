@@ -57,7 +57,7 @@ package data {
             if (dataIndex >= 0 && dataIndex < _flatData.length) {
                 item = {
                     name: Localization.resolve(uint(_flatData[dataIndex])),
-                    weight: _flatData[dataIndex + 1],
+                    weight: _flatData[dataIndex + 1].toFixed(2),
                     type: _flatData[dataIndex + 2]
                 };
             }

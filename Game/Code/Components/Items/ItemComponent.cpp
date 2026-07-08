@@ -51,7 +51,7 @@ void CItemComponent::SetInstance(std::unique_ptr<CItemInstance> pInstance)
 
 	m_pInstance = std::move(pInstance);
 
-	const SItemDefinition* pDef = gGameEnv->pItemDatabase->GetItemDefinition(m_pInstance->GetItemData().GetDefinitionID());
+	const SItemDefinition* pDef = m_pInstance->GetItemData().GetDefinition();
 
 	m_pEntity->LoadGeometry(0, pDef->geometryPath.c_str());
 	Physicalize();

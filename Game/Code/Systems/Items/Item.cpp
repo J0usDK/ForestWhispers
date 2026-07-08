@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "Item.h"
 
-CItem::CItem(TItemDefinitionID defID, uint32 nameStringID) : m_defID(defID), m_nameStringID(nameStringID)
+CItem::CItem(const SItemDefinition* pDefinition, uint32 nameStringID) : m_pDefinition(pDefinition), m_nameStringID(nameStringID)
 {
 	m_traits.reserve(4); // Reserve space for a few traits to avoid frequent reallocations
 }
@@ -13,7 +13,12 @@ uint32 CItem::GetNameStringID() const
 
 TItemDefinitionID CItem::GetDefinitionID() const
 {
-	return m_defID;
+	return m_pDefinition->id;
+}
+
+const SItemDefinition* CItem::GetDefinition() const
+{
+	return m_pDefinition;
 }
 
 void CItem::AddTrait(std::unique_ptr<IItemTrait> pTrait)
@@ -51,7 +56,7 @@ CItem::TTraitVec::iterator CItem::FindTrait(TTraitID traitID)
 
 bool CItem::IsEqual(const CItem& pOther) const
 {
-	if (m_defID != pOther.m_defID) return false;
+	if (m_pDefinition != pOther.m_pDefinition) return false;
 	if (m_traits.size() != pOther.m_traits.size()) return false;
 
 	for (const auto& pTrait : m_traits)

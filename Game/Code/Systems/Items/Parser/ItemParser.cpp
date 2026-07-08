@@ -34,6 +34,11 @@ void CItemParser::Parse(std::vector<char>& buffer, SItemDefinition& outDef) cons
 	JsonUtils::TryGetString(doc, "Description", outDef.description);
 	JsonUtils::TryGetString(doc, "GeometryPath", outDef.geometryPath);
 	JsonUtils::TryGetString(doc, "IconPath", outDef.iconPath);
+	JsonUtils::TryGetFloat(doc, "Weight", outDef.weight);
+
+	int tempType = 0;
+	JsonUtils::TryGetInt(doc, "ItemType", tempType);
+	outDef.itemType = static_cast<ItemType>(tempType);
 
 	ParseItemTraits(doc, outDef);
 }

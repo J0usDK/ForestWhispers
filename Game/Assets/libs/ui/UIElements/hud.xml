@@ -2,7 +2,7 @@
 	<UIElement name="BasicHUD">
 		<GFx file="textures/ui/hud/hud.gfx" layer="0">
 			<Constraints>
-				<Align mode="dynamic" valign="center" halign="center" scale="0" max="0"/>
+				<Align mode="dynamic" valign="center" halign="center" scale="1" max="0"/>
 			</Constraints>
 		</GFx>
 		<functions>

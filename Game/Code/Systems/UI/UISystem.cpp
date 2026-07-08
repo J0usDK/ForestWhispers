@@ -27,6 +27,8 @@ CUISystem::CUISystem()
 	m_pBookVM->SetListener(m_pBookView.get());
 	m_pTipsVM->SetListener(m_pTipsView.get());
 	m_pInventoryPageViewModel->SetListener(m_pInventoryPageView.get());
+
+	m_pInventoryPageView->SetCommandListener(m_pInventoryPageViewModel.get());
 }
 
 CUISystem::~CUISystem()

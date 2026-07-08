@@ -9,10 +9,11 @@ private:
 	using TTraitVec = std::vector<std::unique_ptr<IItemTrait>>;
 
 public:
-	explicit CItem(TItemDefinitionID defID, uint32 nameStringID);
+	explicit CItem(const SItemDefinition* pDefinition, uint32 nameStringID);
 
 	uint32 GetNameStringID() const;
 	TItemDefinitionID GetDefinitionID() const;
+	const SItemDefinition* GetDefinition() const;
 
 	bool HasTrait(TTraitID traitID) const;
 	void AddTrait(std::unique_ptr<IItemTrait> pTrait);
@@ -58,7 +59,7 @@ private:
 	TTraitVec::iterator FindTrait(TTraitID traitID);
 
 private:
-	TItemDefinitionID m_defID;
+	const SItemDefinition* m_pDefinition = nullptr;
 	uint32 m_nameStringID;
 	TTraitVec m_traits;
 };

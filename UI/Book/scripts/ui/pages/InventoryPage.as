@@ -9,6 +9,7 @@ package ui.pages {
 
     public class InventoryPage extends MovieClip {
         public var inventoryList:ScrollingList;
+
         public var sortType_btn:MovieClip;
         public var sortName_btn:MovieClip;
         public var sortWeight_btn:MovieClip;

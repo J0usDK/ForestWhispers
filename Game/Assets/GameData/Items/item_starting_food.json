@@ -1,10 +1,10 @@
 {
-  "ItemID": "item_starting_sword",
-  "Description": "The starting sword.",
+  "ItemID": "item_starting_food",
+  "Description": "The starting food.",
   "GeometryPath": "objects/items/weapons/melee/swords/starting_sword.cgf",
   "IconPath": "textures/ui/icons/weapons/melee/icon_sword_generic.tif",
-  "ItemType": 1,
-  "Weight": 1.2,
+  "ItemType": 2,
+  "Weight": 2.1,
   "traits": {
     "condition": {
       "maxDurability": 100,

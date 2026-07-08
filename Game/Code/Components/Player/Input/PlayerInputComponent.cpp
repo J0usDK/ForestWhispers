@@ -4,6 +4,7 @@
 #include <CryCore/StaticInstanceList.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/IEnvRegistrar.h>
+#include <CryInput/IHardwareMouse.h>
 
 namespace
 {
@@ -95,12 +96,18 @@ void CPlayerInputComponent::FlushCommands()
 
 void CPlayerInputComponent::SwitchContext(EInputContext newContext)
 {
+	bool bWasUI = (m_currentContext == EInputContext::UI);
 	m_currentContext = newContext;
 	FlushIntent();
 	FlushCommands();
 
 	m_pActionMapManager->EnableActionMap("player", (m_currentContext == EInputContext::OnFoot));
 	m_pActionMapManager->EnableActionMap("ui", (m_currentContext == EInputContext::UI));
+
+	if (m_currentContext == EInputContext::UI && !bWasUI)
+		gEnv->pHardwareMouse->IncrementCounter();
+	else if (bWasUI)
+		gEnv->pHardwareMouse->DecrementCounter();
 }
 
 const SCharacterIntent& CPlayerInputComponent::GetCurrentIntent() const { return m_frameIntent; }

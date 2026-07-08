@@ -62,7 +62,8 @@ bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance>& pInstance)
 	{
 		SUIItemData uiData;
 		uiData.nameStringID = pInstance->GetItemData().GetNameStringID();
-		uiData.weight = 0;
+		uiData.weight = pInstance->GetItemData().GetDefinition()->weight;
+		uiData.itemType = pInstance->GetItemData().GetDefinition()->itemType;
 		uiData.rowType = UITypes::EInventoryUIRowType::ROW_ITEM;
 		NotifyItemAdded(uiData);
 	}

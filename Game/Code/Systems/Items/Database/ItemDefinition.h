@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "Systems/Items/Traits/Base/IItemTrait.h"
+#include "ItemTypes.h"
 
 using TItemDefinitionID = uint64_t;
 
@@ -15,6 +16,9 @@ struct SItemDefinition
 	string geometryPath;
 	string iconPath;
 
+	ItemType itemType;
+	float weight;
+
 	std::vector<std::unique_ptr<IItemTrait>> traits;
 
 	SItemDefinition() = default;
@@ -27,6 +31,8 @@ struct SItemDefinition
 		description(std::move(other.description)),
 		geometryPath(std::move(other.geometryPath)),
 		iconPath(std::move(other.iconPath)),
+		itemType(std::move(other.itemType)),
+		weight(std::move(other.weight)),
 		traits(std::move(other.traits))
 	{ }
 
@@ -39,6 +45,8 @@ struct SItemDefinition
 			description = std::move(other.description);
 			geometryPath = std::move(other.geometryPath);
 			iconPath = std::move(other.iconPath);
+			itemType = std::move(other.itemType);
+			weight = std::move(other.weight);
 			traits = std::move(other.traits);
 		}
 		return *this;

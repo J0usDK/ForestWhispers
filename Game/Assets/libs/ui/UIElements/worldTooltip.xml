@@ -2,7 +2,7 @@
 	<UIElement name="worldTooltip">
 		<GFx file="textures/ui/tooltip/worldTooltip.gfx" layer="1">
 			<Constraints>
-				<Align mode="dynamic" valign="center" halign="center" scale="0" max="0"/>
+				<Align mode="dynamic" valign="center" halign="center" scale="1" max="0"/>
 			</Constraints>
 		</GFx>
 		<functions>
