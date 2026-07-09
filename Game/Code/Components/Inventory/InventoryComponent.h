@@ -15,6 +15,9 @@ public:
 	CInventoryComponent(const CInventoryComponent&) = delete;
 	CInventoryComponent& operator=(const CInventoryComponent&) = delete;
 
+	virtual Cry::Entity::EventFlags GetEventMask() const override;
+	virtual void ProcessEvent(const SEntityEvent& event) override;
+
 	void RegisterListener(IInventoryListener* pListener) override;
 	void UnregisterListener(IInventoryListener* pListener) override;
 
@@ -28,6 +31,8 @@ public:
 
 		desc.AddMember(&CInventoryComponent::m_maxSlots, 'maxs', "MaxSlots", "Maximum Slots", "How many items this inventory can hold", 0u);
 	}
+
+	void Reset();
 
 	bool CanAddItem(const CItemInstance* pInstance) const override;
 	bool TryAddItem(std::unique_ptr<CItemInstance>& pInstance) override;

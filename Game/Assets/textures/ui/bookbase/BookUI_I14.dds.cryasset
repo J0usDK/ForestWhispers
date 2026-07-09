@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="0aa01831-1f91-8dcf-e91d-c7f06137b422">
+ <Files>
+  <File path="BookUI_I14.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">1</Detail>
+ </Details>
+</AssetMetadata>

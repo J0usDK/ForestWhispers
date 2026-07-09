@@ -5,7 +5,9 @@
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 
 #include "InventoryComponent.h"
+#include "Systems/UI/Types/UIItemData.h"
 #include "Global/GameEnv.h"
+#include "Systems/UI/UIStringTable.h"
 #include "Systems/Items/Factory/ItemFactory.h"
 
 namespace
@@ -21,6 +23,21 @@ namespace
 	CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterInventoryComponent);
 }
 
+Cry::Entity::EventFlags CInventoryComponent::GetEventMask() const
+{
+	return ENTITY_EVENT_RESET;
+}
+
+void CInventoryComponent::ProcessEvent(const SEntityEvent& event)
+{
+	switch (event.event)
+	{
+		case ENTITY_EVENT_RESET:
+			Reset();
+			break;
+	}
+}
+
 void CInventoryComponent::RegisterListener(IInventoryListener* pListener)
 {
 	if (!pListener) return;
@@ -32,6 +49,11 @@ void CInventoryComponent::UnregisterListener(IInventoryListener* pListener)
 {
 	if (!pListener) return;
 	m_listeners.erase(std::remove(m_listeners.begin(), m_listeners.end(), pListener), m_listeners.end());
+}
+
+void CInventoryComponent::Reset()
+{
+	m_instances.clear();
 }
 
 bool CInventoryComponent::CanAddItem(const CItemInstance* pInstance) const
@@ -49,6 +71,7 @@ bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance>& pInstance)
 	if (!pInstance) return false;
 	for (const auto& instance : m_instances)
 	{
+		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "Item added: %s", gGameEnv->pUIStringTable->Resolve(instance->GetItemData().GetNameStringID()));
 		if (instance->CanUnite(*pInstance))
 		{
 			instance->AddCount(pInstance->GetCount());
@@ -58,17 +81,19 @@ bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance>& pInstance)
 	}
 	if (m_instances.size() >= m_maxSlots) return false;
 
+	m_instances.push_back(std::move(pInstance));
+
 	if (!m_listeners.empty())
 	{
+		auto& item = m_instances.back()->GetItemData();
+
 		SUIItemData uiData;
-		uiData.nameStringID = pInstance->GetItemData().GetNameStringID();
-		uiData.weight = pInstance->GetItemData().GetDefinition()->weight;
-		uiData.itemType = pInstance->GetItemData().GetDefinition()->itemType;
+		uiData.nameStringID = item.GetNameStringID();
+		uiData.weight = item.GetDefinition()->weight;
+		uiData.itemType = item.GetDefinition()->itemType;
 		uiData.rowType = UITypes::EInventoryUIRowType::ROW_ITEM;
 		NotifyItemAdded(uiData);
 	}
-
-	m_instances.push_back(std::move(pInstance));
 
 	return true;
 }

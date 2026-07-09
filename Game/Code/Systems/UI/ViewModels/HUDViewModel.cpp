@@ -6,6 +6,12 @@ void CHUDViewModel::SetListener(IHUDViewListener* pListener)
 	m_pListener = pListener;
 }
 
+void CHUDViewModel::Reset()
+{
+	m_bCrosshairVisible = false;
+	m_bHUDVisible = false;
+}
+
 void CHUDViewModel::ShowCrosshair()
 {
 	if (m_bCrosshairVisible)

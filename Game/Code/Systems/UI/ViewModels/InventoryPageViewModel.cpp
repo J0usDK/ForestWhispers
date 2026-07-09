@@ -1,6 +1,8 @@
 #include "StdAfx.h"
 #include "InventoryPageViewModel.h"
 
+#include "Systems/Items/Database/ItemTypes.h"
+#include "Systems/UI/Types/UIItemData.h"
 #include "Global/GameEnv.h"
 #include "Global/Utils/StringUtils.h"
 #include "Systems/UI/UIStringTable.h"
@@ -8,6 +10,15 @@
 void CInventoryPageViewModel::SetListener(IInventoryPageViewListener* listener)
 {
 	m_pListener = listener;
+}
+
+void CInventoryPageViewModel::Reset()
+{
+	m_cachedItems.clear();
+	m_blockRanges.clear();
+
+	m_bIsActive = false;
+	m_currentSortType = ESortType::BY_TYPE;
 }
 
 void CInventoryPageViewModel::OnInventoryUpdated(const std::vector<SUIItemData>& itemsSnapshot)
@@ -122,15 +133,15 @@ void CInventoryPageViewModel::SortByWeight()
 	PushDataToView();
 }
 
-uint32 CInventoryPageViewModel::GetCategoryStringID(ItemType type)
+uint32 CInventoryPageViewModel::GetCategoryStringID(EItemType type)
 {
 	switch (type)
 	{
-		case ItemType::Sword:
+		case EItemType::Sword:
 			return StringUtils::GenerateID("ui_inv_type_swords");
-		case ItemType::Food:
+		case EItemType::Food:
 			return StringUtils::GenerateID("ui_inv_type_food");
-		case ItemType::None:
+		case EItemType::None:
 		default:
 			return 0;
 	}
@@ -150,7 +161,7 @@ void CInventoryPageViewModel::RebuildList(const std::vector<SUIItemData>& itemsS
 	m_cachedItems.reserve(m_sortedItems.size() + 10);
 	m_blockRanges.reserve(10);
 
-	ItemType lastType = (ItemType)-1;
+	EItemType lastType = (EItemType)-1;
 	for (const auto& item : m_sortedItems)
 	{
 		if (item.itemType != lastType)

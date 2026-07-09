@@ -27,6 +27,9 @@ public:
 	void OnLocalPlayerReady(CPlayerComponent* pPlayer) override;
 	void OnLocalPlayerRemoved() override;
 
+	void OnGameModeEnter();
+	void OnGameModeExit();
+
 	void HandleEvent(const SShowHUDEvent& event);
 	void HandleEvent(const SShowCrosshairEvent& event);
 	void HandleEvent(const SShowHintEvent& event);

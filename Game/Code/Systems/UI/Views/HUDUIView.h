@@ -8,6 +8,7 @@ public:
 	CHUDUIView();
 	~CHUDUIView() = default;
 
+	void Reset();
 	void OnCrosshairStateChanged(bool isVisible) override;
 	void OnHUDStateChanged(bool isVisible) override;
 

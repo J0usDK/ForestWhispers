@@ -49,3 +49,19 @@ void CBootstrap::Shutdown()
 		}
 	}
 }
+
+void CBootstrap::OnGameModeEnter()
+{
+	for (auto& entry : m_modules)
+		entry.pModule->OnGameModeEnter();
+}
+
+void CBootstrap::OnGameModeExit()
+{
+	for (int i = static_cast<int>(EModuleID::Count) - 1; i >= 0; --i)
+	{
+		auto& entry = m_modules[i];
+		if (entry.pModule && entry.bInitialized)
+			entry.pModule->OnGameModeExit();
+	}
+}

@@ -16,7 +16,7 @@ struct SItemDefinition
 	string geometryPath;
 	string iconPath;
 
-	ItemType itemType;
+	EItemType itemType;
 	float weight;
 
 	std::vector<std::unique_ptr<IItemTrait>> traits;

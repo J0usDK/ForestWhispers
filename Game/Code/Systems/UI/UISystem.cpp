@@ -52,6 +52,36 @@ void CUISystem::OnLocalPlayerRemoved()
 	m_pInventoryDataProvider = nullptr;
 }
 
+void CUISystem::OnGameModeEnter()
+{
+	m_pHUDVM->Reset();
+	m_pBookVM->Reset();
+	m_pTipsVM->Reset();
+	m_pInventoryPageViewModel->Reset();
+
+	m_pHUDView->Reset();
+	m_pBookView->Reset();
+	m_pTipsView->Reset();
+	m_pInventoryPageView->Reset();
+}
+
+void CUISystem::OnGameModeExit()
+{
+	m_pHUDVM->Reset();
+	m_pBookVM->Reset();
+	m_pTipsVM->Reset();
+	m_pInventoryPageViewModel->Reset();
+
+	m_pHUDView->Reset();
+	m_pBookView->Reset();
+	m_pTipsView->Reset();
+	m_pInventoryPageView->Reset();
+
+	if (m_pInventoryDataProvider)
+		m_pInventoryDataProvider->UnregisterListener(m_pInventoryPageViewModel.get());
+	m_pInventoryDataProvider = nullptr;
+}
+
 void CUISystem::HandleEvent(const SShowHUDEvent& event)
 {
 	if (event.isVisible)

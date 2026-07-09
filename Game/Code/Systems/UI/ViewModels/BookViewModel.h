@@ -7,6 +7,7 @@ public:
 	CBookViewModel() = default;
 	~CBookViewModel() = default;
 
+	void Reset();
 	void SetListener(IBookViewListener* pListener);
 
 	void ToggleBook();

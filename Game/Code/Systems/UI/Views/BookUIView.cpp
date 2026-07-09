@@ -9,11 +9,17 @@ CBookUIView::CBookUIView()
 	m_pUIElement = gEnv->pFlashUI->GetUIElement("BookUI");
 	m_pUIElement->SetVisible(true);
 	m_pUIElement->AddEventListener(this, "OnInit");
+	m_pUIElement->Init();
 }
 
 CBookUIView::~CBookUIView()
 {
 	m_pUIElement->RemoveEventListener(this);
+}
+
+void CBookUIView::Reset()
+{
+	m_pUIElement->CallFunction("CloseBook");
 }
 
 void CBookUIView::OnInit(IUIElement* pSender, IFlashPlayer* pFlashPlayer)

@@ -12,6 +12,8 @@ public:
 	virtual ~CInteractableComponent() = default;
 
 	virtual void Initialize() override;
+	virtual Cry::Entity::EventFlags GetEventMask() const override;
+	virtual void ProcessEvent(const SEntityEvent& event) override;
 
 	static void ReflectType(Schematyc::CTypeDesc<CInteractableComponent>& desc)
 	{
@@ -34,5 +36,5 @@ public:
 private:
 	EInteractionType m_type;
 	Schematyc::CSharedString m_editorStringKey = "";
-	uint32 m_interactionStringKey;
+	uint32 m_interactionStringKey = 0;
 };

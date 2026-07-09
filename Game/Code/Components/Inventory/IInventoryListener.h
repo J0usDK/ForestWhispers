@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
-#include "Systems/UI/Types/ItemData.h"
+
+struct SUIItemData;
 
 class IInventoryListener
 {

@@ -7,6 +7,11 @@ CHUDUIView::CHUDUIView()
 	m_pUIElement->SetVisible(true);
 }
 
+void CHUDUIView::Reset()
+{
+	m_pUIElement->CallFunction("HideHUD");
+}
+
 void CHUDUIView::OnCrosshairStateChanged(bool isVisible)
 {
 	if (isVisible)

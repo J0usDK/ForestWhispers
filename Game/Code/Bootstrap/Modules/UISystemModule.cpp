@@ -23,4 +23,14 @@ void CUISystemModule::Shutdown()
 	m_pUISystem.reset();
 }
 
+void CUISystemModule::OnGameModeEnter()
+{
+	m_pUISystem->OnGameModeEnter();
+}
+
+void CUISystemModule::OnGameModeExit()
+{
+	m_pUISystem->OnGameModeExit();
+}
+
 CUISystem* CUISystemModule::GetUISystem() { return m_pUISystem.get(); }

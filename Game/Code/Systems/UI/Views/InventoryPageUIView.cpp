@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "InventoryPageUIView.h"
+#include "Systems/UI/Types/UIItemData.h"
 #include "Systems/UI/Types/InventoryUIRowType.h"
 
 CInventoryPageUIView::CInventoryPageUIView()
@@ -8,11 +9,18 @@ CInventoryPageUIView::CInventoryPageUIView()
 	m_pUIElement->AddEventListener(this, "OnSortType");
 	m_pUIElement->AddEventListener(this, "OnSortName");
 	m_pUIElement->AddEventListener(this, "OnSortWeight");
+	m_pUIElement->Init();
 }
 
 CInventoryPageUIView::~CInventoryPageUIView()
 {
 	m_pUIElement->RemoveEventListener(this);
+}
+
+void CInventoryPageUIView::Reset()
+{
+	SUIArguments args;
+	m_pUIElement->CallFunction("Inv_SetItems", args);
 }
 
 void CInventoryPageUIView::SetCommandListener(IInventoryPageCommands* pCommandListener)

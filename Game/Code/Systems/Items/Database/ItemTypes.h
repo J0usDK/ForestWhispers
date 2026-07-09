@@ -1,6 +1,6 @@
 #pragma once
 
-enum ItemType
+enum EItemType
 {
 	None = 0,
 	Sword = 1,

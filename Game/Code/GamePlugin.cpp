@@ -98,12 +98,8 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 
 		case ESYSTEM_EVENT_REGISTER_SCHEMATYC_ENV:
 		{
-			// Register all components that belong to this plug-in
 			auto staticAutoRegisterLambda = [](Schematyc::IEnvRegistrar& registrar)
-			{
-				// Call all static callback registered with the CRY_STATIC_AUTO_REGISTER_WITH_PARAM
-				Detail::CStaticAutoRegistrar<Schematyc::IEnvRegistrar&>::InvokeStaticCallbacks(registrar);
-			};
+			{ Detail::CStaticAutoRegistrar<Schematyc::IEnvRegistrar&>::InvokeStaticCallbacks(registrar); };
 
 			if (gEnv->pSchematyc)
 			{
@@ -120,8 +116,15 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 		}
 		break;
 		
-		case ESYSTEM_EVENT_LEVEL_UNLOAD:
+		case ESYSTEM_EVENT_GAME_MODE_SWITCH_START:
 		{
+			m_pBootstrap->OnGameModeEnter();
+		}
+		break;
+
+		case ESYSTEM_EVENT_GAME_MODE_SWITCH_END:
+		{
+			m_pBootstrap->OnGameModeExit();
 		}
 		break;
 	}

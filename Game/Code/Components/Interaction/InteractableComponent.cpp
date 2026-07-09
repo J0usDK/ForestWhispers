@@ -26,6 +26,28 @@ void CInteractableComponent::Initialize()
 		SetInteractionStringKey(m_editorStringKey.c_str());
 }
 
+Cry::Entity::EventFlags CInteractableComponent::GetEventMask() const
+{
+#if !defined(_RELEASE)
+	return ENTITY_EVENT_EDITOR_PROPERTY_CHANGED;
+#else
+	return 0;
+#endif
+}
+
+void CInteractableComponent::ProcessEvent(const SEntityEvent& event)
+{
+#if !defined(_RELEASE)
+	switch (event.event)
+	{
+		case ENTITY_EVENT_EDITOR_PROPERTY_CHANGED:
+			if (!m_editorStringKey.empty())
+				SetInteractionStringKey(m_editorStringKey.c_str());
+			break;
+	}
+#endif
+}
+
 void CInteractableComponent::SetInteractionType(EInteractionType type)
 {
 	m_type = type;

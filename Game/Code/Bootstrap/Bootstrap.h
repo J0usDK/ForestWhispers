@@ -25,6 +25,9 @@ public:
 	void Finish();
 	void Shutdown();
 
+	void OnGameModeEnter();
+	void OnGameModeExit();
+
 private:
 	struct SModuleEntry
 	{

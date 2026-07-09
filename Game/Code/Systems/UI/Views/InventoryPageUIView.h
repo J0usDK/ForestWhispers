@@ -12,6 +12,7 @@ public:
 	void OnInventoryDataUpdated(const std::vector<SUIItemData>& itemsSnapshot) override;
 	void SetCommandListener(IInventoryPageCommands* pCommandListener);
 
+	void Reset();
 	void OnUIEvent(IUIElement* pSender, const SUIEventDesc& event, const SUIArguments& args) override;
 
 private:

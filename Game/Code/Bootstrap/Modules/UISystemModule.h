@@ -14,6 +14,9 @@ public:
 	bool Initialize() override;
 	void Shutdown() override;
 
+	void OnGameModeEnter() override;
+	void OnGameModeExit() override;
+
 	CUISystem* GetUISystem();
 
 private:

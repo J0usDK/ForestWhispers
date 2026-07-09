@@ -7,6 +7,7 @@ public:
 	CHUDViewModel() = default;
 	~CHUDViewModel() = default;
 
+	void Reset();
 	void SetListener(IHUDViewListener* pListener);
 
 	void ShowCrosshair();

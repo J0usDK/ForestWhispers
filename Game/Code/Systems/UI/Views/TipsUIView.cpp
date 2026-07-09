@@ -16,6 +16,11 @@ CTipsUIView::~CTipsUIView()
 	m_pUIElement->RemoveEventListener(this);
 }
 
+void CTipsUIView::Reset()
+{
+	m_pUIElement->CallFunction("Hide");
+}
+
 void CTipsUIView::OnInit(IUIElement* pSender, IFlashPlayer* pFlashPlayer)
 {
 	PushStringTable();

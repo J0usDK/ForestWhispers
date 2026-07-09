@@ -11,6 +11,7 @@ public:
 
 	void OnBookStateChanged(bool isVisible) override;
 
+	void Reset();
 	void OnInit(IUIElement* pSender, IFlashPlayer* pFlashPlayer) override;
 
 private:

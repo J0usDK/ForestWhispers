@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "Systems/UI/Types/ItemData.h"
+#include "Systems/UI/Types/UIItemData.h"
 
 struct SInventoryUpdateEvent
 {

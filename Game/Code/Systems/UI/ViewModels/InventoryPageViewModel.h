@@ -1,4 +1,5 @@
 #pragma once
+#include "Systems/Items/Database/ItemTypes.h"
 #include "Systems/UI/Listeners/IInventoryPageViewListener.h"
 #include "Systems/UI/Listeners/IInventoryPageCommands.h"
 #include "Components/Inventory/IInventoryListener.h"
@@ -9,7 +10,7 @@ public:
 	CInventoryPageViewModel() = default;
 	~CInventoryPageViewModel() = default;
 
-
+	void Reset();
 	void SetListener(IInventoryPageViewListener* listener);
 
 	void OnInventoryUpdated(const std::vector<SUIItemData>& itemsSnapshot) override;
@@ -23,7 +24,7 @@ public:
 private:
 	void RebuildList(const std::vector<SUIItemData>& itemsSnapshot);
 	void PushDataToView();
-	uint32 GetCategoryStringID(ItemType type);
+	uint32 GetCategoryStringID(EItemType type);
 
 private:
 	IInventoryPageViewListener* m_pListener = nullptr;

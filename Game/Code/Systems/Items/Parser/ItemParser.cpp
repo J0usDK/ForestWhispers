@@ -38,7 +38,7 @@ void CItemParser::Parse(std::vector<char>& buffer, SItemDefinition& outDef) cons
 
 	int tempType = 0;
 	JsonUtils::TryGetInt(doc, "ItemType", tempType);
-	outDef.itemType = static_cast<ItemType>(tempType);
+	outDef.itemType = static_cast<EItemType>(tempType);
 
 	ParseItemTraits(doc, outDef);
 }

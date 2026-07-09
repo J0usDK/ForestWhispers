@@ -20,7 +20,7 @@ package data {
             if (!_initialized) return "<missing string>";
 
             var result:* = _dict[id];
-            return (result != undefined) ? String(result) : "<missing string 2>";
+            return (result != undefined) ? String(result) : "<missing string>";
         }
 
         public static function get isReady():Boolean {

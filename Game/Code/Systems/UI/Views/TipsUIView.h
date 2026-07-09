@@ -10,6 +10,7 @@ public:
 
 	void OnTipsStateChanged(uint32 stringID, bool isVisible) override;
 
+	void Reset();
 	void OnInit(IUIElement* pSender, IFlashPlayer* pFlashPlayer) override;
 
 private:

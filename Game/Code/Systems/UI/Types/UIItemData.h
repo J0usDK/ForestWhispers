@@ -8,6 +8,6 @@ struct SUIItemData
 {
 	uint32 nameStringID;
 	float weight;
-	ItemType itemType;
+	EItemType itemType;
 	UITypes::EInventoryUIRowType rowType;
 };
