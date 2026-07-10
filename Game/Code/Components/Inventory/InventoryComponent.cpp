@@ -71,7 +71,6 @@ bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance>& pInstance)
 	if (!pInstance) return false;
 	for (const auto& instance : m_instances)
 	{
-		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "Item added: %s", gGameEnv->pUIStringTable->Resolve(instance->GetItemData().GetNameStringID()));
 		if (instance->CanUnite(*pInstance))
 		{
 			instance->AddCount(pInstance->GetCount());

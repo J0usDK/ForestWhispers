@@ -10,4 +10,8 @@ struct SUIItemData
 	float weight;
 	EItemType itemType;
 	UITypes::EInventoryUIRowType rowType;
+
+	SUIItemData() = default;
+	SUIItemData(uint32 nameID, float w, EItemType type, UITypes::EInventoryUIRowType row)
+		: nameStringID(nameID), weight(w), itemType(type), rowType(row) { }
 };

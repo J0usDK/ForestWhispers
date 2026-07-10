@@ -1,9 +1,8 @@
 {
   "version": "1.0",
   "itemTypes": [
-    { "name": "None", "value": 0 },
-    { "name": "Sword", "value": 1 },
-    { "name": "Food", "value": 2 }
+    { "name": "Sword", "value": 0 },
+    { "name": "Food", "value": 1 }
   ],
   "traits": [
     {

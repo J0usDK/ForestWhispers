@@ -1,8 +1,9 @@
 #pragma once
 
-enum EItemType
+enum class EItemType
 {
-	None = 0,
-	Sword = 1,
-	Food = 2
+	Sword = 0,
+	Food = 1,
+
+	Count
 };
