@@ -5,6 +5,7 @@ CHUDUIView::CHUDUIView()
 {
 	m_pUIElement = gEnv->pFlashUI->GetUIElement("BasicHUD");
 	m_pUIElement->SetVisible(true);
+	m_pUIElement->Init();
 }
 
 void CHUDUIView::Reset()

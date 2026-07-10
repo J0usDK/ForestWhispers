@@ -40,4 +40,7 @@ private:
 
 	std::vector<SBlockRange> m_blockRanges;
 	std::vector<SUIItemData> m_data;
+
+	ESortType m_currentSortType = ESortType::BY_TYPE;
+	bool m_bSortAscending = true;
 };

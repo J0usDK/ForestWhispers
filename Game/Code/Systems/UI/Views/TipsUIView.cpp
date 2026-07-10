@@ -9,6 +9,7 @@ CTipsUIView::CTipsUIView()
 	m_pUIElement = gEnv->pFlashUI->GetUIElement("worldTooltip");
 	m_pUIElement->SetVisible(true);
 	m_pUIElement->AddEventListener(this, "OnInit");
+	m_pUIElement->Init();
 }
 
 CTipsUIView::~CTipsUIView()

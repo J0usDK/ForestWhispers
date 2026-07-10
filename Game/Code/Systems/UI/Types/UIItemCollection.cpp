@@ -89,6 +89,11 @@ void CUIItemCollection::ApplySort(ESortType sortType)
 {
 	if (m_blockRanges.empty() || m_data.empty()) return;
 
+	if (m_currentSortType == sortType)
+		m_bSortAscending = !m_bSortAscending;
+	else
+		m_currentSortType = sortType;
+
 	switch (sortType)
 	{
 		case ESortType::BY_TYPE:
@@ -105,8 +110,10 @@ void CUIItemCollection::ApplySort(ESortType sortType)
 
 void CUIItemCollection::ApplySortByType()
 {
-	std::sort(m_blockRanges.begin(), m_blockRanges.end(), [&](const SBlockRange& a, const SBlockRange& b) {
-		return m_data[a.headerIndex].itemType < m_data[b.headerIndex].itemType;
+	std::sort(m_blockRanges.begin(), m_blockRanges.end(), [this](const SBlockRange& a, const SBlockRange& b) {
+		auto typeA = m_data[a.headerIndex].itemType;
+		auto typeB = m_data[b.headerIndex].itemType;
+		return m_bSortAscending ? (typeA < typeB) : (typeA > typeB);
 	});
 
 	std::vector<SUIItemData> reordered;
@@ -134,10 +141,10 @@ void CUIItemCollection::ApplySortByName()
 		auto start = m_data.begin() + block.startIndex;
 		auto end = m_data.begin() + block.endIndex;
 
-		std::sort(start, end, [](const SUIItemData& a, const SUIItemData& b) {
+		std::sort(start, end, [this](const SUIItemData& a, const SUIItemData& b) {
 			std::string_view nameA = gGameEnv->pUIStringTable->Resolve(a.nameStringID);
 			std::string_view nameB = gGameEnv->pUIStringTable->Resolve(b.nameStringID);
-			return nameA < nameB;
+			return m_bSortAscending ? (nameA < nameB) : (nameA > nameB);
 		});
 	}
 }
@@ -149,8 +156,8 @@ void CUIItemCollection::ApplySortByWeight()
 		auto start = m_data.begin() + block.startIndex;
 		auto end = m_data.begin() + block.endIndex;
 
-		std::sort(start, end, [](const SUIItemData& a, const SUIItemData& b) {
-			return a.weight > b.weight;
+		std::sort(start, end, [this](const SUIItemData& a, const SUIItemData& b) {
+			return m_bSortAscending ? (a.weight < b.weight) : (a.weight > b.weight);
 		});
 	}
 }
