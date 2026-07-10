@@ -7,6 +7,7 @@
 #include "Components/Player/Input/PlayerInputComponent.h"
 #include "Components/Interaction/InteractionComponent.h"
 #include "Components/Inventory/InventoryComponent.h"
+#include "Components/Core/Stamina/StaminaComponent.h"
 
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
@@ -35,6 +36,7 @@ public:
 
 		desc.AddMember(&CPlayerComponent::m_encumbranceWalkLimit, 'enwl', "encumbrancewalk", "Encumbrance Walk Limit", "Weight limit above which player cannot run", 0.0f);
 		desc.AddMember(&CPlayerComponent::m_encumbranceStopLimit, 'ensl', "encumbrancestop", "Encumbrance Stop Limit", "Weight limit above which player cannot move", 0.0f);
+		desc.AddMember(&CPlayerComponent::m_sprintStaminaCost, 'ssco', "sprintcost", "Sprint Stamina Cost", "Stamina consumed per second while sprinting", 0.0f);
 	}
 
 	virtual void OnFocusChanged(const SInteractionFocus& newFocus) override;
@@ -57,6 +59,7 @@ private:
 	CPlayerInputComponent* m_pInput = nullptr;
 	CInteractionComponent* m_pInteractor = nullptr;
 	CInventoryComponent* m_pInventory = nullptr;
+	CStaminaComponent* m_pStamina = nullptr;
 
 	Vec3 m_defaultCameraPivot = ZERO;
 
@@ -68,6 +71,8 @@ private:
 
 	float m_encumbranceWalkLimit = 0.0f;
 	float m_encumbranceStopLimit = 0.0f;
+
+	float m_sprintStaminaCost = 0.0f;
 
 	bool m_bIsPlaying = false;
 	int16 m_headBoneID = -1;
