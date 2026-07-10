@@ -44,13 +44,16 @@ public:
 	uint32_t GetTotalCountOf(TItemDefinitionID definitionID) const override;
 	uint32_t GetCurrentItemCount() const override;
 	uint32_t GetMaxSlots() const override;
+	float GetTotalWeight() const override;
 
 private:
 	void NotifyItemAdded(const SUIItemData& itemData);
+	void UpdateWeight(float diff);
 
 private:
 	std::vector<IInventoryListener*> m_listeners;
 	std::vector<std::unique_ptr<CItemInstance>> m_instances;
 
 	uint32_t m_maxSlots = 0u;
+	float m_totalWeight = 0.0f;
 };

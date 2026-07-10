@@ -6,6 +6,7 @@
 #include "Components/Player/Camera/PlayerCameraComponent.h"
 #include "Components/Player/Input/PlayerInputComponent.h"
 #include "Components/Interaction/InteractionComponent.h"
+#include "Components/Inventory/InventoryComponent.h"
 
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
@@ -31,6 +32,9 @@ public:
 		desc.AddMember(&CPlayerComponent::m_acceleration, 'acc', "acceleration", "Acceleration", "How fast the player reaches max speed", 0.0f);
 		desc.AddMember(&CPlayerComponent::m_deceleration, 'dec', "deceleration", "Deceleration", "How fast the player stops", 0.0f);
 		desc.AddMember(&CPlayerComponent::m_turnSpeed, 'ts', "turnspeed", "Turn Speed", "How fast the player's body rotates", 0.0f);
+
+		desc.AddMember(&CPlayerComponent::m_encumbranceWalkLimit, 'enwl', "encumbrancewalk", "Encumbrance Walk Limit", "Weight limit above which player cannot run", 0.0f);
+		desc.AddMember(&CPlayerComponent::m_encumbranceStopLimit, 'ensl', "encumbrancestop", "Encumbrance Stop Limit", "Weight limit above which player cannot move", 0.0f);
 	}
 
 	virtual void OnFocusChanged(const SInteractionFocus& newFocus) override;
@@ -52,6 +56,7 @@ private:
 	CPlayerCameraComponent* m_pCamera = nullptr;
 	CPlayerInputComponent* m_pInput = nullptr;
 	CInteractionComponent* m_pInteractor = nullptr;
+	CInventoryComponent* m_pInventory = nullptr;
 
 	Vec3 m_defaultCameraPivot = ZERO;
 
@@ -60,6 +65,9 @@ private:
 	float m_acceleration = 0.0f;
 	float m_deceleration = 0.0f;
 	float m_turnSpeed = 0.0f;
+
+	float m_encumbranceWalkLimit = 0.0f;
+	float m_encumbranceStopLimit = 0.0f;
 
 	bool m_bIsPlaying = false;
 	int16 m_headBoneID = -1;

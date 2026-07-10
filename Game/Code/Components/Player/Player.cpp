@@ -34,6 +34,7 @@ void CPlayerComponent::Initialize()
 	m_pCamera = m_pEntity->GetOrCreateComponent<CPlayerCameraComponent>();
 	m_pInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
 	m_pInteractor = m_pEntity->GetOrCreateComponent<CInteractionComponent>();
+	m_pInventory = m_pEntity->GetOrCreateComponent<CInventoryComponent>();
 
 	m_pInteractor->AddListener(this);
 }
@@ -106,14 +107,24 @@ void CPlayerComponent::UpdateMovement(const SCharacterIntent& intent)
 
 	Quat camYawRot = Quat::CreateRotationZ(m_pCamera->GetAbsoluteYaw());
 
-	if (!Math::IsNearlyZero(intent.movement.GetLengthSquared()))
+	float currentWeight = m_pInventory->GetTotalWeight();
+
+	bool bCanMove = (currentWeight < m_encumbranceStopLimit);
+	bool bCanSprint = (currentWeight < m_encumbranceWalkLimit);
+
+	if (!Math::IsNearlyZero(intent.movement.GetLengthSquared()) && bCanMove)
 	{
-		bool bCanSprint = intent.sprint && (intent.movement.y > Math::DEFAULT_EPSILON);
+		bCanSprint = bCanSprint && intent.sprint && (intent.movement.y > Math::DEFAULT_EPSILON);
 		moveParams.maxSpeed = bCanSprint ? m_maxRunSpeed : m_maxWalkSpeed;
 		
 		Vec3 localInput(intent.movement.x, intent.movement.y, 0.0f);
 		localInput.NormalizeSafe();
 		moveParams.targetDirection = camYawRot * localInput;
+	}
+	else
+	{
+		moveParams.maxSpeed = 0.0f;
+		moveParams.targetDirection = ZERO;
 	}
 
 	moveParams.acceleration = m_acceleration;

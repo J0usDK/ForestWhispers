@@ -10,6 +10,7 @@ public:
 
 	TItemInstanceID GetInstanceID() const;
 	uint32_t GetCount() const;
+	float GetWeight() const;
 
 	void AddCount(uint32_t amount);
 	void RemoveCount(uint32_t amount);

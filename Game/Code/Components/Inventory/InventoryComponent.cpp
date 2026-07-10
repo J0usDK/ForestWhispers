@@ -54,6 +54,7 @@ void CInventoryComponent::UnregisterListener(IInventoryListener* pListener)
 void CInventoryComponent::Reset()
 {
 	m_instances.clear();
+	UpdateWeight(-m_totalWeight);
 }
 
 bool CInventoryComponent::CanAddItem(const CItemInstance* pInstance) const
@@ -74,6 +75,7 @@ bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance>& pInstance)
 		if (instance->CanUnite(*pInstance))
 		{
 			instance->AddCount(pInstance->GetCount());
+			UpdateWeight(pInstance->GetWeight());
 			pInstance.reset();
 			return true;
 		}
@@ -94,6 +96,7 @@ bool CInventoryComponent::TryAddItem(std::unique_ptr<CItemInstance>& pInstance)
 		NotifyItemAdded(uiData);
 	}
 
+	UpdateWeight(m_instances.back()->GetWeight());
 	return true;
 }
 
@@ -116,7 +119,9 @@ std::unique_ptr<CItemInstance> CInventoryComponent::RemoveItem(TItemInstanceID i
 		return extracted;
 	}
 
-	return gGameEnv->pItemFactory->SplitInstance(*pSource, count);
+	auto splitedInstance = gGameEnv->pItemFactory->SplitInstance(*pSource, count);
+	UpdateWeight(splitedInstance->GetWeight());
+	return splitedInstance;
 }
 
 const CItemInstance* CInventoryComponent::GetItem(TItemInstanceID instanceID) const
@@ -156,8 +161,18 @@ uint32_t CInventoryComponent::GetMaxSlots() const
 	return m_maxSlots;
 }
 
+float CInventoryComponent::GetTotalWeight() const
+{
+	return m_totalWeight;
+}
+
 void CInventoryComponent::NotifyItemAdded(const SUIItemData& itemData)
 {
 	for (auto* listener : m_listeners)
 		listener->OnInventoryItemAdded(itemData);
+}
+
+void CInventoryComponent::UpdateWeight(float diff)
+{
+	m_totalWeight += diff;
 }

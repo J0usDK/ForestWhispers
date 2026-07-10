@@ -18,4 +18,5 @@ public:
 
 	virtual uint32_t GetCurrentItemCount() const = 0;
 	virtual uint32_t GetMaxSlots() const = 0;
+	virtual float GetTotalWeight() const = 0;
 };

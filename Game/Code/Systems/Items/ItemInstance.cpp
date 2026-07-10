@@ -17,6 +17,11 @@ uint32_t CItemInstance::GetCount() const
 	return m_count;
 }
 
+float CItemInstance::GetWeight() const
+{
+	return m_pItemData.GetDefinition()->weight * m_count;
+}
+
 void CItemInstance::AddCount(uint32_t count)
 {
 	m_count += count;
