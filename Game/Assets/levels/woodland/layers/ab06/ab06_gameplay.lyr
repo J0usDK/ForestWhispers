@@ -1,5 +1,5 @@
 <ObjectLayer>
- <Layer Name="AB06_Gameplay" FullName="ab06/AB06_Gameplay" GUID="95366905-0344-4358-a6c7-4419e88779c5" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1777070916">
+ <Layer Name="AB06_Gameplay" FullName="ab06/AB06_Gameplay" GUID="95366905-0344-4358-a6c7-4419e88779c5" Hidden="0" Frozen="1" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1783804758">
   <LayerObjects>
    <Object Type="CoverSurface" Layer="AB06_Gameplay" LayerGUID="95366905-0344-4358-a6c7-4419e88779c5" Id="3227d5dc-5805-4f3e-a73b-ec4b72b09426" Name="CoverSurface262" Pos="1610.2395,521.27399,54.102699" Rotate="0.95881981,0,0,-0.28401509" Scale="1,1,1" ColorRGB="11829830" UseCustomLevelLayerColor="0" MinSpec="0" SurfaceID="0" Sampler="Default" LimitDepth="0.75" LimitHeight="2.75" LimitLeft="12" LimitRight="12" SampleWidth="0.25" SampleHeight="0.25" MaxStartHeight="0.5" SimplifyThreshold="0.075000003"/>
    <Object Type="CoverSurface" Layer="AB06_Gameplay" LayerGUID="95366905-0344-4358-a6c7-4419e88779c5" Id="fbefdb4b-42b9-426b-af50-a36fb0012d14" Name="CoverSurface254" Pos="1621.6042,503.12949,52.900002" Rotate="0.98901588,0,0,-0.14780928" Scale="1,1,1" ColorRGB="11829830" UseCustomLevelLayerColor="0" MinSpec="0" SurfaceID="0" Sampler="Default" LimitDepth="0.75" LimitHeight="2.75" LimitLeft="12" LimitRight="12" SampleWidth="0.25" SampleHeight="0.25" MaxStartHeight="0.5" SimplifyThreshold="0.075000003"/>
@@ -68,7 +68,7 @@
    <Object Type="Entity" Layer="AB06_Gameplay" LayerGUID="95366905-0344-4358-a6c7-4419e88779c5" Id="4b58365f-2a5c-484b-b1d6-15b1290500f6" Name="AB06_river_kill_Atrig" Pos="1456.5227,556.11115,51.147346" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="dcbfb7f6-526e-45e0-fe1c-13f7b2325bd3" CryXmlVersion="2" Active="true"/>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="a6875ff1-90bc-3dea-8048-5a0ab1fc63a8" CryXmlVersion="2" Active="true"/>
     </Components>
    </Object>
    <Object Type="CoverSurface" Layer="AB06_Gameplay" LayerGUID="95366905-0344-4358-a6c7-4419e88779c5" Id="6bf5c517-9cf2-4a0b-869c-b9e33adeca49" Name="CoverSurface270" Pos="1616.5818,545.17511,54.984444" Rotate="0.75470936,0,0,0.65605932" Scale="1,1,1" ColorRGB="11829830" UseCustomLevelLayerColor="0" MinSpec="0" SurfaceID="0" Sampler="Default" LimitDepth="0.75" LimitHeight="2.75" LimitLeft="12" LimitRight="12" SampleWidth="0.25" SampleHeight="0.25" MaxStartHeight="0.5" SimplifyThreshold="0.075000003"/>

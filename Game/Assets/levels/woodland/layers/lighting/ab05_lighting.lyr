@@ -1,10 +1,10 @@
 <ObjectLayer>
- <Layer Name="AB05_Lighting" FullName="lighting/AB05_Lighting" GUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1777070400">
+ <Layer Name="AB05_Lighting" FullName="lighting/AB05_Lighting" GUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Hidden="0" Frozen="1" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1783804758">
   <LayerObjects>
    <Object Type="EnvironmentProbe" Layer="AB05_Lighting" LayerGUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Id="d997f8b5-eb08-4533-8c13-a3e1797ce82a" Name="l_probe_AB5_forest_e_root" Pos="1726.2277,636.59637,60.271301" Rotate="0.095845714,0,0,0.9953962" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="9521c02c-51be-44a3-43e0-8e3ac58cf725" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_e_root_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="2c44cd7f-edbf-776f-e3de-8bb05beb30db" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_e_root_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>
@@ -13,7 +13,7 @@
    <Object Type="EnvironmentProbe" Layer="AB05_Lighting" LayerGUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Id="1be5c76d-b9d2-449a-860c-5c2a29f35248" Name="l_probe_AB5_forest_b_root" Pos="1652.7755,804.33618,52.630024" Rotate="0.76604456,0,0,-0.64278752" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="6f1bc5d7-c428-a7d9-88c5-db5669b0738a" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_b_root_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="0524f6cf-a0c4-8e6b-4a97-8057fb3bffd3" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_b_root_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>
@@ -22,7 +22,7 @@
    <Object Type="EnvironmentProbe" Layer="AB05_Lighting" LayerGUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Id="979c70ae-53af-40c9-a88f-ce742ee5be7a" Name="l_probe_AB5_forest_d_root" Pos="1689.0525,631.00598,52.630024" Rotate="0.50753844,0,0,-0.86162913" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="df2b7575-25a2-0811-15bb-ca2e052ea2a7" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_d_root_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="40b71452-884b-df12-5015-b7eca6fa4040" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_d_root_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>
@@ -31,7 +31,7 @@
    <Object Type="EnvironmentProbe" Layer="AB05_Lighting" LayerGUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Id="309aecf3-b056-4066-874a-fb69c2e14af4" Name="l_probe_AB5_forest_d_child" Pos="1705.6514,660.95142,54.852959" Rotate="0.50753844,0,0,-0.86162913" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="715cb184-5364-8003-5868-b1fdc5b07a69" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_d_child_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="787b9d15-fec1-1063-5f55-2430fa10fbef" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_d_child_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>
@@ -40,7 +40,7 @@
    <Object Type="EnvironmentProbe" Layer="AB05_Lighting" LayerGUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Id="3dca4cf7-02ba-4286-8e79-70112fd79bd4" Name="l_probe_AB5_forest_a_root" Pos="1649.118,857.76086,57.065659" Rotate="0.81915212,0,0,-0.57357633" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="61f785b2-0764-b4f7-aa37-126ced805a0a" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_a_root_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="184297dc-52b3-bbba-8f93-0efba64dae6b" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_a_root_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>
@@ -49,7 +49,7 @@
    <Object Type="EnvironmentProbe" Layer="AB05_Lighting" LayerGUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Id="2b61f667-d3ab-4d8f-b670-3f0c9ebe1d4e" Name="l_probe_AB5_forest_d_root2" Pos="1647.6731,651.92419,52.630024" Rotate="0.64278764,0,0,-0.76604444" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="b5397cc3-1086-966b-d0f3-7afddf994d0b" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_d_root2_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="132c38ca-3415-a875-f777-1d059589522c" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_d_root2_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>
@@ -58,7 +58,7 @@
    <Object Type="EnvironmentProbe" Layer="AB05_Lighting" LayerGUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Id="7f0faf21-3c00-4269-a0bf-baddd77ea98a" Name="l_probe_AB5_forest_b_child" Pos="1658.29,722.3736,52.630024" Rotate="0.76604456,0,0,-0.64278752" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="2863ab46-4352-2912-8857-5566683e3cd8" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_b_child_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="4eacaac0-8de2-673b-ff22-824ff6c12e0d" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_b_child_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>
@@ -67,7 +67,7 @@
    <Object Type="EnvironmentProbe" Layer="AB05_Lighting" LayerGUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Id="bc985c8d-2f95-4ebc-82fa-9bb570fe65ee" Name="l_probe_AB5_forest_c_root" Pos="1637.92,841.82916,57.065659" Rotate="0.70090938,0,0,-0.71325034" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="2a66e0ab-18c6-5f96-7866-474bd2d86a4f" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_c_root_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="13490c54-b333-f87a-0ab0-1e7312378500" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_c_root_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>
@@ -76,7 +76,7 @@
    <Object Type="EnvironmentProbe" Layer="AB05_Lighting" LayerGUID="6c0191e9-ee24-42d4-894c-343e9b4ff4fa" Id="8579a3cd-004a-4533-9f67-4190df84189b" Name="l_probe_AB5_forest_e_child" Pos="1713.2421,569.79102,60.271301" Rotate="0.095845714,0,0,0.9953962" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="563fdf80-23c4-26c7-8a03-6d39d7b6fa6a" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_e_child_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="39a5b899-045f-f2f2-26b1-1aade5925c41" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab5_forest_e_child_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>

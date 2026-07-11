@@ -1,5 +1,5 @@
 <ObjectLayer>
- <Layer Name="Main" FullName="Main" GUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="1" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1777306150">
+ <Layer Name="Main" FullName="Main" GUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Hidden="0" Frozen="1" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="1" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1783804758">
   <LayerObjects>
    <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="162dfba3-7bfc-406b-a7fa-f11a513dba48" Name="NavigationArea41" Pos="1422.4781,874.19867,35" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="7" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
     <Properties />
@@ -71,7 +71,7 @@
    <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="ebc14e5f-c7d0-43f0-997c-60f2c416f3cf" Name="AB03_LS_trig" Pos="1570.4387,890.16077,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="fac3c312-88ba-46d8-b200-09be9f18742a" CryXmlVersion="2" Active="true"/>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="ee176d79-d867-f21e-8320-0bf59bc943a9" CryXmlVersion="2" Active="true"/>
     </Components>
    </Object>
    <Object Type="Shape" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="418faab5-6be5-4f94-ad23-4fc8d167e9f3" Name="AB01_LS_Shape" Pos="1493.674,923.07391,0" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="255" UseCustomLevelLayerColor="0" MinSpec="0" Width="0" Height="100" InnerFadeDistance="0" AreaId="0" GroupId="0" Priority="0" Closed="1" DisplayFilled="0" DisplaySoundInfo="0" Agent_height="0" Agent_width="0" Render_voxel_grid="0" voxel_offset_x="0" voxel_offset_y="0" EntityClass="AreaShape" HasEntity="1">
@@ -679,7 +679,7 @@
    <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="afd080ae-1eb7-4db6-963f-8a7c9ee92bfc" Name="Cutscene_Menu_ATrig" Pos="1330,930,80" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="62d11b23-c45a-1a88-0793-d8a8729c9116" CryXmlVersion="2" Active="true"/>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="25f42d00-8338-f358-44f2-3b284419ef3c" CryXmlVersion="2" Active="true"/>
     </Components>
    </Object>
    <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="fa3c3faa-2c29-4e41-be22-9e9ce2e4773d" Name="NavigationArea5" Pos="1412.0137,855.53235,35" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="7" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
@@ -701,7 +701,7 @@
    <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="458bf009-b974-416f-961d-c32643e221a7" Name="AB04_LS_trig" Pos="1643.6455,893.78674,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="e3cc5186-b855-7608-119e-a6a5f426c3ef" CryXmlVersion="2" Active="true"/>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="7efc68eb-90e0-4500-4319-eed5647d43e5" CryXmlVersion="2" Active="true"/>
     </Components>
    </Object>
    <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="4ccd54bb-f5ce-4387-b4b9-05bb9f15a2ab" Name="NavigationArea9" Pos="1715.4982,571.96484,51.003048" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="10" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
@@ -739,7 +739,7 @@
    <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="8d8d20dd-df02-4a43-8e66-1d52b0998a1d" Name="AB06_LS_trig" Pos="1618.7065,593.28021,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="97296929-23f2-faa3-e749-71d3030d2f31" CryXmlVersion="2" Active="true"/>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="79b60042-ee0f-e375-08bf-4ce05552e5db" CryXmlVersion="2" Active="true"/>
     </Components>
    </Object>
    <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="8f3f2baa-3625-4415-8b10-bc41fab16b6f" Name="NavigationArea17" Pos="1640.043,888.96191,45" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="10" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
@@ -768,7 +768,7 @@
    <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="037eb6ac-7f97-4fd9-abaf-5be38bc310c8" Name="AB02_LS_trig" Pos="1512.5591,876.78845,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="2601d116-940e-a25b-6315-6e5c8486e419" CryXmlVersion="2" Active="true"/>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="5f358723-0d21-94f6-1659-c785f571cf72" CryXmlVersion="2" Active="true"/>
     </Components>
    </Object>
    <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="607daa42-c439-4d52-a8eb-e4915633df9a" Name="NavigationArea31" Pos="1588.1876,889.19324,35.494041" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="12" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
@@ -838,7 +838,7 @@
    <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="c08426fd-7242-4e4c-b186-230c39c5dd02" Name="AB05_LS_trig" Pos="1618.7065,792.01624,129.25116" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="e7193d73-ae73-9ccb-2a2d-33d445534961" CryXmlVersion="2" Active="true"/>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="4e2fb4e0-a4dc-d8b2-e352-38b5dba4ab27" CryXmlVersion="2" Active="true"/>
     </Components>
    </Object>
    <Object Type="NavigationArea" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="cb1307c1-3fe1-4d57-b9a1-bf1c3acd2f3b" Name="NavigationArea24" Pos="1415.7657,917.88098,37.69265" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="200" UseCustomLevelLayerColor="0" MinSpec="0" Height="5" Exclusion="1" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
@@ -854,7 +854,7 @@
    <Object Type="Entity" Layer="Main" LayerGUID="56baa75d-4b8e-4837-848b-1b7213e0b9e5" Id="d39a66cc-4a92-4a83-a66b-e6198d4ec093" Name="AB01_LS_trig" Pos="1392.7678,876.38586,133.03375" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="AreaTrigger" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="0a2554de-e283-f2ba-1565-c8fbd7583d3c" CryXmlVersion="2" Active="true"/>
+     <Component typeId="717fcf92-e048-4479-ab8d-6af20d94aa85" guid="049404f9-4d3d-79ea-9b56-859addc028e3" CryXmlVersion="2" Active="true"/>
     </Components>
    </Object>
   </LayerObjects>

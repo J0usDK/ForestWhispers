@@ -38,3 +38,11 @@ Log/
 # =========================
 Thumbs.db
 .DS_Store
+
+# =========================
+# Wwise Middleware
+# =========================
+*/.cache/
+*.validationcache
+*.wsettings
+*.user

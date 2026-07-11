@@ -1,10 +1,10 @@
 <ObjectLayer>
- <Layer Name="AB04_Lighting" FullName="lighting/AB04_Lighting" GUID="8c8e2afc-fd00-433e-abaf-581a98a4dcfa" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1777068680">
+ <Layer Name="AB04_Lighting" FullName="lighting/AB04_Lighting" GUID="8c8e2afc-fd00-433e-abaf-581a98a4dcfa" Hidden="0" Frozen="1" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1783804758">
   <LayerObjects>
    <Object Type="EnvironmentProbe" Layer="AB04_Lighting" LayerGUID="8c8e2afc-fd00-433e-abaf-581a98a4dcfa" Id="70ed5e1a-1b29-4071-957c-95b5f6aaedab" Name="l_probe_AB4_forest_a_root" Pos="1645.2961,891.95587,54.037827" Rotate="0.98628563,0,0,-0.16504741" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" cubemap_resolution="256" preview_cubemap="0" OutdoorOnly="0" GIMode="0" ViewDistRatio="100" HiddenInGame="0" EntityClass="EnvironmentLight" HasEntity="1">
     <Properties />
     <Components>
-     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="571e0899-7706-16ea-82c6-d264f5be0f34" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab4_forest_a_root_cm.dds">
+     <Component typeId="0d3d1840-d239-411e-8738-14c56cccee2c" guid="c6d118bf-c572-77ed-4bd8-414ec4359a71" CryXmlVersion="2" Active="true" IgnoreVisAreas="false" SortPriority="0" AttentuationFalloffMax="1" VolumetricFogOnly="false" AffectsVolumetricFog="true" AffectsOnlyThisArea="true" LinkToSkyColor="false" DiffuseMultiplier="1" SpecularMultiplier="1" ProjectionActive="false" ProjectionHeight="1" ProjectionLength="1" ProjectionWidth="1" Cubemap="textures/cubemaps/woodland/l_probe_ab4_forest_a_root_cm.dds">
       <BoxSize x="10" y="10" z="10"/>
       <Color r="1" g="1" b="1" a="1"/>
      </Component>

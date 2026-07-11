@@ -1,0 +1,24 @@
+<AudioSystemData name="woodland" version="5" triggers="2" preloads="1" files="1">
+ <ImplData events="2" soundbanks="1"/>
+ <Triggers>
+  <Trigger name="Play_Level_Woodland" path="Triggers">
+   <Event name="Play_l_woodland_amb_wind"/>
+  </Trigger>
+  <Trigger name="Stop_Level_Woodland" path="Triggers">
+   <Event name="Stop_l_woodland_amb_wind"/>
+  </Trigger>
+ </Triggers>
+ <Preloads>
+  <PreloadRequest name="Level_Woodland" path="Preloads" type="autoload">
+   <File name="Level_Woodland.bnk"/>
+  </PreloadRequest>
+ </Preloads>
+ <EditorData>
+  <Library />
+  <Folders>
+   <Folder name="Triggers"/>
+   <Folder name="Preloads"/>
+  </Folders>
+  <Controls />
+ </EditorData>
+</AudioSystemData>

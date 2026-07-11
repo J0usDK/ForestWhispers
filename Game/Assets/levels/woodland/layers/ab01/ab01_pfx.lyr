@@ -1,32 +1,10 @@
 <ObjectLayer>
- <Layer Name="AB01_PFX" FullName="ab01/AB01_PFX" GUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1783721867">
+ <Layer Name="AB01_PFX" FullName="ab01/AB01_PFX" GUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1783806853">
   <LayerObjects>
-   <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="be5593f5-b684-4799-9a8d-073db837d086" Name="ParticleEffect17" Pos="1334.6852,913.68506,49.116299" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
-    <Properties />
-    <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="4b4ed7ca-caa1-3ab9-cc04-269514ea27ef" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
-      <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
-      <Attributes>
-       <Attributes />
-      </Attributes>
-     </Component>
-    </Components>
-   </Object>
-   <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="3f20301d-95fa-43e3-8c06-369d49d8d345" Name="ParticleEffect15" Pos="1371.5477,892.16559,43.967251" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
-    <Properties />
-    <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="d7af390a-2663-d613-113d-2a65b31567fa" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
-      <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
-      <Attributes>
-       <Attributes />
-      </Attributes>
-     </Component>
-    </Components>
-   </Object>
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="7c3237ac-7162-4c9a-9608-c532991014e1" Name="ParticleEffect101" Pos="1437.1665,851.87891,37.629833" Rotate="0.6029076,0.60290766,0.36946228,0.36946228" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="materials/particle/water_splash_rapids" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="22b317c6-e530-8252-5c5c-3d439af14cdd" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="2918e8af-1005-7404-1c40-101f75db03e1" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
       <Parameters prime="false" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -37,7 +15,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="420e07f3-1f3f-4228-bf94-c7ea8ee060be" Name="ParticleEffect5" Pos="1438.287,849.60645,45.319332" Rotate="-0.37470949,-0.37470949,0.59966058,0.59966058" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="6cf2118f-5387-1cd9-1623-bc4b432c1043" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="90b719e7-6073-9960-33b3-56f216f4d640" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -48,7 +26,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="5bd97e42-6331-49b2-84c9-d689e856b7c7" Name="ParticleEffect97" Pos="1431.5604,843.87854,37.267639" Rotate="0.68458372,0.68458378,0.17704546,0.17704543" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="materials/particle/water_splash_rapids" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="d477e02f-f54e-5063-3cfb-f2f66067453a" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="023047a9-efab-3cc7-9ce0-b6f454d4402c" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -59,7 +37,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="5c497419-eaf4-4f75-8f5f-567258b028ad" Name="ParticleEffect25" Pos="1417.4569,879.82568,43.379627" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="42d9d5a8-d2f9-0c98-b381-d47d7c427ed6" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="60c09aab-32a5-104e-f29e-f53b01a3f74b" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -71,7 +49,7 @@
     <Properties />
     <Components>
      <Component CryXmlVersion="2" TypeGUID="63f4c0c6-32af-4acb-8fb0-57d45dd14725" TypeName="CPlayerComponent" GUID="d8da68b1-2bea-c037-062d-e8d1d080ab5a" Name="" UserAdded="true">
-      <properties maxwalkspeed="1.5" maxrunspeed="3.5" acceleration="5" deceleration="8" turnspeed="50" encumbrancewalk="25" encumbrancestop="40" sprintcost="5">
+      <properties maxwalkspeed="1.5" maxrunspeed="3.5" acceleration="5" deceleration="8" turnspeed="50" encumbrancewalk="25" encumbrancestop="40" sprintcost="0">
        <defaultcamerapivot x="0" y="0" z="1.6"/>
       </properties>
      </Component>
@@ -79,16 +57,16 @@
       <Transform>
        <translation>
         <position>
-         <element element="1.4197998"/>
-         <element element="10.983276"/>
-         <element element="1.8514175"/>
+         <element element="-116.56201"/>
+         <element element="-47.730591"/>
+         <element element="9.0062485"/>
         </position>
        </translation>
-       <rotation x="-17.647121" y="-8.4043342e-07" z="0.70407802"/>
+       <rotation x="1.6043735" y="2.50129e-08" z="-1.0075082"/>
        <scale>
         <element element="0.99999994"/>
-        <element element="1"/>
         <element element="0.99999994"/>
+        <element element="1"/>
        </scale>
       </Transform>
       <properties Type="Default" Active="true" NearPlane="0.15000001" FarPlane="1024" FieldOfView="1.2217305"/>
@@ -167,7 +145,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="fc4f44c4-07eb-424d-ac4e-29c3212751d7" Name="ParticleEffect58" Pos="1438.8541,890.61548,35.506332" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="a75969a4-f051-16b9-e861-55075e4e9721" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dragonfly_attract" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="e834e927-d0a4-d8ec-8721-8caa22b22e0a" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dragonfly_attract" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -178,7 +156,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="e0e9495e-83af-42c4-8424-e156be566b3b" Name="ParticleEffect7" Pos="1435.1418,844.23315,44.557652" Rotate="-0.37470949,-0.37470949,0.59966058,0.59966058" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="6eb2bd3f-9238-a97e-48a9-9f1804e4cb27" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="24793183-30c1-8675-5527-740426283923" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -189,7 +167,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="40a95c22-a0a7-4bcf-aa99-79658fe0078e" Name="ParticleEffect61" Pos="1442.4717,838.60425,52.198154" Rotate="-0.37470949,-0.37470949,0.59966058,0.59966058" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="42b5412c-121b-2b31-0c2d-0693a3cca773" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="31adb5eb-f84c-af68-30d6-7610bf15b567" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -211,7 +189,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="09951f48-621d-4e33-87a8-919de2d36ed9" Name="ParticleEffect60" Pos="1445.0812,841.71143,52.639359" Rotate="-0.37470949,-0.37470949,0.59966058,0.59966058" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="0d9be10b-b43d-d896-1ca0-0fd0fc59f332" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="acea5b00-9733-e74c-06db-e4f61e993319" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -222,7 +200,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="c0992978-2395-4731-9166-66691987c5a7" Name="ParticleEffect16" Pos="1360.7294,903.26227,43.677689" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="8b05f609-2f5a-0424-1c6a-f987192874f5" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="993f6dd2-31a4-a358-a76c-eb341838e684" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -233,7 +211,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="d3ed62bc-c3de-47c5-85f7-238a0b5dd1c8" Name="ParticleEffect35" Pos="1467.1344,908.03668,37.683685" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="67182476-d8ca-d37e-982e-b8af0c3837f6" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dragonfly_attract" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="eaa16b23-c627-58e4-df2a-297b73995720" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dragonfly_attract" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -244,7 +222,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="91b5a47c-1ad8-4d2a-a5cc-1bbff14b20a7" Name="ParticleEffect27" Pos="1421.3002,922.41455,46.310814" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="41ac95f1-5722-dcaa-17db-e1deeeaa2aa0" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="763b11b0-7c72-f67f-24d4-09ac04a05b04" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -255,7 +233,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="c0caa5f5-7cef-4e2e-8bdb-b7da349bb6f8" Name="ParticleEffect38" Pos="1396.7958,857.44598,40.971798" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="3bc3ba40-57d7-95f0-6a23-b6e0b13cb724" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="e2bde798-6cc4-7ccb-6551-59c69758e971" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -266,7 +244,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="661bb197-aa48-4e73-acb9-eb79371752e0" Name="ParticleEffect21" Pos="1364.5371,868.75708,43.843704" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="7dfb751e-8319-d102-145f-5ca948ee5c84" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="c906ce18-85a5-c5ff-e422-277e9b7b2a7a" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -277,7 +255,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="4e4d7c68-e589-4526-b6b4-44cf510c4ae5" Name="ParticleEffect24" Pos="1391.545,875.07953,44.814442" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="766a13f5-bfe6-75c1-edbb-5b9f3ebbe127" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="a7afcb5a-5019-6f45-2d87-666a88cdd9b6" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -288,7 +266,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="d0b16ad8-f4a3-4395-92b3-680fa093289b" Name="ParticleEffect23" Pos="1377.4,852.75287,45.114983" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="447b849a-06a8-a7f8-ef07-676d130ecc2f" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="af96d240-66a4-b472-a65c-7485926997cd" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -299,7 +277,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="d43a0ab9-2f9c-4e99-b985-0e931b413ed6" Name="ParticleEffect13" Pos="1435.504,849.78711,35.603077" Rotate="0.62433821,0.62433821,0.33196661,0.33196658" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="materials/particle/water_splash_rapids" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="9346c3f4-9a32-f0cc-9c34-207d89b2134d" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="dd6811e6-b858-7d5b-42e5-931aedf25bcb" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
       <Parameters prime="false" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -310,7 +288,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="ab2da180-9863-4883-98c7-9e7eeba34275" Name="ParticleEffect34" Pos="1417.3385,863.68115,36.620323" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="a7cbeb35-2383-1b30-3e8d-23d0063c33f4" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dragonfly_attract" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="d3ea1a05-53bf-5ba6-1fcd-1e5c20ad849e" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dragonfly_attract" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -321,7 +299,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="79da21ff-0fa8-4044-93f4-58512a77d4b3" Name="ParticleEffect26" Pos="1418.1295,904.2738,43.929295" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="cb1fefc9-d290-2177-2b88-de54913249a4" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="555cf02d-0d13-7ff3-a050-cc9da7f7dd58" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -332,7 +310,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="7a62a134-9f83-4d24-a7bd-9125a07a90d2" Name="ParticleEffect39" Pos="1368.8059,898.18689,42.251373" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="9a6776fd-f1ed-bf76-fd47-3f5e1f1ba567" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="7a98cfcd-3a1f-0b29-6dcf-75c25ebffa32" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -340,10 +318,28 @@
      </Component>
     </Components>
    </Object>
+   <Object Type="AreaBox" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="a1379019-aa8f-c71d-3d84-b21f3a0ea32d" Name="AreaBox-2" Pos="1535,760,82" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="16711680" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" InnerFadeDistance="0" AreaId="-1" FadeInZone="0" Width="4" Length="4" Height="1" GroupId="0" Priority="0" DisplayFilled="1" DisplaySoundInfo="0" EntityClass="AreaBox" HasEntity="1" BoxMin="-2,-2,0" BoxMax="2,2,1">
+    <Properties />
+    <Components>
+     <Component typeId="feb82854-291c-4aba-9652-ddd7f403f24a" guid="5a1ef5c4-3b6d-af64-f990-22ed507206f9">
+      <Area Id="-1" Group="0" Proximity="0" Priority="0" InnerFadeDistance="0" BoxMin="-2,-2,0" BoxMax="2,2,1">
+       <SoundData>
+        <Side1 ObstructSound="0"/>
+        <Side2 ObstructSound="0"/>
+        <Side3 ObstructSound="0"/>
+        <Side4 ObstructSound="0"/>
+        <Side5 ObstructSound="0"/>
+        <Side6 ObstructSound="0"/>
+       </SoundData>
+      </Area>
+     </Component>
+    </Components>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Side5="0" Side6="0"/>
+   </Object>
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="cdf1a696-1d79-403d-b595-aaa88614fdd6" Name="ParticleEffect8" Pos="1436.2058,845.73596,45.369583" Rotate="-0.37470949,-0.37470949,0.59966058,0.59966058" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="f240268e-9355-b303-6e3c-84c4c7d27b43" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="1f9f3b11-f787-d44f-dbf6-eb85fcef6782" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -354,7 +350,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="050bee90-fac1-4d0d-841a-80728046cd84" Name="ParticleEffect19" Pos="1318.9746,946.28302,54.299206" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="14784d29-cd52-31db-df39-e87bfc5f5d88" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="cdd4bfba-f789-1b87-970d-899ce3c209a7" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -365,7 +361,18 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="3b9e11aa-39b5-4c48-9891-b42b8d10dba4" Name="ground_smoke_pfx2" Pos="1406.6041,863.43781,36.811939" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="08da6ab8-565b-d08f-2d7a-61a0d17cc735" CryXmlVersion="2" ParticleEffect="environment_fx.smoke.ground_smoke" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="777a22c3-331d-3b12-341f-d9eb7c08bdc9" CryXmlVersion="2" ParticleEffect="environment_fx.smoke.ground_smoke" Active="true">
+      <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
+      <Attributes>
+       <Attributes />
+      </Attributes>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="be5593f5-b684-4799-9a8d-073db837d086" Name="ParticleEffect17" Pos="1334.6852,913.68506,49.116299" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
+    <Properties />
+    <Components>
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="c72d722c-5daf-9869-8d16-70271b5e010b" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -376,7 +383,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="8e420c84-17d0-4ea9-bed9-b10dbfe93a8d" Name="ParticleEffect40" Pos="1332.8511,920.15472,48.132442" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="009c38ba-be66-1ea7-6bef-e2e0cfc490a2" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="1019c7c6-d59a-7b51-4be5-af603ffadb4b" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -387,7 +394,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="09682888-72c2-43fd-b783-11e8962fef30" Name="ParticleEffect10" Pos="1425.3705,853.36761,33.618671" Rotate="0.69840115,0.69840109,0.11061592,0.11061592" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="materials/particle/water_splash_rapids" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="48ebb2bd-e67a-b3ce-db81-f4beb81676d3" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="546a5f7c-a0df-37c8-4b6d-3ece5b5878ac" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
       <Parameters prime="false" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -398,7 +405,18 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="a44ffb6d-d36d-433d-9fda-56e31a19c20d" Name="ParticleEffect30" Pos="1414.605,905.43896,41.028343" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="ea037393-b795-0e00-9d9e-eeb6dc9f2470" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="f7f30bab-2123-ad28-2f4e-a8717b823488" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
+      <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
+      <Attributes>
+       <Attributes />
+      </Attributes>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="3f20301d-95fa-43e3-8c06-369d49d8d345" Name="ParticleEffect15" Pos="1371.5477,892.16559,43.967251" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
+    <Properties />
+    <Components>
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="ea5c12f3-eb27-4157-9863-fbbba571f6d2" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -409,7 +427,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="99e95026-7fe1-4664-b3d4-26d615af92e3" Name="ParticleEffect22" Pos="1362.4043,851.57715,46.84557" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="77cc8e26-7bb9-533a-498e-78023a74adf3" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="5b7be0f4-f2fb-9091-e53d-dc7f0eea6440" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -420,7 +438,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="ed731395-afc6-483a-84cc-d8b48807ea30" Name="ParticleEffect33" Pos="1426.5483,902.58246,40.180077" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="d3da3b73-eac9-21b7-143f-6ae97e2a6b56" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="7aac0ea1-d98b-44e6-7141-57fe3f28c930" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -431,7 +449,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="845a4734-22ee-4278-9d56-1bb033e20d0b" Name="ParticleEffect98" Pos="1433.9701,844.09729,43.012638" Rotate="0.68458372,0.68458378,0.17704546,0.17704543" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="materials/particle/water_splash_rapids" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="3197e00d-dc07-9311-396e-d5c9dd5ee29b" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="55e6cb5a-067e-f297-1bd6-e2f6f9e42244" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -442,7 +460,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="c8c20e0d-a1be-4094-a301-ea847fc2e905" Name="ParticleEffect29" Pos="1419.8154,897.38452,39.00079" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="992951f8-5da6-a289-fea8-1efa0bdd8d3c" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="a237883d-0b36-547b-dbe4-f48edce19c4a" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -453,7 +471,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="1aac41b9-082e-4c12-ad5d-5a18978677c9" Name="ParticleEffect11" Pos="1428.5267,855.54279,33.567791" Rotate="0.58964628,0.58964628,0.39027843,0.39027843" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="materials/particle/water_splash_rapids" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="54f0873a-9100-052f-9534-3f72715f454c" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="59e52b47-0f53-71e9-d234-04f35f7808b1" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
       <Parameters prime="false" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -464,7 +482,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="6b83cc7e-2abe-42cb-a53d-43961cf0b621" Name="ParticleEffect32" Pos="1415.3539,925.47577,43.132984" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="13fde756-c538-27e5-3bd5-e8d1c308495d" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="cb96df9a-6447-a8bf-e820-f8e0fa92068b" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -475,7 +493,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="6c045411-7c37-4391-b0b6-8a03d3ffb4a7" Name="ground_smoke_pfx1" Pos="1368.1924,893.93054,40.416046" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="46fced87-fdc8-e0d4-9bb8-17b529210f7d" CryXmlVersion="2" ParticleEffect="environment_fx.smoke.ground_smoke" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="a600eb89-950b-3d09-b0b6-05d25389be4a" CryXmlVersion="2" ParticleEffect="environment_fx.smoke.ground_smoke" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -486,7 +504,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="69c88cd5-d970-496e-866c-ff42857c9e04" Name="ParticleEffect37" Pos="1417.9102,878.03015,40.574577" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="21a289f1-f320-6d90-b7a4-aea08e3bdead" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="5bdc3fa3-8ec7-747f-85b8-f9e0623f4826" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -497,7 +515,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="ae8676cd-c06b-4778-8038-6c5bb75b9503" Name="ParticleEffect36" Pos="1445.5674,916.46118,41.340019" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="7d54ac9e-24ea-2879-bc7b-15d9565b175f" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="0cd53c97-cc42-eb3f-ac8b-40e093b00e46" CryXmlVersion="2" ParticleEffect="environment_fx.environment.dandelion" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -508,7 +526,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="7fed539b-2f84-4d60-96db-6a6bd5994a4a" Name="ParticleEffect28" Pos="1468.2545,926.37579,45.506065" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="857a5ed4-87fb-fc93-77b8-8f702bd7f408" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="6c8f0f6f-9871-c2d3-9e03-53d1a258bc90" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -519,7 +537,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="3567a1a6-c4c2-446b-915a-8be6d9eeaff4" Name="ParticleEffect6" Pos="1437.6091,847.53241,46.036331" Rotate="-0.37470949,-0.37470949,0.59966058,0.59966058" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="658898c0-33d0-fda9-94c8-42f9003710a9" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="21d47914-e546-6abd-0a22-6eddcc7800b8" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_refract" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -530,7 +548,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="d7095a72-bac4-4182-8837-73ee65efb002" Name="ParticleEffect12" Pos="1433.8007,846.34729,35.696297" Rotate="0.58964628,0.58964628,0.39027843,0.39027843" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="materials/particle/water_splash_rapids" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="97ac6109-cbff-c3fb-60e9-533fe18bcadb" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="389ae0d0-5cbd-6300-a5ae-f70bdc67d8a3" CryXmlVersion="2" ParticleEffect="water.waterfall_tiny.waterfall_tiny" Active="true">
       <Parameters prime="false" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -541,7 +559,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="dba6f1ea-eb55-40c0-af7a-69aca7251ce8" Name="ParticleEffect20" Pos="1337.1731,906.03119,47.392094" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="18fdc85a-1363-ad3c-60e8-2a1428365d07" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="4e0d05d9-f55e-68db-dc5c-ee83ed6adf5b" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -552,7 +570,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="028add51-c660-43fc-ba78-5771ce04e4a4" Name="ParticleEffect31" Pos="1410.8181,916.01263,42.16972" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="2ddfdcfe-8d48-dedd-83b7-8d39393c8e9b" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="0679d241-5930-23a0-e527-c2112f6f16d5" CryXmlVersion="2" ParticleEffect="environment_fx.environment.gnat" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -563,7 +581,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="1f495e5b-d1b3-41f6-b778-8f598708b695" Name="ParticleEffect18" Pos="1328.2258,932.8526,51.270416" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="c75b1185-5a53-a426-e59f-0487b5b4850b" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="dc8ecc71-4adc-b7c1-81c8-a75f57aecf6b" CryXmlVersion="2" ParticleEffect="environment_fx.leaves.falling_leaves_b" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
@@ -574,7 +592,7 @@
    <Object Type="ParticleEntity" Layer="AB01_PFX" LayerGUID="7158872c-9587-403c-8c59-eca0c7d8e2eb" Id="fc5145d8-1900-4fed-9c24-6841d3a5f857" Name="ground_smoke_pfx4" Pos="1431.837,912.21796,38.816296" Rotate="0.70710677,0.70710677,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="ParticleEffect" HasEntity="1" ParticleEntityName="">
     <Properties />
     <Components>
-     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="42b06ad7-60a0-e8ae-2378-424a93d6b099" CryXmlVersion="2" ParticleEffect="environment_fx.smoke.ground_smoke" Active="true">
+     <Component typeId="31b3ead4-c344-42f7-b794-b33746d4232b" guid="c6d63d67-c638-2079-6256-01e52c910270" CryXmlVersion="2" ParticleEffect="environment_fx.smoke.ground_smoke" Active="true">
       <Parameters prime="true" scale="1" countScale="1" speedScale="1" timeScale="1" spec="Default" ignoreVvisAreas="false" ignoreTerrainBlend="true" ignoreDecalBlend="true" seed="-1"/>
       <Attributes>
        <Attributes />
