@@ -9,6 +9,8 @@
 #include "Components/Inventory/InventoryComponent.h"
 #include "Components/Core/Stamina/StaminaComponent.h"
 
+#include "Systems/Audio/Controllers/FootstepAudioController.h"
+
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
 ////////////////////////////////////////////////////////
@@ -61,6 +63,8 @@ private:
 	CInventoryComponent* m_pInventory = nullptr;
 	CStaminaComponent* m_pStamina = nullptr;
 
+	CFootstepAudioController m_footstepAnimController;
+
 	Vec3 m_defaultCameraPivot = ZERO;
 
 	float m_maxWalkSpeed = 0.0f;
@@ -76,6 +80,8 @@ private:
 
 	bool m_bIsPlaying = false;
 	int16 m_headBoneID = -1;
+	int16 m_lFootBoneID = -1;
+	int16 m_rFootBoneID = -1;
 
 	enum class EPlayerState
 	{
@@ -84,6 +90,8 @@ private:
 		Run
 	} m_currentState;
 
+	const char* m_kLFootBoneName = "CC_Base_L_ToeBase";
+	const char* m_kRFootBoneName = "CC_Base_R_ToeBase";
 	const char* m_kHeadBoneName = "CC_Base_Head";
 	const char* m_kIdleName = "Idle";
 	const char* m_kWalkName = "Walk";

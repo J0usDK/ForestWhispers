@@ -1,1 +1,10 @@
-<anim_event_list />
+<anim_event_list>
+ <animation name="animations/characters/mc/a_walkforward.caf">
+  <event name="player_footstep" time="0.38" endTime="0.38" parameter="" bone="CC_Base_R_ToeBase" offset="0,0,0" dir="0,0,0" model=""/>
+  <event name="player_footstep" time="0.88" endTime="0.88" parameter="" bone="CC_Base_L_ToeBase" offset="0,0,0" dir="0,0,0" model=""/>
+ </animation>
+ <animation name="animations/characters/mc/blendspaces/mc_walk.bspace">
+  <event name="player_footstep" time="0.40000001" endTime="0.40000001" parameter="" bone="CC_Base_R_ToeBase" offset="0,0,0" dir="0,0,0" model=""/>
+  <event name="player_footstep" time="0.80000001" endTime="0.80000001" parameter="" bone="CC_Base_L_ToeBase" offset="0,0,0" dir="0,0,0" model=""/>
+ </animation>
+</anim_event_list>

@@ -38,11 +38,12 @@ void CPlayerComponent::Initialize()
 	m_pStamina = m_pEntity->GetOrCreateComponent<CStaminaComponent>();
 
 	m_pInteractor->AddListener(this);
+	m_footstepAnimController.Initialize(m_pEntity);
 }
 
 Cry::Entity::EventFlags CPlayerComponent::GetEventMask() const
 {
-	return Cry::Entity::EEvent::GameplayStarted | Cry::Entity::EEvent::Update | Cry::Entity::EEvent::Reset;
+	return Cry::Entity::EEvent::GameplayStarted | Cry::Entity::EEvent::Update | Cry::Entity::EEvent::Reset | Cry::Entity::EEvent::AnimationEvent;
 }
 
 void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
@@ -51,6 +52,14 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 	{
 		case Cry::Entity::EEvent::GameplayStarted:
 		{
+			if (auto boneID = m_pAnimator->GetBoneID(m_kHeadBoneName))
+				m_headBoneID = *boneID;
+			if (auto boneID = m_pAnimator->GetBoneID(m_kLFootBoneName))
+				m_lFootBoneID = *boneID;
+			if (auto boneID = m_pAnimator->GetBoneID(m_kRFootBoneName))
+				m_rFootBoneID = *boneID;
+
+
 			gGameEnv->pLocalPlayerService->NotifyPlayerReady(this);
 			m_bIsPlaying = true;
 			ShowPlayerHUD();
@@ -81,24 +90,25 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 				m_pAnimator->QueueFragment(m_kIdleName);
 			break;
 		}
+		case Cry::Entity::EEvent::AnimationEvent:
+		{
+			const AnimEventInstance* pAnimEvent = reinterpret_cast<const AnimEventInstance*>(event.nParam[0]);
+
+			if (pAnimEvent && strcmp(pAnimEvent->m_EventName, "player_footstep") == 0)
+			{
+				int16 boneID = strcmp(pAnimEvent->m_BonePathName, m_kLFootBoneName) == 0 ? m_lFootBoneID : m_rFootBoneID;
+				if (auto bonePos = m_pAnimator->GetBoneWorldPosition(boneID))
+					m_footstepAnimController.ProcessFootstep(*bonePos);
+			}
+		}
 	}
 }
 
 void CPlayerComponent::UpdateCamera(const SCharacterIntent& intent)
 {
 	m_pCamera->ApplyInputDelta(intent.lookDelta);
-
-	if (m_headBoneID == -1)
-		if (auto boneID = m_pAnimator->GetBoneID(m_kHeadBoneName))
-			m_headBoneID = *boneID;
-
-	if (m_headBoneID >= 0)
-	{
-		if (auto headPos = m_pAnimator->GetBoneWorldPosition(m_headBoneID))
-			m_pCamera->SetPivotPosition(*headPos);
-	}
-	else
-		m_pCamera->SetPivotPosition(m_pEntity->GetWorldPos() + m_defaultCameraPivot);
+	if (auto headPos = m_pAnimator->GetBoneWorldPosition(m_headBoneID))
+		m_pCamera->SetPivotPosition(*headPos);
 }
 
 void CPlayerComponent::UpdateMovement(const SCharacterIntent& intent)

@@ -1,6 +1,6 @@
 <Material MtlFlags="524544" vertModifType="0">
  <SubMaterials>
-  <Material Name="leaf" MtlFlags="524416" Shader="Vegetation" GenMask="2400801020" StringGenMask="%DETAIL_BENDING%LEAVES%NORMAL_MAP%TEMP_VEGETATION%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="0.10224172,0.048171833,0.03189604" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="9.9450026" AlphaTest="0.44" vertModifType="0" LayerAct="1">
+  <Material Name="leaf" MtlFlags="524416" Shader="Vegetation" GenMask="2400801020" StringGenMask="%DETAIL_BENDING%LEAVES%NORMAL_MAP%TEMP_VEGETATION%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="0.10224172,0.048171833,0.03189604" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="9.9450035" AlphaTest="0.44" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/bushes/bush_round_leaf_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
@@ -14,7 +14,7 @@
    </Textures>
    <PublicParams BackDiffuseMultiplier="1.5" CapOpacityFalloff="0" NormalViewDependency="0.5" TransmittanceColor="0.93725497,0.81176478,0.627451" VertexAlphaBlendFactor="1" bendDetailBranchAmplitude="-0.5" bendDetailFrequency="1" bendDetailLeafAmplitude="0.2"/>
   </Material>
-  <Material Name="proxy_wood" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_vegetation" MatTemplate="" Diffuse="1,0,0" Specular="0,0,0" Opacity="1" Shininess="10" vertModifType="0" LayerAct="1">
+  <Material Name="proxy_wood" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_wood" MatTemplate="" Diffuse="1,0,0" Specular="0,0,0" Opacity="1" Shininess="9.9450016" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
  </SubMaterials>

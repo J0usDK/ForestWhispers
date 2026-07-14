@@ -5100,10 +5100,130 @@
 			"dependencies": [ ]
 		},
 		{
+			"type": "Animation",
+			"guid": "89e5dd49-a88a-1b95-8b4b-2bb6a675c14a",
+			"name": "a_idle",
+			"timestamp": 1779584096,
+			"files": [ "Animations/characters/mc/a_idle.caf" ],
+			"workFiles": [ ],
+			"source": "Animations/characters/mc/mc_idle.fbx",
+			"metadata": "Animations/characters/mc/a_idle.caf.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Animation",
+			"guid": "40cd425a-5271-a96b-4bf9-2e68e5dd5c0f",
+			"name": "a_run",
+			"timestamp": 1779646442,
+			"files": [ "Animations/characters/mc/a_run.caf" ],
+			"workFiles": [ ],
+			"source": "Animations/characters/mc/mc_run.fbx",
+			"metadata": "Animations/characters/mc/a_run.caf.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Animation",
+			"guid": "daf102a8-1f35-3c8c-aebe-6d220ebbd9b7",
+			"name": "a_walkback",
+			"timestamp": 1779565663,
+			"files": [ "Animations/characters/mc/a_walkback.caf" ],
+			"workFiles": [ ],
+			"source": "Animations/characters/mc/mc_walkBack.fbx",
+			"metadata": "Animations/characters/mc/a_walkback.caf.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Animation",
+			"guid": "07a0e9eb-f91c-b94f-32eb-9342878ea970",
+			"name": "a_walkforward",
+			"timestamp": 1779587108,
+			"files": [ "Animations/characters/mc/a_walkforward.caf" ],
+			"workFiles": [ ],
+			"source": "Animations/characters/mc/mc_walk.fbx",
+			"metadata": "Animations/characters/mc/a_walkforward.caf.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Animation",
+			"guid": "50416b1d-4d9c-6286-e9c2-0447993e1ddc",
+			"name": "a_walkleft",
+			"timestamp": 1779565947,
+			"files": [ "Animations/characters/mc/a_walkleft.caf" ],
+			"workFiles": [ ],
+			"source": "Animations/characters/mc/mc_walkLeft.fbx",
+			"metadata": "Animations/characters/mc/a_walkleft.caf.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Animation",
+			"guid": "c59de662-7ee5-e7a7-69be-01a43043aeb2",
+			"name": "a_walkright",
+			"timestamp": 1779565855,
+			"files": [ "Animations/characters/mc/a_walkright.caf" ],
+			"workFiles": [ ],
+			"source": "Animations/characters/mc/mc_walkRight.fbx",
+			"metadata": "Animations/characters/mc/a_walkright.caf.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Xml",
+			"guid": "21388f19-6ece-22a0-efad-d26ff616017c",
+			"name": "FirstPersonControllerDefinition",
+			"timestamp": 1652893759,
+			"files": [ "Animations/characters/mc/data/FirstPersonControllerDefinition.xml" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "Animations/characters/mc/data/FirstPersonControllerDefinition.xml.cryasset",
+			"details": [ { "key": "rootTag", "value": "ControllerDef" } ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Xml",
+			"guid": "9f05792b-ae0b-4734-f71c-d0edfb988488",
+			"name": "Player",
+			"timestamp": 1652893759,
+			"files": [ "Animations/characters/mc/data/Player.xml" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "Animations/characters/mc/data/Player.xml.cryasset",
+			"details": [ { "key": "rootTag", "value": "MannequinPreview" } ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Xml",
+			"guid": "aa2410fe-ba1c-4cc3-7248-61a18b51ad8a",
+			"name": "PlayerFragmentIds",
+			"timestamp": 1652893759,
+			"files": [ "Animations/characters/mc/data/PlayerFragmentIds.xml" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "Animations/characters/mc/data/PlayerFragmentIds.xml.cryasset",
+			"details": [ { "key": "rootTag", "value": "TagDefinition" } ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Xml",
+			"guid": "c08b4200-3710-a09c-c2db-db7f82315116",
+			"name": "PlayerTags",
+			"timestamp": 1652893759,
+			"files": [ "Animations/characters/mc/data/PlayerTags.xml" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "Animations/characters/mc/data/PlayerTags.xml.cryasset",
+			"details": [ { "key": "rootTag", "value": "TagDefinition" } ],
+			"dependencies": [ ]
+		},
+		{
 			"type": "Level",
 			"guid": "cfabd5af-4ef0-c32a-cad0-cdca8bebf4d1",
 			"name": "woodland",
-			"timestamp": 1777306835,
+			"timestamp": 1783900543,
 			"files": [ "levels/woodland/woodland.level" ],
 			"workFiles": [ ],
 			"source": "",
@@ -5168,6 +5288,191 @@
 				},
 				{
 					"path": "%engine%/engineassets/textures/skys/night/half_moon.dds",
+					"usageCount": 0
+				},
+				{ "path": "animations/characters/mc/a_idle.caf", "usageCount": 0 },
+				{ "path": "animations/characters/mc/a_run.caf", "usageCount": 0 },
+				{ "path": "animations/characters/mc/a_walkback.caf", "usageCount": 0 },
+				{
+					"path": "animations/characters/mc/a_walkforward.caf",
+					"usageCount": 0
+				},
+				{ "path": "animations/characters/mc/a_walkleft.caf", "usageCount": 0 },
+				{ "path": "animations/characters/mc/a_walkright.caf", "usageCount": 0 },
+				{
+					"path": "animations/characters/mc/data/firstpersoncontrollerdefinition.xml",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/characters/mc/data/playerfragmentids.xml",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/characters/mc/data/playertags.xml",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/beard_transparency_diff.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/boots_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/boots_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/boxers_ddn.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/boxers_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/hair_clap_transparency_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/hair_transparency_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/male_brow_base_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/male_brow_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/pants_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/pants_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_cornea_l_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_cornea_r_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_eye_l_ddn.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_eye_l_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_eye_occlusion_l_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_eye_occlusion_r_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_eye_r_ddn.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_eye_r_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_eyelash_ddn.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_eyelash_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_lower_teeth_ddn.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_lower_teeth_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_nails_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_nails_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_skin_arm_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_skin_arm_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_skin_body_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_skin_body_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_skin_head_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_skin_head_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_skin_leg_ddn.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_skin_leg_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_tearline_l_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_tearline_r_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_tongue_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_tongue_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_upper_teeth_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/std_upper_teeth_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/tunic_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/characters/humans/mc/tunic_diffuse.dds",
 					"usageCount": 0
 				},
 				{
@@ -5547,6 +5852,18 @@
 					"usageCount": 0
 				},
 				{
+					"path": "editor/resourcecache/textures/items/weapons/melee/swords/starting_sword/starting_sword_ddna.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/items/weapons/melee/swords/starting_sword/starting_sword_diffuse.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "editor/resourcecache/textures/items/weapons/melee/swords/starting_sword/starting_sword_spec.dds",
+					"usageCount": 0
+				},
+				{
 					"path": "engineassets/materials/water/ocean_default.mtl",
 					"usageCount": 0
 				},
@@ -5554,15 +5871,12 @@
 					"path": "engineassets/texturemsg/defaultsolids.mtl",
 					"usageCount": 0
 				},
+				{ "path": "libs/config/defaultprofile.xml", "usageCount": 0 },
 				{ "path": "libs/particles/environment_fx.xml", "usageCount": 0 },
 				{ "path": "libs/particles/water.xml", "usageCount": 0 },
 				{ "path": "materials/decals/default.mtl", "usageCount": 0 },
 				{ "path": "materials/decals/mud/river_ground.mtl", "usageCount": 0 },
 				{ "path": "materials/default/black_reflective.mtl", "usageCount": 0 },
-				{
-					"path": "materials/default/collision_proxy_entitiesonly.mtl",
-					"usageCount": 0
-				},
 				{
 					"path": "materials/default/collision_proxy_entitiesonly.mtl",
 					"usageCount": 0
@@ -5651,8 +5965,66 @@
 					"path": "objects/characters/animals/insects/dragonfly_body.cgf",
 					"usageCount": 0
 				},
+				{ "path": "objects/characters/humans/mc/mc.cdf", "usageCount": 0 },
+				{ "path": "objects/characters/humans/mc/mc.chr", "usageCount": 0 },
+				{
+					"path": "objects/characters/humans/mc/mc_boots.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_boxers.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_cc_base_body.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_cc_base_eye.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_cc_base_eyeocclusion.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_cc_base_tearline.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_cc_base_teeth.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_cc_base_tongue.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_chin_curtain_sparse.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_male_brow_2.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_pants.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_short_blowback.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/mc_tunic.skin",
+					"usageCount": 0
+				},
 				{
 					"path": "objects/default/primitive_sphere_noproxy.cgf",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/items/weapons/melee/swords/starting_sword.cgf",
 					"usageCount": 0
 				},
 				{ "path": "objects/misc/haybale.cgf", "usageCount": 0 },
@@ -6400,7 +6772,7 @@
 			"type": "Environment",
 			"guid": "21bc35f4-d48b-f4e0-1d84-e7eface9c03b",
 			"name": "main",
-			"timestamp": 1777246355,
+			"timestamp": 1778026563,
 			"files": [ "libs/environmentpresets/example.env" ],
 			"workFiles": [ ],
 			"source": "",
@@ -6436,7 +6808,7 @@
 			"type": "Material",
 			"guid": "67c9a993-dcaf-900a-2162-7a2ec8714d3b",
 			"name": "br_bridge_wood",
-			"timestamp": 1776729092,
+			"timestamp": 1783832217,
 			"files": [ "materials/buildings/village/bridge/br_bridge_wood.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -6480,13 +6852,13 @@
 			"type": "Material",
 			"guid": "f83d9c95-fbbc-c872-9874-e756267e324c",
 			"name": "sb_wooden_bridge",
-			"timestamp": 1776729544,
+			"timestamp": 1783832207,
 			"files": [ "materials/buildings/village/bridge/sb_wooden_bridge.mtl" ],
 			"workFiles": [ ],
 			"source": "",
 			"metadata": "materials/buildings/village/bridge/sb_wooden_bridge.mtl.cryasset",
 			"details": [
-				{ "key": "subMaterialCount", "value": "5" },
+				{ "key": "subMaterialCount", "value": "6" },
 				{ "key": "textureCount", "value": "8" }
 			],
 			"dependencies": [
@@ -6528,7 +6900,7 @@
 			"type": "Material",
 			"guid": "1e027a28-28bd-ad79-c881-c49e6c597646",
 			"name": "loghouse",
-			"timestamp": 1777298773,
+			"timestamp": 1783832188,
 			"files": [ "materials/buildings/village/loghouse/loghouse.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -6614,7 +6986,7 @@
 			"type": "Material",
 			"guid": "47be163d-6649-bb3c-f8ed-85ab4a0512d3",
 			"name": "benches",
-			"timestamp": 1777055149,
+			"timestamp": 1783832240,
 			"files": [ "materials/buildings/village/misc/benches.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -6642,7 +7014,7 @@
 			"type": "Material",
 			"guid": "7e65b057-0813-5364-d582-52687f38a211",
 			"name": "table_a",
-			"timestamp": 1777055943,
+			"timestamp": 1783832251,
 			"files": [ "materials/buildings/village/misc/table_a.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -6734,6 +7106,191 @@
 			"dependencies": [
 				{
 					"path": "textures/sprites/insects/dragonfly/dragonfly_body.dds",
+					"usageCount": 1
+				}
+			]
+		},
+		{
+			"type": "Material",
+			"guid": "1099de69-78a2-91a7-d9c6-c4864763813d",
+			"name": "m_mc",
+			"timestamp": 1779583245,
+			"files": [ "materials/characters/humans/mc/m_mc.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "materials/characters/humans/mc/m_mc.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "28" },
+				{ "key": "textureCount", "value": "43" }
+			],
+			"dependencies": [
+				{
+					"path": "textures/characters/humans/mc/std_skin_head_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_skin_head_ddna.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_skin_body_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_skin_body_ddna.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_skin_arm_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_skin_arm_ddna.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_skin_leg_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_skin_leg_ddn.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_nails_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_nails_ddna.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_eyelash_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_eyelash_ddn.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_eye_r_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_eye_r_ddn.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_cornea_r_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_eye_l_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_eye_l_ddn.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_cornea_l_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_eye_occlusion_r_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_eye_occlusion_l_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_tearline_r_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_tearline_l_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_upper_teeth_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_upper_teeth_ddna.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_lower_teeth_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_lower_teeth_ddn.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_tongue_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/std_tongue_ddna.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/beard_transparency_diff.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/male_brow_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/male_brow_base_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/hair_transparency_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/hair_clap_transparency_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/boots_diffuse.dds",
+					"usageCount": 2
+				},
+				{
+					"path": "textures/characters/humans/mc/boots_ddna.dds",
+					"usageCount": 2
+				},
+				{
+					"path": "textures/characters/humans/mc/pants_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/pants_ddna.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/tunic_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/tunic_ddna.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/boxers_diffuse.dds",
+					"usageCount": 1
+				},
+				{
+					"path": "textures/characters/humans/mc/boxers_ddn.dds",
+					"usageCount": 1
+				},
+				{ "path": "%ENGINE%/EngineAssets/Textures/white.dds", "usageCount": 1 },
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white_ddn.dds",
 					"usageCount": 1
 				}
 			]
@@ -6836,7 +7393,7 @@
 			"type": "Material",
 			"guid": "7c88a6cf-80b7-89d0-cb19-90ad5904b8bd",
 			"name": "material_default",
-			"timestamp": 1776875951,
+			"timestamp": 1783900120,
 			"files": [ "materials/default/material_default.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -6847,6 +7404,34 @@
 			],
 			"dependencies": [
 				{ "path": "%engine%/engineassets/textures/grey.dds", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "Material",
+			"guid": "71c15182-fa90-a7d9-d0b8-376ad1cadd8d",
+			"name": "starting_sword",
+			"timestamp": 1782587900,
+			"files": [ "materials/items/weapons/melee/swords/starting_sword.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "materials/items/weapons/melee/swords/starting_sword.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "2" },
+				{ "key": "textureCount", "value": "3" }
+			],
+			"dependencies": [
+				{
+					"path": "textures/items/weapons/melee/swords/starting_sword/starting_sword_diffuse.dds",
+					"usageCount": 2
+				},
+				{
+					"path": "textures/items/weapons/melee/swords/starting_sword/starting_sword_ddna.dds",
+					"usageCount": 2
+				},
+				{
+					"path": "textures/items/weapons/melee/swords/starting_sword/starting_sword_spec.dds",
+					"usageCount": 2
+				}
 			]
 		},
 		{
@@ -6871,7 +7456,7 @@
 			"type": "Material",
 			"guid": "30552df4-66eb-20d9-5dd5-9830278c9538",
 			"name": "forest",
-			"timestamp": 1777161086,
+			"timestamp": 1783832354,
 			"files": [ "materials/nature/biome/forest/forest.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -7007,7 +7592,7 @@
 			"type": "Material",
 			"guid": "38d2f060-3b70-fcfd-eac4-2ced03afd93d",
 			"name": "river",
-			"timestamp": 1776886464,
+			"timestamp": 1783832384,
 			"files": [ "materials/nature/biome/river/river.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -7116,7 +7701,7 @@
 			"type": "Material",
 			"guid": "3253a1f8-322f-2ad6-c25d-97be0852965f",
 			"name": "bush_round_leaf",
-			"timestamp": 1776713831,
+			"timestamp": 1783832398,
 			"files": [ "materials/nature/bushes/bush_round_leaf.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -7144,7 +7729,7 @@
 			"type": "Material",
 			"guid": "a2c3f67d-2d25-1b08-9ee7-f5fbb4744236",
 			"name": "bush_round_leaf_dark",
-			"timestamp": 1776728049,
+			"timestamp": 1783832404,
 			"files": [ "materials/nature/bushes/bush_round_leaf_dark.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -7312,7 +7897,7 @@
 			"type": "Material",
 			"guid": "cef2cba2-e5ba-0fb7-f523-baad7f8301ab",
 			"name": "grass_tall",
-			"timestamp": 1776723826,
+			"timestamp": 1783832549,
 			"files": [ "materials/nature/grass/tall/grass_tall.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -7341,7 +7926,7 @@
 			"type": "Material",
 			"guid": "2afa963d-49cc-5945-d3f6-14c1c3a6e09b",
 			"name": "grass_tall_dark",
-			"timestamp": 1776724724,
+			"timestamp": 1783832542,
 			"files": [ "materials/nature/grass/tall/grass_tall_dark.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -7370,7 +7955,7 @@
 			"type": "Material",
 			"guid": "ec8f1051-a282-72ce-0b9c-5af100c68255",
 			"name": "grass_tall_flat",
-			"timestamp": 1776724747,
+			"timestamp": 1783832546,
 			"files": [ "materials/nature/grass/tall/grass_tall_flat.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -7399,13 +7984,13 @@
 			"type": "Material",
 			"guid": "bb2b599b-dda8-700a-916b-f88da0792804",
 			"name": "canyon",
-			"timestamp": 1776886989,
+			"timestamp": 1783899500,
 			"files": [ "materials/nature/rocks/canyon.mtl" ],
 			"workFiles": [ ],
 			"source": "",
 			"metadata": "materials/nature/rocks/canyon.mtl.cryasset",
 			"details": [
-				{ "key": "subMaterialCount", "value": "13" },
+				{ "key": "subMaterialCount", "value": "14" },
 				{ "key": "textureCount", "value": "26" }
 			],
 			"dependencies": [
@@ -7519,7 +8104,7 @@
 			"type": "Material",
 			"guid": "b5757866-30bc-1867-53b4-6df7523021fc",
 			"name": "canyon_weathered",
-			"timestamp": 1776890885,
+			"timestamp": 1783832812,
 			"files": [ "materials/nature/rocks/canyon_weathered.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -7635,7 +8220,7 @@
 			"type": "Material",
 			"guid": "17ee5428-383b-90f1-1dd0-9223fa210bcf",
 			"name": "forest_monoliths",
-			"timestamp": 1776887059,
+			"timestamp": 1783832624,
 			"files": [ "materials/nature/rocks/forest_monoliths.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -7663,13 +8248,13 @@
 			"type": "Material",
 			"guid": "281a8eac-d786-ccc1-9420-43fcf70b7fed",
 			"name": "stone_toad",
-			"timestamp": 1776898702,
+			"timestamp": 1783832861,
 			"files": [ "materials/nature/rocks/stone_toad.mtl" ],
 			"workFiles": [ ],
 			"source": "",
 			"metadata": "materials/nature/rocks/stone_toad.mtl.cryasset",
 			"details": [
-				{ "key": "subMaterialCount", "value": "4" },
+				{ "key": "subMaterialCount", "value": "5" },
 				{ "key": "textureCount", "value": "11" }
 			],
 			"dependencies": [
@@ -7981,7 +8566,7 @@
 			"type": "Material",
 			"guid": "285d72d9-be99-f354-5b75-6b703aa893e0",
 			"name": "forest_path_stones",
-			"timestamp": 1776731799,
+			"timestamp": 1783820367,
 			"files": [ "materials/roads/forest_path_stones.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -8026,7 +8611,7 @@
 			"type": "Material",
 			"guid": "32918f4c-8a02-0dbc-52e4-88f27b1bc19b",
 			"name": "canyon_rock_terrain",
-			"timestamp": 1776876738,
+			"timestamp": 1783893117,
 			"files": [ "materials/terrain/canyon_rock_terrain.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -8050,7 +8635,7 @@
 			"type": "Material",
 			"guid": "442c3dd0-4793-ab34-fa50-8ca1cebb5b65",
 			"name": "forest_terrain",
-			"timestamp": 1776894699,
+			"timestamp": 1783832089,
 			"files": [ "materials/terrain/forest_terrain.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -8078,7 +8663,7 @@
 			"type": "Material",
 			"guid": "b4807a84-ad66-0d0f-c019-524b907a74d9",
 			"name": "moss_terrain",
-			"timestamp": 1776901979,
+			"timestamp": 1783832102,
 			"files": [ "materials/terrain/moss_terrain.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -8102,7 +8687,7 @@
 			"type": "Material",
 			"guid": "189babb2-bffb-7d5b-ff01-f8371caac310",
 			"name": "river_ground_terrain",
-			"timestamp": 1776876718,
+			"timestamp": 1783898424,
 			"files": [ "materials/terrain/river_ground_terrain.mtl" ],
 			"workFiles": [ ],
 			"source": "",
@@ -8128,18 +8713,18 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "028a7a35-ceb9-7ca4-a751-e4afe1c5e9c8",
+			"guid": "f0426bf3-f88d-d6b2-4e66-5851bc4f38a4",
 			"name": "sb_wooden_bridge_support01",
-			"timestamp": 1777298396,
+			"timestamp": 1780008293,
 			"files": [ "objects/buildings/village/bridge/sb_wooden_bridge_support01.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/bridge/sb_wooden_bridge_support01.fbx",
 			"metadata": "objects/buildings/village/bridge/sb_wooden_bridge_support01.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "2" },
+				{ "key": "materialCount", "value": "7" },
 				{ "key": "triangleCount", "value": "48" },
-				{ "key": "vertexCount", "value": "100" }
+				{ "key": "vertexCount", "value": "84" }
 			],
 			"dependencies": [
 				{
@@ -8150,9 +8735,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "ca4ca6bc-33ee-a591-8a41-2fcfa9ab9dd6",
+			"guid": "874a1ffd-0a7e-7e40-0ec0-4108217f0f85",
 			"name": "wooden_bridge_forest",
-			"timestamp": 1777298438,
+			"timestamp": 1780008381,
 			"files": [ "objects/buildings/village/bridge/wooden_bridge_forest.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/bridge/wooden_bridge_forest.fbx",
@@ -8172,9 +8757,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "0fbb8662-57d7-27ed-2a6c-d9a2a36ab581",
+			"guid": "794f4acb-41b5-4007-095d-19565046948e",
 			"name": "loghouse_blue",
-			"timestamp": 1777298553,
+			"timestamp": 1780009094,
 			"files": [ "objects/buildings/village/loghouse/loghouse_blue.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/loghouse/loghouse_blue.fbx",
@@ -8183,7 +8768,7 @@
 				{ "key": "16BitPrecision", "value": "false" },
 				{ "key": "materialCount", "value": "14" },
 				{ "key": "triangleCount", "value": "49447" },
-				{ "key": "vertexCount", "value": "91229" }
+				{ "key": "vertexCount", "value": "91227" }
 			],
 			"dependencies": [
 				{
@@ -8194,9 +8779,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "7baba89a-7cbc-b1a0-52e1-565f39e51fae",
+			"guid": "05ea6857-bcd1-4723-1e03-5d747ad96ae2",
 			"name": "loghouse_grey",
-			"timestamp": 1777298627,
+			"timestamp": 1780005461,
 			"files": [ "objects/buildings/village/loghouse/loghouse_grey.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/loghouse/loghouse_grey.fbx",
@@ -8205,7 +8790,7 @@
 				{ "key": "16BitPrecision", "value": "false" },
 				{ "key": "materialCount", "value": "12" },
 				{ "key": "triangleCount", "value": "49507" },
-				{ "key": "vertexCount", "value": "91407" }
+				{ "key": "vertexCount", "value": "91405" }
 			],
 			"dependencies": [
 				{
@@ -8216,16 +8801,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "ba0762ac-2731-b0db-10a7-d20f81c248c9",
+			"guid": "9bfd900b-dcbc-1f54-006f-3dfa2aa6c430",
 			"name": "loghouse_pile",
-			"timestamp": 1777298729,
+			"timestamp": 1780009180,
 			"files": [ "objects/buildings/village/loghouse/loghouse_pile.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/loghouse/loghouse_pile.fbx",
 			"metadata": "objects/buildings/village/loghouse/loghouse_pile.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "10" },
+				{ "key": "materialCount", "value": "6" },
 				{ "key": "triangleCount", "value": "19258" },
 				{ "key": "vertexCount", "value": "24280" }
 			],
@@ -8260,16 +8845,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "006c74df-fb97-8242-b843-46cd6daaf214",
+			"guid": "fad4c541-7813-0968-b187-68f9c49946c9",
 			"name": "bench_a",
-			"timestamp": 1777298902,
+			"timestamp": 1780009629,
 			"files": [ "objects/buildings/village/misc/bench_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/misc/bench_a.fbx",
 			"metadata": "objects/buildings/village/misc/bench_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "6" },
+				{ "key": "materialCount", "value": "7" },
 				{ "key": "triangleCount", "value": "423" },
 				{ "key": "vertexCount", "value": "348" }
 			],
@@ -8282,9 +8867,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "57a287f9-3338-fd08-9a9a-17d7c7ef2ca4",
+			"guid": "5c2419fd-e303-f9f9-3002-100c2a0555ae",
 			"name": "table_a",
-			"timestamp": 1777298951,
+			"timestamp": 1780009718,
 			"files": [ "objects/buildings/village/misc/table_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/misc/table_a.fbx",
@@ -8304,16 +8889,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "af045fdb-51f4-3809-4b69-92ca721d8b4b",
+			"guid": "ccdc0c82-ba75-77af-3a8b-0c009ec9beed",
 			"name": "stacked_logs_full_2m_a",
-			"timestamp": 1777299017,
+			"timestamp": 1780010350,
 			"files": [ "objects/buildings/village/stacked_logs/stacked_logs_full_2m_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/stacked_logs/stacked_logs_full_2m_a.fbx",
 			"metadata": "objects/buildings/village/stacked_logs/stacked_logs_full_2m_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "4" },
+				{ "key": "materialCount", "value": "5" },
 				{ "key": "triangleCount", "value": "3204" },
 				{ "key": "vertexCount", "value": "5807" }
 			],
@@ -8326,16 +8911,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "2bde03dd-9db2-1a7e-abb8-d37d813471fd",
+			"guid": "b27e6314-c0cb-0d27-da64-5613786be481",
 			"name": "stacked_logs_half_4m_a",
-			"timestamp": 1777299056,
+			"timestamp": 1780010413,
 			"files": [ "objects/buildings/village/stacked_logs/stacked_logs_half_4m_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/stacked_logs/stacked_logs_half_4m_a.fbx",
 			"metadata": "objects/buildings/village/stacked_logs/stacked_logs_half_4m_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "4" },
+				{ "key": "materialCount", "value": "5" },
 				{ "key": "triangleCount", "value": "2396" },
 				{ "key": "vertexCount", "value": "4318" }
 			],
@@ -8348,16 +8933,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "c0868e20-8b7b-c42d-f218-000fc56588cb",
+			"guid": "587ca226-dda7-2405-be18-d22f68e550b8",
 			"name": "stacked_logs_half_4m_b",
-			"timestamp": 1777299088,
+			"timestamp": 1780010458,
 			"files": [ "objects/buildings/village/stacked_logs/stacked_logs_half_4m_b.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/buildings/village/stacked_logs/stacked_logs_half_4m_b.fbx",
 			"metadata": "objects/buildings/village/stacked_logs/stacked_logs_half_4m_b.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "4" },
+				{ "key": "materialCount", "value": "5" },
 				{ "key": "triangleCount", "value": "1454" },
 				{ "key": "vertexCount", "value": "2414" }
 			],
@@ -8391,6 +8976,366 @@
 			]
 		},
 		{
+			"type": "Character",
+			"guid": "6abecda2-8b2d-3b69-58ee-1aaef616707a",
+			"name": "MC",
+			"timestamp": 1779583369,
+			"files": [ "objects/characters/humans/mc/MC.cdf" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "objects/characters/humans/mc/MC.cdf.cryasset",
+			"details": [ ],
+			"dependencies": [
+				{ "path": "objects/characters/humans/mc/MC.chr", "usageCount": 0 },
+				{
+					"path": "objects/characters/humans/mc/MC_boots.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_Boxers.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_CC_Base_Body.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_CC_Base_Eye.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_CC_Base_EyeOcclusion.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_CC_Base_TearLine.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_CC_Base_Teeth.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_CC_Base_Tongue.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_Chin_Curtain_Sparse.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_Male_Brow_2.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_pants.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_Short_blowback.skin",
+					"usageCount": 0
+				},
+				{
+					"path": "objects/characters/humans/mc/MC_tunic.skin",
+					"usageCount": 0
+				}
+			]
+		},
+		{
+			"type": "Mesh",
+			"guid": "8b8e282e-3b16-27d8-aa81-7cbcd2e93089",
+			"name": "MC",
+			"timestamp": 1779580720,
+			"files": [ "objects/characters/humans/mc/MC.cgf" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC.cgf.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "145904" },
+				{ "key": "vertexCount", "value": "110265" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "Skeleton",
+			"guid": "1d721ea1-37ed-b620-23e8-686f2e88ccf2",
+			"name": "MC",
+			"timestamp": 1779724176,
+			"files": [
+				"objects/characters/humans/mc/MC.chr",
+				"objects/characters/humans/mc/MC.chrparams"
+			],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC.chr.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "4bf29088-d496-8177-b6de-f926c5eea394",
+			"name": "MC_boots",
+			"timestamp": 1779583561,
+			"files": [ "objects/characters/humans/mc/MC_boots.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_boots.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "32" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "15758" },
+				{ "key": "vertexCount", "value": "13364" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "fdb392f6-395f-b811-7116-5346d6f51a6d",
+			"name": "MC_Boxers",
+			"timestamp": 1779583320,
+			"files": [ "objects/characters/humans/mc/MC_Boxers.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_Boxers.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "12" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "1212" },
+				{ "key": "vertexCount", "value": "792" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "d4b09729-d199-e450-bd28-867a0e397fa4",
+			"name": "MC_CC_Base_Body",
+			"timestamp": 1779583436,
+			"files": [ "objects/characters/humans/mc/MC_CC_Base_Body.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_CC_Base_Body.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "59" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "17490" },
+				{ "key": "vertexCount", "value": "9732" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "71a98b36-cfbf-ab05-e702-46f10843a38a",
+			"name": "MC_CC_Base_Eye",
+			"timestamp": 1779583493,
+			"files": [ "objects/characters/humans/mc/MC_CC_Base_Eye.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_CC_Base_Eye.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "12" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "1280" },
+				{ "key": "vertexCount", "value": "756" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "358c4104-9596-d467-16e6-057c8c29b910",
+			"name": "MC_CC_Base_EyeOcclusion",
+			"timestamp": 1779583499,
+			"files": [ "objects/characters/humans/mc/MC_CC_Base_EyeOcclusion.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_CC_Base_EyeOcclusion.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "9" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "288" },
+				{ "key": "vertexCount", "value": "182" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "3ab3d95b-c9dc-f228-53e8-d467a806e252",
+			"name": "MC_CC_Base_TearLine",
+			"timestamp": 1779583506,
+			"files": [ "objects/characters/humans/mc/MC_CC_Base_TearLine.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_CC_Base_TearLine.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "9" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "272" },
+				{ "key": "vertexCount", "value": "196" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "f61f04d8-014f-117e-bb47-6b48b982ddb1",
+			"name": "MC_CC_Base_Teeth",
+			"timestamp": 1779583514,
+			"files": [ "objects/characters/humans/mc/MC_CC_Base_Teeth.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_CC_Base_Teeth.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "14" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "4842" },
+				{ "key": "vertexCount", "value": "2902" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "85b0751a-4446-d34a-9b52-f42f9535d689",
+			"name": "MC_CC_Base_Tongue",
+			"timestamp": 1779583520,
+			"files": [ "objects/characters/humans/mc/MC_CC_Base_Tongue.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_CC_Base_Tongue.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "14" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "592" },
+				{ "key": "vertexCount", "value": "331" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "eb816987-e41f-4c6a-0ed2-925f8e37006f",
+			"name": "MC_Chin_Curtain_Sparse",
+			"timestamp": 1779583525,
+			"files": [ "objects/characters/humans/mc/MC_Chin_Curtain_Sparse.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_Chin_Curtain_Sparse.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "9" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "11768" },
+				{ "key": "vertexCount", "value": "16522" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "291341ec-e472-9abe-d86f-e61edf5d1a4b",
+			"name": "MC_Male_Brow_2",
+			"timestamp": 1779583548,
+			"files": [ "objects/characters/humans/mc/MC_Male_Brow_2.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_Male_Brow_2.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "9" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "1066" },
+				{ "key": "vertexCount", "value": "1347" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "d04cf481-ee8e-a06d-8e62-823fb4c71373",
+			"name": "MC_pants",
+			"timestamp": 1779583567,
+			"files": [ "objects/characters/humans/mc/MC_pants.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_pants.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "21" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "4760" },
+				{ "key": "vertexCount", "value": "3141" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "49607829-d515-ea3a-b267-d4b5baefb0cb",
+			"name": "MC_Short_blowback",
+			"timestamp": 1779583555,
+			"files": [ "objects/characters/humans/mc/MC_Short_blowback.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_Short_blowback.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "9" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "23506" },
+				{ "key": "vertexCount", "value": "26533" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
+			"type": "SkinnedMesh",
+			"guid": "6e917460-52f6-5d1c-bf8c-c09e68895cc8",
+			"name": "MC_tunic",
+			"timestamp": 1779583574,
+			"files": [ "objects/characters/humans/mc/MC_tunic.skin" ],
+			"workFiles": [ ],
+			"source": "objects/characters/humans/mc/MC.fbx",
+			"metadata": "objects/characters/humans/mc/MC_tunic.skin.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "bonesCount", "value": "38" },
+				{ "key": "materialCount", "value": "28" },
+				{ "key": "triangleCount", "value": "63070" },
+				{ "key": "vertexCount", "value": "34467" }
+			],
+			"dependencies": [
+				{ "path": "materials/characters/humans/mc/m_mc.mtl", "usageCount": 1 }
+			]
+		},
+		{
 			"type": "Mesh",
 			"guid": "4cbe27d9-373d-d34d-0e45-f42a192ba9ba",
 			"name": "primitive_sphere_noproxy",
@@ -8411,16 +9356,38 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "dbd865ff-1364-3592-2935-d5493c58e7dd",
+			"guid": "dfb92ec6-4a13-389a-4d67-a393df7351d8",
+			"name": "starting_sword",
+			"timestamp": 1782587922,
+			"files": [ "objects/items/weapons/melee/swords/starting_sword.cgf" ],
+			"workFiles": [ ],
+			"source": "objects/items/weapons/melee/swords/starting_sword.fbx",
+			"metadata": "objects/items/weapons/melee/swords/starting_sword.cgf.cryasset",
+			"details": [
+				{ "key": "16BitPrecision", "value": "false" },
+				{ "key": "materialCount", "value": "3" },
+				{ "key": "triangleCount", "value": "862" },
+				{ "key": "vertexCount", "value": "827" }
+			],
+			"dependencies": [
+				{
+					"path": "materials/items/weapons/melee/swords/starting_sword.mtl",
+					"usageCount": 1
+				}
+			]
+		},
+		{
+			"type": "Mesh",
+			"guid": "c1880d3b-7672-c6e1-e653-ae6017b4fc05",
 			"name": "haybale",
-			"timestamp": 1777303039,
+			"timestamp": 1780010804,
 			"files": [ "objects/misc/haybale.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/misc/haybale.fbx",
 			"metadata": "objects/misc/haybale.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "3" },
+				{ "key": "materialCount", "value": "4" },
 				{ "key": "triangleCount", "value": "4972" },
 				{ "key": "vertexCount", "value": "9291" }
 			],
@@ -8931,16 +9898,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "4462b448-959e-5942-6ef2-98b75e7d76ee",
+			"guid": "d5cc4543-f7b5-c56d-8cb7-697fead6a809",
 			"name": "wood_pile_a",
-			"timestamp": 1777161713,
+			"timestamp": 1780019309,
 			"files": [ "objects/nature/misc/wood_pile_a/wood_pile_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/misc/wood_pile_a/wood_pile_a.fbx",
 			"metadata": "objects/nature/misc/wood_pile_a/wood_pile_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "7" },
+				{ "key": "materialCount", "value": "14" },
 				{ "key": "triangleCount", "value": "5436" },
 				{ "key": "vertexCount", "value": "4470" }
 			],
@@ -8950,16 +9917,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "32500a31-3622-bda9-69c6-40526e6b2399",
+			"guid": "9468137d-350f-f6b5-8abb-548c91361857",
 			"name": "wood_pile_b",
-			"timestamp": 1777161810,
+			"timestamp": 1780019426,
 			"files": [ "objects/nature/misc/wood_pile_b/wood_pile_b.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/misc/wood_pile_b/wood_pile_b.fbx",
 			"metadata": "objects/nature/misc/wood_pile_b/wood_pile_b.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "7" },
+				{ "key": "materialCount", "value": "14" },
 				{ "key": "triangleCount", "value": "6644" },
 				{ "key": "vertexCount", "value": "5333" }
 			],
@@ -8969,16 +9936,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "aeb5f9fa-d9e0-5910-adba-3680b7997d29",
+			"guid": "6a6a838c-3e8e-cb72-a34f-880209f40f8e",
 			"name": "wood_pile_c",
-			"timestamp": 1777161894,
+			"timestamp": 1780019562,
 			"files": [ "objects/nature/misc/wood_pile_c/wood_pile_c.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/misc/wood_pile_c/wood_pile_c.fbx",
 			"metadata": "objects/nature/misc/wood_pile_c/wood_pile_c.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "7" },
+				{ "key": "materialCount", "value": "14" },
 				{ "key": "triangleCount", "value": "6949" },
 				{ "key": "vertexCount", "value": "5525" }
 			],
@@ -8988,16 +9955,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "97e5432f-25e0-332b-1ccc-0ff10ebe2880",
+			"guid": "45b6c5a7-4de3-912d-82a7-3dfe95caed7c",
 			"name": "canyon_path_a",
-			"timestamp": 1777239296,
+			"timestamp": 1780094799,
 			"files": [ "objects/nature/rocks/canyon_path_a/canyon_path_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_path_a/canyon_path_a.fbx",
 			"metadata": "objects/nature/rocks/canyon_path_a/canyon_path_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "7" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "6698" },
 				{ "key": "vertexCount", "value": "3846" }
 			],
@@ -9007,16 +9974,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "816cc53d-e4d1-cd8c-d37c-4922c47c296c",
+			"guid": "069e365a-dd4a-f64c-bfaa-202955b94fee",
 			"name": "canyon_rock_a",
-			"timestamp": 1777238187,
+			"timestamp": 1780079658,
 			"files": [ "objects/nature/rocks/canyon_rock_a/canyon_rock_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_rock_a/canyon_rock_a.fbx",
 			"metadata": "objects/nature/rocks/canyon_rock_a/canyon_rock_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "3" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "1714" },
 				{ "key": "vertexCount", "value": "1040" }
 			],
@@ -9026,16 +9993,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "06908487-2de4-2d47-6ad5-0a50041b0fae",
+			"guid": "1c953547-fc15-7b0a-51d5-2d8aef0f2b6b",
 			"name": "canyon_rock_a_moss",
-			"timestamp": 1777238636,
+			"timestamp": 1780079914,
 			"files": [ "objects/nature/rocks/canyon_rock_a_moss/canyon_rock_a_moss.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_rock_a_moss/canyon_rock_a_moss.fbx",
 			"metadata": "objects/nature/rocks/canyon_rock_a_moss/canyon_rock_a_moss.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "9" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "1792" },
 				{ "key": "vertexCount", "value": "1105" }
 			],
@@ -9045,16 +10012,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "efc3d797-3f0d-4865-04e9-c30dcdcca503",
+			"guid": "4d5b6fb7-476e-42f8-fd39-539d124c70a2",
 			"name": "canyon_rock_a_wet",
-			"timestamp": 1777238890,
+			"timestamp": 1780080114,
 			"files": [ "objects/nature/rocks/canyon_rock_a_wet/canyon_rock_a_wet.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_rock_a_wet/canyon_rock_a_wet.fbx",
 			"metadata": "objects/nature/rocks/canyon_rock_a_wet/canyon_rock_a_wet.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "9" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "1792" },
 				{ "key": "vertexCount", "value": "1105" }
 			],
@@ -9064,16 +10031,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "02397b13-e781-a8e0-da50-291944681703",
+			"guid": "86d69a30-c494-4789-8a07-f951d22d02e2",
 			"name": "canyon_rock_b",
-			"timestamp": 1777239243,
+			"timestamp": 1780080378,
 			"files": [ "objects/nature/rocks/canyon_rock_b/canyon_rock_b.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_rock_b/canyon_rock_b.fbx",
 			"metadata": "objects/nature/rocks/canyon_rock_b/canyon_rock_b.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "13" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "1202" },
 				{ "key": "vertexCount", "value": "758" }
 			],
@@ -9083,16 +10050,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "984afa7a-6725-74c1-36a8-07981b97345f",
+			"guid": "d306a612-f05c-144b-cd15-6de17006200c",
 			"name": "canyon_rock_d_moss",
-			"timestamp": 1777239549,
+			"timestamp": 1780081413,
 			"files": [ "objects/nature/rocks/canyon_rock_d_moss/canyon_rock_d_moss.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_rock_d_moss/canyon_rock_d_moss.fbx",
 			"metadata": "objects/nature/rocks/canyon_rock_d_moss/canyon_rock_d_moss.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "10" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "3398" },
 				{ "key": "vertexCount", "value": "2043" }
 			],
@@ -9102,16 +10069,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "4c66bfe1-f28a-db6b-d308-34bde73505b0",
+			"guid": "09adb15c-809e-d37c-5a80-6ee417b49719",
 			"name": "canyon_rock_e_wall",
-			"timestamp": 1777239771,
+			"timestamp": 1780096324,
 			"files": [ "objects/nature/rocks/canyon_rock_e_wall/canyon_rock_e_wall.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_rock_e_wall/canyon_rock_e_wall.fbx",
 			"metadata": "objects/nature/rocks/canyon_rock_e_wall/canyon_rock_e_wall.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "11" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "7958" },
 				{ "key": "vertexCount", "value": "4327" }
 			],
@@ -9121,16 +10088,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "297c6207-c03d-ffc5-9d24-8cefc9cb2108",
+			"guid": "44341c20-7e4b-ccbe-9552-80210ecc553b",
 			"name": "canyon_wall_high_a",
-			"timestamp": 1777239862,
+			"timestamp": 1780172353,
 			"files": [ "objects/nature/rocks/canyon_wall_high_a/canyon_wall_high_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_wall_high_a/canyon_wall_high_a.fbx",
 			"metadata": "objects/nature/rocks/canyon_wall_high_a/canyon_wall_high_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "2" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "13858" },
 				{ "key": "vertexCount", "value": "8151" }
 			],
@@ -9140,16 +10107,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "f573f0ec-b917-9f85-fcaa-52f9d9bfbf72",
+			"guid": "56de20ee-ddaa-e156-b295-1fa0dceb3f31",
 			"name": "canyon_wall_river_a",
-			"timestamp": 1777240099,
+			"timestamp": 1780107206,
 			"files": [ "objects/nature/rocks/canyon_wall_river_a/canyon_wall_river_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_wall_river_a/canyon_wall_river_a.fbx",
 			"metadata": "objects/nature/rocks/canyon_wall_river_a/canyon_wall_river_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "3978" },
 				{ "key": "vertexCount", "value": "2213" }
 			],
@@ -9159,16 +10126,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "cdbe01c8-ac52-f3e0-5135-2060b9b811a6",
+			"guid": "b37d4be8-9cc0-793f-a197-bb6bbcba82f0",
 			"name": "canyon_waterfall",
-			"timestamp": 1777240298,
+			"timestamp": 1780085243,
 			"files": [ "objects/nature/rocks/canyon_waterfall/canyon_waterfall.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/canyon_waterfall/canyon_waterfall.fbx",
 			"metadata": "objects/nature/rocks/canyon_waterfall/canyon_waterfall.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "15" },
 				{ "key": "triangleCount", "value": "7500" },
 				{ "key": "vertexCount", "value": "4466" }
 			],
@@ -9178,9 +10145,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "b6740019-2c75-58c1-37a1-1208348f6f7b",
+			"guid": "157d7f65-9723-cf05-5921-9203b93472f5",
 			"name": "forest_monolith_a",
-			"timestamp": 1777240480,
+			"timestamp": 1780085653,
 			"files": [ "objects/nature/rocks/forest_monolith_a/forest_monolith_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/forest_monolith_a/forest_monolith_a.fbx",
@@ -9200,9 +10167,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "b039b12a-612b-8114-79b5-ed70035493d8",
+			"guid": "cf34054a-624d-ff98-5e23-37e65f931df3",
 			"name": "forest_monolith_b",
-			"timestamp": 1777240641,
+			"timestamp": 1780088829,
 			"files": [ "objects/nature/rocks/forest_monolith_b/forest_monolith_b.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/forest_monolith_b/forest_monolith_b.fbx",
@@ -9222,9 +10189,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "eff80016-41ea-bb4a-c726-5b7ba90d83bb",
+			"guid": "914e247a-33fd-9aa5-ec58-91954085e524",
 			"name": "forest_monolith_c",
-			"timestamp": 1777241500,
+			"timestamp": 1780089190,
 			"files": [ "objects/nature/rocks/forest_monolith_c/forest_monolith_c.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/forest_monolith_c/forest_monolith_c.fbx",
@@ -9244,9 +10211,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "45120a53-8c9a-df04-4f46-81c2b36be7a8",
+			"guid": "9456cd06-2a02-8437-98a3-ffe1b72d49e0",
 			"name": "forest_monolith_d",
-			"timestamp": 1777241534,
+			"timestamp": 1780091736,
 			"files": [ "objects/nature/rocks/forest_monolith_d/forest_monolith_d.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/forest_monolith_d/forest_monolith_d.fbx",
@@ -9266,9 +10233,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "41d10db7-c9e3-cf52-d7cd-6d914b097ee8",
+			"guid": "f0e5b95c-2c03-2960-f2e7-dbcdb2600e7d",
 			"name": "forest_monolith_e",
-			"timestamp": 1777241563,
+			"timestamp": 1780093589,
 			"files": [ "objects/nature/rocks/forest_monolith_e/forest_monolith_e.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/forest_monolith_e/forest_monolith_e.fbx",
@@ -9288,9 +10255,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "f80898f0-fa15-3ae8-b75a-e68acc793042",
+			"guid": "30782df2-9e2b-bbef-3666-b5117a509548",
 			"name": "forest_monolith_f",
-			"timestamp": 1777243473,
+			"timestamp": 1780101048,
 			"files": [ "objects/nature/rocks/forest_monolith_f/forest_monolith_f.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/forest_monolith_f/forest_monolith_f.fbx",
@@ -9310,9 +10277,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "ab6c459b-04ea-30ba-037d-8c57955fdb8e",
+			"guid": "3c24b228-32cc-5905-fb16-fdbd4710c27c",
 			"name": "forest_monolith_g",
-			"timestamp": 1777243538,
+			"timestamp": 1780101816,
 			"files": [ "objects/nature/rocks/forest_monolith_g/forest_monolith_g.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/forest_monolith_g/forest_monolith_g.fbx",
@@ -9332,16 +10299,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "e181e149-f01e-70d2-2a7d-c1c1d67c5943",
+			"guid": "6a097e43-0dcd-2b0c-f6db-d2d55f97dd15",
 			"name": "rock_forest_group_a",
-			"timestamp": 1777243727,
+			"timestamp": 1780102984,
 			"files": [ "objects/nature/rocks/rock_forest_group_a/rock_forest_group_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/rock_forest_group_a/rock_forest_group_a.fbx",
 			"metadata": "objects/nature/rocks/rock_forest_group_a/rock_forest_group_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "45736" },
 				{ "key": "vertexCount", "value": "29582" }
 			],
@@ -9351,16 +10318,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "f87b4545-6049-b4ec-0093-cfb8bad3780d",
+			"guid": "891f199d-6322-57a4-c8be-56490a08e3e3",
 			"name": "rock_forest_group_b",
-			"timestamp": 1777243860,
+			"timestamp": 1780103402,
 			"files": [ "objects/nature/rocks/rock_forest_group_b/rock_forest_group_b.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/rock_forest_group_b/rock_forest_group_b.fbx",
 			"metadata": "objects/nature/rocks/rock_forest_group_b/rock_forest_group_b.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "43577" },
 				{ "key": "vertexCount", "value": "29306" }
 			],
@@ -9370,16 +10337,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "8a3515bd-a0b0-4bef-70ff-89e9a88011d4",
+			"guid": "6c320776-ae5b-16ce-11cb-1e18775a826c",
 			"name": "rock_forest_group_c",
-			"timestamp": 1777243947,
+			"timestamp": 1780104098,
 			"files": [ "objects/nature/rocks/rock_forest_group_c/rock_forest_group_c.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/rock_forest_group_c/rock_forest_group_c.fbx",
 			"metadata": "objects/nature/rocks/rock_forest_group_c/rock_forest_group_c.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "34538" },
 				{ "key": "vertexCount", "value": "21402" }
 			],
@@ -9389,16 +10356,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "fd612c14-ec3a-8094-07b1-27d91429f406",
+			"guid": "5f1db9fe-6e7c-0f42-6835-80f25d4ad92d",
 			"name": "rock_forest_group_d",
-			"timestamp": 1777244044,
+			"timestamp": 1780104338,
 			"files": [ "objects/nature/rocks/rock_forest_group_d/rock_forest_group_d.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/rock_forest_group_d/rock_forest_group_d.fbx",
 			"metadata": "objects/nature/rocks/rock_forest_group_d/rock_forest_group_d.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "55938" },
 				{ "key": "vertexCount", "value": "36343" }
 			],
@@ -9408,9 +10375,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "20a9313f-2585-b729-8903-4323db58a5b7",
+			"guid": "3d39f619-01b7-6b9f-c80f-9745b22347b8",
 			"name": "rock_forest_group_no_moss_a",
-			"timestamp": 1777244181,
+			"timestamp": 1780105006,
 			"files": [
 				"objects/nature/rocks/rock_forest_group_no_moss_a/rock_forest_group_no_moss_a.cgf"
 			],
@@ -9419,7 +10386,7 @@
 			"metadata": "objects/nature/rocks/rock_forest_group_no_moss_a/rock_forest_group_no_moss_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "11" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "32092" },
 				{ "key": "vertexCount", "value": "20377" }
 			],
@@ -9429,9 +10396,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "7a1f1ceb-a127-a915-f4ee-884cd9849323",
+			"guid": "b8fbcdea-08d5-4fdb-1dc2-175eb51a3b9c",
 			"name": "rock_forest_group_no_moss_b",
-			"timestamp": 1777244382,
+			"timestamp": 1780105228,
 			"files": [
 				"objects/nature/rocks/rock_forest_group_no_moss_b/rock_forest_group_no_moss_b.cgf"
 			],
@@ -9440,7 +10407,7 @@
 			"metadata": "objects/nature/rocks/rock_forest_group_no_moss_b/rock_forest_group_no_moss_b.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "11" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "26837" },
 				{ "key": "vertexCount", "value": "16763" }
 			],
@@ -9450,9 +10417,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "cd060796-f245-3639-f303-f262348ab3af",
+			"guid": "fdb54e3e-c070-ce2a-27c0-63c563f34d3c",
 			"name": "rock_forest_group_no_moss_c",
-			"timestamp": 1777244482,
+			"timestamp": 1780105412,
 			"files": [
 				"objects/nature/rocks/rock_forest_group_no_moss_c/rock_forest_group_no_moss_c.cgf"
 			],
@@ -9461,7 +10428,7 @@
 			"metadata": "objects/nature/rocks/rock_forest_group_no_moss_c/rock_forest_group_no_moss_c.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "11" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "19326" },
 				{ "key": "vertexCount", "value": "11787" }
 			],
@@ -9471,9 +10438,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "e6127568-c0cc-a214-388a-120f8ef03206",
+			"guid": "6ba86453-d189-3661-46c3-dc14c40a7e23",
 			"name": "rock_forest_group_no_moss_d",
-			"timestamp": 1777244568,
+			"timestamp": 1780105703,
 			"files": [
 				"objects/nature/rocks/rock_forest_group_no_moss_d/rock_forest_group_no_moss_d.cgf"
 			],
@@ -9482,7 +10449,7 @@
 			"metadata": "objects/nature/rocks/rock_forest_group_no_moss_d/rock_forest_group_no_moss_d.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "11" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "35472" },
 				{ "key": "vertexCount", "value": "22632" }
 			],
@@ -9492,16 +10459,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "418db6ae-4651-e838-ffbb-53caabc1c169",
+			"guid": "68ffbd67-b91e-ac38-20e1-9752fa19d3ad",
 			"name": "rock_forest_small_a",
-			"timestamp": 1777244644,
+			"timestamp": 1780105987,
 			"files": [ "objects/nature/rocks/rock_forest_small_a/rock_forest_small_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/rock_forest_small_a/rock_forest_small_a.fbx",
 			"metadata": "objects/nature/rocks/rock_forest_small_a/rock_forest_small_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "1942" },
 				{ "key": "vertexCount", "value": "1553" }
 			],
@@ -9511,16 +10478,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "31a55b73-85a9-e58f-bd6c-80b3f3d2dfa0",
+			"guid": "e678125a-b3b7-d663-c2bd-9c54eb4cb942",
 			"name": "rock_forest_small_d",
-			"timestamp": 1777244695,
+			"timestamp": 1780106173,
 			"files": [ "objects/nature/rocks/rock_forest_small_d/rock_forest_small_d.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/rock_forest_small_d/rock_forest_small_d.fbx",
 			"metadata": "objects/nature/rocks/rock_forest_small_d/rock_forest_small_d.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "2490" },
 				{ "key": "vertexCount", "value": "1912" }
 			],
@@ -9530,16 +10497,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "354da2c6-983f-e64e-3cf3-10844fbfee1d",
+			"guid": "c0a7b619-6ba3-b341-6a78-0b7da6a8f251",
 			"name": "rock_river_group_c",
-			"timestamp": 1777244795,
+			"timestamp": 1780106398,
 			"files": [ "objects/nature/rocks/rock_river_group_c/rock_river_group_c.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/rock_river_group_c/rock_river_group_c.fbx",
 			"metadata": "objects/nature/rocks/rock_river_group_c/rock_river_group_c.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "13" },
 				{ "key": "triangleCount", "value": "26380" },
 				{ "key": "vertexCount", "value": "15758" }
 			],
@@ -9548,41 +10515,17 @@
 			]
 		},
 		{
-			"type": "Material",
-			"guid": "ff87c6f4-dd61-b1e8-dcea-e804bdc22e09",
-			"name": "rock_river_group_c",
-			"timestamp": 1777244715,
-			"files": [ "objects/nature/rocks/rock_river_group_c/rock_river_group_c.mtl" ],
-			"workFiles": [ ],
-			"source": "",
-			"metadata": "objects/nature/rocks/rock_river_group_c/rock_river_group_c.mtl.cryasset",
-			"details": [
-				{ "key": "subMaterialCount", "value": "14" },
-				{ "key": "textureCount", "value": "2" }
-			],
-			"dependencies": [
-				{
-					"path": "%ENGINE%/EngineAssets/Textures/white.dds",
-					"usageCount": 14
-				},
-				{
-					"path": "%ENGINE%/EngineAssets/Textures/white_ddn.dds",
-					"usageCount": 14
-				}
-			]
-		},
-		{
 			"type": "Mesh",
-			"guid": "b3545609-53e8-ccba-ffa9-a226a67a78c4",
+			"guid": "8a309204-f034-ec36-1049-63b4bdaabf35",
 			"name": "toad_prestandin",
-			"timestamp": 1777244863,
+			"timestamp": 1780106680,
 			"files": [ "objects/nature/rocks/stone_toad/toad_prestandin.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/rocks/stone_toad/toad_prestandin.fbx",
 			"metadata": "objects/nature/rocks/stone_toad/toad_prestandin.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "4" },
+				{ "key": "materialCount", "value": "6" },
 				{ "key": "triangleCount", "value": "11390" },
 				{ "key": "vertexCount", "value": "6968" }
 			],
@@ -9614,9 +10557,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "15ec3c38-fe04-00ea-a9d4-a51441c2cc52",
+			"guid": "66490521-61c0-801d-d499-09a8dfae31e4",
 			"name": "robinia_b_leaning",
-			"timestamp": 1777249942,
+			"timestamp": 1780167596,
 			"files": [ "objects/nature/trees/robinia/robinia_b_leaning.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/robinia/robinia_b_leaning.fbx",
@@ -9625,7 +10568,7 @@
 				{ "key": "16BitPrecision", "value": "false" },
 				{ "key": "materialCount", "value": "8" },
 				{ "key": "triangleCount", "value": "13792" },
-				{ "key": "vertexCount", "value": "13549" }
+				{ "key": "vertexCount", "value": "11728" }
 			],
 			"dependencies": [
 				{
@@ -9636,18 +10579,18 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "d67fbdec-dbc9-e933-b489-c4a9f1f6c86d",
+			"guid": "a11ddde0-a8ac-5050-3463-ca476c9448a7",
 			"name": "robinia_c_leaning",
-			"timestamp": 1777250002,
+			"timestamp": 1780167676,
 			"files": [ "objects/nature/trees/robinia/robinia_c_leaning.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/robinia/robinia_c_leaning.fbx",
 			"metadata": "objects/nature/trees/robinia/robinia_c_leaning.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "3" },
+				{ "key": "materialCount", "value": "5" },
 				{ "key": "triangleCount", "value": "4856" },
-				{ "key": "vertexCount", "value": "7259" }
+				{ "key": "vertexCount", "value": "7281" }
 			],
 			"dependencies": [
 				{
@@ -9658,18 +10601,18 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "1f783386-d2a7-032a-0569-3b2d3b7f493a",
+			"guid": "d8f888b2-9b2c-9aac-eef7-56e43a938209",
 			"name": "robinia_d_large",
-			"timestamp": 1777250056,
+			"timestamp": 1780168006,
 			"files": [ "objects/nature/trees/robinia/robinia_d_large.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/robinia/robinia_d_large.fbx",
 			"metadata": "objects/nature/trees/robinia/robinia_d_large.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "3" },
+				{ "key": "materialCount", "value": "5" },
 				{ "key": "triangleCount", "value": "5384" },
-				{ "key": "vertexCount", "value": "8892" }
+				{ "key": "vertexCount", "value": "8912" }
 			],
 			"dependencies": [
 				{
@@ -9680,16 +10623,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "32955005-2528-555e-d941-90a43c273e39",
+			"guid": "2631b470-84eb-fbff-0691-51ed25daa131",
 			"name": "robinia_e_small",
-			"timestamp": 1777250103,
+			"timestamp": 1780168267,
 			"files": [ "objects/nature/trees/robinia/robinia_e_small.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/robinia/robinia_e_small.fbx",
 			"metadata": "objects/nature/trees/robinia/robinia_e_small.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "3" },
+				{ "key": "materialCount", "value": "5" },
 				{ "key": "triangleCount", "value": "2079" },
 				{ "key": "vertexCount", "value": "3185" }
 			],
@@ -9702,9 +10645,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "2564b3be-eecb-39cc-f5ca-38c5ad01a38e",
+			"guid": "3f6ec7af-7da7-a6dc-34ad-236376f5f145",
 			"name": "spruce_big_a",
-			"timestamp": 1777250219,
+			"timestamp": 1780168900,
 			"files": [ "objects/nature/trees/spruce/spruce_big_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_big_a.fbx",
@@ -9721,9 +10664,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "6fb3e548-6566-7303-57d8-faa06c55433e",
+			"guid": "3ef89c0b-34d9-d667-20aa-61502eacb6dd",
 			"name": "spruce_big_a_detailed",
-			"timestamp": 1777250302,
+			"timestamp": 1780169251,
 			"files": [ "objects/nature/trees/spruce/spruce_big_a_detailed.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_big_a_detailed.fbx",
@@ -9740,9 +10683,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "5b16c516-8479-7fb2-3aa5-47eaf2fe14f7",
+			"guid": "a8c4f772-b612-4789-5376-333c0ddda4ee",
 			"name": "spruce_big_b",
-			"timestamp": 1777250359,
+			"timestamp": 1780169427,
 			"files": [ "objects/nature/trees/spruce/spruce_big_b.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_big_b.fbx",
@@ -9759,18 +10702,18 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "6b8a79bb-1511-99e6-bfd4-bff28f754c35",
+			"guid": "d993e9e7-8b2e-c7ef-415e-633a875ab8a5",
 			"name": "spruce_border_a",
-			"timestamp": 1777250413,
+			"timestamp": 1780169897,
 			"files": [ "objects/nature/trees/spruce/spruce_border_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_border_a.fbx",
 			"metadata": "objects/nature/trees/spruce/spruce_border_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "3" },
-				{ "key": "triangleCount", "value": "2992" },
-				{ "key": "vertexCount", "value": "3003" }
+				{ "key": "materialCount", "value": "14" },
+				{ "key": "triangleCount", "value": "2976" },
+				{ "key": "vertexCount", "value": "2988" }
 			],
 			"dependencies": [
 				{ "path": "materials/nature/biome/forest/forest.mtl", "usageCount": 1 }
@@ -9778,18 +10721,18 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "64bcf8d8-7e57-aaa3-8425-26c3cdbdaa61",
+			"guid": "353816dd-3860-b1b5-8f37-a4d008d492f4",
 			"name": "spruce_border_b",
-			"timestamp": 1777250464,
+			"timestamp": 1780170109,
 			"files": [ "objects/nature/trees/spruce/spruce_border_b.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_border_b.fbx",
 			"metadata": "objects/nature/trees/spruce/spruce_border_b.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "3" },
-				{ "key": "triangleCount", "value": "4502" },
-				{ "key": "vertexCount", "value": "4866" }
+				{ "key": "materialCount", "value": "14" },
+				{ "key": "triangleCount", "value": "4486" },
+				{ "key": "vertexCount", "value": "4851" }
 			],
 			"dependencies": [
 				{ "path": "materials/nature/biome/forest/forest.mtl", "usageCount": 1 }
@@ -9797,18 +10740,18 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "92b67e7f-b3ba-991c-6e63-31fa75226783",
+			"guid": "423e8ae7-a97c-9402-1c98-7a4fb0d9fa38",
 			"name": "spruce_border_b_detailed",
-			"timestamp": 1777250512,
+			"timestamp": 1780170270,
 			"files": [ "objects/nature/trees/spruce/spruce_border_b_detailed.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_border_b_detailed.fbx",
 			"metadata": "objects/nature/trees/spruce/spruce_border_b_detailed.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "3" },
-				{ "key": "triangleCount", "value": "4886" },
-				{ "key": "vertexCount", "value": "5242" }
+				{ "key": "materialCount", "value": "14" },
+				{ "key": "triangleCount", "value": "4870" },
+				{ "key": "vertexCount", "value": "5227" }
 			],
 			"dependencies": [
 				{ "path": "materials/nature/biome/forest/forest.mtl", "usageCount": 1 }
@@ -9816,18 +10759,18 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "d2fb321f-a5c9-d995-7fa4-755c3fb212a7",
+			"guid": "cb369c94-88b2-8b67-1c79-a1914fe2158a",
 			"name": "spruce_border_c_detailed",
-			"timestamp": 1777250556,
+			"timestamp": 1780170429,
 			"files": [ "objects/nature/trees/spruce/spruce_border_c_detailed.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_border_c_detailed.fbx",
 			"metadata": "objects/nature/trees/spruce/spruce_border_c_detailed.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "3" },
-				{ "key": "triangleCount", "value": "5285" },
-				{ "key": "vertexCount", "value": "5697" }
+				{ "key": "materialCount", "value": "14" },
+				{ "key": "triangleCount", "value": "5269" },
+				{ "key": "vertexCount", "value": "5682" }
 			],
 			"dependencies": [
 				{ "path": "materials/nature/biome/forest/forest.mtl", "usageCount": 1 }
@@ -9835,9 +10778,9 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "c8745709-9110-0b18-8861-b6e55123afcc",
+			"guid": "9c12be07-d128-c638-61fe-a24f02d731f4",
 			"name": "spruce_border_d",
-			"timestamp": 1777250672,
+			"timestamp": 1780170691,
 			"files": [ "objects/nature/trees/spruce/spruce_border_d.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_border_d.fbx",
@@ -9857,16 +10800,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "fd93704c-f5ee-db38-b6f4-20a2b56030e4",
+			"guid": "c470f078-4f2e-8c64-ca1c-5a6ce19957c6",
 			"name": "spruce_med_a",
-			"timestamp": 1777250736,
+			"timestamp": 1780171216,
 			"files": [ "objects/nature/trees/spruce/spruce_med_a.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_med_a.fbx",
 			"metadata": "objects/nature/trees/spruce/spruce_med_a.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "14" },
 				{ "key": "triangleCount", "value": "3720" },
 				{ "key": "vertexCount", "value": "4170" }
 			],
@@ -9876,16 +10819,16 @@
 		},
 		{
 			"type": "Mesh",
-			"guid": "dbbd6933-7407-fc21-a48a-85b6c0bf06f9",
+			"guid": "50d700f3-0eea-56cc-72b0-89d05669fcd9",
 			"name": "spruce_med_b",
-			"timestamp": 1777250787,
+			"timestamp": 1780171610,
 			"files": [ "objects/nature/trees/spruce/spruce_med_b.cgf" ],
 			"workFiles": [ ],
 			"source": "objects/nature/trees/spruce/spruce_med_b.fbx",
 			"metadata": "objects/nature/trees/spruce/spruce_med_b.cgf.cryasset",
 			"details": [
 				{ "key": "16BitPrecision", "value": "false" },
-				{ "key": "materialCount", "value": "12" },
+				{ "key": "materialCount", "value": "14" },
 				{ "key": "triangleCount", "value": "5022" },
 				{ "key": "vertexCount", "value": "5603" }
 			],
@@ -10758,6 +11701,758 @@
 				{ "key": "height", "value": "1024" },
 				{ "key": "mipCount", "value": "9" },
 				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "55c8db57-c130-a9c7-3455-0b2f20b95037",
+			"name": "beard_transparency_diff",
+			"timestamp": 1778021695,
+			"files": [ "textures/characters/humans/mc/beard_transparency_diff.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/beard_transparency_diff.tif",
+			"metadata": "textures/characters/humans/mc/beard_transparency_diff.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "681de848-ab69-963e-e94c-0240155e5392",
+			"name": "boots_ddna",
+			"timestamp": 1778024677,
+			"files": [ "textures/characters/humans/mc/boots_ddna.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/boots_ddna.tif",
+			"metadata": "textures/characters/humans/mc/boots_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "11" },
+				{ "key": "width", "value": "4096" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "69d62161-dbdb-3a0b-699c-62e71e835119",
+			"name": "boots_diffuse",
+			"timestamp": 1777997979,
+			"files": [ "textures/characters/humans/mc/boots_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/boots_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/boots_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "11" },
+				{ "key": "width", "value": "4096" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "3874901b-33d1-097a-25ba-a7d9fffdf626",
+			"name": "boxers_ddn",
+			"timestamp": 1777826046,
+			"files": [ "textures/characters/humans/mc/boxers_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/boxers_ddn.tif",
+			"metadata": "textures/characters/humans/mc/boxers_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "4fd0fbcf-28f0-d587-8b25-3bbee53057f2",
+			"name": "boxers_diffuse",
+			"timestamp": 1777826046,
+			"files": [ "textures/characters/humans/mc/boxers_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/boxers_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/boxers_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "194db6fb-cac4-ad25-86c8-544b5787779e",
+			"name": "cc_base_tear_ducts_diffuse",
+			"timestamp": 1777826046,
+			"files": [ "textures/characters/humans/mc/cc_base_tear_ducts_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/cc_base_tear_ducts_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/cc_base_tear_ducts_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "b9f40d42-ad69-1d06-8cd3-54b9daa9ac9d",
+			"name": "hair_clap_transparency_diffuse",
+			"timestamp": 1778022326,
+			"files": [ "textures/characters/humans/mc/hair_clap_transparency_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/hair_clap_transparency_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/hair_clap_transparency_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "be8727b8-971c-2af8-042f-40e467442218",
+			"name": "hair_transparency_ddn",
+			"timestamp": 1778018150,
+			"files": [ "textures/characters/humans/mc/hair_transparency_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/hair_transparency_ddn.tif",
+			"metadata": "textures/characters/humans/mc/hair_transparency_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "c207f33b-f1d1-9c9c-f2ea-25342b437e48",
+			"name": "hair_transparency_diffuse",
+			"timestamp": 1778018576,
+			"files": [ "textures/characters/humans/mc/hair_transparency_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/hair_transparency_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/hair_transparency_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "2c7b8e33-3112-bd6e-f667-bf514c4dc832",
+			"name": "male_brow_base_diffuse",
+			"timestamp": 1777826047,
+			"files": [ "textures/characters/humans/mc/male_brow_base_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/male_brow_base_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/male_brow_base_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "bc379cdf-2af3-eb9c-2766-fe8995c68a8d",
+			"name": "male_brow_diffuse",
+			"timestamp": 1777826047,
+			"files": [ "textures/characters/humans/mc/male_brow_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/male_brow_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/male_brow_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "af0b32f6-2d43-49d6-75e7-a5ccd17799b2",
+			"name": "pants_ddna",
+			"timestamp": 1778024628,
+			"files": [ "textures/characters/humans/mc/pants_ddna.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/pants_ddna.tif",
+			"metadata": "textures/characters/humans/mc/pants_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "11" },
+				{ "key": "width", "value": "4096" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "71985cd8-fd99-64ba-7fc7-6204c764c141",
+			"name": "pants_diffuse",
+			"timestamp": 1778003463,
+			"files": [ "textures/characters/humans/mc/pants_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/pants_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/pants_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "11" },
+				{ "key": "width", "value": "4096" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "d33daa9b-3b18-6e1a-2f73-24b35e15f397",
+			"name": "std_cornea_l_diffuse",
+			"timestamp": 1777826047,
+			"files": [ "textures/characters/humans/mc/std_cornea_l_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_cornea_l_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_cornea_l_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "9648e486-f953-d747-c6e0-d1bb10079dd7",
+			"name": "std_cornea_r_diffuse",
+			"timestamp": 1777826047,
+			"files": [ "textures/characters/humans/mc/std_cornea_r_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_cornea_r_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_cornea_r_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "47d5d7e1-2588-ae15-55f1-a4d90e6fb1d3",
+			"name": "std_eye_l_ddn",
+			"timestamp": 1777826047,
+			"files": [ "textures/characters/humans/mc/std_eye_l_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_eye_l_ddn.tif",
+			"metadata": "textures/characters/humans/mc/std_eye_l_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "512" },
+				{ "key": "mipCount", "value": "8" },
+				{ "key": "width", "value": "512" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "6f01c8ed-15d3-46e9-2f12-1cc49201de84",
+			"name": "std_eye_l_diffuse",
+			"timestamp": 1777826048,
+			"files": [ "textures/characters/humans/mc/std_eye_l_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_eye_l_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_eye_l_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "1dd07b42-8eee-88b2-e570-8c94c1cc18f0",
+			"name": "std_eye_occlusion_l_diffuse",
+			"timestamp": 1777826048,
+			"files": [ "textures/characters/humans/mc/std_eye_occlusion_l_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_eye_occlusion_l_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_eye_occlusion_l_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "64" },
+				{ "key": "mipCount", "value": "5" },
+				{ "key": "width", "value": "64" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "44319c51-8c9b-8011-88d5-e228260bf70b",
+			"name": "std_eye_occlusion_r_diffuse",
+			"timestamp": 1777826048,
+			"files": [ "textures/characters/humans/mc/std_eye_occlusion_r_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_eye_occlusion_r_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_eye_occlusion_r_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "64" },
+				{ "key": "mipCount", "value": "5" },
+				{ "key": "width", "value": "64" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "e872b3b7-3961-ba8a-5208-ea83a6c7ec0f",
+			"name": "std_eye_r_ddn",
+			"timestamp": 1777826048,
+			"files": [ "textures/characters/humans/mc/std_eye_r_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_eye_r_ddn.tif",
+			"metadata": "textures/characters/humans/mc/std_eye_r_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "512" },
+				{ "key": "mipCount", "value": "8" },
+				{ "key": "width", "value": "512" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "516b06f6-f148-1706-1a94-89e0a87da5fc",
+			"name": "std_eye_r_diffuse",
+			"timestamp": 1777826048,
+			"files": [ "textures/characters/humans/mc/std_eye_r_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_eye_r_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_eye_r_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "c17a42eb-f2dd-f5be-2c0b-c888dae61fae",
+			"name": "std_eyelash_ddn",
+			"timestamp": 1778024835,
+			"files": [ "textures/characters/humans/mc/std_eyelash_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_eyelash_ddn.tif",
+			"metadata": "textures/characters/humans/mc/std_eyelash_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "f9e36ff3-9149-8f66-b501-0b3d8d8f341e",
+			"name": "std_eyelash_diffuse",
+			"timestamp": 1777826050,
+			"files": [ "textures/characters/humans/mc/std_eyelash_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_eyelash_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_eyelash_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "b2302d05-fcc3-a300-5f98-515e3768741a",
+			"name": "std_lower_teeth_ddn",
+			"timestamp": 1777826052,
+			"files": [ "textures/characters/humans/mc/std_lower_teeth_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_lower_teeth_ddn.tif",
+			"metadata": "textures/characters/humans/mc/std_lower_teeth_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "f9294b5c-651d-b354-bd3a-f36dda67c825",
+			"name": "std_lower_teeth_diffuse",
+			"timestamp": 1777826054,
+			"files": [ "textures/characters/humans/mc/std_lower_teeth_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_lower_teeth_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_lower_teeth_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "71a51bee-31a9-f3b1-f3fe-b8a19ae62a71",
+			"name": "std_nails_ddn",
+			"timestamp": 1777826054,
+			"files": [ "textures/characters/humans/mc/std_nails_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_nails_ddn.tif",
+			"metadata": "textures/characters/humans/mc/std_nails_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "0ee3c517-184a-218b-b587-e9878c8046a1",
+			"name": "std_nails_ddna",
+			"timestamp": 1778022140,
+			"files": [ "textures/characters/humans/mc/std_nails_ddna.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_nails_ddna.tif",
+			"metadata": "textures/characters/humans/mc/std_nails_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "b77e1723-0623-3901-f6fb-a415e5a8840c",
+			"name": "std_nails_diffuse",
+			"timestamp": 1777826056,
+			"files": [ "textures/characters/humans/mc/std_nails_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_nails_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_nails_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "8cdc006a-79b0-0002-748f-3b4244b3a585",
+			"name": "std_skin_arm_ddn",
+			"timestamp": 1777826059,
+			"files": [ "textures/characters/humans/mc/std_skin_arm_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_arm_ddn.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_arm_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "da0def19-bc10-8177-1858-27997553c6b0",
+			"name": "std_skin_arm_ddna",
+			"timestamp": 1778024992,
+			"files": [ "textures/characters/humans/mc/std_skin_arm_ddna.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_arm_ddna.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_arm_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "5a839bb2-b4fe-ea70-b932-ffb8580b4c6d",
+			"name": "std_skin_arm_diffuse",
+			"timestamp": 1777826060,
+			"files": [ "textures/characters/humans/mc/std_skin_arm_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_arm_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_arm_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "9deb9ed9-4b75-15e1-ecaa-981e320ad7f1",
+			"name": "std_skin_body_ddn",
+			"timestamp": 1777826062,
+			"files": [ "textures/characters/humans/mc/std_skin_body_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_body_ddn.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_body_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "9c74ccb1-9259-622e-847e-679a2509ce71",
+			"name": "std_skin_body_ddna",
+			"timestamp": 1778018942,
+			"files": [ "textures/characters/humans/mc/std_skin_body_ddna.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_body_ddna.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_body_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "ad5a39dd-1c2f-9de6-387c-96d4aeaf6585",
+			"name": "std_skin_body_diffuse",
+			"timestamp": 1777826062,
+			"files": [ "textures/characters/humans/mc/std_skin_body_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_body_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_body_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "9d27e1f6-f30f-d00b-abf2-bed744a85ddf",
+			"name": "std_skin_head_ddn",
+			"timestamp": 1777826066,
+			"files": [ "textures/characters/humans/mc/std_skin_head_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_head_ddn.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_head_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "c3a3c411-54c5-65cd-ac27-d154395444e2",
+			"name": "std_skin_head_ddna",
+			"timestamp": 1778024163,
+			"files": [ "textures/characters/humans/mc/std_skin_head_ddna.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_head_ddna.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_head_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "3f702da9-1ce2-fe98-e2ed-f81a9e67016b",
+			"name": "std_skin_head_diffuse",
+			"timestamp": 1778023790,
+			"files": [ "textures/characters/humans/mc/std_skin_head_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_head_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_head_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "12fd2bf6-e2bb-6314-6364-a32ba6043d95",
+			"name": "std_skin_leg_ddn",
+			"timestamp": 1777826070,
+			"files": [ "textures/characters/humans/mc/std_skin_leg_ddn.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_leg_ddn.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_leg_ddn.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "5da8452f-4c18-5615-e22f-02bd1fe2ccbe",
+			"name": "std_skin_leg_diffuse",
+			"timestamp": 1777826071,
+			"files": [ "textures/characters/humans/mc/std_skin_leg_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_skin_leg_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_skin_leg_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "2048" },
+				{ "key": "mipCount", "value": "10" },
+				{ "key": "width", "value": "2048" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "371ed9de-2cf9-bb0f-5e2d-6d7ea0478dce",
+			"name": "std_tearline_l_diffuse",
+			"timestamp": 1777826071,
+			"files": [ "textures/characters/humans/mc/std_tearline_l_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_tearline_l_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_tearline_l_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "64" },
+				{ "key": "mipCount", "value": "5" },
+				{ "key": "width", "value": "64" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "1539b49c-a9c5-e1eb-0941-f7488454fb7f",
+			"name": "std_tearline_r_diffuse",
+			"timestamp": 1777826071,
+			"files": [ "textures/characters/humans/mc/std_tearline_r_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_tearline_r_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_tearline_r_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "64" },
+				{ "key": "mipCount", "value": "5" },
+				{ "key": "width", "value": "64" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "a6cc8a1a-92f2-5a28-d534-83b7a901fa30",
+			"name": "std_tongue_ddna",
+			"timestamp": 1777826072,
+			"files": [ "textures/characters/humans/mc/std_tongue_ddna.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_tongue_ddna.tif",
+			"metadata": "textures/characters/humans/mc/std_tongue_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "1a08f5a4-9803-4b5a-35ae-e9b487a58a94",
+			"name": "std_tongue_diffuse",
+			"timestamp": 1777826072,
+			"files": [ "textures/characters/humans/mc/std_tongue_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_tongue_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_tongue_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "58dc5a03-3600-41ba-9589-3f967944b264",
+			"name": "std_upper_teeth_ddna",
+			"timestamp": 1777826072,
+			"files": [ "textures/characters/humans/mc/std_upper_teeth_ddna.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_upper_teeth_ddna.tif",
+			"metadata": "textures/characters/humans/mc/std_upper_teeth_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "ff5baa04-3ba3-9488-ebca-fbffd46f5377",
+			"name": "std_upper_teeth_diffuse",
+			"timestamp": 1777826075,
+			"files": [ "textures/characters/humans/mc/std_upper_teeth_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/std_upper_teeth_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/std_upper_teeth_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "1024" },
+				{ "key": "mipCount", "value": "9" },
+				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "3c4369c7-0de4-76eb-1978-0e06575cdaa5",
+			"name": "tunic_ddna",
+			"timestamp": 1778024548,
+			"files": [ "textures/characters/humans/mc/tunic_ddna.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/tunic_ddna.tif",
+			"metadata": "textures/characters/humans/mc/tunic_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "11" },
+				{ "key": "width", "value": "4096" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "7d6bc0c0-e6f5-e197-c57a-583ad6f0d5ba",
+			"name": "tunic_diffuse",
+			"timestamp": 1778003675,
+			"files": [ "textures/characters/humans/mc/tunic_diffuse.dds" ],
+			"workFiles": [ ],
+			"source": "textures/characters/humans/mc/tunic_diffuse.tif",
+			"metadata": "textures/characters/humans/mc/tunic_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "11" },
+				{ "key": "width", "value": "4096" }
 			],
 			"dependencies": [ ]
 		},
@@ -12459,6 +14154,60 @@
 				{ "key": "height", "value": "1024" },
 				{ "key": "mipCount", "value": "9" },
 				{ "key": "width", "value": "1024" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "8bead666-14cd-161c-59ef-cbf3e532e4c9",
+			"name": "starting_sword_ddna",
+			"timestamp": 1782431336,
+			"files": [
+				"textures/items/weapons/melee/swords/starting_sword/starting_sword_ddna.dds"
+			],
+			"workFiles": [ ],
+			"source": "textures/items/weapons/melee/swords/starting_sword/starting_sword_ddna.tif",
+			"metadata": "textures/items/weapons/melee/swords/starting_sword/starting_sword_ddna.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "11" },
+				{ "key": "width", "value": "4096" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "c8ddbd66-2802-6bc4-2900-a228d708dbf7",
+			"name": "starting_sword_diffuse",
+			"timestamp": 1782431343,
+			"files": [
+				"textures/items/weapons/melee/swords/starting_sword/starting_sword_diffuse.dds"
+			],
+			"workFiles": [ ],
+			"source": "textures/items/weapons/melee/swords/starting_sword/starting_sword_diffuse.tif",
+			"metadata": "textures/items/weapons/melee/swords/starting_sword/starting_sword_diffuse.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "11" },
+				{ "key": "width", "value": "4096" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "5ed1b280-c948-603f-3f73-cf9eaa99dbff",
+			"name": "starting_sword_spec",
+			"timestamp": 1782431351,
+			"files": [
+				"textures/items/weapons/melee/swords/starting_sword/starting_sword_spec.dds"
+			],
+			"workFiles": [ ],
+			"source": "textures/items/weapons/melee/swords/starting_sword/starting_sword_spec.tif",
+			"metadata": "textures/items/weapons/melee/swords/starting_sword/starting_sword_spec.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "11" },
+				{ "key": "width", "value": "4096" }
 			],
 			"dependencies": [ ]
 		},
@@ -15803,6 +17552,248 @@
 				{ "key": "width", "value": "2048" }
 			],
 			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "0aa01831-1f91-8dcf-e91d-c7f06137b422",
+			"name": "BookUI_I14",
+			"timestamp": 1783476922,
+			"files": [ "textures/ui/bookbase/BookUI_I14.dds" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "textures/ui/bookbase/BookUI_I14.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "4096" },
+				{ "key": "mipCount", "value": "1" },
+				{ "key": "width", "value": "4096" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Texture",
+			"guid": "e927a6b9-3714-730b-8e7a-de4340689ed0",
+			"name": "icon_sword_generic",
+			"timestamp": 1782427002,
+			"files": [ "textures/ui/icons/weapons/melee/icon_sword_generic.dds" ],
+			"workFiles": [ ],
+			"source": "textures/ui/icons/weapons/melee/icon_sword_generic.tif",
+			"metadata": "textures/ui/icons/weapons/melee/icon_sword_generic.dds.cryasset",
+			"details": [
+				{ "key": "height", "value": "256" },
+				{ "key": "mipCount", "value": "1" },
+				{ "key": "width", "value": "256" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Material",
+			"guid": "f7123a59-1946-c5dc-7274-dba32e9c3807",
+			"name": "mi_caf_material",
+			"timestamp": 1777763552,
+			"files": [ "user/meshimporter/tmp_meshimporter_bfplxz/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_bfplxz/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "0" },
+				{ "key": "textureCount", "value": "0" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Material",
+			"guid": "7d15ee1d-b26a-ace8-45a0-5a0213de1273",
+			"name": "mi_caf_material",
+			"timestamp": 1777825733,
+			"files": [ "user/meshimporter/tmp_meshimporter_ctgolt/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_ctgolt/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "0" },
+				{ "key": "textureCount", "value": "0" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Material",
+			"guid": "b21f4218-8828-0b99-ba59-9a07f4713a00",
+			"name": "mi_caf_material",
+			"timestamp": 1777825887,
+			"files": [ "user/meshimporter/tmp_meshimporter_fnrcsm/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_fnrcsm/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "0" },
+				{ "key": "textureCount", "value": "0" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Material",
+			"guid": "40ac9fe3-e00e-19cf-7d39-49872b45ce59",
+			"name": "mi_caf_material",
+			"timestamp": 1779654846,
+			"files": [ "user/meshimporter/tmp_meshimporter_hwetmp/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_hwetmp/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "28" },
+				{ "key": "textureCount", "value": "2" }
+			],
+			"dependencies": [
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white.dds",
+					"usageCount": 28
+				},
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white_ddn.dds",
+					"usageCount": 28
+				}
+			]
+		},
+		{
+			"type": "Material",
+			"guid": "f2884ed7-36e1-5dd0-3115-ee02ffde2c27",
+			"name": "mi_caf_material",
+			"timestamp": 1777761843,
+			"files": [ "user/meshimporter/tmp_meshimporter_ibgakt/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_ibgakt/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "2" },
+				{ "key": "textureCount", "value": "0" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Material",
+			"guid": "5bcd22aa-a476-a0b9-55f2-fe854ba3d35a",
+			"name": "mi_caf_material",
+			"timestamp": 1779657427,
+			"files": [ "user/meshimporter/tmp_meshimporter_kfmmvb/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_kfmmvb/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "28" },
+				{ "key": "textureCount", "value": "2" }
+			],
+			"dependencies": [
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white.dds",
+					"usageCount": 28
+				},
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white_ddn.dds",
+					"usageCount": 28
+				}
+			]
+		},
+		{
+			"type": "Material",
+			"guid": "4ddb8fbc-aa25-305a-f970-2c59b9365a52",
+			"name": "mi_caf_material",
+			"timestamp": 1779658990,
+			"files": [ "user/meshimporter/tmp_meshimporter_ktvbvz/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_ktvbvz/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "28" },
+				{ "key": "textureCount", "value": "2" }
+			],
+			"dependencies": [
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white.dds",
+					"usageCount": 28
+				},
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white_ddn.dds",
+					"usageCount": 28
+				}
+			]
+		},
+		{
+			"type": "Material",
+			"guid": "6d92344a-0059-d96e-5f4d-feb0602e9616",
+			"name": "mi_caf_material",
+			"timestamp": 1777763592,
+			"files": [ "user/meshimporter/tmp_meshimporter_lonjnr/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_lonjnr/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "0" },
+				{ "key": "textureCount", "value": "0" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Material",
+			"guid": "10844483-1523-8a0e-f127-9f9fb13141dd",
+			"name": "mi_caf_material",
+			"timestamp": 1777762948,
+			"files": [ "user/meshimporter/tmp_meshimporter_newepk/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_newepk/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "2" },
+				{ "key": "textureCount", "value": "0" }
+			],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Material",
+			"guid": "4668be75-f298-b5ca-ee25-3726cc6d0776",
+			"name": "mi_caf_material",
+			"timestamp": 1779656381,
+			"files": [ "user/meshimporter/tmp_meshimporter_uonqzz/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_uonqzz/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "28" },
+				{ "key": "textureCount", "value": "2" }
+			],
+			"dependencies": [
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white.dds",
+					"usageCount": 28
+				},
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white_ddn.dds",
+					"usageCount": 28
+				}
+			]
+		},
+		{
+			"type": "Material",
+			"guid": "ab998e0f-9d6a-3206-899c-9e1bf6b41e76",
+			"name": "mi_caf_material",
+			"timestamp": 1779657442,
+			"files": [ "user/meshimporter/tmp_meshimporter_xthqbk/mi_caf_material.mtl" ],
+			"workFiles": [ ],
+			"source": "",
+			"metadata": "user/meshimporter/tmp_meshimporter_xthqbk/mi_caf_material.mtl.cryasset",
+			"details": [
+				{ "key": "subMaterialCount", "value": "28" },
+				{ "key": "textureCount", "value": "2" }
+			],
+			"dependencies": [
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white.dds",
+					"usageCount": 28
+				},
+				{
+					"path": "%ENGINE%/EngineAssets/Textures/white_ddn.dds",
+					"usageCount": 28
+				}
+			]
 		}
 	]
 }

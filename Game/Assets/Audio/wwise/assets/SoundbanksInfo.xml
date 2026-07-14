@@ -12,11 +12,12 @@
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
 		<SoundBank Id="334699460" Language="SFX">
-			<ObjectPath>\SoundBanks\Default Work Unit\Level_Woodland</ObjectPath>
+			<ObjectPath>\SoundBanks\Ambience\Level_Woodland</ObjectPath>
 			<ShortName>Level_Woodland</ShortName>
 			<Path>Level_Woodland.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2600454393" Name="Play_l_woodland_amb_wind" ObjectPath="\Events\Default Work Unit\Play_l_woodland_amb_wind"/>
+				<Event Id="2600454393" Name="Play_l_woodland_amb_wind" ObjectPath="\Events\User Data\Ambience\Play_l_woodland_amb_wind"/>
+				<Event Id="2740196547" Name="Stop_l_woodland_amb_wind" ObjectPath="\Events\User Data\Ambience\Stop_l_woodland_amb_wind"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="554382604" Language="SFX">
@@ -29,6 +30,96 @@
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2385628198" Language="SFX">
+			<ObjectPath>\SoundBanks\Player\Footsteps</ObjectPath>
+			<ShortName>Footsteps</ShortName>
+			<Path>Footsteps.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1724675634" Name="Play_Player_Footstep" ObjectPath="\Events\User Data\Footsteps\Play_Player_Footstep"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="158112572" Language="SFX">
+					<ShortName>c_player_fts_dirt_walk_2.wav</ShortName>
+					<Path>SFX\c_player_fts_dirt_walk_2_10C4C929.wem</Path>
+				</File>
+				<File Id="164411773" Language="SFX">
+					<ShortName>c_player_fts_grass_walk_5.wav</ShortName>
+					<Path>SFX\c_player_fts_grass_walk_5_10C4C929.wem</Path>
+				</File>
+				<File Id="185112005" Language="SFX">
+					<ShortName>c_player_fts_leaves_walk.wav</ShortName>
+					<Path>SFX\c_player_fts_leaves_walk_10C4C929.wem</Path>
+				</File>
+				<File Id="206606989" Language="SFX">
+					<ShortName>c_player_fts_grass_walk_4.wav</ShortName>
+					<Path>SFX\c_player_fts_grass_walk_4_10C4C929.wem</Path>
+				</File>
+				<File Id="233537808" Language="SFX">
+					<ShortName>c_player_fts_water_walk.wav</ShortName>
+					<Path>SFX\c_player_fts_water_walk_10C4C929.wem</Path>
+				</File>
+				<File Id="300160624" Language="SFX">
+					<ShortName>c_player_fts_dirt_walk_3.wav</ShortName>
+					<Path>SFX\c_player_fts_dirt_walk_3_10C4C929.wem</Path>
+				</File>
+				<File Id="321816676" Language="SFX">
+					<ShortName>c_player_fts_stone_walk_1.wav</ShortName>
+					<Path>SFX\c_player_fts_stone_walk_1_10C4C929.wem</Path>
+				</File>
+				<File Id="340822587" Language="SFX">
+					<ShortName>c_player_fts_grass_tall_walk.wav</ShortName>
+					<Path>SFX\c_player_fts_grass_tall_walk_10C4C929.wem</Path>
+				</File>
+				<File Id="449957004" Language="SFX">
+					<ShortName>c_player_fts_dirt_walk_1.wav</ShortName>
+					<Path>SFX\c_player_fts_dirt_walk_1_10C4C929.wem</Path>
+				</File>
+				<File Id="545843135" Language="SFX">
+					<ShortName>c_player_fts_dirt_walk_4.wav</ShortName>
+					<Path>SFX\c_player_fts_dirt_walk_4_10C4C929.wem</Path>
+				</File>
+				<File Id="579343406" Language="SFX">
+					<ShortName>c_player_fts_grass_walk_3.wav</ShortName>
+					<Path>SFX\c_player_fts_grass_walk_3_10C4C929.wem</Path>
+				</File>
+				<File Id="686348597" Language="SFX">
+					<ShortName>c_player_fts_stone_walk_4.wav</ShortName>
+					<Path>SFX\c_player_fts_stone_walk_4_10C4C929.wem</Path>
+				</File>
+				<File Id="697806434" Language="SFX">
+					<ShortName>c_player_fts_stone_walk_3.wav</ShortName>
+					<Path>SFX\c_player_fts_stone_walk_3_10C4C929.wem</Path>
+				</File>
+				<File Id="746050511" Language="SFX">
+					<ShortName>c_player_fts_wood_walk_3.wav</ShortName>
+					<Path>SFX\c_player_fts_wood_walk_3_10C4C929.wem</Path>
+				</File>
+				<File Id="867526043" Language="SFX">
+					<ShortName>c_player_fts_wood_walk_1.wav</ShortName>
+					<Path>SFX\c_player_fts_wood_walk_1_10C4C929.wem</Path>
+				</File>
+				<File Id="903597794" Language="SFX">
+					<ShortName>c_player_fts_grass_walk_2.wav</ShortName>
+					<Path>SFX\c_player_fts_grass_walk_2_10C4C929.wem</Path>
+				</File>
+				<File Id="911405113" Language="SFX">
+					<ShortName>c_player_fts_wood_walk_4.wav</ShortName>
+					<Path>SFX\c_player_fts_wood_walk_4_10C4C929.wem</Path>
+				</File>
+				<File Id="911703354" Language="SFX">
+					<ShortName>c_player_fts_grass_walk_1.wav</ShortName>
+					<Path>SFX\c_player_fts_grass_walk_1_10C4C929.wem</Path>
+				</File>
+				<File Id="1016077311" Language="SFX">
+					<ShortName>c_player_fts_stone_walk_2.wav</ShortName>
+					<Path>SFX\c_player_fts_stone_walk_2_10C4C929.wem</Path>
+				</File>
+				<File Id="1031127273" Language="SFX">
+					<ShortName>c_player_fts_wood_walk_2.wav</ShortName>
+					<Path>SFX\c_player_fts_wood_walk_2_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

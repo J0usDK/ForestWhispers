@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
-	2600454393	Play_l_woodland_amb_wind			\Default Work Unit\Play_l_woodland_amb_wind	
+	2600454393	Play_l_woodland_amb_wind			\User Data\Ambience\Play_l_woodland_amb_wind	
+	2740196547	Stop_l_woodland_amb_wind			\User Data\Ambience\Stop_l_woodland_amb_wind	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	554382604	l_woodland_amb_wind	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\l_woodland_amb_wind_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\l_woodland_amb_wind		5935052
+	554382604	l_woodland_amb_wind	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\l_woodland_amb_wind_D79FB2B7.wem		\Actor-Mixer Hierarchy\Woodland\Ambience\l_woodland_amb_wind		5935052
 

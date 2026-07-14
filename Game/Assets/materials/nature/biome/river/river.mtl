@@ -17,7 +17,9 @@
     <Texture Map="Decal" File="textures/generic/water/river_foam.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" OffsetV="0.1" TexMod_VOscillatorType="2" TexMod_VOscillatorRate="1.8" TexMod_VOscillatorAmplitude="-0.1"/>
     </Texture>
-    <Texture Map="Emittance" File="textures/nature/water/river_foam/river_foam_diff.dds"/>
+    <Texture Map="Emittance" File="textures/nature/water/river_foam/river_foam_diff.dds">
+     <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
+    </Texture>
    </Textures>
    <PublicParams DecalAlphaMult="1" DecalAngleBasedFading="1" DecalDiffuseOpacity="1" DecalFalloff="1" DecalNormalOpacity="1" DecalSpecularOpacity="1" EmittanceMapGamma="1"/>
   </Material>
@@ -50,7 +52,7 @@
   <Material Name="_free" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_water" MatTemplate="" Diffuse="1,1,1" Specular="0.016988052,0.016988052,0.016988052" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
-  <Material Name="wood_dead" MtlFlags="524416" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.016807375,0.016807375,0.016807375" Opacity="1" Shininess="199.92001" vertModifType="0" LayerAct="1">
+  <Material Name="wood_dead" MtlFlags="524416" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.016807375,0.016807375,0.016807375" Opacity="1" Shininess="199.92003" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/trees/pine/na_scots_pine_tree_trunk_rotten_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="5" TileV="5"/>
@@ -119,7 +121,7 @@
    </Textures>
    <PublicParams BlendFactor="3.3" BlendFalloff="2.3" BlendLayer2Specular="0.029999999" BlendLayer2Tiling="4.2399998" BlendMaskTiling="1" DetailBumpScale="2.8" DetailDiffuseScale="0.5" DetailGlossScale="0.5" EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="rock_c" MtlFlags="524416" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.03189604,0.03189604,0.03189604" Opacity="1" Shininess="120.105" vertModifType="0" LayerAct="1">
+  <Material Name="rock_c" MtlFlags="524416" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.03189604,0.03189604,0.03189604" Opacity="1" Shininess="120.10501" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/rocks/canyon_rocks/canyon_wall/canyon_wall_up_river_wet_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="2" TileV="2"/>
@@ -165,7 +167,7 @@
    </Textures>
    <PublicParams BlendFactor="5.9899998" BlendFalloff="1.4" BlendLayer2Specular="0.029999999" BlendLayer2Tiling="4.1999998" BlendMaskTiling="1" DetailBumpScale="2.5" DetailDiffuseScale="0.5" DetailGlossScale="1" EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="moss_decal" MtlFlags="524448" Shader="Illum" GenMask="4000000000820" StringGenMask="%DECAL%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="0.40197787,0.54572469,0.3515327" Specular="0.016807375,0.016807375,0.016807375" Opacity="1" Shininess="88.99501" AlphaTest="1" vertModifType="0" LayerAct="1">
+  <Material Name="moss_decal" MtlFlags="524448" Shader="Illum" GenMask="4000000000820" StringGenMask="%DECAL%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="0.40197787,0.54572469,0.3515327" Specular="0.016807375,0.016807375,0.016807375" Opacity="1" Shininess="88.995018" AlphaTest="1" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/decals/moss/decal_moss_a.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
@@ -179,7 +181,7 @@
    </Textures>
    <PublicParams DecalAlphaMult="3.26" DecalAngleBasedFading="1" DecalDiffuseOpacity="0.76499999" DecalFalloff="0.2" DecalNormalOpacity="1" DecalSpecularOpacity="1" EmittanceMapGamma="1"/>
   </Material>
-  <Material Name="proxy_stone" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_rock" MatTemplate="" Diffuse="1,1,1" Specular="0,0,0" Opacity="1" Shininess="10" vertModifType="0" LayerAct="1">
+  <Material Name="proxy_stone" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_stone" MatTemplate="" Diffuse="1,1,1" Specular="0,0,0" Opacity="1" Shininess="9.9450016" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
   <Material Name="proxy_wood" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_wood" MatTemplate="" Diffuse="1,1,1" Specular="0,0,0" Opacity="1" Shininess="10" vertModifType="0" LayerAct="1">

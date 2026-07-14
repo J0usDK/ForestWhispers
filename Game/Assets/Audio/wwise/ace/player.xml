@@ -1,0 +1,61 @@
+<AudioSystemData name="Player" version="5" triggers="1" switches="1" states="7" preloads="1" files="1">
+ <ImplData events="1" switches="7" soundbanks="1"/>
+ <Triggers>
+  <Trigger name="Play_Player_Footstep" path="Triggers">
+   <Event name="Play_Player_Footstep"/>
+  </Trigger>
+ </Triggers>
+ <Switches>
+  <Switch name="Surface_Type" path="Switches">
+   <State name="dirt">
+    <SwitchGroup name="Surface_Type">
+     <Value name="dirt"/>
+    </SwitchGroup>
+   </State>
+   <State name="stone">
+    <SwitchGroup name="Surface_Type">
+     <Value name="stone"/>
+    </SwitchGroup>
+   </State>
+   <State name="grass">
+    <SwitchGroup name="Surface_Type">
+     <Value name="grass"/>
+    </SwitchGroup>
+   </State>
+   <State name="grass_tall">
+    <SwitchGroup name="Surface_Type">
+     <Value name="grass_tall"/>
+    </SwitchGroup>
+   </State>
+   <State name="leaves">
+    <SwitchGroup name="Surface_Type">
+     <Value name="leaves"/>
+    </SwitchGroup>
+   </State>
+   <State name="wood">
+    <SwitchGroup name="Surface_Type">
+     <Value name="wood"/>
+    </SwitchGroup>
+   </State>
+   <State name="water">
+    <SwitchGroup name="Surface_Type">
+     <Value name="water"/>
+    </SwitchGroup>
+   </State>
+  </Switch>
+ </Switches>
+ <Preloads>
+  <PreloadRequest name="Footsteps" path="Preloads" type="autoload">
+   <File name="Footsteps.bnk"/>
+  </PreloadRequest>
+ </Preloads>
+ <EditorData>
+  <Library />
+  <Folders>
+   <Folder name="Preloads"/>
+   <Folder name="Triggers"/>
+   <Folder name="Switches"/>
+  </Folders>
+  <Controls />
+ </EditorData>
+</AudioSystemData>

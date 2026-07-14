@@ -1,6 +1,6 @@
 <Material MtlFlags="524544" vertModifType="0">
  <SubMaterials>
-  <Material Name="proxy" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_rock" MatTemplate="" Diffuse="1,0,0" Specular="0,0,0" Opacity="0.5" Shininess="10" vertModifType="0" LayerAct="1">
+  <Material Name="proxy" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_stone" MatTemplate="" Diffuse="1,0,0" Specular="0,0,0" Opacity="0.5" Shininess="9.9450016" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
   <Material Name="forest_monolith_a" MtlFlags="525440" Shader="NoDraw" GenMask="0" StringGenMask="" SurfaceType="mat_rock" MatTemplate="" Diffuse="0,0,0" Specular="0,0,0" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
@@ -24,7 +24,7 @@
   <Material Name="forest_monolith_g" MtlFlags="525440" Shader="NoDraw" GenMask="0" StringGenMask="" SurfaceType="mat_rock" MatTemplate="" Diffuse="0,0,0" Specular="0,0,0" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
-  <Material Name="forest_monolith_new" MtlFlags="524416" Shader="Illum" GenMask="40020000000A0" StringGenMask="%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="180.03001" vertModifType="0" LayerAct="1">
+  <Material Name="forest_monolith_new" MtlFlags="524416" Shader="Illum" GenMask="40020000000A0" StringGenMask="%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="180.03003" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/rocks/forest_monoliths/forest_monolith_new_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="8" TileV="8"/>

@@ -1,4 +1,4 @@
-<AssetMetadata version="0" type="Material" guid="38d2f060-3b70-fcfd-eac4-2ced03afd93d" source="" timestamp="1776886464">
+<AssetMetadata version="0" type="Material" guid="38d2f060-3b70-fcfd-eac4-2ced03afd93d" source="" timestamp="1783832384">
  <Files>
   <File path="river.mtl"/>
  </Files>
@@ -10,8 +10,8 @@
   <Path usageCount="3">textures/nature/water/river_foam/river_foam_diff.dds</Path>
   <Path usageCount="2">textures/nature/water/river_foam/river_foam_ddn.dds</Path>
   <Path usageCount="2">textures/nature/water/river_foam/river_foam_spec.dds</Path>
-  <Path usageCount="2">textures/generic/water/river_foam_displ.tif</Path>
-  <Path usageCount="2">textures/generic/water/river_foam.tif</Path>
+  <Path usageCount="2">textures/generic/water/river_foam_displ.dds</Path>
+  <Path usageCount="2">textures/generic/water/river_foam.dds</Path>
   <Path usageCount="1">textures/nature/trees/pine/na_scots_pine_tree_trunk_rotten_diff.dds</Path>
   <Path usageCount="1">textures/nature/trees/pine/na_scots_pine_tree_trunk_ddna.dds</Path>
   <Path usageCount="1">textures/nature/trees/dead_wood_detail/dead_wood_detail.dds</Path>

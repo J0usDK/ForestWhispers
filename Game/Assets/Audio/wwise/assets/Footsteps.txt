@@ -1,0 +1,37 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1724675634	Play_Player_Footstep			\User Data\Footsteps\Play_Player_Footstep	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	4064446173	Surface_Type			\User Data\Footsteps\Surface_Type	
+
+Switch	ID	Name	Switch Group			Notes
+	582824249	leaves	Surface_Type			
+	614881961	grass_tall	Surface_Type			
+	1216965916	stone	Surface_Type			
+	2058049674	wood	Surface_Type			
+	2195636714	dirt	Surface_Type			
+	2654748154	water	Surface_Type			
+	4248645337	grass	Surface_Type			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	158112572	c_player_fts_dirt_walk_2	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_dirt_walk_2_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Dirt\c_player_fts_dirt_walk_2		47524
+	164411773	c_player_fts_grass_walk_5	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_grass_walk_5_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Grass\c_player_fts_grass_walk_5		132500
+	185112005	c_player_fts_leaves_walk	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_leaves_walk_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Leaves\c_player_fts_leaves_walk		54646
+	206606989	c_player_fts_grass_walk_4	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_grass_walk_4_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Grass\c_player_fts_grass_walk_4		113300
+	233537808	c_player_fts_water_walk	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_water_walk_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Water\c_player_fts_water_walk		87780
+	300160624	c_player_fts_dirt_walk_3	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_dirt_walk_3_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Dirt\c_player_fts_dirt_walk_3		47904
+	321816676	c_player_fts_stone_walk_1	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_stone_walk_1_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Stone\c_player_fts_stone_walk_1		57036
+	340822587	c_player_fts_grass_tall_walk	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_grass_tall_walk_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Grass_Tall\c_player_fts_grass_tall_walk		58580
+	449957004	c_player_fts_dirt_walk_1	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_dirt_walk_1_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Dirt\c_player_fts_dirt_walk_1		48284
+	545843135	c_player_fts_dirt_walk_4	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_dirt_walk_4_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Dirt\c_player_fts_dirt_walk_4		47144
+	579343406	c_player_fts_grass_walk_3	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_grass_walk_3_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Grass\c_player_fts_grass_walk_3		59968
+	686348597	c_player_fts_stone_walk_4	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_stone_walk_4_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Stone\c_player_fts_stone_walk_4		92308
+	697806434	c_player_fts_stone_walk_3	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_stone_walk_3_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Stone\c_player_fts_stone_walk_3		88488
+	746050511	c_player_fts_wood_walk_3	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_wood_walk_3_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Wood\c_player_fts_wood_walk_3		50516
+	867526043	c_player_fts_wood_walk_1	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_wood_walk_1_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Wood\c_player_fts_wood_walk_1		36388
+	903597794	c_player_fts_grass_walk_2	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_grass_walk_2_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Grass\c_player_fts_grass_walk_2		38212
+	911405113	c_player_fts_wood_walk_4	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_wood_walk_4_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Wood\c_player_fts_wood_walk_4		51662
+	911703354	c_player_fts_grass_walk_1	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_grass_walk_1_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Grass\c_player_fts_grass_walk_1		39232
+	1016077311	c_player_fts_stone_walk_2	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_stone_walk_2_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Stone\c_player_fts_stone_walk_2		88488
+	1031127273	c_player_fts_wood_walk_2	C:\Users\Admin\Documents\CRYENGINE Projects\Whispers Project\Game\Assets\Audio\wwise_project\.cache\Windows\SFX\c_player_fts_wood_walk_2_10C4C929.wem		\Actor-Mixer Hierarchy\Woodland\Footsteps\Footsteps_Player\Footsteps_Wood\c_player_fts_wood_walk_2		49368
+

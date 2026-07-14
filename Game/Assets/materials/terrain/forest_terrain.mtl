@@ -1,4 +1,4 @@
-<Material MtlFlags="526336" Shader="Terrain.Layer" GenMask="208000020" StringGenMask="%NORMAL_MAP%PARALLAX_OCCLUSION_MAPPING%TEMP_TERRAIN" SurfaceType="" MatTemplate="" Diffuse="0.73791069,0.73791069,0.73791069" Specular="0.012983033,0.012983033,0.012983033" Opacity="1" Shininess="99.960007" vertModifType="0" LayerAct="1">
+<Material MtlFlags="526336" Shader="Terrain.Layer" GenMask="208000020" StringGenMask="%NORMAL_MAP%PARALLAX_OCCLUSION_MAPPING%TEMP_TERRAIN" SurfaceType="mat_dirt" MatTemplate="" Diffuse="0.73791069,0.73791069,0.73791069" Specular="0.012983033,0.012983033,0.012983033" Opacity="1" Shininess="99.960007" vertModifType="0" LayerAct="1">
  <Textures>
   <Texture Map="Diffuse" File="textures/terrain/forest_terrain/forest_soil_terrain_diff.dds">
    <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="0.30000001" TileV="0.30000001"/>

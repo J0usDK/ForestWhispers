@@ -1,4 +1,4 @@
-<Material MtlFlags="524288" Shader="Illum" GenMask="4002008000820" StringGenMask="%DECAL%NORMAL_MAP%PARALLAX_OCCLUSION_MAPPING%SUBSURFACE_SCATTERING%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="0.45641106,0.45641106,0.45641106" Specular="0.012983033,0.012983033,0.012983033" Opacity="1" Shininess="99.960007" vertModifType="0" LayerAct="1">
+<Material MtlFlags="524288" Shader="Illum" GenMask="4002008000820" StringGenMask="%DECAL%NORMAL_MAP%PARALLAX_OCCLUSION_MAPPING%SUBSURFACE_SCATTERING%VERTCOLORS" SurfaceType="mat_dirt" MatTemplate="" Diffuse="0.45641106,0.45641106,0.45641106" Specular="0.012983033,0.012983033,0.012983033" Opacity="1" Shininess="99.960007" vertModifType="0" LayerAct="1">
  <Textures>
   <Texture Map="Diffuse" File="textures/roads/forest_path_stones/forest_path_stones_diff.dds">
    <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>

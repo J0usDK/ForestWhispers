@@ -77,7 +77,7 @@
    </Textures>
    <PublicParams EmittanceMapGamma="1" SSSIndex="0"/>
   </Material>
-  <Material Name="canyon_wall_plants" MtlFlags="525440" Shader="NoDraw" GenMask="0" StringGenMask="" SurfaceType="mat_vegetation" MatTemplate="" Diffuse="1,1,1" Specular="0.013473397,0.013473397,0.013473397" Opacity="1" Shininess="53.000004" AlphaTest="0.68000001" vertModifType="0" LayerAct="1">
+  <Material Name="canyon_wall_plants" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_stone" MatTemplate="" Diffuse="1,1,1" Specular="0.012983033,0.012983033,0.012983033" Opacity="1" Shininess="53.040005" AlphaTest="0.68000001" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
   <Material Name="canyon_rock" MtlFlags="524416" Shader="Illum" GenMask="40000000080B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%DISPLACEMENT_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="0.58407861,0.58407861,0.58407861" Specular="0.012983033,0.012983033,0.012983033" Opacity="1" Shininess="255" vertModifType="0" LayerAct="1">
@@ -106,10 +106,10 @@
    </Textures>
    <PublicParams BlendFactor="8" BlendFalloff="32" BlendLayer2Specular="0.039999999" BlendLayer2Tiling="1" BlendLayerDisplacement="0" BlendMaskTiling="1" DetailBumpScale="0.5" DetailDiffuseScale="0.5" DetailGlossScale="0.5" EmittanceMapGamma="1" SSSIndex="0" TessellationDispBias="0.5" TessellationFaceCull="0.75" TessellationFactor="1" TessellationFactorMax="32" TessellationFactorMin="1" TessellationHeightScale="1"/>
   </Material>
-  <Material Name="proxy_rock" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_rock" MatTemplate="" Diffuse="1,1,1" Specular="0,0,0" Opacity="1" Shininess="10" vertModifType="0" LayerAct="1">
+  <Material Name="proxy_rock" MtlFlags="525440" Shader="Nodraw" GenMask="0" StringGenMask="" SurfaceType="mat_stone" MatTemplate="" Diffuse="1,1,1" Specular="0,0,0" Opacity="1" Shininess="9.9450045" vertModifType="0" LayerAct="1">
    <Textures />
   </Material>
-  <Material Name="canyon_rock_a" MtlFlags="524416" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.03189604,0.03189604,0.03189604" Opacity="1" Shininess="180.03001" AlphaTest="0.56" vertModifType="0" LayerAct="1">
+  <Material Name="canyon_rock_a" MtlFlags="524416" Shader="Illum" GenMask="40000000000B0" StringGenMask="%BLENDLAYER%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="0.03189604,0.03189604,0.03189604" Opacity="1" Shininess="180.03004" AlphaTest="0.56" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/nature/rocks/canyon_rocks/canyon_rock/canyon_rock_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0" TileU="2" TileV="2"/>

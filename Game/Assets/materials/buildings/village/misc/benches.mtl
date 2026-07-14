@@ -1,6 +1,6 @@
 <Material MtlFlags="524544" vertModifType="0">
  <SubMaterials>
-  <Material Name="wood" MtlFlags="524416" Shader="Illum" GenMask="40020000000A0" StringGenMask="%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING%VERTCOLORS" SurfaceType="mat_wood" MatTemplate="" Diffuse="0.34402567,0.30663478,0.27583286" Specular="0.021219011,0.021219011,0.021219011" Opacity="1" Shininess="80" vertModifType="0" LayerAct="1">
+  <Material Name="wood" MtlFlags="524416" Shader="Illum" GenMask="40020000000A0" StringGenMask="%DETAIL_MAPPING%NORMAL_MAP%SUBSURFACE_SCATTERING%VERTCOLORS" SurfaceType="" MatTemplate="" Diffuse="0.34191453,0.30498737,0.27467737" Specular="0.021219013,0.021219013,0.021219013" Opacity="1" Shininess="80.07" vertModifType="0" LayerAct="1">
    <Textures>
     <Texture Map="Diffuse" File="textures/generic/wood/wood_flat_a_diff.dds">
      <TexMod TexMod_RotateType="0" TexMod_TexGenType="0" TexMod_bTexGenProjected="0"/>
